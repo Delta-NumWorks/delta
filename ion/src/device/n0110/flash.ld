@@ -63,24 +63,13 @@ SECTIONS {
     . = ALIGN(4);
     *(.text.start)
     *(.text.abort)
-    *(.text.unlikely.abort)
+    /* *(.text.unlikely.abort) */
     *(.text.isr_systick)
     *(.text.__assert)
 
-    *libc_nano.a:(.text)
-    *libc_nano.a:(.text.*)
-    *libnosys.a:(.text)
-    *libnosys.a:(.text.*)
+    *libc_nano.a:lib_a-memcpy.o(.text*)
+    *libc_nano.a:lib_a-memset.o(.text*)
 
-    *(.text.memcpy)
-    *(.text.memset)
-    /*
-    *(.text.strlen)
-    *(.text.strncmp)
-    *(.text.strlcpy)
-    *(.text.strcmp)
-    *(.text.memmove)
-    */
     /* 'start' dependencies */
     *(.text._ZN3Ion6Device5Board4initEv)
     *(.text._ZN3Ion6Device5Board7initFPUEv)
@@ -134,11 +123,6 @@ SECTIONS {
     *(.rodata._ZNV3Ion6Device4Regs8RegisterImE11getBitRangeEhh.str1.1)
     *(.rodata._ZNV3Ion6Device4Regs3TIMINS1_8RegisterItEEE4CCMR6setOCMEiNS6_3OCME.str1.1)
 
-    *libc_nano.a:(.rodata)
-    *libc_nano.a:(.rodata.*)
-    *libnosys.a:(.rodata)
-    *libnosys.a:(.rodata.*)
-
   } >INTERNAL_FLASH
 
   .exam_mode_buffer ORIGIN(EXTERNAL_FLASH) : {
@@ -166,6 +150,12 @@ SECTIONS {
     _init_array_start = .;
     KEEP (*(.init_array*))
     _init_array_end = .;
+  } >INTERNAL_FLASH
+
+  .ARM.exidx : {
+    __exidx_start = .;
+     *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+    __exidx_end = .;
   } >INTERNAL_FLASH
 
   .data : {

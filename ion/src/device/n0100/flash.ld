@@ -19,6 +19,31 @@ FLASH_SECOND_SECTOR_OFFSET = 16K;
 FLASH_SECOND_SECTOR_SIZE = 16K;
 
 SECTIONS {
+  .giac : {
+    . = ALIGN(4);
+    *(.text.ext_main)
+    *libtommath.a:(.text);
+    *libtommath.a:(.text.*);
+    *libtommath.a:(.rodata);
+    *libtommath.a:(.rodata.*);
+    *libgiac.a:(.text);
+    *libgiac.a:(.text.*);
+    *libgiac.a:(.rodata);
+    *libgiac.a:(.rodata.*);
+    *libmpfi.a:(.text);
+    *libmpfi.a:(.text.*);
+    *libmpfi.a:(.rodata);
+    *libmpfi.a:(.rodata.*);
+    *libmpfr.a:(.text);
+    *libmpfr.a:(.text.*);
+    *libmpfr.a:(.rodata);
+    *libmpfr.a:(.rodata.*);
+    *libgmp.a:(.text);
+    *libgmp.a:(.text.*);
+    *libgmp.a:(.rodata);
+    *libgmp.a:(.rodata.*);
+  } >EXTERNAL_FLASH
+
   .isr_vector_table ORIGIN(FLASH) : {
     /* When booting, the STM32F412 fetches the content of address 0x0, and
      * extracts from it various key infos: the initial value of the PC register
@@ -49,6 +74,14 @@ SECTIONS {
     _exam_mode_buffer_end = .;
   } >FLASH
 
+  .libc : {
+    . = ALIGN(4);
+    *libstdc++_nano.a:(.text)
+    *libstdc++_nano.a:(.text.*)
+    *libstdc++_nano.a:(.rodata)
+    *libstdc++_nano.a:(.rodata.*)
+  } >EXTERNAL_FLASH
+
   .text : {
     . = ALIGN(4);
     *(.text)
@@ -66,6 +99,12 @@ SECTIONS {
     . = ALIGN(4);
     *(.rodata)
     *(.rodata.*)
+  } >FLASH
+
+  .ARM.exidx : {
+    __exidx_start = .;
+     *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+    __exidx_end = .;
   } >FLASH
 
   .data : {
