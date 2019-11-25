@@ -88,6 +88,8 @@ void __attribute__((noinline)) start() {
    * For example, static C++ objects are very likely to manipulate float values */
   Ion::Device::Board::initFPU();
 
+  Ion::Device::Board::init();
+
   /* Call static C++ object constructors
    * The C++ compiler creates an initialization function for each static object.
    * The linker then stores the address of each of those functions consecutively
@@ -107,8 +109,6 @@ void __attribute__((noinline)) start() {
     abort();
   }
 #endif
-
-  Ion::Device::Board::init();
 
   /* At this point, we initialized clocks and the external flash but no other
    * peripherals. */

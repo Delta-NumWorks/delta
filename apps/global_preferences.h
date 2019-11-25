@@ -17,10 +17,10 @@ public:
   constexpr static int NumberOfBrightnessStates = 5;
 private:
   GlobalPreferences() :
-    m_language(I18n::Language::EN),
+    m_language(I18n::Language::FR),
     m_examMode(ExamMode::Unknown),
     m_showPopUp(true),
-    m_brightnessLevel(Ion::Backlight::MaxBrightness) {}
+    m_brightnessLevel(Ion::Backlight::MaxBrightness / 3) {}
   I18n::Language m_language;
   enum class ExamMode : uint8_t {
     Deactivate = 0,
