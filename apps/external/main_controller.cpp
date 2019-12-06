@@ -85,6 +85,7 @@ void MainController::willDisplayCellForIndex(HighlightCell * cell, int index) {
   struct File f;
   if(fileAtIndex(index, f)) {
     myTextCell->setText(f.name);
+    myTextCell->setTextColor(f.isExecutable ? KDColorBlack : Palette::GreyDark);
   }
 }
 

@@ -65,6 +65,7 @@ bool fileAtIndex(size_t index, File &entry) {
   entry.name = tar->name;
   entry.data = reinterpret_cast<const uint8_t*>(tar) + sizeof(TarHeader);
   entry.dataLength = size;
+  entry.isExecutable = (tar->mode[4] & 0x01) == 1;
 
   return true;
 }
@@ -74,6 +75,9 @@ typedef uint32_t (*entrypoint)(const uint32_t, const void *, void *, const uint3
 uint32_t executeFile(const char *name, void * heap, const uint32_t heapSize) {
   File entry;
   if(fileAtIndex(indexFromName(name), entry)) {
+    if(!entry.isExecutable) {
+      return 0;
+    }
     uint32_t ep = *reinterpret_cast<const uint32_t*>(entry.data);
     if(ep >= 0x90200000 && ep < 0x90800000) {
       return ((entrypoint)ep)(API_VERSION, getApiPointers(), heap, heapSize);
