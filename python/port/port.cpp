@@ -553,8 +553,8 @@ int getkey_raw(bool allow_suspend){
     }
     if (event == Ion::Events::USBEnumeration
 	) {
-      if (false && Ion::USB::isPlugged()) {
-        KDIonContext::sharedContext()->pushRectUniform(rect,64934 /* Palette::YellowDark*/);
+      KDIonContext::sharedContext()->pushRectUniform(rect,64934 /* Palette::YellowDark*/);
+      if (Ion::USB::isPlugged()) {
 	/* Just after a software update, the battery timer does not have time to
 	 * fire before the calculator enters DFU mode. As the DFU mode blocks the
 	 * event loop, we update the battery state "manually" here.

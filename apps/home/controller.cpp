@@ -55,7 +55,14 @@ Controller::Controller(Responder * parentResponder, SelectableTableViewDataSourc
 }
 
 bool Controller::handleEvent(Ion::Events::Event event) {
-  if (event == Ion::Events::OK || event == Ion::Events::EXE) {
+  if (event == Ion::Events::Home) {
+    AppsContainer * container = AppsContainer::sharedAppsContainer();
+    bool switched =
+      container->switchTo(container->appSnapshotAtIndex(numberOfIcons()));
+    assert(switched);
+    (void) switched; // Silence compilation warning about unused variable.
+    return true;
+  } else if (event == Ion::Events::OK || event == Ion::Events::EXE) {
     AppsContainer * container = AppsContainer::sharedAppsContainer();
     bool switched = container->switchTo(container->appSnapshotAtIndex(selectionDataSource()->selectedRow()*k_numberOfColumns+selectionDataSource()->selectedColumn()+1));
     assert(switched);
