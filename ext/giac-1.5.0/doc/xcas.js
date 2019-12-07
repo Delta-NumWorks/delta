@@ -2557,7 +2557,7 @@ id="matr_case' + i + '_' + j + '">' + oldval + '</textarea><div class="matrixcel
             s = 'latex(quote(' + out + '))';
           else
             s = 'mathml(quote(' + out + '),1)'; //Module.print(s);
-          //console.log(out,s);
+          console.log(out,s);
           if (out.length > 10 && out.substr(0, 10) == 'GIAC_ERROR')
             s = '"' + out.substr(11, out.length - 11) + '"';
           else s = UI.caseval_noautosimp(s);
@@ -2853,6 +2853,7 @@ id="matr_case' + i + '_' + j + '">' + oldval + '</textarea><div class="matrixcel
               s = UI.caseval_noautosimp('latex(quote(' + out + '))');
             else
               s = UI.caseval_noautosimp('mathml(quote(' + out + '),1)');
+	    //console.log(s);
           } else s = out;
 	}
       }

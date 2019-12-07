@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-28 14:36+0100\n"
+"POT-Creation-Date: 2019-12-02 11:27+0100\n"
 "PO-Revision-Date: 2010-05-03 15:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -751,7 +751,7 @@ msgstr ""
 msgid "Unable to find singular points"
 msgstr ""
 
-#: src/misc.cc:7367 src/misc.cc:7949 src/misc.cc:7963
+#: src/misc.cc:7367 src/misc.cc:7951 src/misc.cc:7965
 msgid "Unable to find critical points"
 msgstr ""
 
@@ -759,7 +759,7 @@ msgstr ""
 msgid "Unable to find inflection points"
 msgstr ""
 
-#: src/misc.cc:7384 src/misc.cc:7971
+#: src/misc.cc:7384 src/misc.cc:7973
 msgid "Infinite number of critical points. Try with optional argument "
 msgstr ""
 
@@ -775,12 +775,12 @@ msgstr ""
 msgid "Horizontal asymptote at %gen : %gen"
 msgstr ""
 
-#: src/misc.cc:7532 src/misc.cc:8070
+#: src/misc.cc:7532 src/misc.cc:8072
 #, c-format
 msgid "Vertical parabolic asymptote at %gen"
 msgstr ""
 
-#: src/misc.cc:7538 src/misc.cc:8077
+#: src/misc.cc:7538 src/misc.cc:8079
 #, c-format
 msgid "Horizontal parabolic asymptote at %gen"
 msgstr ""
@@ -834,46 +834,46 @@ msgstr ""
 msgid "Odd function %gen. Center O"
 msgstr ""
 
-#: src/misc.cc:7957
+#: src/misc.cc:7959
 msgid "Unable to find convexity"
 msgstr ""
 
-#: src/misc.cc:8033
+#: src/misc.cc:8035
 #, c-format
 msgid "Vertical asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8038
+#: src/misc.cc:8040
 #, c-format
 msgid "Symmetric vertical asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8051
+#: src/misc.cc:8053
 #, c-format
 msgid "Horizontal asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8058
+#: src/misc.cc:8060
 #, c-format
 msgid "Symmetric horizontal asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8086
+#: src/misc.cc:8088
 #, c-format
 msgid "Parabolic asymptote direction %gen at infinity"
 msgstr ""
 
-#: src/misc.cc:8093
+#: src/misc.cc:8095
 #, c-format
 msgid "Asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8103
+#: src/misc.cc:8105
 #, c-format
 msgid "Symmetric asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8339
+#: src/misc.cc:8341
 #, c-format
 msgid ""
 "Sign %gen\n"
@@ -1137,7 +1137,7 @@ msgstr ""
 msgid "modpoly.cc/powmod"
 msgstr ""
 
-#: src/modpoly.cc:8662 src/modpoly.cc:8683
+#: src/modpoly.cc:8649 src/modpoly.cc:8670
 msgid "modpoly.cc/ininttype2ZZ"
 msgstr ""
 
@@ -2471,35 +2471,35 @@ msgstr ""
 msgid " was discarded and replaced randomly by "
 msgstr ""
 
-#: src/alg_ext.cc:1087 src/alg_ext.cc:1092
+#: src/alg_ext.cc:1107 src/alg_ext.cc:1112
 msgid "inv_EXT"
 msgstr ""
 
-#: src/alg_ext.cc:1164 src/alg_ext.cc:1173
+#: src/alg_ext.cc:1184 src/alg_ext.cc:1193
 msgid "rootof"
 msgstr ""
 
-#: src/alg_ext.cc:1181
+#: src/alg_ext.cc:1201
 msgid "Algebraic extensions not allowed in a rootof"
 msgstr ""
 
-#: src/alg_ext.cc:1387
+#: src/alg_ext.cc:1407
 msgid "Warning: variable name ignored: "
 msgstr ""
 
-#: src/alg_ext.cc:1561
+#: src/alg_ext.cc:1581
 msgid "Or condition not implemented"
 msgstr ""
 
-#: src/alg_ext.cc:1565
+#: src/alg_ext.cc:1585
 msgid "fminmax, range "
 msgstr ""
 
-#: src/alg_ext.cc:1629
+#: src/alg_ext.cc:1649
 msgid "Warning: "
 msgstr ""
 
-#: src/alg_ext.cc:1629
+#: src/alg_ext.cc:1649
 msgid "=0: no solution found"
 msgstr ""
 

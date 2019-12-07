@@ -2,7 +2,7 @@
 
 #include "giacPCH.h"
 
-/*  
+/*
  *  Copyright (C) 2000,14 B. Parisse, Institut Fourier, 38402 St Martin d'Heres
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -81,9 +81,9 @@ using namespace std;
 #endif // win32
 #endif // ndef bestaos
 
-#if defined VISUALC && !defined BESTA_OS && !defined RTOS_THREADX && !defined FREERTOS 
+#if defined VISUALC && !defined BESTA_OS && !defined RTOS_THREADX && !defined FREERTOS
 #include <Windows.h>
-#endif 
+#endif
 
 #ifdef BESTA_OS
 #include <stdlib.h>
@@ -127,7 +127,7 @@ namespace giac {
   double opaque_double_val(const void * source){
     longlong r = * (longlong *)(source) ;
     (* (gen *) (&r)).type = 0;
-    return * (double *)(&r); 
+    return * (double *)(&r);
   }
 
   // FIXME: make the replacement call for APPLE
@@ -166,8 +166,8 @@ namespace giac {
 #else
 	back_key_pressed()
 #endif
-	){ 
-      kbd_interrupted=ctrl_c=interrupted=true; 
+	){
+      kbd_interrupted=ctrl_c=interrupted=true;
     }
 #else
     if (caseval_unitialized!=-123454321){
@@ -176,21 +176,21 @@ namespace giac {
       caseval_n=0;
       caseval_maxtime=15;
     }
-    if (caseval_mod>0){ 
-      ++caseval_n; 
+    if (caseval_mod>0){
+      ++caseval_n;
       if (caseval_n >=caseval_mod){
-	caseval_n=0; 
-	caseval_current=time(0); 
+	caseval_n=0;
+	caseval_current=time(0);
 #ifdef EMCC
 	if (difftime(caseval_current,caseval_begin)>caseval_maxtime)
 #else
 	if (caseval_current>caseval_maxtime+caseval_begin)
 #endif
-	  { 
-	    CERR << "Timeout" << '\n'; ctrl_c=true; interrupted=true; 
+	  {
+	    CERR << "Timeout" << '\n'; ctrl_c=true; interrupted=true;
 	    caseval_begin=caseval_current;
-	  } 
-      } 
+	  }
+      }
     }
 #endif // NSPIRE
   }
@@ -203,7 +203,7 @@ namespace giac {
 #endif
 
 #if defined VISUALC || defined BESTA_OS
-#if !defined FREERTOS && !defined HAVE_LIBMPIR 
+#if !defined FREERTOS && !defined HAVE_LIBMPIR
   int R_OK=4;
 #endif
   int access(const char *path, int mode ){
@@ -284,7 +284,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       return _last_evaled_argptr_;
   }
 
-  static int _language_=0; 
+  static int _language_=0;
   int & language(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_language_;
@@ -300,7 +300,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _language_=b;
   }
 
-  static int _max_sum_sqrt_=3; 
+  static int _max_sum_sqrt_=3;
   int & max_sum_sqrt(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_max_sum_sqrt_;
@@ -315,9 +315,9 @@ extern "C" void Sleep(unsigned int miliSecond);
   }
 
 #ifdef GIAC_HAS_STO_38 // Prime sum(x^2,x,0,100000) crash on hardware
-  static int _max_sum_add_=10000; 
+  static int _max_sum_add_=10000;
 #else
-  static int _max_sum_add_=100000; 
+  static int _max_sum_add_=100000;
 #endif
   int & max_sum_add(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
@@ -450,7 +450,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       return _proba_epsilon_;
   }
 
-  static bool _expand_re_im_=true; 
+  static bool _expand_re_im_=true;
   bool & expand_re_im(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_expand_re_im_;
@@ -464,7 +464,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _expand_re_im_=b;
   }
 
-  static int _scientific_format_=0; 
+  static int _scientific_format_=0;
   int & scientific_format(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_scientific_format_;
@@ -478,7 +478,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _scientific_format_=b;
   }
 
-  static int _decimal_digits_=12; 
+  static int _decimal_digits_=12;
 
   int & decimal_digits(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
@@ -493,7 +493,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _decimal_digits_=b;
   }
 
-  static int _minchar_for_quote_as_string_=1; 
+  static int _minchar_for_quote_as_string_=1;
 
   int & minchar_for_quote_as_string(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
@@ -508,7 +508,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _minchar_for_quote_as_string_=b;
   }
 
-  static int _xcas_mode_=0; 
+  static int _xcas_mode_=0;
   int & xcas_mode(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_xcas_mode_;
@@ -523,7 +523,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   }
 
 
-  static int _integer_format_=0; 
+  static int _integer_format_=0;
   int & integer_format(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_integer_format_;
@@ -536,7 +536,7 @@ extern "C" void Sleep(unsigned int miliSecond);
     else
       _integer_format_=b;
   }
-  static int _latex_format_=0; 
+  static int _latex_format_=0;
   int & latex_format(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_latex_format_;
@@ -544,7 +544,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       return _latex_format_;
   }
 #ifdef BCD
-  static u32 _bcd_decpoint_='.'|('E'<<16)|(' '<<24); 
+  static u32 _bcd_decpoint_='.'|('E'<<16)|(' '<<24);
   u32 & bcd_decpoint(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_bcd_decpoint_;
@@ -552,7 +552,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       return _bcd_decpoint_;
   }
 
-  static u32 _bcd_mantissa_=12+(15<<8); 
+  static u32 _bcd_mantissa_=12+(15<<8);
   u32 & bcd_mantissa(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_bcd_mantissa_;
@@ -560,7 +560,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       return _bcd_mantissa_;
   }
 
-  static u32 _bcd_flags_=0; 
+  static u32 _bcd_flags_=0;
   u32 & bcd_flags(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_bcd_flags_;
@@ -615,7 +615,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _python_compat_=b;
   }
 
-  static bool _complex_mode_=false; 
+  static bool _complex_mode_=false;
   bool & complex_mode(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_complex_mode_;
@@ -630,7 +630,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _complex_mode_=b;
   }
 
-  static bool _escape_real_=true; 
+  static bool _escape_real_=true;
   bool & escape_real(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_escape_real_;
@@ -690,7 +690,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _eval_equaltosto_=b;
   }
 
-  static bool _all_trig_sol_=false; 
+  static bool _all_trig_sol_=false;
   bool & all_trig_sol(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_all_trig_sol_;
@@ -705,7 +705,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _all_trig_sol_=b;
   }
 
-  static bool _try_parse_i_=true; 
+  static bool _try_parse_i_=true;
   bool & try_parse_i(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_try_parse_i_;
@@ -720,7 +720,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _try_parse_i_=b;
   }
 
-  static bool _specialtexprint_double_=false; 
+  static bool _specialtexprint_double_=false;
   bool & specialtexprint_double(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_specialtexprint_double_;
@@ -735,7 +735,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _specialtexprint_double_=b;
   }
 
-  static bool _atan_tan_no_floor_=false; 
+  static bool _atan_tan_no_floor_=false;
   bool & atan_tan_no_floor(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_atan_tan_no_floor_;
@@ -750,7 +750,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _atan_tan_no_floor_=b;
   }
 
-  static bool _keep_acosh_asinh_=false; 
+  static bool _keep_acosh_asinh_=false;
   bool & keep_acosh_asinh(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_keep_acosh_asinh_;
@@ -765,7 +765,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _keep_acosh_asinh_=b;
   }
 
-  static bool _keep_algext_=false; 
+  static bool _keep_algext_=false;
   bool & keep_algext(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_keep_algext_;
@@ -780,7 +780,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _keep_algext_=b;
   }
 
-  static bool _lexer_close_parenthesis_=true; 
+  static bool _lexer_close_parenthesis_=true;
   bool & lexer_close_parenthesis(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_lexer_close_parenthesis_;
@@ -795,7 +795,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _lexer_close_parenthesis_=b;
   }
 
-  static bool _rpn_mode_=false; 
+  static bool _rpn_mode_=false;
   bool & rpn_mode(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_rpn_mode_;
@@ -810,7 +810,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _rpn_mode_=b;
   }
 
-  static bool _ntl_on_=true; 
+  static bool _ntl_on_=true;
   bool & ntl_on(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_ntl_on_;
@@ -825,7 +825,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _ntl_on_=b;
   }
 
-  static bool _complex_variables_=false; 
+  static bool _complex_variables_=false;
   bool & complex_variables(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_complex_variables_;
@@ -1025,7 +1025,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _show_axes_=b;
   }
 
-  static bool _io_graph_=false; 
+  static bool _io_graph_=false;
   // DO NOT SET TO true WITH non-zero contexts or fix symadd when points are added
   bool & io_graph(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
@@ -1201,7 +1201,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 			      ,eval_thread(0),stackaddr(0)
 #endif
 #endif
-  { 
+  {
   }
 
   thread_param * & context0_thread_param_ptr(){
@@ -1286,7 +1286,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   int thread_eval_status(GIAC_CONTEXT){
     return -1;
   }
-  
+
   void thread_eval_status(int val,GIAC_CONTEXT){
   }
 
@@ -1497,7 +1497,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       _pl()._initialisation_done_=b;
   }
 
-  static int _calc_mode_=0; 
+  static int _calc_mode_=0;
   int & calc_mode(GIAC_CONTEXT){
     if (contextptr && contextptr->globalptr )
       return contextptr->globalptr->_calc_mode_;
@@ -1782,8 +1782,8 @@ extern "C" void Sleep(unsigned int miliSecond);
   bool block_signal=false;
   bool CAN_USE_LAPACK = true;
   bool simplify_sincosexp_pi=true;
-  int history_begin_level=0; 
-  // variable used to avoid copying the whole history between processes 
+  int history_begin_level=0;
+  // variable used to avoid copying the whole history between processes
 #ifdef WIN32 // Temporary
   int debug_infolevel=0;
 #else
@@ -1795,11 +1795,11 @@ extern "C" void Sleep(unsigned int miliSecond);
 #else
   int threads=sysconf (_SC_NPROCESSORS_ONLN);
 #endif
-  unsigned max_pairs_by_iteration=32768; 
+  unsigned max_pairs_by_iteration=32768;
   // gbasis max number of pairs by F4 iteration
   // setting to 2000 accelerates cyclic9mod but cyclic9 would be slower
   // 32768 is enough for cyclic10mod without truncation and not too large for yang1
-  unsigned simult_primes=16,simult_primes2=16,simult_primes3=16,simult_primes_seuil2=-1,simult_primes_seuil3=-1; 
+  unsigned simult_primes=16,simult_primes2=16,simult_primes3=16,simult_primes_seuil2=-1,simult_primes_seuil3=-1;
   // gbasis modular algorithm on Q: simultaneous primes (more primes means more parallel threads but also more memory required)
   double gbasis_reinject_ratio=0.2;
   // gbasis modular algo on Q: if new basis element exceed this ratio, new elements are reinjected in the ideal generators for the remaining computations
@@ -1829,7 +1829,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   int HENSEL_QUADRATIC_POWER=25;
   int KARAMUL_SIZE=13;
   int INT_KARAMUL_SIZE=300;
-  int FFTMUL_SIZE=100; 
+  int FFTMUL_SIZE=100;
   int FFTMUL_INT_MAXBITS=1024;
   int MAX_ALG_EXT_ORDER_SIZE = 4;
   int MAX_COMMON_ALG_EXT_ORDER_SIZE = 16;
@@ -1865,7 +1865,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   int HENSEL_QUADRATIC_POWER=25;
   int KARAMUL_SIZE=13;
   int INT_KARAMUL_SIZE=300;
-  int FFTMUL_SIZE=100; 
+  int FFTMUL_SIZE=100;
   int FFTMUL_INT_MAXBITS=1024;
 #ifdef GIAC_GGB
   int MAX_ALG_EXT_ORDER_SIZE = 3;
@@ -1961,7 +1961,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   }
 #endif
 
-#if defined HAVE_SIGNAL_H_OLD 
+#if defined HAVE_SIGNAL_H_OLD
   static bool running_file=false;
   static int run_modif_pos;
   bool synchronize_history=true;
@@ -1984,7 +1984,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   // signal_plot_parent is true for intermediate data, false otherwise
   volatile bool signal_child=true; // true if busy
   volatile bool signal_plot_child=false; // true if child can continue
-  volatile bool signal_plot_parent=false; 
+  volatile bool signal_plot_parent=false;
   volatile bool child_busy=false,data_ready=false;
   // child sends a SIGUSR1
   void data_signal_handler(int signum){
@@ -2017,11 +2017,11 @@ extern "C" void Sleep(unsigned int miliSecond);
     // cerr << "Child called" << '\n';
     signal_child=true;
   }
-  
+
   void child_plot_done(int signum){
     signal_plot_child=true;
   }
-  
+
   void kill_and_wait_sigusr2(){
     sigset_t mask, oldmask;
     sigemptyset (&mask);
@@ -2042,7 +2042,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 
   gen wait_parent(){
     kill_and_wait_sigusr2();
-    ifstream child_in(cas_entree_name().c_str());    
+    ifstream child_in(cas_entree_name().c_str());
     gen res;
     try {
       res=unarchive(child_in,context0);
@@ -2237,7 +2237,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   static void archive_write_error(){
     cerr << "Archive error on " << cas_entree_name() << '\n';
   }
-  
+
   // return true if entree has been sent to evalation by child process
   static bool child_eval(const string & entree,bool numeric,bool is_run_file){
 #if defined(HAVE_NO_SIGNAL_H) || defined(DONT_FORK)
@@ -2400,7 +2400,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 		PICTautoname_plus_plus();
 	      }
 #endif
-	    } 
+	    }
 	  }
 	  else {
 #ifdef WITH_GNUPLOT
@@ -2410,7 +2410,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	}
       }
     } // end for (;it!=itend;++it)
-  } 
+  }
 
   static void signal_child_ok(){
     child_busy=true;
@@ -2432,8 +2432,8 @@ extern "C" void Sleep(unsigned int miliSecond);
     if (signal_plot_parent){
       // cerr << "Child signaled " << entree << " " << sortie << '\n';
       if ( entree.type==_SYMB ){
-	if ( (entree._SYMBptr->sommet==at_click && entree._SYMBptr->feuille.type==_VECT && entree._SYMBptr->feuille._VECTptr->empty() ) 
-	     || (entree._SYMBptr->sommet==at_debug) 
+	if ( (entree._SYMBptr->sommet==at_click && entree._SYMBptr->feuille.type==_VECT && entree._SYMBptr->feuille._VECTptr->empty() )
+	     || (entree._SYMBptr->sommet==at_debug)
 	     ) {
 	  debug_ptr(contextptr)->debug_mode=(entree._SYMBptr->sommet==at_debug);
 	  // cerr << "Child waiting" << '\n';
@@ -2469,7 +2469,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	    v[1]._IDNTptr->value = new gen(v[0]);
 	  }
 	  signal_child_ok();
-	  return false;	  
+	  return false;
 	}
 	if (sortie._SYMBptr->sommet==at_purge){
 	  gen & g=sortie._SYMBptr->feuille;
@@ -2504,7 +2504,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	  gen f=sortie._SYMBptr->feuille;
 	  if ( (f.type==_VECT) && (f._VECTptr->size()>=7)){
 	    vecteur v=*f._VECTptr;
-	    cas_setup(v,contextptr); 
+	    cas_setup(v,contextptr);
             signal_child_ok();
 	    return false;
 	  }
@@ -2515,7 +2515,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	ofstream parent_out(cas_entree_name().c_str());
 	archive(parent_out,res,contextptr);
 	parent_out.close();
-	signal_child_ok();	
+	signal_child_ok();
 	return false;
       }
     } // end signal_plot_parent
@@ -2552,7 +2552,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	plot_instructions.clear();
 #endif
       }
-    }  
+    }
     else {
       bool fait=false;
       if (running_file) {
@@ -2568,7 +2568,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	if (in_texmacs){
 	  COUT << GIAC_DATA_BEGIN << "verbatim:";
 	  COUT << "ans(" << history_out(contextptr).size() << ") " << sortie << "\n";
-  
+
 	  COUT << GIAC_DATA_BEGIN << "latex:$$ " << gen2tex(entree,contextptr) << "\\quad = \\quad " << gen2tex(sortie,contextptr) << "$$" << GIAC_DATA_END;
 	  COUT << "\n";
 	  COUT << GIAC_DATA_BEGIN << "channel:prompt" << GIAC_DATA_END;
@@ -2618,7 +2618,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       ifstream parent_in(cas_sortie_name().c_str());
       if (!parent_in)
 	setsizeerr();
-      CLOCK_T start, end;  
+      CLOCK_T start, end;
       start = CLOCK();
       entree=unarchive(parent_in,contextptr);
       sortie=unarchive(parent_in,contextptr);
@@ -2688,10 +2688,10 @@ extern "C" void Sleep(unsigned int miliSecond);
 #endif
   }
 #endif
-  
+
   void read_config(const string & name,GIAC_CONTEXT,bool verbose){
 #if !defined NSPIRE && !defined FXCG && !defined GIAC_HAS_STO_38
-#if !defined __MINGW_H 
+#if !defined __MINGW_H
     if (access(name.c_str(),R_OK)) {
       if (verbose)
 	CERR << "// Unable to find config file " << name << '\n';
@@ -2706,7 +2706,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       CERR << "// Reading config file " << name << '\n';
     readargs_from_stream(inf,args,contextptr);
     gen g(args);
-    if (debug_infolevel || verbose)    
+    if (debug_infolevel || verbose)
       CERR << g << '\n';
     g.eval(1,contextptr);
     if (verbose){
@@ -2801,7 +2801,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   }
 
   std::string absolute_path(const std::string & orig_file){
-#ifdef BESTA_OS 
+#ifdef BESTA_OS
     // BP: FIXME
     return orig_file;
 #else
@@ -2946,7 +2946,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       if (file[0]!='/'){
 #ifdef WIN32
 	file=giac_aide_dir()+file;
-#else    
+#else
 	s=giac_aide_dir();
 #endif
       }
@@ -3015,7 +3015,7 @@ extern "C" void Sleep(unsigned int miliSecond);
     else {
       if (getenv("BROWSER"))
 	s=getenv("BROWSER")+(" '"+s+"' &");
-      else 
+      else
 	s="'/cygdrive/c/Program Files/Internet Explorer/IEXPLORE.EXE' '"+s+"' &";
     }
     */
@@ -3188,7 +3188,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       break;
     default:
       return "local/";
-    }  
+    }
   }
 
   std::string find_doc_prefix(int i){
@@ -3224,7 +3224,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       break;
     default:
       return "doc/local/";
-    }  
+    }
   }
 
   void update_completions(){
@@ -3415,7 +3415,7 @@ extern "C" void Sleep(unsigned int miliSecond);
       debug_infolevel=atoi(getenv("GIAC_DEBUG"));
       CERR << "// Setting debug_infolevel to " << debug_infolevel << '\n';
     }
-    if (getenv("GIAC_PRINTPROG")){ 
+    if (getenv("GIAC_PRINTPROG")){
       // force print of prog at parse, 256 for python compat mode print
       printprog=atoi(getenv("GIAC_PRINTPROG"));
       CERR << "// Setting printprog to " << printprog << '\n';
@@ -3489,11 +3489,11 @@ extern "C" void Sleep(unsigned int miliSecond);
     if (!ans) ans=new vector<context *>(1,(context *) 0);
     return *ans;
   }
-  context::context() { 
+  context::context() {
     // CERR << "new context " << this << '\n';
     parent=0;
-    tabptr=new sym_tab; 
-    globalcontextptr=this; previous=0; globalptr=new global; 
+    tabptr=new sym_tab;
+    globalcontextptr=this; previous=0; globalptr=new global;
     quoted_global_vars=new vecteur;
     rootofs=new vecteur;
     history_in_ptr=new vecteur;
@@ -3512,11 +3512,11 @@ extern "C" void Sleep(unsigned int miliSecond);
 #if !defined BESTA_OS && !defined NSPIRE && !defined FXCG && !defined(KHICAS)
   std::map<std::string,context *> * context_names = new std::map<std::string,context *> ;
 
-  context::context(const string & name) { 
+  context::context(const string & name) {
     // CERR << "new context " << this << '\n';
     parent=0;
-    tabptr=new sym_tab; 
-    globalcontextptr=this; previous=0; globalptr=new global; 
+    tabptr=new sym_tab;
+    globalcontextptr=this; previous=0; globalptr=new global;
     quoted_global_vars=new vecteur;
     rootofs=new vecteur;
     history_in_ptr=new vecteur;
@@ -3535,7 +3535,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 #endif
 #endif
 
-  context::context(const context & c) { 
+  context::context(const context & c) {
     *this = c;
   }
 
@@ -3597,7 +3597,7 @@ extern "C" void Sleep(unsigned int miliSecond);
      ptr->globalptr->_epsilon_=_epsilon_<=0?1e-12:_epsilon_;
      ptr->globalptr->_proba_epsilon_=_proba_epsilon_;
      ptr->globalptr->_withsqrt_=_withsqrt_;
-     ptr->globalptr->_show_point_=_show_point_; // show 3-d point 
+     ptr->globalptr->_show_point_=_show_point_; // show 3-d point
      ptr->globalptr->_io_graph_=_io_graph_; // show 2-d point in io
      ptr->globalptr->_show_axes_=_show_axes_;
      ptr->globalptr->_spread_Row_=_spread_Row_;
@@ -3615,9 +3615,9 @@ extern "C" void Sleep(unsigned int miliSecond);
      ptr->globalptr->_last_evaled_argptr_=_last_evaled_argptr_;
      ptr->globalptr->_last_evaled_function_name_=_last_evaled_function_name_;
      ptr->globalptr->_currently_scanned_="";
-     ptr->globalptr->_max_sum_sqrt_=_max_sum_sqrt_;      
-     ptr->globalptr->_max_sum_add_=_max_sum_add_;   
-     
+     ptr->globalptr->_max_sum_sqrt_=_max_sum_sqrt_;
+     ptr->globalptr->_max_sum_add_=_max_sum_add_;
+
   }
 
   context * clone_context(const context * contextptr) {
@@ -3768,7 +3768,7 @@ extern "C" void Sleep(unsigned int miliSecond);
   // check if contextptr has a running evaluation thread
   // if not returns -1
   // if evaluation is not finished return 1
-  // if evaluation is finished, clear mutex lock and 
+  // if evaluation is finished, clear mutex lock and
   // call the thread_param_ptr callback function with the evaluation value
   // and returns 0
   // otherwise returns status, 2=debug, 3=wait click
@@ -3794,7 +3794,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 	gen arg_callback=tp.v[5];
 	void * param_callback=tp.f_param;
 	double tt=tp.v[4]._DOUBLE_val;
-	pthread_join(tp.eval_thread,0); 
+	pthread_join(tp.eval_thread,0);
 	pthread_mutex_unlock(mutexptr(contextptr));
 	// double tt=double(tp.v[4].val)/CLOCKS_PER_SEC;
 	if (tt>0.4)
@@ -3830,13 +3830,13 @@ extern "C" void Sleep(unsigned int miliSecond);
     return status;
   }
 
-  // check contexts in context_list starting at index i, 
+  // check contexts in context_list starting at index i,
   // returns at first context with status >= 2
   // return value is -2 (invalid range), -1 (ok) or context number
   int check_threads(int i){
     int s,ans=-1;
     context * cptr;
-    if (// i>=s || 
+    if (// i>=s ||
 	i<0)
       return -2;
     for (;;++i){
@@ -3938,7 +3938,7 @@ extern "C" void Sleep(unsigned int miliSecond);
     debug_localvars=new gen;
     debug_contextptr=0;
   }
-  
+
   debug_struct::~debug_struct(){
     delete debug_info_ptr;
     delete fast_debug_info_ptr;
@@ -4000,14 +4000,14 @@ extern "C" void Sleep(unsigned int miliSecond);
   }
 
 
-  global::global() : _xcas_mode_(0), 
+  global::global() : _xcas_mode_(0),
 		     _calc_mode_(0),_decimal_digits_(12),_minchar_for_quote_as_string_(1),
-		     _scientific_format_(0), _integer_format_(0), _latex_format_(0), 
+		     _scientific_format_(0), _integer_format_(0), _latex_format_(0),
 #ifdef BCD
 		     _bcd_decpoint_('.'|('E'<<16)|(' '<<24)),_bcd_mantissa_(12+(15<<8)), _bcd_flags_(0),_bcd_printdouble_(false),
 #endif
-		     _expand_re_im_(true), _do_lnabs_(true), _eval_abs_(true),_eval_equaltosto_(true),_integer_mode_(true),_complex_mode_(false), _escape_real_(true),_complex_variables_(false), _increasing_power_(false), _approx_mode_(false), _variables_are_files_(false), _local_eval_(true), 
-		     _withsqrt_(true), 
+		     _expand_re_im_(true), _do_lnabs_(true), _eval_abs_(true),_eval_equaltosto_(true),_integer_mode_(true),_complex_mode_(false), _escape_real_(true),_complex_variables_(false), _increasing_power_(false), _approx_mode_(false), _variables_are_files_(false), _local_eval_(true),
+		     _withsqrt_(true),
 		     _show_point_(true),  _io_graph_(true),
 		     _all_trig_sol_(false),
 #ifdef WITH_MYOSTREAM
@@ -4019,7 +4019,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 		     _python_compat_(false),
 #endif
 		     _angle_mode_(0), _bounded_function_no_(0), _series_flags_(0x3),_step_infolevel_(0),_default_color_(FL_BLACK), _epsilon_(1e-12), _proba_epsilon_(1e-15),  _show_axes_(1),_spread_Row_ (-1), _spread_Col_ (-1),_logptr_(&my_CERR),_prog_eval_level_val(1), _eval_level(DEFAULT_EVAL_LEVEL), _rand_seed(123457),_last_evaled_function_name_(0),_currently_scanned_(""),_last_evaled_argptr_(0),_max_sum_sqrt_(3),
-#ifdef GIAC_HAS_STO_38 // Prime sum(x^2,x,0,100000) crash on hardware	
+#ifdef GIAC_HAS_STO_38 // Prime sum(x^2,x,0,100000) crash on hardware
 		     _max_sum_add_(10000),
 #else
 		     _max_sum_add_(100000),
@@ -4033,9 +4033,9 @@ extern "C" void Sleep(unsigned int miliSecond);
 #else
 		     _python_compat_(false),
 #endif
-		     _angle_mode_(0), _bounded_function_no_(0), _series_flags_(0x3),_step_infolevel_(0),_default_color_(FL_BLACK), _epsilon_(1e-12), _proba_epsilon_(1e-15),  _show_axes_(1),_spread_Row_ (-1), _spread_Col_ (-1), 
+		     _angle_mode_(0), _bounded_function_no_(0), _series_flags_(0x3),_step_infolevel_(0),_default_color_(FL_BLACK), _epsilon_(1e-12), _proba_epsilon_(1e-15),  _show_axes_(1),_spread_Row_ (-1), _spread_Col_ (-1),
 #ifdef EMCC
-		     _logptr_(&COUT), 
+		     _logptr_(&COUT),
 #else
 #ifdef FXCG
 		     _logptr_(0),
@@ -4048,14 +4048,14 @@ extern "C" void Sleep(unsigned int miliSecond);
 #endif
 #endif
 		     _prog_eval_level_val(1), _eval_level(DEFAULT_EVAL_LEVEL), _rand_seed(123457),_last_evaled_function_name_(0),_currently_scanned_(""),_last_evaled_argptr_(0),_max_sum_sqrt_(3),
-#ifdef GIAC_HAS_STO_38 // Prime sum(x^2,x,0,100000) crash on hardware	
+#ifdef GIAC_HAS_STO_38 // Prime sum(x^2,x,0,100000) crash on hardware
 		     _max_sum_add_(10000),
 #else
 		     _max_sum_add_(100000),
 #endif
 		     _total_time_(0),_evaled_table_(0),_extra_ptr_(0),_series_variable_name_('h'),_series_default_order_(5)
 #endif
-  { 
+  {
     _pl._i_sqrt_minus1_=1;
 #ifndef KHICAS
     _turtle_stack_.push_back(_turtle_);
@@ -4119,7 +4119,7 @@ extern "C" void Sleep(unsigned int miliSecond);
      _epsilon_=g._epsilon_;
      _proba_epsilon_=g._proba_epsilon_;
      _withsqrt_=g._withsqrt_;
-     _show_point_=g._show_point_; // show 3-d point 
+     _show_point_=g._show_point_; // show 3-d point
      _io_graph_=g._io_graph_; // show 2-d point in io
      _show_axes_=g._show_axes_;
      _spread_Row_=g._spread_Row_;
@@ -4216,7 +4216,7 @@ extern "C" void Sleep(unsigned int miliSecond);
 
 #endif // __APPLE__
 #endif // FXCG
-  
+
   double giac_floor(double d){
     double maxdouble=longlong(1)<<30;
     if (d>=maxdouble || d<=-maxdouble)
@@ -4247,9 +4247,9 @@ extern "C" void Sleep(unsigned int miliSecond);
 /* --------------------------------------------------------------------- */
 /*
  * Copyright 2001-2004 Unicode, Inc.
- * 
+ *
  * Disclaimer
- * 
+ *
  * This source code is provided as is by Unicode, Inc. No claims are
  * made as to fitness for any particular purpose. No warranties of any
  * kind are expressed or implied. The recipient agrees to determine
@@ -4257,9 +4257,9 @@ extern "C" void Sleep(unsigned int miliSecond);
  * purchased on magnetic or optical media from Unicode, Inc., the
  * sole remedy for any claim will be exchange of defective media
  * within 90 days of receipt.
- * 
+ *
  * Limitations on Rights to Redistribute This Code
- * 
+ *
  * Unicode, Inc. hereby grants the right to freely use the information
  * supplied in this file in the creation of products supporting the
  * Unicode Standard, and to make copies of this file in any form
@@ -4280,7 +4280,7 @@ extern "C" void Sleep(unsigned int miliSecond);
     July 2003: slight mods to back out aggressive FFFE detection.
     Jan 2004: updated switches in from-UTF8 conversions.
     Oct 2004: updated to use UNI_MAX_LEGAL_UTF32 in UTF-32 conversions.
-    Jan 2013: Jean-Yves Avenard adapted to only calculate size if 
+    Jan 2013: Jean-Yves Avenard adapted to only calculate size if
     destination pointer are null
 
 ------------------------------------------------------------------------ */
@@ -4321,7 +4321,7 @@ static const char trailingBytesForUTF8[256] = {
  * This table contains as many values as there might be trailing bytes
  * in a UTF-8 sequence.
  */
-static const UTF32 offsetsFromUTF8[6] = { 0x00000000UL, 0x00003080UL, 0x000E2080UL, 
+static const UTF32 offsetsFromUTF8[6] = { 0x00000000UL, 0x00003080UL, 0x000E2080UL,
              0x03C82080UL, 0xFA082080UL, 0x82082080UL };
 
 /*
@@ -4346,7 +4346,7 @@ static const UTF8 firstByteMark[7] = { 0x00, 0x00, 0xC0, 0xE0, 0xF0, 0xF8, 0xFC 
 /* --------------------------------------------------------------------- */
 
 unsigned int ConvertUTF16toUTF8 (
-    const UTF16* sourceStart, const UTF16* sourceEnd, 
+    const UTF16* sourceStart, const UTF16* sourceEnd,
     UTF8* targetStart, UTF8* targetEnd, ConversionFlags flags) {
     ConversionResult result = conversionOK;
     const UTF16* source = sourceStart;
@@ -4355,7 +4355,7 @@ unsigned int ConvertUTF16toUTF8 (
     while ((source < sourceEnd) && (ch = *source)) {
     unsigned short bytesToWrite = 0;
     const UTF32 byteMask = 0xBF;
-    const UTF32 byteMark = 0x80; 
+    const UTF32 byteMark = 0x80;
     const UTF16* oldSource = source; /* In case we have to back up because of target overflow. */
     source++;
     /* If we have a surrogate pair, convert to UTF32 first. */
@@ -4486,8 +4486,8 @@ unsigned int ConvertUTF8toUTF16 (const UTF8* sourceStart, const UTF8* sourceEnd,
 }
 
 unsigned int ConvertUTF8toUTF162 (
-    const UTF8* sourceStart, const UTF8* sourceEnd, 
-    UTF16* targetStart, UTF16* targetEnd, ConversionFlags flags) 
+    const UTF8* sourceStart, const UTF8* sourceEnd,
+    UTF16* targetStart, UTF16* targetEnd, ConversionFlags flags)
 #endif
 {
     ConversionResult result = conversionOK;
@@ -4583,8 +4583,8 @@ unsigned int ConvertUTF8toUTF162 (
     return j;
   }
 
-    // convert position n in utf8-encoded line into the corresponding position 
-  // in the same string encoded with unicode 
+    // convert position n in utf8-encoded line into the corresponding position
+  // in the same string encoded with unicode
   unsigned int utf8pos2unicodepos(const char * line,unsigned int n,bool skip_added_spaces){
     if (!line) return 0;
     unsigned int i=0,j=0,c;
@@ -4603,7 +4603,7 @@ unsigned int ConvertUTF8toUTF162 (
 	c = (c & 0x1f) << 6 | (line[i] & 0x3f);
 	j++;
 	continue;
-      } 
+      }
       if ( (c & 0xf0) == 0xe0) { // 3 char 1110/xxxx/ 10/xxxxxx/ 10/xxxxxx/
 	i++;
 	c = (c & 0x0f) << 6 | (line[i] & 0x3f);
@@ -4616,7 +4616,7 @@ unsigned int ConvertUTF8toUTF162 (
 	    j -= 2;
 	}
 	continue;
-      } 
+      }
       if ( (c & 0xf8) == 0xf0) { // 4 char 11110/xxx/ 10/xxxxxx/ 10/xxxxxx/ 10/xxxxxx/
 	i++;
 	c = (c & 0x07) << 6 | (line[i] & 0x3f);
@@ -4626,7 +4626,7 @@ unsigned int ConvertUTF8toUTF162 (
 	c = c << 6 | (line[i] & 0x3f);
 	j++;
 	continue;
-      } 
+      }
       // FIXME complete for 5 and 6 char
       c = 0xfffd;
       j++;
@@ -4840,16 +4840,16 @@ unsigned int ConvertUTF8toUTF162 (
 
 #ifdef GIAC_HAS_STO_38
   // return true/false to tell if s is recognized. return the appropriate gen if true
-  int lexerCompare(void const *a, void const *b) { 
+  int lexerCompare(void const *a, void const *b) {
     charptr_gen_unary const * ptr=(charptr_gen_unary const *)b;
     const char * aptr=(const char *) a;
-    return strcmp(aptr, ptr->s); 
+    return strcmp(aptr, ptr->s);
   }
 
   bool casbuiltin(const char *s, gen &g){
     // binary search in builtin_lexer_functions
 #if 1 // def SMARTPTR64
-    int n=builtin_lexer_functions_number; 
+    int n=builtin_lexer_functions_number;
     charptr_gen_unary const * f = (charptr_gen_unary const *)bsearch(s, builtin_lexer_functions, n, sizeof(builtin_lexer_functions[0]), lexerCompare);
     if (f != NULL) {
       g = 0;
@@ -4940,7 +4940,7 @@ unsigned int ConvertUTF8toUTF162 (
 	res=identificateur(sch);
 	syms()[sch]=res;
       }
-      unlock_syms_mutex();  
+      unlock_syms_mutex();
 #if DBG_ARCHIVE
       std::ofstream ofs;
       ofs.open ("e:\\tmp\\logrestore", std::ofstream::out | std::ofstream::app);
@@ -4998,7 +4998,7 @@ unsigned int ConvertUTF8toUTF162 (
 	      res=gen(*res._FUNCptr);
 	    }
 	  }
-#else	  
+#else
 	  if (builtin_lexer_functions_){
 #ifdef GIAC_HAS_STO_38
 	    if (!casbuiltin(ch,res)){
@@ -5020,7 +5020,7 @@ unsigned int ConvertUTF8toUTF162 (
 	    }
 #endif
 	  }
-#endif 
+#endif
 	}
 	if (is_zero(res)){
 #if DBG_ARCHIVE
@@ -5139,14 +5139,14 @@ unsigned int ConvertUTF8toUTF162 (
       }
     }
     else {
-      lock_syms_mutex();  
+      lock_syms_mutex();
       sym_string_tab::const_iterator it=syms().begin(),itend=syms().end();
       for (;it!=itend;++it){
 	gen id=it->second;
 	if (id.type==_IDNT && id._IDNTptr->value)
 	  res.push_back(symb_sto(*id._IDNTptr->value,id));
       }
-      unlock_syms_mutex();  
+      unlock_syms_mutex();
     }
     int xc=xcas_mode(contextptr);
     if (xc==0 && python_compat(contextptr))
@@ -5174,16 +5174,16 @@ unsigned int ConvertUTF8toUTF162 (
     if (v[0].type==_VECT)
       _cas_setup(v[0],contextptr);
     else
-      protecteval(v[0],eval_level(contextptr),contextptr); 
+      protecteval(v[0],eval_level(contextptr),contextptr);
     if (v[1].type==_VECT)
       _xyztrange(v[1],contextptr);
     else
-      protecteval(v[1],eval_level(contextptr),contextptr); 
+      protecteval(v[1],eval_level(contextptr),contextptr);
 #endif
 #endif
     // restore variables
     for (int i=4;i<l;++i)
-      protecteval(v[i],eval_level(contextptr),contextptr); 
+      protecteval(v[i],eval_level(contextptr),contextptr);
     // restore xcas_mode
     if (v.back().type==_INT_)
       xcas_mode(v.back().val,contextptr);
@@ -5192,12 +5192,12 @@ unsigned int ConvertUTF8toUTF162 (
     // eval replace if level>=0
     if (level<0 || level>=l){
       history_in(contextptr).push_back(replace);
-      history_out(contextptr).push_back(protecteval(replace,eval_level(contextptr),contextptr)); 
+      history_out(contextptr).push_back(protecteval(replace,eval_level(contextptr),contextptr));
     }
     else {
       history_in(contextptr)[level]=replace;
       for (int i=level;i<l;++i)
-	history_out(contextptr)[i]=protecteval(history_in(contextptr)[i],eval_level(contextptr),contextptr); 
+	history_out(contextptr)[i]=protecteval(history_in(contextptr)[i],eval_level(contextptr),contextptr);
     }
     return true;
   }
@@ -5318,7 +5318,7 @@ unsigned int ConvertUTF8toUTF162 (
 
   bool csv_guess(const char * data,int count,char & sep,char & nl,char & decsep){
     bool ans=true;
-    int nb[256],pointdecsep=0,commadecsep=0; 
+    int nb[256],pointdecsep=0,commadecsep=0;
     for (int i=0;i<256;++i)
       nb[i]=0;
     // count occurence of each char
@@ -5495,7 +5495,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     }
     free(line);
   }
-	    
+
   void update_lexer_localization(const std::vector<int> & v,std::map<std::string,std::string> &lexer_map,std::multimap<std::string,localized_string> &back_lexer_map,GIAC_CONTEXT){
     lexer_map.clear();
     back_lexer_map.clear();
@@ -5529,9 +5529,9 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
   }
 #endif
 
-#if !defined NSPIRE 
+#if !defined NSPIRE
 
-#include "input_parser.h" 
+#include "input_parser.h"
 
     bool has_special_syntax(const char * s){
 #ifdef USTL
@@ -5552,7 +5552,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	return false;
       return (i->second.subtype!=T_UNARY_OP-256);
     }
-    
+
     bool lexer_functions_register(const unary_function_ptr & u,const char * s,int parser_token){
       map_charptr_gen::const_iterator i = lexer_functions().find(s);
       if (i!=lexer_functions().end())
@@ -5584,7 +5584,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  lexer_functions()[s].subtype=T_UNARY_OP-256;
 	else
 	  lexer_functions()[s].subtype=parser_token-256;
-	if (debug_infolevel) CERR << "insmod register lexer_functions " << s << '\n';	
+	if (debug_infolevel) CERR << "insmod register lexer_functions " << s << '\n';
       }
       // If s is a library function name (with ::), update the library
       int ss=int(strlen(s)),j=0;
@@ -5631,7 +5631,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
       if (s.size()==1){
 #ifdef GIAC_HAS_STO_38
 	if (0 && s[0]>='a' && s[0]<='z'){
-	  index_status(contextptr)=1; 
+	  index_status(contextptr)=1;
 	  res=*tab_one_letter_idnt[s[0]-'a'];
 	  return T_SYMBOL;
 	}
@@ -5641,7 +5641,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	if (s[0]>='a' && s[0]<='z'){
 	  if (check38 && calc_mode(contextptr)==38)
 	    giac_yyerror(scanner,invalid_name);
-	  index_status(contextptr)=1; 
+	  index_status(contextptr)=1;
 	  res=*tab_one_letter_idnt[s[0]-'a'];
 	  return T_SYMBOL;
 	}
@@ -5691,7 +5691,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	if (builtin_lexer_functions_){
 #ifdef NSPIRE
 	  res=gen(int((*builtin_lexer_functions_())[p.first-builtin_lexer_functions_begin()]+p.first->second.val));
-	  res=gen(*res._FUNCptr);	  
+	  res=gen(*res._FUNCptr);
 #else
 #if !defined NSPIRE_NEWLIB || defined KHICAS
 	  res=0;
@@ -5722,7 +5722,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	}
 	index_status(contextptr)=(p.first->second.subtype==T_UNARY_OP-256);
 	int token=p.first->second.subtype;
-	token += (token<0)?512:256 ;	
+	token += (token<0)?512:256 ;
 	return token;
       }
       lexer_tab_int_type tst={ts.c_str(),0,0,0,0};
@@ -5752,11 +5752,11 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
       lock_syms_mutex();
       sym_string_tab::const_iterator i2 = syms().find(s),i2end=syms().end();
       if (i2 == i2end) {
-	unlock_syms_mutex();  
+	unlock_syms_mutex();
 	const char * S = s.c_str();
 	// std::CERR << "lexer new" << s << '\n';
 	if (check38 && calc_mode(contextptr)==38 && strcmp(S,string_pi) && strcmp(S,string_euler_gamma) && strcmp(S,string_infinity) && strcmp(S,string_undef) && S[0]!='G'&& (!is_known_name_38 || !is_known_name_38(0,S))){
-	  // detect invalid names and implicit multiplication 
+	  // detect invalid names and implicit multiplication
 	  size_t ss=strlen(S);
 	  vecteur args;
 	  for (size_t i=0;i<ss;++i){
@@ -5821,7 +5821,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  }
 	  if (args.size()==1)
 	    res=args.front();
-	  else 
+	  else
 	    res=_prod(args,contextptr);
 	  lock_syms_mutex();
 	  syms()[s]=res;
@@ -5835,7 +5835,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	return T_SYMBOL;
       } // end if ==syms.end()
       res = i2->second;
-      unlock_syms_mutex();  
+      unlock_syms_mutex();
       return T_SYMBOL;
     }
 
@@ -5852,7 +5852,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
       sym_string_tab::const_iterator i = syms().find(it->_IDNTptr->id_name),iend=syms().end();
       if (i==iend)
 	syms()[it->_IDNTptr->name()] = *it;
-      unlock_syms_mutex();  
+      unlock_syms_mutex();
     }
   }
 
@@ -5965,7 +5965,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	}
 	else
 	  cur.insert(cur.begin()+pos,'0');
-	continue;	
+	continue;
       }
       if (curch=='%'){
 	cur.insert(cur.begin()+pos+1,'/');
@@ -5987,7 +5987,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     int i=s.find('\\');
     if (i<0 || i>=ss)
       return s;
-    string res,line;    
+    string res,line;
     for (i=0;i<ss;++i){
       if (s[i]!='\n'){
 	line += s[i];
@@ -6003,7 +6003,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	line ="";
       }
       else
-	line=line.substr(0,j); 
+	line=line.substr(0,j);
     }
     return res+line;
   }
@@ -6039,7 +6039,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     }
     if (poscmath>=0 && poscmath<cs){
       // add python cmath shortcuts
-      static bool alertcmath=true;      
+      static bool alertcmath=true;
       if (alertcmath){
 	alertcmath=false;
 	alert(gettext("Assigning phase, j, J and rect."),contextptr);
@@ -6049,7 +6049,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     }
     if (posmath>=0 && posmath<cs){
       // add python math shortcuts
-      static bool alertmath=true;      
+      static bool alertmath=true;
       if (alertmath){
 	alertmath=false;
 	alert(gettext("Assigning gamma, fabs. Not supported: copysign."),contextptr);
@@ -6109,7 +6109,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     return res;
   }
 
-  // detect Python like syntax: 
+  // detect Python like syntax:
   // remove """ """ docstrings and ''' ''' comments
   // cut string in lines, remove comments at the end (search for #)
   // warning don't take care of # inside strings
@@ -6200,7 +6200,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
       if (endl<0 || endl>=sss)
 	endl=sss;
       ++first;
-      if (first<endl && (s_orig[first]==';' || s_orig[first]=='=')) 
+      if (first<endl && (s_orig[first]==';' || s_orig[first]=='='))
 	continue; // ignore :;
       // search for line finishing with : (or with # comment)
       for (;first<endl;++first){
@@ -6211,14 +6211,14 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  break;
 	}
       }
-      if (first==endl) 
+      if (first==endl)
 	break;
     }
     // probably Python-like
     string res;
     res.reserve(6*s_orig.size()/5);
     res=s_orig;
-    if (res.size()>18 && res.substr(0,17)=="add_autosimplify(" 
+    if (res.size()>18 && res.substr(0,17)=="add_autosimplify("
 	&& res[res.size()-1]==')'
 	)
       res=res.substr(17,res.size()-18);
@@ -6228,7 +6228,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     res=remove_comment(res,"'''",true);
     res=glue_lines_backslash(res);
     vector<int_string> stack;
-    string s,cur; 
+    string s,cur;
     s.reserve(res.capacity());
     if (pythoncompat) pythonmode=true;
     for (;res.size();){
@@ -6292,10 +6292,10 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	    if (ch==';')
 	      ++c3;
 	  }
-	  if (p<cs 
-	      //&& c1 
+	  if (p<cs
+	      //&& c1
 	      && c3==0){
-	    // table initialization, replace {} by table( ) , 
+	    // table initialization, replace {} by table( ) ,
 	    // cur=cur.substr(0,pos)+"table("+cur.substr(pos+1,p-pos-1)+")"+cur.substr(p+1,cs-pos-1);
 	    cur=cur.substr(0,pos)+"{/"+replace_deuxpoints_egal(cur.substr(pos+1,p-1-pos))+"/}"+cur.substr(p+1,cs-pos-1);
 	  }
@@ -6309,13 +6309,13 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  }
 	  int p=pos,q=pos+1,beg; // skip spaces
 	  for (p++;p<int(cur.size());++p)
-	    if (cur[p]!=' ') 
+	    if (cur[p]!=' ')
 	      break;
 	  if (p!=cur.size()){
-	    // find matching ' 
+	    // find matching '
 	    beg=q;
 	    for (;p<int(cur.size());++p)
-	      if (cur[p]=='\'') 
+	      if (cur[p]=='\'')
 		break;
 	    if (p>0 && p<int(cur.size())){
 	      --p;
@@ -6356,7 +6356,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  if (cur.size()>pos+8 && (cur.substr(pos,8)=="# local " || cur.substr(pos,7)=="#local ")){
 	    cur.erase(cur.begin()+pos);
 	    if (cur[pos]==' ')
-	      cur.erase(cur.begin()+pos);	      
+	      cur.erase(cur.begin()+pos);
 	  }
 	  else
 	    cur=cur.substr(0,pos);
@@ -6381,11 +6381,11 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	    pythonmode=true;
 #ifdef KHICAS
 	    if (
-		(posturtle<0 || posturtle>=cs) && 
-		(poscmath<0 || poscmath>=cs) && 
-		(posmath<0 || posmath>=cs) && 
-		(posnumpy<0 || posnumpy>=cs) && 
-		(posmatplotlib<0 || posmatplotlib>=cs) 
+		(posturtle<0 || posturtle>=cs) &&
+		(poscmath<0 || poscmath>=cs) &&
+		(posmath<0 || posmath>=cs) &&
+		(posnumpy<0 || posnumpy>=cs) &&
+		(posmatplotlib<0 || posmatplotlib>=cs)
 		){
 	      string filename=cur.substr(pos+5,posi-pos-5)+".py";
 	      // CERR << "import " << filename << endl;
@@ -6429,7 +6429,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	    cur = ' '+cur;
 	  python_import(cur,cs,posturtle,poscmath,posmath,posnumpy,posmatplotlib,contextptr);
 	  pythonmode=true;
-	  break;	    
+	  break;
 	}
 	if (ch=='l' && pos+6<int(cur.size()) && cur.substr(pos,6)=="lambda" && instruction_at(cur,pos,6)){
 	  int posdot=cur.find(':',pos);
@@ -6458,8 +6458,8 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	if (cur[pos]!=' ' && cur[pos]!=char(9))
 	  break;
       }
-      if (pos<0){ 
-	s+='\n';  
+      if (pos<0){
+	s+='\n';
 	continue;
       }
       if (cur[pos]!=':'){ // detect oneliner and function/fonction
@@ -6482,7 +6482,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  if (cur[p]==':' && (cur[p+1]!=';' && cur[p+1]!='='))
 	    break;
 	  if (cur[p]=='"' && cur[p-1]!='\\')
-	    instr=true;	  
+	    instr=true;
 	}
 	if (p==0){
 	  // = or return expr if cond else alt_expr => ifte(cond,expr,alt_expr)
@@ -6561,7 +6561,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	int progpos=cur.find("else");
 	if (progpos>=0 && progpos<cs && instruction_at(cur,progpos,4)){
 	  pythonmode=true;
-	  if (stack.size()>1){ 
+	  if (stack.size()>1){
 	    int indent=stack[stack.size()-1].decal;
 	    if (ws<indent){
 	      // remove last \n and add explicit endbloc delimiters from stack
@@ -6583,7 +6583,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	progpos=cur.find("except");
 	if (progpos>=0 && progpos<cs && instruction_at(cur,progpos,6)){
 	  pythonmode=true;
-	  if (stack.size()>1){ 
+	  if (stack.size()>1){
 	    int indent=stack[stack.size()-1].decal;
 	    if (ws<indent){
 	      // remove last \n and add explicit endbloc delimiters from stack
@@ -6605,7 +6605,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	progpos=cur.find("elif");
 	if (progpos>=0 && progpos<cs && instruction_at(cur,progpos,4)){
 	  pythonmode=true;
-	  if (stack.size()>1){ 
+	  if (stack.size()>1){
 	    int indent=stack[stack.size()-1].decal;
 	    if (ws<indent){
 	      // remove last \n and add explicit endbloc delimiters from stack
@@ -6627,7 +6627,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	  continue;
 	}
       }
-      if (!stack.empty()){ 
+      if (!stack.empty()){
 	int indent=stack.back().decal;
 	if (ws<=indent){
 	  // remove last \n and add explicit endbloc delimiters from stack
@@ -6693,7 +6693,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 	progpos=cur.find("def");
 	if (progpos>=0 && progpos<cs && instruction_at(cur,progpos,3)){
 	  pythonmode=true;
-	  if (abs_calc_mode(contextptr)==38) python_compat(1,contextptr); 
+	  if (abs_calc_mode(contextptr)==38) python_compat(1,contextptr);
 	  pythoncompat=true;
 	  // should remove possible returned type, between -> ... and :
 	  string entete=cur.substr(progpos+3,pos-progpos-3);
@@ -6747,7 +6747,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     // CERR << s << endl;
     return string(s.begin(),s.end());
   }
-  
+
     std::string translate_at(const char * ch){
       if (!strcmp(ch,"∡"))
 	return "polar_complex";
@@ -6778,7 +6778,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
       }
       return res;
     }
-    
+
     bool builtin_lexer_functions_sorted = false;
 
     map_charptr_gen & lexer_functions(){
@@ -6793,7 +6793,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
 
 
 #ifdef STATIC_BUILTIN_LEXER_FUNCTIONS
-    
+
     const charptr_gen_unary builtin_lexer_functions[] ={
 #if defined(GIAC_HAS_STO_38) && defined(CAS38_DISABLED)
 #include "static_lexer_38.h"
@@ -6902,7 +6902,7 @@ void update_lexer_localization(const std::vector<int> & v,std::map<std::string,s
     for (int i=0;i<builtin_lexer_functions_number;++i){
 #ifdef SMARTPTR64
       if (debug_infolevel)
-	CERR << builtin_lexer_functions_begin()[i].first << '\n'; 
+	CERR << builtin_lexer_functions_begin()[i].first << '\n';
       builtin_lexer_functions_begin()[i].second=0;
       //delete (ref_unary_function_ptr *) (* ((ulonglong * ) &builtin_lexer_functions_begin()[i].second) >> 16);
 #endif

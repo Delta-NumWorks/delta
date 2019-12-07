@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-28 14:36+0100\n"
+"POT-Creation-Date: 2019-12-02 11:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -789,7 +789,7 @@ msgstr "Domínio %gen"
 msgid "Unable to find singular points"
 msgstr "Não é possível encontrar pontos singulares"
 
-#: src/misc.cc:7367 src/misc.cc:7949 src/misc.cc:7963
+#: src/misc.cc:7367 src/misc.cc:7951 src/misc.cc:7965
 msgid "Unable to find critical points"
 msgstr "Não é possível encontrar pontos críticos"
 
@@ -797,7 +797,7 @@ msgstr "Não é possível encontrar pontos críticos"
 msgid "Unable to find inflection points"
 msgstr "Não é possível encontrar pontos de inflexão"
 
-#: src/misc.cc:7384 src/misc.cc:7971
+#: src/misc.cc:7384 src/misc.cc:7973
 msgid "Infinite number of critical points. Try with optional argument "
 msgstr ""
 "Número infinito de pontos críticos. Experimente com um argumento opcional "
@@ -816,12 +816,12 @@ msgstr ""
 msgid "Horizontal asymptote at %gen : %gen"
 msgstr "Assimptota horizontal em %gen : %gen"
 
-#: src/misc.cc:7532 src/misc.cc:8070
+#: src/misc.cc:7532 src/misc.cc:8072
 #, c-format
 msgid "Vertical parabolic asymptote at %gen"
 msgstr "Assimptota parabólica vertical em %gen"
 
-#: src/misc.cc:7538 src/misc.cc:8077
+#: src/misc.cc:7538 src/misc.cc:8079
 #, c-format
 msgid "Horizontal parabolic asymptote at %gen"
 msgstr "Assimptota parabólica horizontal em %gen"
@@ -881,46 +881,46 @@ msgstr "Função par %gen. Reflexo Oy"
 msgid "Odd function %gen. Center O"
 msgstr "Função ímpar %gen. Centro O"
 
-#: src/misc.cc:7957
+#: src/misc.cc:7959
 msgid "Unable to find convexity"
 msgstr "Não é possível encontrar convexidade"
 
-#: src/misc.cc:8033
+#: src/misc.cc:8035
 #, c-format
 msgid "Vertical asymptote %gen"
 msgstr "Assimptota vertical %gen"
 
-#: src/misc.cc:8038
+#: src/misc.cc:8040
 #, c-format
 msgid "Symmetric vertical asymptote %gen"
 msgstr "Assimptota vertical simétrica %gen"
 
-#: src/misc.cc:8051
+#: src/misc.cc:8053
 #, c-format
 msgid "Horizontal asymptote %gen"
 msgstr "Assimptota horizontal %gen"
 
-#: src/misc.cc:8058
+#: src/misc.cc:8060
 #, c-format
 msgid "Symmetric horizontal asymptote %gen"
 msgstr "Assimptota horizontal simétrica %gen"
 
-#: src/misc.cc:8086
+#: src/misc.cc:8088
 #, c-format
 msgid "Parabolic asymptote direction %gen at infinity"
 msgstr "Direção de assimptota parabólica %gen em infinito"
 
-#: src/misc.cc:8093
+#: src/misc.cc:8095
 #, c-format
 msgid "Asymptote %gen"
 msgstr "Assimptota %gen"
 
-#: src/misc.cc:8103
+#: src/misc.cc:8105
 #, c-format
 msgid "Symmetric asymptote %gen"
 msgstr "Assimptota simétrica %gen"
 
-#: src/misc.cc:8339
+#: src/misc.cc:8341
 #, fuzzy, c-format
 msgid ""
 "Sign %gen\n"
@@ -1195,7 +1195,7 @@ msgstr "Argumento tem de ser um vetor de tamanho uniforme"
 msgid "modpoly.cc/powmod"
 msgstr "modpoly.cc/powmod"
 
-#: src/modpoly.cc:8662 src/modpoly.cc:8683
+#: src/modpoly.cc:8649 src/modpoly.cc:8670
 msgid "modpoly.cc/ininttype2ZZ"
 msgstr "modpoly.cc/ininttype2ZZ"
 
@@ -2624,35 +2624,35 @@ msgstr "Valor não regular "
 msgid " was discarded and replaced randomly by "
 msgstr " foi eliminado e substituído aleatoriamente por "
 
-#: src/alg_ext.cc:1087 src/alg_ext.cc:1092
+#: src/alg_ext.cc:1107 src/alg_ext.cc:1112
 msgid "inv_EXT"
 msgstr "inv_EXT"
 
-#: src/alg_ext.cc:1164 src/alg_ext.cc:1173
+#: src/alg_ext.cc:1184 src/alg_ext.cc:1193
 msgid "rootof"
 msgstr "rootof"
 
-#: src/alg_ext.cc:1181
+#: src/alg_ext.cc:1201
 msgid "Algebraic extensions not allowed in a rootof"
 msgstr "Extensões algébricas não permitidas num rootof"
 
-#: src/alg_ext.cc:1387
+#: src/alg_ext.cc:1407
 msgid "Warning: variable name ignored: "
 msgstr "Aviso: nome de variável ignorada: "
 
-#: src/alg_ext.cc:1561
+#: src/alg_ext.cc:1581
 msgid "Or condition not implemented"
 msgstr "Ou condição não implementada"
 
-#: src/alg_ext.cc:1565
+#: src/alg_ext.cc:1585
 msgid "fminmax, range "
 msgstr "fminmax, intervalo "
 
-#: src/alg_ext.cc:1629
+#: src/alg_ext.cc:1649
 msgid "Warning: "
 msgstr "Aviso: "
 
-#: src/alg_ext.cc:1629
+#: src/alg_ext.cc:1649
 msgid "=0: no solution found"
 msgstr "=0: nenhuma solução encontrada"
 
