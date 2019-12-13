@@ -535,10 +535,10 @@ int getkey_raw(bool allow_suspend){
       statusline(0,0);
       // KDIonContext::sharedContext()->pushRectUniform(rect,33333);
       if (Ion::USB::isPlugged()) {
-	if (GlobalPreferences::sharedGlobalPreferences()->examMode() == GlobalPreferences::ExamMode::Activate) {
+	if (GlobalPreferences::sharedGlobalPreferences()->examMode()) {
 	  Ion::LED::setColor(KDColorBlack);
 	  Ion::LED::updateColorWithPlugAndCharge();
-	  GlobalPreferences::sharedGlobalPreferences()->setExamMode(GlobalPreferences::ExamMode::Deactivate);
+	  GlobalPreferences::sharedGlobalPreferences()->setExamMode(false);
 	  // displayExamModePopUp(false);
 	} else {
 	  Ion::USB::enable();

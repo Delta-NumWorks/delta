@@ -58,11 +58,6 @@ void ion_main(int argc, char * argv[]) {
     }
   }
 #endif
-
-  GlobalPreferences::sharedGlobalPreferences()->setExamMode(GlobalPreferences::ExamMode::Activate);
-     Ion::LED::setColor(KDColorRed);
-     Ion::LED::setBlinking(1000, 0.1f);
-
   AppsContainer::sharedAppsContainer()->run();
 }
 
