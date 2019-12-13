@@ -2,12 +2,20 @@ apps += External::App
 app_headers += apps/external/app.h
 
 app_external_src = $(addprefix apps/external/,\
-	api.cpp \
 	app.cpp \
+	extapp_api.cpp \
 	archive.cpp \
 	main_controller.cpp \
 	pointer_text_table_cell.cpp \
 )
+
+SFLAGS += -Iapps/external/
+
+ifeq ($(PLATFORM),device)
+	SFLAGS += -DDEVICE
+else
+	include apps/external/app/sources.mak
+endif
 
 app_src += $(app_external_src)
 

@@ -1,11 +1,13 @@
 #include "archive.h"
-#include "api.h"
+#include "extapp_api.h"
 
 #include <string.h>
 #include <stdlib.h>
 
 namespace External {
 namespace Archive {
+
+#ifdef DEVICE
 
 struct TarHeader
 {                              /* byte offset */
@@ -70,6 +72,7 @@ bool fileAtIndex(size_t index, File &entry) {
   return true;
 }
 
+extern "C" void (* const apiPointers[])(void);
 typedef uint32_t (*entrypoint)(const uint32_t, const void *, void *, const uint32_t);
 
 uint32_t executeFile(const char *name, void * heap, const uint32_t heapSize) {
@@ -80,7 +83,7 @@ uint32_t executeFile(const char *name, void * heap, const uint32_t heapSize) {
     }
     uint32_t ep = *reinterpret_cast<const uint32_t*>(entry.data);
     if(ep >= 0x90200000 && ep < 0x90800000) {
-      return ((entrypoint)ep)(API_VERSION, getApiPointers(), heap, heapSize);
+      return ((entrypoint)ep)(API_VERSION, apiPointers, heap, heapSize);
     }
   }
   return -1;
@@ -106,6 +109,33 @@ size_t numberOfFiles() {
 
   return count;
 }
+
+#else
+
+bool fileAtIndex(size_t index, File &entry) {
+  entry.name = "App";
+  entry.data = NULL;
+  entry.dataLength = 0;
+  entry.isExecutable = true;
+  return true;
+}
+
+extern "C" void extapp_main(void);
+
+uint32_t executeFile(const char *name, void * heap, const uint32_t heapSize) {
+  extapp_main();
+  return 0;
+}
+
+int indexFromName(const char *name) {
+  return 0;
+}
+
+size_t numberOfFiles() {
+  return 1;
+}
+
+#endif
 
 }
 }
