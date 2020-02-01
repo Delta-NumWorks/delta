@@ -141,8 +141,6 @@ SECTIONS {
     . = ALIGN(4);
     _data_section_start_flash = LOADADDR(.data);
     _data_section_start_ram = .;
-    *libc_nano.a:lib_a-impure.o(.data*)
-    . += 68; /* Horrible hack for __ieee754_lgamma_r reentrancy */
     *(.data)
     *(.data.*)
     _data_section_end_ram = .;
