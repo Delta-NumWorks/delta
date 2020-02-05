@@ -7,6 +7,7 @@
 #ifndef IN_GIAC
 #include <giac/giac.h>
 #else
+#include "giacPCH.h"
 #include "giac.h"
 #endif
 #include <fstream>

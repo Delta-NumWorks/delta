@@ -121,6 +121,7 @@ Cmds/Polynômes/Base/factors: liste des facteurs
 Cmds/Polynômes/Base/fcoeff
 Cmds/Polynômes/Base/froot
 Cmds/Polynômes/Base/genpoly: P(a) -> P
+Cmds/Polynômes/Base/homogeneize: P(x) -> P(x,t)
 Cmds/Polynômes/Base/lcoeff: coefficient dominant
 Cmds/Polynômes/Base/normal: forme normale
 Cmds/Polynômes/Base/pcoeff: racines -> coefficients

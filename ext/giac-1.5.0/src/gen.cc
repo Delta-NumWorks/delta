@@ -4725,6 +4725,12 @@ namespace giac {
     if (is_exactly_zero(num))
       return Tfraction<gen>(num,1);
     simplify3(num,den);
+    if (den.type==_CPLX){ // 3 jan 2020, avoid complex denominator
+      gen & a=*den._CPLXptr;
+      gen & b=*(den._CPLXptr+1);
+      num=num*gen(a,-b);
+      den=a*a+b*b;
+    }
     den=den*da*db;
     return Tfraction<gen> (num,den);
   }
@@ -7468,6 +7474,8 @@ namespace giac {
       if (!exponent){
 	if (ckmatrix(base))
 	  return midn(int(base._VECTptr->size()));
+	if (base.type==_USER)
+	  return base*inv(base,context0);
 	return 1;
       }
       inpow(base,exponent,res);
@@ -7605,6 +7613,14 @@ namespace giac {
     return res;
   }
 
+  static polynome iquopoly(const polynome & a,const gen & b){
+    polynome res(a);
+    vector< monomial<gen> >::iterator it=res.coord.begin(),itend=res.coord.end();
+    for (;it!=itend;++it)
+      it->value=iquo(it->value,b);
+    return res;
+  }
+
   // integer quotient, use rdiv for symbolic division 
   gen iquo(const gen & a,const gen & b){
     if ((b.type==_INT_)){
@@ -7617,6 +7633,8 @@ namespace giac {
 	return gensizeerr(gettext("Division by 0"));
       }
     }
+    if (a.type==_POLY) // may be called by resulant interpolation
+      return iquopoly(*a._POLYptr,b);
     ref_mpz_t * quo;
     switch ( (a.type<< _DECALAGE) | b.type ) {
     case _INT___INT_: 
@@ -10450,7 +10468,7 @@ namespace giac {
 	return symgcd(ext_reduce(a),b,contextptr);
       gen aa(lgcd(*a._EXTptr->_VECTptr));
       gen res=gcd(aa,b,contextptr),b2(rdiv(b,res,contextptr));
-      if (is_one(b2) || is_minus_one(b2))
+      if (is_one(b2) || is_minus_one(b2))// || b2.type==_POLY)
 	return res;
       vecteur ua,u,v,dd;
       divvecteur(*(a._EXTptr->_VECTptr),aa,ua);

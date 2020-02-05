@@ -7420,6 +7420,13 @@ convert(pi,interval,20)
  A[0..2,0..2]:=1;A[0..1,1..2]:=2;convert(A,array)
  B[0..1,1..2]:=1;B[2,2]:=2;convert(B,array)
 
+# homogeneize
+1 Transforme P en polynome homogene en ajoutant une variable (par defaut t)
+2 Make P homogeneous by adding a variable (by default t)
+0 Expr(P),[Var(t)]
+x^2-1
+x^2-y,z
+
 # lcoeff
 1 Renvoie le coefficient du terme de plus haut degré d'un polynôme (l=leading=dominant).
 2 Returns the coefficient of the term of highest degree of a polynomial (l=leading).
@@ -9476,12 +9483,12 @@ dot([[1,2],[3,4]],[[3,2],[4,5]])
  [1,2]*[3,4]
 
 # diff derive deriver
-1 Dérivée par rapport au second argument.
+1 Dérivée par rapport au second argument. Derivee d'ordre n s'il y a un 3eme argument n.
 2 Returns the derivative with respect to the 2nd argument.
 3 Devuelve la derivada con respecto al segundo argumento.
 4 Παραγωγίζει αναφορικά με το 2ο όρισμα.
 8 微分。
-0 Expr or Fnc,[SeqVar or LstVar]
+0 Expr or Fnc,[SeqVar or LstVar],[n]
 -1 '
 -2 function_diff
 -3 integrate

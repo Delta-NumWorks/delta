@@ -3126,6 +3126,19 @@ namespace giac {
   }
 
   void multmatvecteur(const matrice & a,const vecteur & b,vecteur & res){
+    vector<int> B; gen x;
+    int btype=gf_char2_vecteur2vectorint(b,B,x);
+    if (btype>0){
+      vector< vector<int> > A;
+      int atype=gf_char2_matrice2vectorvectorint(a,A,x);
+      if (atype==0 || atype==btype){
+	vector< vector<int> >::const_iterator ita=A.begin(), itaend=A.end();
+	res.clear();
+	res.reserve(itaend-ita);
+	for (;ita!=itaend;++ita)
+	  res.push_back(galois_field(plus_two,btype,x,dotgf_char2(*ita,B,btype)));
+      }
+    }
     vecteur::const_iterator ita=a.begin(), itaend=a.end();
     res.clear();
     res.reserve(itaend-ita);
@@ -4725,7 +4738,20 @@ namespace giac {
 #ifndef GIAC_HAS_STO_38
     if (is_integer_matrice(a_) && is_integer_matrice(btran) && mmult_int(a_,btran,res))
       return;
-    vector< vector<int> > A,Btran; int p=0;
+    vector< vector<int> > A,Btran; 
+    gen x;
+    int Atype=gf_char2_matrice2vectorvectorint(a_,A,x);
+    int Btype=gf_char2_matrice2vectorvectorint(btran,Btran,x);
+    if ( (Atype>0 && Btype>0 && Atype==Btype) ||
+	 (Atype>0 && Btype==0) ||
+	 (Btype>0 && Atype==0) ){
+      int M=Atype?Atype:Btype;
+      vector< vector<int> > C;
+      gf_char2_mmult_atranb(A,Btran,C,M);
+      gf_char2_vectorvectorint2mat(C,res,M,x);
+      return ;
+    }
+    int p=0;
     if (is_mod_matrice(a_,A,p) && is_mod_matrice(btran,Btran,p)){
       vector< vector<int> > C;
       mmult_mod(A,Btran,C,p);
@@ -6686,7 +6712,16 @@ namespace giac {
     }
   }
 
-  int rref_reduce(std_matrix<gen> &M,vecteur & pivots,vector<int> & permutation,gen & det,gen &detnum,int algorithm,int l,int lmax,int c,int cmax,int dont_swap_below,int rref_or_det_or_lu,int fullreduction,double eps,bool step_rref,const vecteur &lv,bool convert_internal,GIAC_CONTEXT){
+  bool betterpivot(const gen & a,const gen &b,bool num_mat,GIAC_CONTEXT){
+    if (num_mat && a.type<=_CPLX && b.type<=_CPLX){
+      gen A=evalf_double(a,1,contextptr),B=evalf_double(b,1,contextptr);
+      if ( (A.type==_DOUBLE_ || A.type==_CPLX) && (B.type==_DOUBLE_ || B.type==_CPLX))
+	return is_strictly_greater(abs(A),abs(B),contextptr);
+    }
+    return a.islesscomplexthan(b);
+  }
+
+  int rref_reduce(std_matrix<gen> &M,vecteur & pivots,vector<int> & permutation,gen & det,gen &detnum,int algorithm,int l,int lmax,int c,int cmax,int dont_swap_below,int rref_or_det_or_lu,int fullreduction,double eps,bool step_rref,const vecteur &lv,bool convert_internal,bool num_mat,GIAC_CONTEXT){
     int linit=l;
     gen bareiss (1),invbareiss(1),pivot,temp;
     int pivotline,pivotcol;
@@ -6714,7 +6749,7 @@ namespace giac {
 	  temp=M[l][ctemp];
 	  if (debug_infolevel>2)
 	    print_debug_info(temp);
-	  if (!is_zero(temp,contextptr) && temp.islesscomplexthan(pivot)){
+	  if (!is_exactly_zero(temp) && betterpivot(temp,pivot,num_mat,contextptr)){
 	    pivot=temp;
 	    pivotcol=ctemp;
 	  }
@@ -6735,7 +6770,7 @@ namespace giac {
 	    temp=M[ltemp][c];
 	    if (debug_infolevel>2)
 	      print_debug_info(temp);
-	    if (!is_zero(temp,contextptr) && (is_zero(pivot) || temp.islesscomplexthan(pivot))){
+	    if (!is_exactly_zero(temp) && (is_exactly_zero(pivot) || betterpivot(temp,pivot,num_mat,contextptr)) ){
 	      pivot=temp;
 	      pivotline=ltemp;
 	    }
@@ -6744,8 +6779,11 @@ namespace giac {
       }
       if (debug_infolevel>2)
 	CERR << '\n';
-      //COUT << M << '\n' << pivot << '\n';
-      if (!is_zero(pivot,contextptr)){
+      //COUT << "line " << l << " pivot " << pivot << '\n';
+      // check changed here and in remove_identity for m:=[[0.0005,0,0,-0.0005,0,0,0,1],[0,9.69696969697E-4+0.00125*i,0,-0.00125*i,-6.66666666667E-4,-3.0303030303E-4,0,0],[0,0,3.57142857143E-4-0.0025*i,0,0.0025*i,0,-3.57142857143E-4,0],[-0.0005,-0.00125*i,0,0.0005+0.00125*i,0,0,0,0],[0,-6.66666666667E-4,0.0025*i,0,6.66666666667E-4-0.0025*i,0,0,0],[0,-3.0303030303E-4,0,0,0,3.0303030303E-4-1.66666666667E-3*i,0,0],[0,0,-3.57142857143E-4,0,0,0,3.57142857143E-4+0.005*i,0],[1,0,0,0,0,0,0,0]] ; inv(m);
+      if (!is_exactly_zero(pivot)
+	  //!is_zero(pivot,contextptr)
+	  ){
 	if (step_rref){
 	  std_matrix_gen2matrice(M,res);
 	  gen pivot1=pivot;
@@ -6876,7 +6914,10 @@ namespace giac {
     // "shrink" res
     for (int i=0;i<s;++i){
       vecteur v = *res[i]._VECTptr;
-      if (is_zero(v[i],context0))
+      if (
+	  is_exactly_zero(v[i])
+	  //is_zero(v[i],context0)
+	  )
 	return false;
       gen tmp=new ref_vecteur(v.begin()+s,v.end());
       divvecteur(*tmp._VECTptr,v[i],*tmp._VECTptr);
@@ -7003,14 +7044,30 @@ namespace giac {
     }
     int linit=l;//,previous_l=l;
     vecteur lv;
-    bool num_mat=has_num_coeff(a);
+    bool num_mat=has_num_coeff(a),num_mat_=num_mat;
     if (num_mat){
       if (is_fully_numeric(a))
 	res=a;
       else {
 	res=*evalf_VECT(a,0,1,contextptr)._VECTptr;
 	num_mat=is_fully_numeric(res);
+	if (!num_mat){
+	  *logptr(contextptr) << "Converting to exact approx symbolic matrix\n" ;
+	  res=*exact(a,contextptr)._VECTptr;
+	}
       }
+    }
+    else {
+#if 1
+      std::vector< std::vector<int> > M; gen x; std::vector<int> maxrankcols;
+      int minpoly=gf_char2_matrice2vectorvectorint(a,M,x);
+      if (minpoly>0 && gf_char2_rref(M,x,minpoly,pivots,permutation,maxrankcols,det,l,lmax,c,cmax,fullreduction,dont_swap_below,rref_or_det_or_lu)){
+	gf_char2_vectorvectorint2mat(M,res,minpoly,x);
+	return 1;
+      }
+#endif
+    }
+    if (num_mat){
       if (algorithm==RREF_GUESS)
 	algorithm=RREF_LAGRANGE;
 #if 1 // ndef BCD
@@ -7039,8 +7096,10 @@ namespace giac {
       }
 #endif
     }
-    else
-      res=a;
+    else {
+      if (!num_mat_)
+	res=a;
+    }
     //if (debug_infolevel) CERR << CLOCK()*1e-6 << " convert internal" << '\n';
     if (convert_internal){
       // convert a to internal form
@@ -7360,7 +7419,7 @@ namespace giac {
     pivots.reserve(cmax-c);
     bool fullreductionafter=rref_or_det_or_lu==0 && dont_swap_below==0 && cmax-c>=lmax-linit && step_infolevel(contextptr)==0 && fullreduction && algorithm!=RREF_GAUSS_JORDAN;
     gen detnumsave=detnum;
-    int status=rref_reduce(M,pivots,permutation,det,detnum,algorithm,l,lmax,c,cmax,dont_swap_below,rref_or_det_or_lu,(fullreductionafter?0:fullreduction),eps,step_rref,lv,convert_internal,contextptr);
+    int status=rref_reduce(M,pivots,permutation,det,detnum,algorithm,l,lmax,c,cmax,dont_swap_below,rref_or_det_or_lu,(fullreductionafter?0:fullreduction),eps,step_rref,lv,convert_internal,num_mat,contextptr);
     if (status!=2 && status!=3)
       return status;
     if (fullreductionafter){ 
@@ -7370,7 +7429,7 @@ namespace giac {
 	// not Cramer like, re-reduce, 
 	pivots.clear();
 	matrice2std_matrix_gen(res,M); det=detnum=detnumsave;// this should be commented but some outputs are more complicated
-	rref_reduce(M,pivots,permutation,det,detnum,algorithm,l,lmax,c,cmax,dont_swap_below,rref_or_det_or_lu,fullreduction,eps,step_rref,lv,convert_internal,contextptr);
+	rref_reduce(M,pivots,permutation,det,detnum,algorithm,l,lmax,c,cmax,dont_swap_below,rref_or_det_or_lu,fullreduction,eps,step_rref,lv,convert_internal,num_mat,contextptr);
       }
       else {
 	// back row reduction to echelon form for Cramer like system
@@ -11169,6 +11228,8 @@ namespace giac {
 	    return gensizeerr(contextptr);
 	}
 	gen loi=(*e._VECTptr)[1];
+	if (loi==at_uniform)
+	  loi=at_uniformd;
 	gen res(vecteur(0));
 	if (e._VECTptr->size()==3){
 	  if (loi.type==_INT_ && e._VECTptr->back().type==_INT_){

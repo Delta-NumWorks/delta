@@ -14,4 +14,4 @@ function build {
 
 build n0100
 build n0110
-build simulator
+#build simulator

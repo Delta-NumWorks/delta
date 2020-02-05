@@ -948,6 +948,45 @@ namespace giac {
   static define_unary_function_eval (__tcoeff,&_tcoeff,_tcoeff_s);
   define_unary_function_ptr5( at_tcoeff ,alias_at_tcoeff,&__tcoeff,0,true);
 
+  gen _homogeneize(const gen & args,GIAC_CONTEXT){
+    if (args.type==_STRNG && args.subtype==-1) return  args;
+    gen t,p;
+    int s=2;
+    if (args.type!=_VECT){
+      t=t__IDNT_e;
+      p=args;
+    }
+    else {
+      vecteur & v=*args._VECTptr;
+      s=int(v.size());
+      if (!s)
+	return args;
+      if ( (args.subtype!=_SEQ__VECT) || (s<2) )
+	return v.front();
+      t=v[1];
+      p=v[0];
+    }
+    vecteur lv(lidnt(p));
+    vecteur lt(lv);
+    lt.push_back(t);
+    gen g=_e2r(makesequence(p,lv),contextptr),n,d;
+    fxnd(g,n,d);
+    if (n.type!=_POLY)
+      return p;
+    polynome nlcoeff(*n._POLYptr);
+    nlcoeff=nlcoeff.homogeneize();
+    if (d.type==_POLY){
+      polynome dlcoeff=d._POLYptr->homogeneize();
+      g=r2e(dlcoeff,lt,contextptr);
+    }
+    else
+      g=r2e(d,lv,contextptr);
+    return r2e(nlcoeff,lt,contextptr)/g;
+  }
+  static const char _homogeneize_s []="homogeneize";
+  static define_unary_function_eval (__homogeneize,&_homogeneize,_homogeneize_s);
+  define_unary_function_ptr5( at_homogeneize ,alias_at_homogeneize,&__homogeneize,0,true);
+
   static gen sqrfree(const gen & g,const vecteur & l,GIAC_CONTEXT){
     if (g.type!=_POLY)
       return r2sym(g,l,contextptr);
@@ -6912,6 +6951,17 @@ static define_unary_function_eval (__os_version,&_os_version,_os_version_s);
   static define_unary_function_eval (__randmarkov,&_randmarkov,_randmarkov_s);
   define_unary_function_ptr5( at_randmarkov ,alias_at_randmarkov,&__randmarkov,0,true);
 
+  vecteur lvarxwithinvsqrt(const gen &e,const gen & x,GIAC_CONTEXT){
+    gen ee=subst(e,invpowtan_tab,invpowtan2_tab,false,contextptr);
+    ee=remove_nop(ee,x,contextptr);
+    vecteur w(lvar(ee)),v;
+    for (int i=0;i<w.size();++i){
+      if (!is_constant_wrt(w[i],x,contextptr))
+	v.push_back(w[i]);
+    }
+    return v; // to remove nop do a return *(eval(v)._VECTptr);
+  }
+  
   gen _is_polynomial(const gen & args,GIAC_CONTEXT){
     if ( args.type==_STRNG && args.subtype==-1) return  args;
     vecteur v;
@@ -6924,7 +6974,7 @@ static define_unary_function_eval (__os_version,&_os_version,_os_version_s);
     if (v.size()==1)
       v.push_back(ggb_var(args));
     gen tmp=apply(v,equal2diff);
-    vecteur lv=lvarxwithinv(tmp,v[1],contextptr);
+    vecteur lv=lvarxwithinvsqrt(tmp,v[1],contextptr);
     gen res=lv.size()<2?1:0;
     res.subtype=_INT_BOOLEAN;
     return res;

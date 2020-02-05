@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-02 11:27+0100\n"
+"POT-Creation-Date: 2020-01-31 10:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,15 +33,15 @@ msgstr "sym2poly.cc/equalposmat"
 msgid "sym2poly.cc/addfirstrow"
 msgstr "sym2poly.cc/addfirstrow"
 
-#: src/sym2poly.cc:703 src/sym2poly.cc:1184 src/gausspol.cc:1066
+#: src/sym2poly.cc:704 src/sym2poly.cc:1185 src/gausspol.cc:1066
 msgid "Polynomial exponent overflow."
 msgstr "Desbordamiento del exponente polinomial"
 
-#: src/sym2poly.cc:788
+#: src/sym2poly.cc:789
 msgid "Can't check irreducibility extracting rootof"
 msgstr "No se puede verificar la irreductibilidad al extraer rootof"
 
-#: src/sym2poly.cc:826
+#: src/sym2poly.cc:827
 msgid ""
 "Warning, checking for positivity of a root depending of parameters might "
 "return wrong sign: "
@@ -49,51 +49,51 @@ msgstr ""
 "Advertencia, si verifica la positividad de una raíz dependiente de "
 "parámetros podría retornar un signo incorrecto: "
 
-#: src/sym2poly.cc:852
+#: src/sym2poly.cc:853
 msgid "sym2poly.cc/sym2rxroot"
 msgstr "sym2poly.cc/sym2rxroot"
 
-#: src/sym2poly.cc:1225
+#: src/sym2poly.cc:1226
 msgid "Minimal poly. in rootof must be fraction free"
 msgstr "El polinomio mínimo en rootof no debe tener fracciones"
 
-#: src/sym2poly.cc:1261
+#: src/sym2poly.cc:1262
 msgid "sym2poly.cc/bool sym2r (const"
 msgstr "sym2poly.cc/bool sym2r (const"
 
-#: src/sym2poly.cc:1447
+#: src/sym2poly.cc:1459
 msgid "Unable to handle type [sym2poly.cc]"
 msgstr "No es posible manejar el tipo [sym2poly.cc]"
 
-#: src/sym2poly.cc:1449
+#: src/sym2poly.cc:1461
 msgid "Unable to handle "
 msgstr "No es posible manejar "
 
-#: src/sym2poly.cc:1968
+#: src/sym2poly.cc:1981
 msgid "sym2poly/r2sym(const gen & e,const index_m & i,const vecteur & l)"
 msgstr "sym2poly/r2sym(const gen & e,const index_m & i,const vecteur & l)"
 
-#: src/sym2poly.cc:2065 src/sym2poly.cc:2071
+#: src/sym2poly.cc:2078 src/sym2poly.cc:2084
 msgid "sym2poly.cc/ckdeg2_rootof"
 msgstr "sym2poly.cc/ckdeg2_rootof"
 
-#: src/sym2poly.cc:2122
+#: src/sym2poly.cc:2135
 msgid "sym2poly.cc/is_root_of_deg2"
 msgstr "sym2poly.cc/is_root_of_deg2"
 
-#: src/sym2poly.cc:2378
+#: src/sym2poly.cc:2391
 msgid "Warning, choosing root of "
 msgstr "Advertencia, la elección de la raíz de "
 
-#: src/sym2poly.cc:2378
+#: src/sym2poly.cc:2391
 msgid " at parameters values "
 msgstr " en los valores de los parámetros "
 
-#: src/sym2poly.cc:2888
+#: src/sym2poly.cc:2954
 msgid "Making implicit assumption for sqrt argument "
 msgstr "Se supone de forma implícita el argumento de sqrt "
 
-#: src/sym2poly.cc:2901
+#: src/sym2poly.cc:2967
 msgid ""
 "Unable to build a single algebraic extension for simplifying.\n"
 "Trying rational simplification only. This might return a wrong answer if "
@@ -104,26 +104,26 @@ msgstr ""
 "Pruebe solo la simplificación racional. Esto podría retornar una respuesta "
 "errónea si se simplifica 0/0"
 
-#: src/sym2poly.cc:3080 src/gausspol.cc:266 src/gausspol.cc:346
+#: src/sym2poly.cc:3179 src/gausspol.cc:266 src/gausspol.cc:346
 #: src/gausspol.cc:381 src/gausspol.cc:1026 src/gausspol.cc:1698
-#: src/gausspol.cc:3784 src/gausspol.cc:5111 src/threaded.cc:3846
-#: src/maple.cc:1266 src/ti89.cc:2689 src/ti89.cc:2701 src/modpoly.cc:489
-#: src/modpoly.cc:507 src/modpoly.cc:651 src/modpoly.cc:669 src/modpoly.cc:765
-#: src/modpoly.cc:781 src/modpoly.cc:803 src/modpoly.cc:819
-#: src/modpoly.cc:1606 src/solve.cc:4479 src/solve.cc:4561 src/intg.cc:3518
+#: src/gausspol.cc:3784 src/gausspol.cc:5111 src/threaded.cc:3867
+#: src/maple.cc:1266 src/ti89.cc:2694 src/ti89.cc:2706 src/modpoly.cc:494
+#: src/modpoly.cc:512 src/modpoly.cc:656 src/modpoly.cc:674 src/modpoly.cc:774
+#: src/modpoly.cc:790 src/modpoly.cc:812 src/modpoly.cc:828
+#: src/modpoly.cc:1658 src/solve.cc:4479 src/solve.cc:4561 src/intg.cc:3559
 #: src/intgab.cc:277 src/prog.cc:2675 src/gen.cc:2153 src/gen.cc:2360
-#: src/gen.cc:4464 src/gen.cc:4484 src/gen.cc:4769 src/gen.cc:5264
-#: src/gen.cc:5276 src/gen.cc:5443 src/gen.cc:6025 src/gen.cc:6555
-#: src/gen.cc:6931 src/gen.cc:7302 src/gen.cc:7437 src/gen.cc:7699
-#: src/gen.cc:7844
+#: src/gen.cc:4464 src/gen.cc:4484 src/gen.cc:4775 src/gen.cc:5270
+#: src/gen.cc:5282 src/gen.cc:5449 src/gen.cc:6031 src/gen.cc:6561
+#: src/gen.cc:6937 src/gen.cc:7308 src/gen.cc:7443 src/gen.cc:7717
+#: src/gen.cc:7862
 msgid "Stopped by user interruption."
 msgstr "Se detuvo por una interrupción del usuario."
 
-#: src/sym2poly.cc:3350 src/sym2poly.cc:3387
+#: src/sym2poly.cc:3449 src/sym2poly.cc:3486
 msgid "Not implemented, e.g. for multivariate mod/approx polynomials"
 msgstr "No se implementó, por ej. para polinomios aprox./mod multivariado"
 
-#: src/sym2poly.cc:3983
+#: src/sym2poly.cc:4082
 msgid "Not enough elements in field to interpolate. Try in a field extension"
 msgstr ""
 "No hay suficientes elementos en campo para interpolar. Pruebe en una "
@@ -207,31 +207,31 @@ msgstr "Se debe implementar"
 msgid "Too much substitution variables"
 msgstr "Demasiadas variables de sustitución"
 
-#: src/threaded.cc:226
+#: src/threaded.cc:250
 msgid "Unable to make thread"
 msgstr "No es posible hacer el thread"
 
-#: src/threaded.cc:3462
+#: src/threaded.cc:3483
 msgid "complex_smod"
 msgstr "complex_smod"
 
-#: src/threaded.cc:3984 src/threaded.cc:4020 src/threaded.cc:4022
+#: src/threaded.cc:4005 src/threaded.cc:4041 src/threaded.cc:4043
 msgid "invmodext"
 msgstr "invmodext"
 
-#: src/threaded.cc:4593
+#: src/threaded.cc:4614
 msgid "interp_tk"
 msgstr "interp_tk"
 
-#: src/threaded.cc:4813
+#: src/threaded.cc:4834
 msgid "vector<int> operator /"
 msgstr "vector<int> operator /"
 
-#: src/threaded.cc:4820
+#: src/threaded.cc:4841
 msgid "vector<int> operator %"
 msgstr "vector<int> operator %"
 
-#: src/threaded.cc:4827
+#: src/threaded.cc:4848
 msgid "vector<int> operator >"
 msgstr "vector<int> operator >"
 
@@ -279,7 +279,7 @@ msgstr ""
 "Los datos de conjeturas son una lista de valores, adecuación a la "
 "distribución discreta uniforme entre "
 
-#: src/moyal.cc:3101 src/quater.cc:354
+#: src/moyal.cc:3101 src/quater.cc:363
 msgid " and "
 msgstr " y "
 
@@ -433,11 +433,11 @@ msgstr "Bessel no implementado"
 msgid "Bessel"
 msgstr "Bessel"
 
-#: src/maple.cc:231 src/vecteur.cc:11500
+#: src/maple.cc:231 src/vecteur.cc:11561
 msgid "Option keep_pivot not applicable"
 msgstr "Opción keep_pivot no aplicable"
 
-#: src/maple.cc:1045 src/plot.cc:8074 src/plot.cc:8124
+#: src/maple.cc:1045 src/plot.cc:8078 src/plot.cc:8128
 msgid "not implemented"
 msgstr "no implementado"
 
@@ -483,11 +483,11 @@ msgid "File not found or unrecognized image file format"
 msgstr ""
 "No se encontró el archivo o no se reconoció el formato de archivo de imagen"
 
-#: src/maple.cc:2388 src/intg.cc:268
+#: src/maple.cc:2388 src/intg.cc:269
 msgid "in linear_apply"
 msgstr "en linear_apply"
 
-#: src/maple.cc:2414 src/intg.cc:294
+#: src/maple.cc:2414 src/intg.cc:295
 msgid "in linear_apply 2"
 msgstr "en linear_apply 2"
 
@@ -532,107 +532,107 @@ msgstr "No se ha implementado aún"
 msgid "Array too large"
 msgstr "La matriz es demasiado grande"
 
-#: src/ti89.cc:757
+#: src/ti89.cc:762
 msgid "Selecting last arc"
 msgstr "Selección del último arco"
 
-#: src/ti89.cc:2031 src/vecteur.cc:10463
+#: src/ti89.cc:2036 src/vecteur.cc:10522
 msgid "minor_det option applies only to det"
 msgstr "la opción minor_det solo se aplica a det"
 
-#: src/ti89.cc:2935
+#: src/ti89.cc:2940
 msgid "TI stop"
 msgstr "Detención de TI"
 
-#: src/ti89.cc:3302
+#: src/ti89.cc:3307
 msgid "Can't find length of non tokenized programs"
 msgstr "No es posible encontrar la longitud de los programas no tokenizados"
 
-#: src/ti89.cc:3534
+#: src/ti89.cc:3539
 msgid "Unknown sysvar tag"
 msgstr "Etiqueta de sysvar desconocida"
 
-#: src/ti89.cc:3666
+#: src/ti89.cc:3671
 msgid "Parser internal token"
 msgstr "Token interno del parser"
 
-#: src/ti89.cc:3707
+#: src/ti89.cc:3712
 msgid "Unknown secondary tag"
 msgstr "Etiqueta secundaria desconocida"
 
-#: src/ti89.cc:3851
+#: src/ti89.cc:3856
 msgid "empty local declaration"
 msgstr "declaración local vacía"
 
-#: src/ti89.cc:3906
+#: src/ti89.cc:3911
 msgid "End structure "
 msgstr "Estructura final "
 
-#: src/ti89.cc:4202
+#: src/ti89.cc:4207
 msgid "Unknown instruction tag:"
 msgstr "Etiqueta de instrucción desconocida:"
 
-#: src/ti89.cc:4248
+#: src/ti89.cc:4253
 msgid "Data_var_tag not implemented"
 msgstr "Data_var_tag no implementada"
 
-#: src/ti89.cc:4250
+#: src/ti89.cc:4255
 msgid "Gdb_var_tag not implemented"
 msgstr "Gdb_var_tag no implementada"
 
-#: src/ti89.cc:4252
+#: src/ti89.cc:4257
 msgid "Unable to find pic_var_tag length"
 msgstr "No es posible encontrar la longitud de pic_var_tag"
 
-#: src/ti89.cc:4254
+#: src/ti89.cc:4259
 msgid "Unable to find text_var_tag length"
 msgstr "No es posible encontrar la longitud de text_var_tag"
 
-#: src/ti89.cc:4265
+#: src/ti89.cc:4270
 msgid "End_tag/End_of_segment"
 msgstr "End_tag/End_of_segment"
 
-#: src/ti89.cc:4267
+#: src/ti89.cc:4272
 msgid "Asm programs not implemented"
 msgstr "Los programas Asm no están implementados"
 
-#: src/ti89.cc:4269
+#: src/ti89.cc:4274
 msgid "3rd party data"
 msgstr "datos de terceros"
 
-#: src/ti89.cc:4526
+#: src/ti89.cc:4531
 msgid "start tag"
 msgstr "etiqueta de inicio"
 
-#: src/ti89.cc:4575
+#: src/ti89.cc:4580
 msgid "Internal sincos token"
 msgstr "Token de sincos interno"
 
-#: src/ti89.cc:4723
+#: src/ti89.cc:4728
 msgid "fig_tag"
 msgstr "fig_tag"
 
-#: src/ti89.cc:4725
+#: src/ti89.cc:4730
 msgid "mac_tag"
 msgstr "mac_tag"
 
-#: src/ti89.cc:4758
+#: src/ti89.cc:4763
 msgid "Unknown tag "
 msgstr "Etiqueta desconocida "
 
-#: src/ti89.cc:4845
+#: src/ti89.cc:4850
 msgid "Unable to open "
 msgstr "No se puede abrir "
 
-#: src/ti89.cc:4855
+#: src/ti89.cc:4860
 msgid "Too short for a TI archive"
 msgstr "Demasiado corto para un archivo de TI"
 
-#: src/ti89.cc:4865
+#: src/ti89.cc:4870
 msgid "Not long enough"
 msgstr "No es lo suficientemente largo"
 
-#: src/ti89.cc:4941
+#: src/ti89.cc:4946
 msgid "Not a TI89/92 program/function/group file"
 msgstr "No es un archivo de programa/función/grupo de TI89/92"
 
@@ -640,102 +640,102 @@ msgstr "No es un archivo de programa/función/grupo de TI89/92"
 msgid "No mathml support"
 msgstr "No hay compatibilidad con mathml"
 
-#: src/mathml.cc:1930
+#: src/mathml.cc:1932
 msgid "MathMl convert "
 msgstr "Conversión de MathMl "
 
-#: src/misc.cc:700 src/rpn.cc:919 src/gen.cc:9462
+#: src/misc.cc:700 src/rpn.cc:919 src/gen.cc:9480
 msgid "Bad index"
 msgstr "Índice incorrecto"
 
-#: src/misc.cc:1182
+#: src/misc.cc:1221
 msgid "2nd arg"
 msgstr "2° arg"
 
-#: src/misc.cc:1797 src/misc.cc:1837 src/misc.cc:1843 src/vecteur.cc:11365
-#: src/cocoa.cc:3356 src/gen.cc:4372 src/gen.cc:10206
+#: src/misc.cc:1836 src/misc.cc:1876 src/misc.cc:1882 src/vecteur.cc:11426
+#: src/cocoa.cc:3356 src/gen.cc:4372 src/gen.cc:10224
 msgid "Not invertible"
 msgstr "No inversible"
 
-#: src/misc.cc:1879
+#: src/misc.cc:1918
 msgid "Not a potential"
 msgstr "No es un potencial"
 
-#: src/misc.cc:1909
+#: src/misc.cc:1948
 msgid "Not a vector potential"
 msgstr "No es un potencial del vector"
 
-#: src/misc.cc:2066 src/vecteur.cc:14654 src/vecteur.cc:14675
+#: src/misc.cc:2105 src/vecteur.cc:14715 src/vecteur.cc:14736
 msgid "Low accuracy"
 msgstr "Baja precisión"
 
-#: src/misc.cc:4075
+#: src/misc.cc:4114
 msgid "Guessing initial production requires more than 20 samples"
 msgstr "La producción inicial de conjeturas requiere más de 20 muestras"
 
-#: src/misc.cc:4083
+#: src/misc.cc:4122
 msgid "Initial cumulative estimated to "
 msgstr "Acumulado inicial estimado en "
 
-#: src/misc.cc:4083
+#: src/misc.cc:4122
 msgid "Correlation for 5 first years to estimate initial cumulative : "
 msgstr ""
 "La correlación de los 5 primeros años para calcular el acumulado inicial: "
 
-#: src/misc.cc:4122
+#: src/misc.cc:4161
 msgid "Pinstant="
 msgstr "Pinstant="
 
-#: src/misc.cc:4122
+#: src/misc.cc:4161
 msgid "*Pcumul+"
 msgstr "*Pcumul+"
 
-#: src/misc.cc:4122
+#: src/misc.cc:4161
 msgid "Correlation "
 msgstr "Correlación "
 
-#: src/misc.cc:4122
+#: src/misc.cc:4161
 msgid ", Estimated total P="
 msgstr ", P total estimado="
 
-#: src/misc.cc:4122
+#: src/misc.cc:4161
 msgid "Returning estimated Pcumul, Pinstant, Ptotal, Pinstantmax, tmax, R"
 msgstr "Retornando Pcumul, Pinstant, Ptotal, Pinstantmax, tmax, R estimados"
 
-#: src/misc.cc:4200
+#: src/misc.cc:4239
 msgid "Values out of range"
 msgstr "Valores fuera del rango"
 
-#: src/misc.cc:4302
+#: src/misc.cc:4341
 msgid "Invalid class size (replaced by 1) "
 msgstr "Tamaño de clase inválido (sustituido por 1) "
 
-#: src/misc.cc:5168
+#: src/misc.cc:5207
 msgid "Negative value encoutered"
 msgstr "Se encontró un valor negativo"
 
-#: src/misc.cc:5197
+#: src/misc.cc:5236
 msgid "graham_sort_function"
 msgstr "graham_sort_function"
 
-#: src/misc.cc:5659
+#: src/misc.cc:5698
 msgid "binop"
 msgstr "binop"
 
-#: src/misc.cc:5759
+#: src/misc.cc:5798
 msgid "plotarea(f(x),x=a..b[,n,method])"
 msgstr "plotarea(f(x),x=a..b[,n,method])"
 
-#: src/misc.cc:5845
+#: src/misc.cc:5884
 #, fuzzy
 msgid "not supported"
 msgstr "No hay compatibilidad con mathml"
 
-#: src/misc.cc:5980
+#: src/misc.cc:6019
 msgid "Warning: not a graph matrix!"
 msgstr "Advertencia: ¡no es una matriz de gráfico!"
 
-#: src/misc.cc:6261
+#: src/misc.cc:6300
 msgid ""
 "Warning! Leaving conjugate gradient algorithm after dimension of matrix "
 "iterations. Check that your matrix is hermitian/symmetric definite."
@@ -744,7 +744,7 @@ msgstr ""
 "dimensión de las iteraciones de la matriz. Verifique que su matriz sea "
 "definitiva hermitiana/simétrica."
 
-#: src/misc.cc:6291
+#: src/misc.cc:6330
 msgid ""
 "Warning! Leaving Jacobi iterative algorithm after maximal number of "
 "iterations. Check that your matrix is diagonal dominant."
@@ -753,7 +753,7 @@ msgstr ""
 "cantidad máxima de iteraciones. Verifique que su matriz sea dominante "
 "diagonal."
 
-#: src/misc.cc:6323
+#: src/misc.cc:6362
 msgid ""
 "Warning! Leaving Gauss-Seidel iterative algorithm after maximal number of "
 "iterations. Check that your matrix is diagonal dominant."
@@ -762,7 +762,7 @@ msgstr ""
 "la cantidad máxima de iteraciones. Verifique que su matriz sea dominante "
 "diagonal."
 
-#: src/misc.cc:7293
+#: src/misc.cc:7343
 #, c-format
 msgid ""
 "====================\n"
@@ -771,46 +771,46 @@ msgstr ""
 "====================\n"
 "Gráfico paramétrico (%gen,%gen), variable %gen"
 
-#: src/misc.cc:7306
+#: src/misc.cc:7356
 msgid "Even functions."
 msgstr "Funciones pares."
 
-#: src/misc.cc:7308
+#: src/misc.cc:7358
 #, c-format
 msgid "Even function %gen, odd function %gen. Reflection Ox"
 msgstr "Función par %gen, función impar %gen. Reflexión: Ox"
 
-#: src/misc.cc:7312
+#: src/misc.cc:7362
 #, c-format
 msgid "Odd function %gen, even function %gen. Reflection Oy"
 msgstr "Función impar %gen, función par %gen. Reflexión: Oy"
 
-#: src/misc.cc:7314
+#: src/misc.cc:7364
 msgid "Odd functions. Center O"
 msgstr "Funciones impares. O central"
 
-#: src/misc.cc:7328 src/misc.cc:7919
+#: src/misc.cc:7378 src/misc.cc:7969
 #, c-format
 msgid "Domain %gen"
 msgstr "Dominio %gen"
 
-#: src/misc.cc:7331 src/misc.cc:7922
+#: src/misc.cc:7381 src/misc.cc:7972
 msgid "Unable to find singular points"
 msgstr "No es posible encontrar los puntos singulares"
 
-#: src/misc.cc:7367 src/misc.cc:7951 src/misc.cc:7965
+#: src/misc.cc:7417 src/misc.cc:8001 src/misc.cc:8015
 msgid "Unable to find critical points"
 msgstr "No es posible encontrar los puntos criticos"
 
-#: src/misc.cc:7377
+#: src/misc.cc:7427
 msgid "Unable to find inflection points"
 msgstr "No es posible encontrar los puntos de inflexión"
 
-#: src/misc.cc:7384 src/misc.cc:7973
+#: src/misc.cc:7434 src/misc.cc:8023
 msgid "Infinite number of critical points. Try with optional argument "
 msgstr "Número infinito de puntos críticos. Pruebe con un argumento opcional "
 
-#: src/misc.cc:7447
+#: src/misc.cc:7497
 #, c-format
 msgid ""
 "Singular point %gen, point %gen direction %gen kind (%gen,%gen)\n"
@@ -819,37 +819,37 @@ msgstr ""
 "Punto singular %gen, punto %gen, dirección %gen, tipo (%gen,%gen)\n"
 "Expansiones de Taylor %gen"
 
-#: src/misc.cc:7522
+#: src/misc.cc:7572
 #, c-format
 msgid "Horizontal asymptote at %gen : %gen"
 msgstr "Asíntota horizontal en %gen : %gen"
 
-#: src/misc.cc:7532 src/misc.cc:8072
+#: src/misc.cc:7582 src/misc.cc:8122
 #, c-format
 msgid "Vertical parabolic asymptote at %gen"
 msgstr "Asíntota parabólica vertical en %gen"
 
-#: src/misc.cc:7538 src/misc.cc:8079
+#: src/misc.cc:7588 src/misc.cc:8129
 #, c-format
 msgid "Horizontal parabolic asymptote at %gen"
 msgstr "Asíntota parabólica horizontal en %gen"
 
-#: src/misc.cc:7545
+#: src/misc.cc:7595
 #, c-format
 msgid "Parabolic asymptote direction at %gen: %gen"
 msgstr "Dirección de asíntota parabólica en %gen: %gen"
 
-#: src/misc.cc:7551
+#: src/misc.cc:7601
 #, c-format
 msgid "Asymptote at %gen: %gen"
 msgstr "Asíntota en %gen: %gen"
 
-#: src/misc.cc:7563
+#: src/misc.cc:7613
 #, c-format
 msgid "Vertical asymptote at %gen: %gen"
 msgstr "Asíntota vertical en %gen: %gen"
 
-#: src/misc.cc:7834
+#: src/misc.cc:7884
 #, c-format
 msgid ""
 "Variations (%gen,%gen)\n"
@@ -858,14 +858,14 @@ msgstr ""
 "Variaciones (%gen,%gen)\n"
 "%gen"
 
-#: src/misc.cc:7847
+#: src/misc.cc:7897
 msgid ""
 "Warning, using x or y as variable in parametric plot may lead to confusion!"
 msgstr ""
 "¡Advertencia, el uso de x o y como variable en el gráfico paramétrico puede "
 "causar confusión!"
 
-#: src/misc.cc:7890
+#: src/misc.cc:7940
 #, c-format
 msgid ""
 "====================\n"
@@ -874,61 +874,61 @@ msgstr ""
 "====================\n"
 "Gráfico de función %gen, variable %gen"
 
-#: src/misc.cc:7892
+#: src/misc.cc:7942
 #, c-format
 msgid "Periodic function T=%gen"
 msgstr "T de la función periódica=%gen"
 
-#: src/misc.cc:7901
+#: src/misc.cc:7951
 #, c-format
 msgid "Even function %gen. Reflection Oy"
 msgstr "Función par %gen. Reflexión: Oy"
 
-#: src/misc.cc:7903
+#: src/misc.cc:7953
 #, c-format
 msgid "Odd function %gen. Center O"
 msgstr "Función impar %gen. O central"
 
-#: src/misc.cc:7959
+#: src/misc.cc:8009
 msgid "Unable to find convexity"
 msgstr "No es posible encontrar la convexidad"
 
-#: src/misc.cc:8035
+#: src/misc.cc:8085
 #, c-format
 msgid "Vertical asymptote %gen"
 msgstr "Asíntota vertical %gen"
 
-#: src/misc.cc:8040
+#: src/misc.cc:8090
 #, c-format
 msgid "Symmetric vertical asymptote %gen"
 msgstr "Asíntota vertical simétrica %gen"
 
-#: src/misc.cc:8053
+#: src/misc.cc:8103
 #, c-format
 msgid "Horizontal asymptote %gen"
 msgstr "Asíntota horizontal %gen"
 
-#: src/misc.cc:8060
+#: src/misc.cc:8110
 #, c-format
 msgid "Symmetric horizontal asymptote %gen"
 msgstr "Asíntota horizontal simétrica %gen"
 
-#: src/misc.cc:8088
+#: src/misc.cc:8138
 #, c-format
 msgid "Parabolic asymptote direction %gen at infinity"
 msgstr "Dirección de asíntota parabólica %gen en infinito"
 
-#: src/misc.cc:8095
+#: src/misc.cc:8145
 #, c-format
 msgid "Asymptote %gen"
 msgstr "Asíntota %gen"
 
-#: src/misc.cc:8105
+#: src/misc.cc:8155
 #, c-format
 msgid "Symmetric asymptote %gen"
 msgstr "Asíntota simétrica %gen"
 
-#: src/misc.cc:8341
+#: src/misc.cc:8391
 #, fuzzy, c-format
 msgid ""
 "Sign %gen\n"
@@ -937,7 +937,7 @@ msgstr ""
 "Variaciones %gen\n"
 "%gen"
 
-#: src/permu.cc:1814 src/permu.cc:1822 src/permu.cc:1833 src/permu.cc:1835
+#: src/permu.cc:1859 src/permu.cc:1867 src/permu.cc:1878 src/permu.cc:1880
 msgid "Probably not a Riemann sum"
 msgstr "Probablemente no es una suma de Riemann"
 
@@ -952,7 +952,7 @@ msgstr ""
 "Advertencia, el polinomio mínimo solo es irreducible, no necesariamente "
 "primitivo"
 
-#: src/quater.cc:218
+#: src/quater.cc:220
 msgid ""
 "Warning, random search for irreducible polynomial did not work, starting "
 "exhaustive search"
@@ -960,15 +960,15 @@ msgstr ""
 "Advertencia, la búsqueda aleatoria del polinomio irreducible no funcionó, se "
 "está empezando una búsqueda exhaustiva"
 
-#: src/quater.cc:232
+#: src/quater.cc:234
 msgid "No irreducible primitive polynomial found"
 msgstr "No se encontró el polinomio primitivo irreducible"
 
-#: src/quater.cc:240
+#: src/quater.cc:242
 msgid " already assigned. Trying "
 msgstr " ya asignado. Intentando "
 
-#: src/quater.cc:259
+#: src/quater.cc:268
 msgid ""
 "GF is used for non-prime finite field. Use % or mod for prime fields, e.g. 1 "
 "% "
@@ -976,35 +976,35 @@ msgstr ""
 "GF se usa en el campo finito no primo. Use % o el mod para los campos "
 "primos, por ej. 1 % "
 
-#: src/quater.cc:285
+#: src/quater.cc:294
 msgid "Not a power of a prime"
 msgstr "No es una potencia de un primo"
 
-#: src/quater.cc:318
+#: src/quater.cc:327
 msgid "Setting "
 msgstr "Configuración "
 
-#: src/quater.cc:318
+#: src/quater.cc:327
 msgid " as generator for Galois field "
 msgstr " como generador para el campo de Galois "
 
-#: src/quater.cc:318
+#: src/quater.cc:327
 msgid "(auxiliary polynomial variable for addition representation "
 msgstr "(variable del polinomio auxiliar para la representación de la adición "
 
-#: src/quater.cc:354
+#: src/quater.cc:363
 msgid "Assigning variables "
 msgstr "Asignar variables "
 
-#: src/quater.cc:355
+#: src/quater.cc:364
 msgid "Now e.g. "
 msgstr "Ahora por ej. "
 
-#: src/quater.cc:355
+#: src/quater.cc:364
 msgid "^200+1 will build an element of "
 msgstr "^200+1 construirá un elemento de "
 
-#: src/quater.cc:366
+#: src/quater.cc:375
 msgid ""
 "galois_field has 1 or 4 arguments (charac p, irred poly P, var name x, value "
 "as a poly of x or as a vector)"
@@ -1012,65 +1012,65 @@ msgstr ""
 "galois_field tiene 1 o 4 argumentos (p de carac, P de polin irred, nombre de "
 "var x, valor como polin de x o como vector)"
 
-#: src/quater.cc:382
+#: src/quater.cc:391
 msgid "Not irreducible or not primitive polynomial"
 msgstr "Polinomio no irreducible o no primitivo"
 
-#: src/quater.cc:384
+#: src/quater.cc:393
 msgid "Warning "
 msgstr "Advertencia "
 
-#: src/quater.cc:384
+#: src/quater.cc:393
 msgid " is irreducible but not primitive. You could use "
 msgstr " es irreducible pero no primitivo. Podría usar "
 
-#: src/quater.cc:384
+#: src/quater.cc:393
 msgid " instead "
 msgstr " en vez de ello "
 
-#: src/quater.cc:439
+#: src/quater.cc:469
 msgid "Unable to convert user type to galois field"
 msgstr "No es posible convertir el tipo de usuario en el campo de galois"
 
-#: src/quater.cc:444
+#: src/quater.cc:474
 msgid "Expecting characteristic p, integer m"
 msgstr "Esperando p característico, m de entero"
 
-#: src/quater.cc:448
+#: src/quater.cc:478
 msgid "Bad characteristic: "
 msgstr "Característica incorrecta: "
 
-#: src/quater.cc:452
+#: src/quater.cc:482
 msgid "Exponent must be >=2: "
 msgstr "El exponente debe ser >=2: "
 
-#: src/quater.cc:610 src/quater.cc:626 src/quater.cc:669 src/quater.cc:714
+#: src/quater.cc:655 src/quater.cc:678 src/quater.cc:736 src/quater.cc:1636
 msgid "Incompatible characteristics"
 msgstr "Características incompatibles"
 
-#: src/quater.cc:774
+#: src/quater.cc:1714
 msgid "galois field inv"
 msgstr "inv de campo de galois"
 
-#: src/quater.cc:787
+#: src/quater.cc:1726
 msgid "GF inv internal bug"
 msgstr "Error interno de inv de GF"
 
-#: src/quater.cc:849
+#: src/quater.cc:1788
 msgid ") invalid, works only for integers or polynomials depending on "
 msgstr ") inválido, solo funciona con enteros o polinomios dependientes de "
 
-#: src/quater.cc:1025
+#: src/quater.cc:1974
 msgid "Warning: multivariate GF factorization is experimental and may fail"
 msgstr ""
 "Advertencia: la factorización multivariada de GF es experimental y podría "
 "fallar"
 
-#: src/quater.cc:1027
+#: src/quater.cc:1976
 msgid "Multivariate GF factorization not yet implemented"
 msgstr "La factorización multivariada de GF aún no se ha implementado"
 
-#: src/quater.cc:1031 src/quater.cc:1040
+#: src/quater.cc:1981 src/quater.cc:1990
 msgid "GF polyfactor"
 msgstr "Polifactor de GF"
 
@@ -1082,7 +1082,7 @@ msgstr "Advertencia, el coeficiente de x exponencial es positivo "
 msgid "desolve.cc/pf_ilaplace"
 msgstr "desolve.cc/pf_ilaplace"
 
-#: src/desolve.cc:375 src/desolve.cc:1503
+#: src/desolve.cc:375 src/desolve.cc:1505
 msgid "Unable to solve differential equation"
 msgstr "No es posible resolver la ecuación diferencial"
 
@@ -1095,15 +1095,15 @@ msgid "Boundary conditions for parametric curve not implemented"
 msgstr ""
 "No se han implementado las condiciones limítrofes para la curva paramétrica"
 
-#: src/desolve.cc:1306
+#: src/desolve.cc:1308
 msgid "Incomplete"
 msgstr "Incompleto"
 
-#: src/desolve.cc:1339
+#: src/desolve.cc:1341
 msgid "Homogeneous differential equation"
 msgstr "Ecuación diferencial homegénea"
 
-#: src/desolve.cc:1656
+#: src/desolve.cc:1658
 msgid ""
 "Inverse z-transform of non rational functions not implemented or unable to "
 "fully factor rational function"
@@ -1111,11 +1111,11 @@ msgstr ""
 "La transformación de z inversa de funciones no racionales no se ha "
 "implementado o no es capaz de factorizar completamente la función racional"
 
-#: src/desolve.cc:1686 src/desolve.cc:1689
+#: src/desolve.cc:1688 src/desolve.cc:1691
 msgid "desolve.cc/invztrans"
 msgstr "desolve.cc/invztrans"
 
-#: src/desolve.cc:1718
+#: src/desolve.cc:1720
 msgid "Warning, z*argument has a non-zero integral part"
 msgstr "Advertencia, el argumento z* tiene una parte integral que no es cero"
 
@@ -1183,31 +1183,31 @@ msgstr "index.cc index_m i_lex_is_greater"
 msgid "index.cc index_m i_total_revlex_is_greater"
 msgstr "index.cc index_m i_total_revlex_is_greater"
 
-#: src/modpoly.cc:247
+#: src/modpoly.cc:252
 msgid "modpoly.cc/modularize"
 msgstr "modpoly.cc/modularize"
 
-#: src/modpoly.cc:353
+#: src/modpoly.cc:358
 msgid "Field too large"
 msgstr "Campo demasiado grande"
 
-#: src/modpoly.cc:363
+#: src/modpoly.cc:368
 msgid "modpoly.cc/x_to_xp"
 msgstr "modpoly.cc/x_to_xp"
 
-#: src/modpoly.cc:1940
+#: src/modpoly.cc:2152
 msgid "modpoly.cc/DivRem"
 msgstr "modpoly.cc/DivRem"
 
-#: src/modpoly.cc:4269
+#: src/modpoly.cc:4810
 msgid "Argument must be a vector of even size"
 msgstr "El argumento debe ser un vector de tamaño par"
 
-#: src/modpoly.cc:4394
+#: src/modpoly.cc:4935
 msgid "modpoly.cc/powmod"
 msgstr "modpoly.cc/powmod"
 
-#: src/modpoly.cc:8649 src/modpoly.cc:8670
+#: src/modpoly.cc:9509 src/modpoly.cc:9530
 msgid "modpoly.cc/ininttype2ZZ"
 msgstr "modpoly.cc/ininttype2ZZ"
 
@@ -1624,7 +1624,7 @@ msgstr "Advertencia: algsubs seleccionó una bifurcación"
 msgid "Unable to minimize at given precision, last value "
 msgstr "No es posible minimizar con la precisión dada, último valor "
 
-#: src/intg.cc:575
+#: src/intg.cc:583
 #, c-format
 msgid ""
 "Integration of a rational fraction with denominator %gen\n"
@@ -1635,7 +1635,7 @@ msgstr ""
 "Las raíces se obtienen al resolver la ecuación de segundo orden %gen=0 y "
 "luego extraer las raíces n-ésimas"
 
-#: src/intg.cc:647
+#: src/intg.cc:655
 #, c-format
 msgid ""
 "Integrate rational fraction with denominator a cyclotomic polynomial, roots "
@@ -1644,7 +1644,7 @@ msgstr ""
 "Integre la fracción racional con el denominador, un polinomio ciclotómico, "
 "las raíces son primitivas de %gen=0"
 
-#: src/intg.cc:675
+#: src/intg.cc:683
 #, c-format
 msgid ""
 "Integrate rational fraction with denominator %gen=0\n"
@@ -1653,27 +1653,27 @@ msgstr ""
 "Integre la fracción racional con denominador %gen=0\n"
 "las raíces se deducen de las raíces n-ésimas de la unidad"
 
-#: src/intg.cc:810
+#: src/intg.cc:818
 #, c-format
 msgid "Integrate linearizable expression %gen -> %gen"
 msgstr "Integre la expresión linearizable %gen -> %gen"
 
-#: src/intg.cc:922
+#: src/intg.cc:930
 #, c-format
 msgid "Integrate trigonometric linearizable expression %gen -> %gen"
 msgstr "Integre la expresión linearizable trigonométrica %gen -> %gen"
 
-#: src/intg.cc:1003
+#: src/intg.cc:1011
 #, c-format
 msgid "Primitive of %gen is polynomial of same degree*same exponential %gen"
 msgstr ""
 "El primitivo de %gen es un polinomio del mismo grado*mismo exponencial %gen"
 
-#: src/intg.cc:1373
+#: src/intg.cc:1381
 msgid "trig_fraction"
 msgstr "trig_fraction"
 
-#: src/intg.cc:1383
+#: src/intg.cc:1391
 #, c-format
 msgid ""
 "Integrate rational fraction of exponential %gen by %gen change of variable, "
@@ -1682,12 +1682,12 @@ msgstr ""
 "Integre la fracción racional de la exponencial %gen según el cambio de "
 "variable de %gen, lo que genera la integral de %gen"
 
-#: src/intg.cc:1387 src/intg.cc:1405 src/intg.cc:2371
+#: src/intg.cc:1395 src/intg.cc:1413 src/intg.cc:2404
 #, c-format
 msgid "Back substitution %gen->%gen in %gen"
 msgstr "Sustitución inversa %gen->%gen en %gen"
 
-#: src/intg.cc:1397
+#: src/intg.cc:1405
 #, c-format
 msgid ""
 "Integrate rational fraction of trigonometric %gen by %gen change of "
@@ -1696,25 +1696,25 @@ msgstr ""
 "Integre la fracción racional de %gen trigonométrico mediante el cambio de la "
 "variable de %gen, lo que genera el integral de %gen"
 
-#: src/intg.cc:1458
+#: src/intg.cc:1466
 msgid "in intgab_rational"
 msgstr "en intgab_rational"
 
-#: src/intg.cc:1683
+#: src/intg.cc:1691
 msgid "in integrate_rational"
 msgstr "en integrate_rational"
 
-#: src/intg.cc:1742
+#: src/intg.cc:1750
 #, c-format
 msgid "Integrate rational fraction %gen, change of variable %gen"
 msgstr "Integre la fracción racional %gen, cambio de variable %gen"
 
-#: src/intg.cc:1876
+#: src/intg.cc:1884
 #, c-format
 msgid "Integrate rational fraction %gen"
 msgstr "Integre la fracción racional %gen"
 
-#: src/intg.cc:1896
+#: src/intg.cc:1904
 #, c-format
 msgid ""
 "Partial fraction %gen -> Hermite reduction -> integrate squarefree part %gen"
@@ -1722,12 +1722,12 @@ msgstr ""
 "Fracción parcial %gen -> Reducción de Hermite -> integre la parte sin "
 "cuadrado %gen"
 
-#: src/intg.cc:1904
+#: src/intg.cc:1912
 #, c-format
 msgid "Partial fraction integration of %gen"
 msgstr "Integración de la fracción parcial de %gen"
 
-#: src/intg.cc:2270
+#: src/intg.cc:2303
 msgid ""
 "Warning, integration of abs or sign assumes constant sign by intervals "
 "(correct if the argument is real):\n"
@@ -1737,28 +1737,28 @@ msgstr ""
 "intervalos (correcto si el argumento es real):\n"
 "Verificar "
 
-#: src/intg.cc:2301
+#: src/intg.cc:2334
 msgid "Unable to cancel step at "
 msgstr "No es posible cancelar el incr. en "
 
-#: src/intg.cc:2306
+#: src/intg.cc:2339
 msgid "Discontinuities at zeroes of "
 msgstr "Discontinuidades en los ceros de "
 
-#: src/intg.cc:2368
+#: src/intg.cc:2401
 #, c-format
 msgid "Integrate %gen, change of variable %gen->%gen, new integral %gen"
 msgstr "Integre %gen, cambio de variable %gen->%gen, nueva integral %gen"
 
-#: src/intg.cc:2420
+#: src/intg.cc:2453
 msgid "Temporary replacing surd/NTHROOT by fractional powers"
 msgstr "Temporalmente sustituyendo surd/NTHROOT por potencias fraccionales"
 
-#: src/intg.cc:2467
+#: src/intg.cc:2500
 msgid "integrate id_rem "
 msgstr "integrate id_rem "
 
-#: src/intg.cc:2492
+#: src/intg.cc:2525
 msgid ""
 "Warning: piecewise indefinite integration does not return a continuous "
 "antiderivative"
@@ -1766,19 +1766,19 @@ msgstr ""
 "Advertencia: la integración indefinida de la función definida a trozos no "
 "retorna una antiderivada continua"
 
-#: src/intg.cc:2498
+#: src/intg.cc:2531
 msgid "integrate step -2 "
 msgstr "integre el incr. -2 "
 
-#: src/intg.cc:2503
+#: src/intg.cc:2536
 msgid "Bad when "
 msgstr "Incorrecto cuando "
 
-#: src/intg.cc:2505
+#: src/intg.cc:2538
 msgid "integrate step 0 "
 msgstr "integre el incr. 0 "
 
-#: src/intg.cc:2523
+#: src/intg.cc:2556
 #, c-format
 msgid ""
 "Integrate %gen, a linear expression u=%gen to a constant power n=%gen,\n"
@@ -1787,7 +1787,7 @@ msgstr ""
 "Integre %gen, una expresión lineal u=%gen a una potencia constante n=%gen,\n"
 "Si n=-1 entonces ln(u)/a de lo contrario u^(n+1)/((n+1)*%gen)"
 
-#: src/intg.cc:2531 src/intg.cc:2539
+#: src/intg.cc:2564 src/intg.cc:2572
 #, c-format
 msgid ""
 "Integrate %gen, a linear expression u=%gen to a constant power n=1/%gen,\n"
@@ -1797,11 +1797,11 @@ msgstr ""
 "%gen,\n"
 "Si n=-1 entonces ln(u)/a de lo contrario u^(n+1)/((n+1)*%gen)"
 
-#: src/intg.cc:2557
+#: src/intg.cc:2590
 msgid "integrate step 1 "
 msgstr "integre el incr. 1 "
 
-#: src/intg.cc:2577
+#: src/intg.cc:2610
 #, c-format
 msgid ""
 "Integrate %gen: function %gen applied to a linear expression u=%gen, result "
@@ -1810,59 +1810,59 @@ msgstr ""
 "Integre %gen: función %gen aplicada a una expresión lineal u=%gen, resulta "
 "%gen"
 
-#: src/intg.cc:2642 src/intg.cc:2708 src/intg.cc:2728 src/intg.cc:2797
-#: src/intg.cc:2819
+#: src/intg.cc:2675 src/intg.cc:2741 src/intg.cc:2761 src/intg.cc:2830
+#: src/intg.cc:2852
 #, c-format
 msgid "Integration of %gen: f(u)*u' where f=%gen->%gen and u=%gen"
 msgstr "Integración de %gen: f(u)*u' donde f=%gen->%gen y u=%gen"
 
-#: src/intg.cc:2736
+#: src/intg.cc:2769
 msgid "integrate step 2 "
 msgstr "integre el incr. 2 "
 
-#: src/intg.cc:2828
+#: src/intg.cc:2861
 msgid "integrate step 3 "
 msgstr "integre el incr. 3 "
 
-#: src/intg.cc:2910
+#: src/intg.cc:2943
 #, c-format
 msgid "Integration of %gen: by part, u*v'=%gen*(%gen)'"
 msgstr "Integración de %gen: por parte, u*v'=%gen*(%gen)'"
 
-#: src/intg.cc:2944
+#: src/intg.cc:2977
 #, c-format
 msgid "Integration of %gen by part of u*v' where u=1 and v=%gen'"
 msgstr "Integración de %gen por parte de u*v' donde u=1 y v=%gen'"
 
-#: src/intg.cc:3044
+#: src/intg.cc:3077
 #, c-format
 msgid "Integrate %gen, no heuristic found, running Risch algorithm"
 msgstr ""
 "Integre %gen, no se encontró el algoritmo heurístico, se está ejecutando el "
 "algoritmo de Risch"
 
-#: src/intg.cc:3113
+#: src/intg.cc:3146
 #, c-format
 msgid "===== Step/step primitive of %gen with respect to %gen ====="
 msgstr "===== Primitiva de incr./incr. de %gen con respecto a %gen ====="
 
-#: src/intg.cc:3126
+#: src/intg.cc:3167
 #, c-format
 msgid "Hence primitive of %gen with respect to %gen is %gen"
 msgstr "Por lo tanto, la primitiva de %gen con respecto a %gen es %gen"
 
-#: src/intg.cc:3182
+#: src/intg.cc:3223
 msgid "Checking exact value of integral with numeric approximation"
 msgstr "Verificar el valor exacto de la integral con aproximación numérica"
 
-#: src/intg.cc:3192
+#: src/intg.cc:3233
 msgid ""
 "Error while checking exact value with approximate value, returning both!"
 msgstr ""
 "Error al verificar el valor exacto con valor aproximado, ¡está retornando "
 "ambos!"
 
-#: src/intg.cc:3263
+#: src/intg.cc:3304
 msgid ""
 "Warning, complex variables is set, this can lead to fairly complex answers. "
 "It is recommended to switch off complex variables in the settings or by "
@@ -1875,56 +1875,56 @@ msgstr ""
 "que las variables individuales sean complejas mediante, por ej., assume(a,"
 "complex)."
 
-#: src/intg.cc:3265
+#: src/intg.cc:3306
 msgid "integrate begin"
 msgstr "integre Inic."
 
-#: src/intg.cc:3486
+#: src/intg.cc:3527
 msgid "Floor definite integration: can only handle linear < or > condition"
 msgstr ""
 "Integración definida de suelo: solo puede manejar lineal < o > condición"
 
-#: src/intg.cc:3492
+#: src/intg.cc:3533
 msgid "Floor definite integration: unable to handle infinite boundaries"
 msgstr "Integración definida de suelo: no es posible manejar límites infinitos"
 
-#: src/intg.cc:3557 src/plot.cc:1385 src/prog.cc:13017
+#: src/intg.cc:3598 src/plot.cc:1385 src/prog.cc:13017
 msgid "Assuming false condition "
 msgstr "Suponiendo una condición falsa "
 
-#: src/intg.cc:3561 src/plot.cc:1389 src/prog.cc:13021
+#: src/intg.cc:3602 src/plot.cc:1389 src/prog.cc:13021
 msgid "Assuming true condition "
 msgstr "Suponiendo una condición verdadera "
 
-#: src/intg.cc:3576
+#: src/intg.cc:3617
 msgid "Piecewise definite integration: can only handle linear < or > condition"
 msgstr ""
 "Integración definida de la función definida a trozos: solo puede manejar "
 "lineal < o > condición"
 
-#: src/intg.cc:3732
+#: src/intg.cc:3786
 #, fuzzy
 msgid "No checks were made for singular points of antiderivative "
 msgstr "No se verificaron los puntos singulares de antiderivada "
 
-#: src/intg.cc:3732
+#: src/intg.cc:3786
 msgid " for definite integration in ["
 msgstr " para la integración definida en ["
 
-#: src/intg.cc:3751
+#: src/intg.cc:3805
 msgid "Unable to find singular points of antiderivative"
 msgstr "No es posible encontrar puntos singulares de antiderivada"
 
-#: src/intg.cc:3762
+#: src/intg.cc:3816
 msgid "Unable to handle approx. or algebraic extension singular point "
 msgstr ""
 "No es posible manejar un punto singular de extensión aproximada o algebraica "
 
-#: src/intg.cc:3762
+#: src/intg.cc:3816
 msgid " of antiderivative"
 msgstr " de antiderivada"
 
-#: src/intg.cc:4171
+#: src/intg.cc:4225
 msgid ""
 "Infinity or undefined limit at bounds.\n"
 "Using middle point Romberg method"
@@ -1932,7 +1932,7 @@ msgstr ""
 "Límite infinito o indefinido en las fronteras.\n"
 "Uso del método Romberg de punto medio"
 
-#: src/intg.cc:4224 src/intg.cc:4266
+#: src/intg.cc:4278 src/intg.cc:4320
 msgid ""
 "Unable to find numeric integral using Romberg method, returning the last "
 "approximations"
@@ -1940,31 +1940,31 @@ msgstr ""
 "No es posible encontrar la integral numérica usando el método Rosemberg, lo "
 "que retorna las últimas aproximaciones"
 
-#: src/intg.cc:4901
+#: src/intg.cc:4955
 msgid "prodsum"
 msgstr "prodsum"
 
-#: src/intg.cc:5033
+#: src/intg.cc:5087
 msgid "Unable to sort boundaries "
 msgstr "No es posible ordenar los límites "
 
-#: src/intg.cc:5096
+#: src/intg.cc:5150
 msgid "Bad step"
 msgstr "Incr. incorrecto"
 
-#: src/intg.cc:5223
+#: src/intg.cc:5277
 msgid "i=sqrt(-1), please use a valid identifier name"
 msgstr "i=sqrt(-1), use un nombre de identificador válido"
 
-#: src/intg.cc:5413 src/intg.cc:5422 src/intg.cc:5447
+#: src/intg.cc:5467 src/intg.cc:5476 src/intg.cc:5501
 msgid "bernoulli"
 msgstr "bernoulli"
 
-#: src/intg.cc:5777
+#: src/intg.cc:5831
 msgid "RK8 evolve not successfull"
 msgstr "La evolución de RK8 no fue exitosa"
 
-#: src/intg.cc:6015
+#: src/intg.cc:6069
 msgid "Warning time reversal"
 msgstr "Advertencia: inversión temporal"
 
@@ -2012,11 +2012,11 @@ msgstr " está en el círculo unitario, usando residuos"
 msgid "Unable to sum "
 msgstr "No es posible sumar "
 
-#: src/risch.cc:72
+#: src/risch.cc:84
 msgid "Risch diff dimension"
 msgstr "Dimensión dif de Risch"
 
-#: src/risch.cc:459 src/risch.cc:490
+#: src/risch.cc:471 src/risch.cc:502
 msgid "risch.cc/hermite_reduce"
 msgstr "risch.cc/hermite_reduce"
 
@@ -2129,7 +2129,7 @@ msgstr "No es posible convertir a euler mac laurin"
 msgid "This function works only in radian mode"
 msgstr "Este recurso solo funciona en el modo de radianes"
 
-#: src/subst.cc:421 src/plot.cc:10035
+#: src/subst.cc:421 src/plot.cc:10046
 msgid "Unable to solve"
 msgstr "No es posible resolver"
 
@@ -2199,15 +2199,15 @@ msgstr "Error de raízP: no se encontró la raíz de "
 msgid "dotvector"
 msgstr "dotvector"
 
-#: src/vecteur.cc:3169
+#: src/vecteur.cc:3182
 msgid "dotvecteur"
 msgstr "dotvecteur"
 
-#: src/vecteur.cc:4850
+#: src/vecteur.cc:4876
 msgid "mmultck"
 msgstr "mmultck"
 
-#: src/vecteur.cc:6510
+#: src/vecteur.cc:6536
 msgid ""
 "Probabilistic algorithm for determinant\n"
 "(run proba_epsilon:=0 for a deterministic answer, this is slower).\n"
@@ -2217,19 +2217,19 @@ msgstr ""
 "(ejecute proba_epsilon:=0 para una respuesta determinista, esto tarda más).\n"
 "La probabilidad de error es inferior a "
 
-#: src/vecteur.cc:6632
+#: src/vecteur.cc:6658
 msgid " Early termination"
 msgstr " Terminación anticipada"
 
-#: src/vecteur.cc:6649
+#: src/vecteur.cc:6675
 msgid " dividing by determinant"
 msgstr " dividiendo por la determinante"
 
-#: src/vecteur.cc:6652
+#: src/vecteur.cc:6678
 msgid " end dividing by determinant"
 msgstr " termine dividiendo por la determinante"
 
-#: src/vecteur.cc:6756
+#: src/vecteur.cc:6794
 #, c-format
 msgid ""
 "%gen\n"
@@ -2238,70 +2238,70 @@ msgstr ""
 "%gen\n"
 "Reduzca la columna %gen con pivote %gen en la fila %gen"
 
-#: src/vecteur.cc:6764
+#: src/vecteur.cc:6802
 #, c-format
 msgid "Exchange row %gen and row %gen"
 msgstr "Intercambie la fila %gen y la fila %gen"
 
-#: src/vecteur.cc:6789 src/vecteur.cc:6814
+#: src/vecteur.cc:6827 src/vecteur.cc:6852
 #, c-format
 msgid "L%gen <- (%gen)*L%gen-(%gen)*L%gen on %gen"
 msgstr "L%gen <- (%gen)*L%gen-(%gen)*L%gen en %gen"
 
-#: src/vecteur.cc:7407
+#: src/vecteur.cc:7466
 #, c-format
 msgid "End reduction %gen"
 msgstr "Reducción final %gen"
 
-#: src/vecteur.cc:10282
+#: src/vecteur.cc:10341
 msgid "Unable to find a modulus to solve"
 msgstr "No es posible encontrar un módulo para solucionar"
 
-#: src/vecteur.cc:10288
+#: src/vecteur.cc:10347
 msgid "Incompatible system"
 msgstr "Sistema incompatible"
 
-#: src/vecteur.cc:10537
+#: src/vecteur.cc:10596
 msgid "idn"
 msgstr "idn"
 
-#: src/vecteur.cc:11504
+#: src/vecteur.cc:11565
 msgid "Warning: non-square matrix!"
 msgstr "Advertencia: ¡matriz no cuadrada!"
 
-#: src/vecteur.cc:13466
+#: src/vecteur.cc:13527
 msgid ""
 "Probabilistic answer. Run proba_epsilon:=0 for a certified result. Error <"
 msgstr ""
 "Respuesta probabilística. Ejecute proba_epsilon:=0 para obtener un resultado "
 "certificado. Error <"
 
-#: src/vecteur.cc:13686
+#: src/vecteur.cc:13747
 msgid "polymat2matpoly"
 msgstr "polymat2matpoly"
 
-#: src/vecteur.cc:13718
+#: src/vecteur.cc:13779
 msgid "polymat2mat"
 msgstr "polymat2mat"
 
-#: src/vecteur.cc:13763
+#: src/vecteur.cc:13824
 msgid "rat_jordan_block"
 msgstr "rat_jordan_block"
 
-#: src/vecteur.cc:13809
+#: src/vecteur.cc:13870
 msgid "pseudo_rat_ro_rat"
 msgstr "pseudo_rat_ro_rat"
 
-#: src/vecteur.cc:13874
+#: src/vecteur.cc:13935
 msgid "Low accuracy for Schur row "
 msgstr "Baja precisión en la fila de Schur "
 
-#: src/vecteur.cc:14465
+#: src/vecteur.cc:14526
 msgid "Unable to find exact eigenvalues. Trying approx"
 msgstr ""
 "No es posible encontrar valores propios exactos. Pruebe con los aproximados"
 
-#: src/vecteur.cc:14626
+#: src/vecteur.cc:14687
 msgid ""
 "Low accuracy or not diagonalizable at some eigenvalue. Try jordan if the "
 "matrix is exact."
@@ -2309,60 +2309,60 @@ msgstr ""
 "Baja precisión o imposibilidad de diagonalizar en algunos valores propios. "
 "Intente Jordan si la matriz es exacta."
 
-#: src/vecteur.cc:14750
+#: src/vecteur.cc:14811
 msgid "Unable to find all eigenvalues"
 msgstr "No es posible encontrar todos los valores propios"
 
-#: src/vecteur.cc:14774
+#: src/vecteur.cc:14835
 msgid " is not analytic"
 msgstr " no es analítico"
 
-#: src/vecteur.cc:14930 src/vecteur.cc:14977
+#: src/vecteur.cc:14991 src/vecteur.cc:15038
 msgid "cross"
 msgstr "vectorial"
 
-#: src/vecteur.cc:15055
+#: src/vecteur.cc:15116
 msgid "vecteur.cc vecteur2gsl_vector"
 msgstr "vecteur.cc vecteur2gsl_vector"
 
-#: src/vecteur.cc:15287 src/vecteur.cc:15311
+#: src/vecteur.cc:15348 src/vecteur.cc:15372
 msgid "LAPACK LU error"
 msgstr "Error de LAPACK LU"
 
-#: src/vecteur.cc:15334
+#: src/vecteur.cc:15395
 msgid "Expecting a square matrix"
 msgstr "Esperando una matriz cuadrada"
 
-#: src/vecteur.cc:15461 src/vecteur.cc:15712
+#: src/vecteur.cc:15522 src/vecteur.cc:15773
 msgid "LAPACK not available"
 msgstr "LAPACK no disponible"
 
-#: src/vecteur.cc:15467
+#: src/vecteur.cc:15528
 msgid "Lapack conversion error"
 msgstr "Conversión de error de Lapack"
 
-#: src/vecteur.cc:15479 src/vecteur.cc:15491 src/vecteur.cc:15510
-#: src/vecteur.cc:15737 src/vecteur.cc:15751
+#: src/vecteur.cc:15540 src/vecteur.cc:15552 src/vecteur.cc:15571
+#: src/vecteur.cc:15798 src/vecteur.cc:15812
 msgid "LAPACK error "
 msgstr "Error de LAPACK "
 
-#: src/vecteur.cc:15700
+#: src/vecteur.cc:15761
 msgid "Warning: svd is implemented for numeric matrices"
 msgstr "Advertencia: svd se implementa en las matrices numéricas"
 
-#: src/vecteur.cc:15974
+#: src/vecteur.cc:16035
 msgid "Non positive definite"
 msgstr "Definido no positivo"
 
-#: src/vecteur.cc:15994
+#: src/vecteur.cc:16055
 msgid "Not invertible matrice"
 msgstr "Matriz no inversible"
 
-#: src/vecteur.cc:16461 src/vecteur.cc:16639
+#: src/vecteur.cc:16522 src/vecteur.cc:16700
 msgid "Integer matrix expected"
 msgstr "Matriz de entero esperada"
 
-#: src/vecteur.cc:16795
+#: src/vecteur.cc:16856
 msgid "Expecting file name to convert"
 msgstr "Esperando el nombre de archivo para convertir"
 
@@ -2378,12 +2378,12 @@ msgstr "Precisión incorrecta, al usar 1e-12 en vez de "
 msgid "Square is flat!"
 msgstr "¡El cuadrado es plano!"
 
-#: src/global.cc:3428 src/hist.menus:1 src/hist.menus:4 src/History.cc:227
+#: src/global.cc:3433 src/hist.menus:1 src/hist.menus:4 src/History.cc:227
 #: src/History.cc:3727 src/Editeur.cc:2445
 msgid "File"
 msgstr "Archivo"
 
-#: src/global.cc:3801
+#: src/global.cc:3806
 msgid ""
 "\n"
 "Evaluation time: "
@@ -2391,23 +2391,23 @@ msgstr ""
 "\n"
 "Hora de evaluación: "
 
-#: src/global.cc:3817
+#: src/global.cc:3822
 msgid "Thread "
 msgstr "Thread "
 
-#: src/global.cc:3887
+#: src/global.cc:3892
 msgid "Cancel thread "
 msgstr "Cancelar thread "
 
-#: src/global.cc:3909
+#: src/global.cc:3914
 msgid "Evaluation time: "
 msgstr "Hora de evaluación: "
 
-#: src/global.cc:6045
+#: src/global.cc:6050
 msgid "Assigning phase, j, J and rect."
 msgstr ""
 
-#: src/global.cc:6055
+#: src/global.cc:6060
 msgid "Assigning gamma, fabs. Not supported: copysign."
 msgstr ""
 
@@ -2583,11 +2583,11 @@ msgstr "(Mac OS) Número grande, puede probar con pari(); pari_factor("
 msgid "ifactor.cc/ifactors"
 msgstr "ifactor.cc/ifactors"
 
-#: src/ifactor.cc:4352
+#: src/ifactor.cc:4370
 msgid "Integer too large"
 msgstr "Entero demasiado grande"
 
-#: src/ifactor.cc:4585 src/ifactor.cc:4615
+#: src/ifactor.cc:4603 src/ifactor.cc:4633
 msgid "No solution in ring"
 msgstr "No hay solución en el anillo"
 
@@ -2779,129 +2779,129 @@ msgstr ""
 "\n"
 "Pruebe un valor mayor para xstep"
 
-#: src/plot.cc:1576
+#: src/plot.cc:1580
 msgid "Plotfunc 2nd arg must be var or [var1,var2]"
 msgstr "El 2° argumento de Plotfunc debe ser var o [var1,var2]"
 
-#: src/plot.cc:2166
+#: src/plot.cc:2170
 msgid "Plotfunc: Range must be [xmin,ymin] or [xmax,ymax]"
 msgstr "Plotfunc: el rango debe ser [xmin,ymin] o [xmax,ymax]"
 
-#: src/plot.cc:2172 src/plot.cc:2183 src/plot.cc:2199
+#: src/plot.cc:2176 src/plot.cc:2187 src/plot.cc:2203
 msgid "Plotfunc: bad range value!"
 msgstr "Plotfunc: ¡valor de rango incorrecto!"
 
-#: src/plot.cc:2380
+#: src/plot.cc:2384
 msgid "pointon"
 msgstr "pointon"
 
-#: src/plot.cc:2674
+#: src/plot.cc:2678
 msgid "Non linear equations"
 msgstr "Ecuaciones no lineales"
 
-#: src/plot.cc:2677
+#: src/plot.cc:2681
 msgid "Parallel plans"
 msgstr "Planos paralelos"
 
-#: src/plot.cc:2792
+#: src/plot.cc:2796
 msgid "Not a line!"
 msgstr "¡No es una línea!"
 
-#: src/plot.cc:2810
+#: src/plot.cc:2814
 msgid "2-d instruction"
 msgstr "Instrucción 2-d"
 
-#: src/plot.cc:3617
+#: src/plot.cc:3621
 msgid "3-d instruction"
 msgstr "Instrucción 3-d"
 
-#: src/plot.cc:3775 src/plot.cc:3814 src/Input.cc:1280 src/Input.cc:1282
-#: src/Graph.cc:6779
+#: src/plot.cc:3779 src/plot.cc:3818 src/Input.cc:1280 src/Input.cc:1282
+#: src/Graph.cc:6787
 msgid "circle"
 msgstr "círculo"
 
-#: src/plot.cc:3966
+#: src/plot.cc:3970
 msgid "milieu"
 msgstr "medio"
 
-#: src/plot.cc:4045
+#: src/plot.cc:4049
 msgid "3 points expected"
 msgstr "se esperan 3 puntos"
 
-#: src/plot.cc:4077
+#: src/plot.cc:4081
 msgid "midpoint"
 msgstr "punto medio"
 
-#: src/plot.cc:5137
+#: src/plot.cc:5141
 msgid "Sum of coeff is 0"
 msgstr "La suma del coef. es 0"
 
-#: src/plot.cc:5430
+#: src/plot.cc:5434
 msgid "line2curve"
 msgstr "line2curve"
 
-#: src/plot.cc:5449
+#: src/plot.cc:5453
 msgid "Distance curve/curve not implemented"
 msgstr "Curva de distancia/curva no implementada"
 
-#: src/plot.cc:5884 src/plot.cc:5896
+#: src/plot.cc:5888 src/plot.cc:5900
 msgid "area(f(x),x=a..b,n,method])"
 msgstr "area(f(x),x=a..b,n,method])"
 
-#: src/plot.cc:6036
+#: src/plot.cc:6040
 msgid "angle plan with unknown"
 msgstr "plano del ángulo con desconocido"
 
-#: src/plot.cc:6046 src/plot.cc:6072 src/plot.cc:6086
+#: src/plot.cc:6050 src/plot.cc:6076 src/plot.cc:6090
 msgid "angle"
 msgstr "ángulo"
 
-#: src/plot.cc:6053
+#: src/plot.cc:6057
 msgid "Lines must intersect"
 msgstr "Las líneas deben cruzarse"
 
-#: src/plot.cc:6411 src/plot.cc:6423 src/plot.cc:6435 src/plot.cc:6438
-#: src/plot.cc:6444
+#: src/plot.cc:6415 src/plot.cc:6427 src/plot.cc:6439 src/plot.cc:6442
+#: src/plot.cc:6448
 msgid "plot.cc/parameter2point"
 msgstr "plot.cc/parameter2point"
 
-#: src/plot.cc:6615
+#: src/plot.cc:6619
 msgid "Line "
 msgstr "Línea "
 
-#: src/plot.cc:6936
+#: src/plot.cc:6940
 msgid "Locus on an unknown parametric curve type"
 msgstr "Locus en un tipo de curva paramétrica desconocida"
 
-#: src/plot.cc:6971
+#: src/plot.cc:6975
 msgid "3-d enveloppe not implemented"
 msgstr "Sobre 3-d no implementado"
 
-#: src/plot.cc:7019
+#: src/plot.cc:7023
 msgid "Equation 0 = "
 msgstr "Ecuación 0 = "
 
-#: src/plot.cc:7212 src/plot.cc:7215 src/plot.cc:7229
+#: src/plot.cc:7216 src/plot.cc:7219 src/plot.cc:7233
 msgid "sommet"
 msgstr "sommet"
 
-#: src/plot.cc:7848
+#: src/plot.cc:7852
 msgid "gen2complex"
 msgstr "gen2complex"
 
-#: src/plot.cc:8043
+#: src/plot.cc:8047
 msgid "Not implemented or bad argument type/value"
 msgstr "No implementado o tipo/valor de argumento incorrecto"
 
-#: src/plot.cc:8289
+#: src/plot.cc:8293
 msgid "First arg of translation should not be a point"
 msgstr "El primer arg. de la traducción no debe ser un punto"
 
-#: src/plot.cc:8348
+#: src/plot.cc:8352
 msgid "Plotparam: unable to discretize: tmin, tmax, tstep="
 msgstr "Plotparam: no es posible discretizar: tmin, tmax, tstep="
 
-#: src/plot.cc:8348
+#: src/plot.cc:8352
 msgid ""
 "\n"
 "Try a larger value for tstep"
@@ -2909,199 +2909,199 @@ msgstr ""
 "\n"
 "Pruebe un valor mayor para tstep"
 
-#: src/plot.cc:8628 src/plot.cc:8822
+#: src/plot.cc:8632 src/plot.cc:8833
 msgid "2nd arg must be a free variable"
 msgstr "El 2° arg debe ser una variable libre"
 
-#: src/plot.cc:8707
+#: src/plot.cc:8711
 msgid "To get a point, run point("
 msgstr "Para obtener un punto, ejecute point("
 
-#: src/plot.cc:8711
+#: src/plot.cc:8715
 #, fuzzy
 msgid "Assuming you want to run polygonplot"
 msgstr "Suponiendo que usted quiera ejecutar polygonscatterplot"
 
-#: src/plot.cc:8842
+#: src/plot.cc:8853
 msgid "Variable x should be purged"
 msgstr "La variable x debe depurarse"
 
-#: src/plot.cc:8849
+#: src/plot.cc:8860
 msgid "Variable y should be purged"
 msgstr "La variable y debe depurarse"
 
-#: src/plot.cc:8856
+#: src/plot.cc:8867
 msgid "Variable z should be purged"
 msgstr "La variable z debe depurarse"
 
-#: src/plot.cc:8863
+#: src/plot.cc:8874
 msgid "Variable "
 msgstr "Variable "
 
-#: src/plot.cc:8863
+#: src/plot.cc:8874
 msgid " should be purged"
 msgstr " debe depurarse"
 
-#: src/plot.cc:8870
+#: src/plot.cc:8881
 msgid "Variable t should be purged"
 msgstr "La variable t debe depurarse"
 
-#: src/plot.cc:8877
+#: src/plot.cc:8888
 msgid "Variable u should be purged"
 msgstr "La variable u debe depurarse"
 
-#: src/plot.cc:8884
+#: src/plot.cc:8895
 msgid "Variable v should be purged"
 msgstr "La variable v debe depurarse"
 
-#: src/plot.cc:9153
+#: src/plot.cc:9164
 msgid "Wrong parameter type "
 msgstr "Tipo de parámetro equivocado "
 
-#: src/plot.cc:9171
+#: src/plot.cc:9182
 msgid "Can't isolate"
 msgstr "No se puede aislar"
 
-#: src/plot.cc:9280
+#: src/plot.cc:9291
 msgid "3-d line/2-d circle"
 msgstr "Línea 3-d/círculo 2-d"
 
-#: src/plot.cc:9282
+#: src/plot.cc:9293
 msgid "2-d line/sphere"
 msgstr "Línea/esfera 2-d"
 
-#: src/plot.cc:9427
+#: src/plot.cc:9438
 msgid "Unable to solve intersection equation "
 msgstr "No es posible resolver la ecuación de la intersección "
 
-#: src/plot.cc:9781
+#: src/plot.cc:9792
 msgid "Point is not on curve"
 msgstr "El punto no está en la curva"
 
-#: src/plot.cc:9783
+#: src/plot.cc:9794
 msgid "2-d point expected"
 msgstr "Punto 2-d esperado"
 
-#: src/plot.cc:9865
+#: src/plot.cc:9876
 msgid "Hypersurface w/o equation not implemented"
 msgstr "Hipersurficie c/s ecuación no implementada"
 
-#: src/plot.cc:9870
+#: src/plot.cc:9881
 msgid "f(t)!=0:"
 msgstr "f(t)!=0:"
 
-#: src/plot.cc:10408
+#: src/plot.cc:10419
 msgid "Bug in conique reducing "
 msgstr "Error al reducir el cónico "
 
-#: src/plot.cc:10416
+#: src/plot.cc:10427
 msgid "Bug in conique, equation "
 msgstr "Error en el cónico, ecuación "
 
-#: src/plot.cc:10785
+#: src/plot.cc:10796
 msgid "Use pencolor for the turtle"
 msgstr "Use pencolor para la tortuga"
 
-#: src/plot.cc:10905
+#: src/plot.cc:10916
 msgid "Time"
 msgstr "Tiempo"
 
-#: src/plot.cc:11218
+#: src/plot.cc:11229
 msgid "End interactive_plotode"
 msgstr "interactive_plotode final"
 
-#: src/plot.cc:11422
+#: src/plot.cc:11433
 msgid "End of stream"
 msgstr "Fin del flujo"
 
-#: src/plot.cc:11782 src/History.cc:1728
+#: src/plot.cc:11793 src/History.cc:1728
 msgid "Unable to open file "
 msgstr "No es posible abrir el archivo "
 
-#: src/plot.cc:11785
+#: src/plot.cc:11796
 msgid "Error writing "
 msgstr "Error al escribir "
 
-#: src/plot.cc:11807
+#: src/plot.cc:11818
 msgid "Unable to read file"
 msgstr "No es posible leer el archivo"
 
-#: src/plot.cc:11997
+#: src/plot.cc:12008
 msgid "Bad iteration"
 msgstr "Iteración incorrecta"
 
-#: src/plot.cc:12254
+#: src/plot.cc:12265
 msgid "Near "
 msgstr "Cerca "
 
-#: src/plot.cc:12361
+#: src/plot.cc:12372
 msgid ""
 "Singular points directions: [cell_i, cell_j, singularity, next solution] "
 msgstr ""
 "Direcciones de puntos singulares: [cell_i, cell_j, singularity, next "
 "solution] "
 
-#: src/plot.cc:12563
+#: src/plot.cc:12574
 msgid "Bad branch, questionnable accuracy"
 msgstr "Rama incorrecta, precisión cuestionable"
 
-#: src/plot.cc:12633 src/plot.cc:12675 src/plot.cc:12737
+#: src/plot.cc:12644 src/plot.cc:12686 src/plot.cc:12748
 msgid "Warning! Could not loop or reach boundaries "
 msgstr "¡Advertencia! No fue posible enlazar o alcanzar los límites "
 
-#: src/plot.cc:12731
+#: src/plot.cc:12742
 msgid "Implicitplot "
 msgstr "Implicitplot "
 
-#: src/plot.cc:12755 src/plot3d.cc:2138
+#: src/plot.cc:12766 src/plot3d.cc:2138
 msgid "Variables must be free"
 msgstr "Las variables deben ser libres"
 
-#: src/plot.cc:12759
+#: src/plot.cc:12770
 msgid "Impliciplot: temporarily swtiching to real mode"
 msgstr "Impliciplot: alternación temporal al modo real"
 
-#: src/plot.cc:14073
+#: src/plot.cc:14084
 msgid "vecteur2turtle"
 msgstr "vecteur2turtle"
 
-#: src/plot.cc:14412
+#: src/plot.cc:14423
 msgid "Give a name to the procedure, e.g. test"
 msgstr "Nombre el procedimiento, por ej. prueba"
 
-#: src/plot.cc:14417
+#: src/plot.cc:14428
 msgid "Give a name to thr procedure, e.g. \"test\""
 msgstr "Nombre el procedimiento de thr, por ej. \"test\""
 
-#: src/plot.cc:14436
+#: src/plot.cc:14447
 msgid "Give a filename, e.g. \"test\""
 msgstr "Brinde un nombre de archivo, por ej. \"test\""
 
-#: src/plot.cc:14444
+#: src/plot.cc:14455
 msgid "Instruction debut_enregistrement not found"
 msgstr "No se encontró la instrucción debut_enregistrement"
 
-#: src/plot.cc:14686
+#: src/plot.cc:14697
 msgid "Integer argument >= 2"
 msgstr "Argumento de entero >= 2"
 
-#: src/plot.cc:14824
+#: src/plot.cc:14835
 msgid "Collinear points"
 msgstr "Puntos colineales"
 
-#: src/plot.cc:15159
+#: src/plot.cc:15170
 msgid "Circle centers are identical"
 msgstr "Los centros del círculos son idénticos"
 
-#: src/plot.cc:15334 src/Graph.cc:6814
+#: src/plot.cc:15345 src/Graph.cc:6822
 msgid "reciprocation"
 msgstr "reciprocación"
 
-#: src/plot.cc:15542 src/plot.cc:15546 src/plot.cc:15561
+#: src/plot.cc:15553 src/plot.cc:15557 src/plot.cc:15572
 msgid "conj_harmonique"
 msgstr "conj_harmonique"
 
-#: src/plot.cc:15823
+#: src/plot.cc:15834
 msgid "enveloppe"
 msgstr "sobre"
 
@@ -3307,7 +3307,7 @@ msgstr "Advertencia: las variables locales ocultan los argumentos de función "
 msgid "Too many recursions"
 msgstr "Demasiadas recursiones"
 
-#: src/prog.cc:1491 src/gen.cc:2180 src/gen.cc:2193 src/gen.cc:11795
+#: src/prog.cc:1491 src/gen.cc:2180 src/gen.cc:2193 src/gen.cc:11813
 msgid "Too many recursion levels"
 msgstr "Demasiados niveles de recursión"
 
@@ -3755,7 +3755,7 @@ msgstr ""
 msgid "Iquo"
 msgstr "Iquo"
 
-#: src/usual.cc:6344 src/gen.cc:7617
+#: src/usual.cc:6344 src/gen.cc:7633
 msgid "Division by 0"
 msgstr "División entre 0"
 
@@ -4043,21 +4043,21 @@ msgstr ""
 "Advertencia + es adición de vector, en vez de ello, ejecute list1.extend"
 "(list2)"
 
-#: src/gen.cc:5133 src/gen.cc:5135
+#: src/gen.cc:5139 src/gen.cc:5141
 msgid "subpoly"
 msgstr "subpoly"
 
-#: src/gen.cc:5709 src/gen.cc:5711
+#: src/gen.cc:5715 src/gen.cc:5717
 msgid "mulpoly"
 msgstr "mulpoly"
 
-#: src/gen.cc:6159
+#: src/gen.cc:6165
 msgid ""
 "Python compatibility, integer*list will do vector multiplication, run "
 "list*integer to duplicate list"
 msgstr ""
 
-#: src/gen.cc:6579
+#: src/gen.cc:6585
 msgid ""
 "Warning, ^ is ambiguous on non square matrices. Use .^ to apply ^ element by "
 "element."
@@ -4065,33 +4065,33 @@ msgstr ""
 "Advertencia, ^ son matrices no cuadradas o ambiguas. Use .^ para aplicar ^ "
 "elemento por elemento."
 
-#: src/gen.cc:6810
+#: src/gen.cc:6816
 msgid "Use matpow to force computation of a power of matrix via jordanisation"
 msgstr ""
 "Use matpow para forzar el cálculo de una potencia de matriz mediante la "
 "jordanización"
 
-#: src/gen.cc:6851
+#: src/gen.cc:6857
 msgid "Negative to a fractional power"
 msgstr "Negativo para una potencia fraccional"
 
-#: src/gen.cc:7105
+#: src/gen.cc:7111
 msgid "Unable to multiply two graphic objects"
 msgstr "No es posible multiplicar dos objetos gráficos"
 
-#: src/gen.cc:7374
+#: src/gen.cc:7380
 msgid "Inv of non-square matrix"
 msgstr "Inv de matriz no cuadrada"
 
-#: src/gen.cc:7507
+#: src/gen.cc:7515
 msgid "Pow"
 msgstr "Pow"
 
-#: src/gen.cc:7634
+#: src/gen.cc:7652
 msgid "iquo"
 msgstr "iquo"
 
-#: src/gen.cc:7796
+#: src/gen.cc:7814
 msgid ""
 "Warning: A/B with B a square matrix is a misleading notation interpreted as "
 "inv(B)*A"
@@ -4099,7 +4099,7 @@ msgstr ""
 "Advertencia: una matriz cuadrada A/B con B es una notación errónea "
 "interpretada como inv(B)*A"
 
-#: src/gen.cc:7799
+#: src/gen.cc:7817
 msgid ""
 "Warning, pointwise division of a by b. For matrix division, please use inv(b)"
 "*a or a*inv(b)"
@@ -4107,11 +4107,11 @@ msgstr ""
 "Advertencia, la división pointwise de a entre b. Para la división de la "
 "matriz, use inv(b)*a o a*inv(b)"
 
-#: src/gen.cc:8009
+#: src/gen.cc:8027
 msgid "rdiv"
 msgstr "rdiv"
 
-#: src/gen.cc:8627
+#: src/gen.cc:8645
 msgid ""
 "Warning, sign might return 0 incorrectly because the value of eps is too "
 "large "
@@ -4119,115 +4119,115 @@ msgstr ""
 "Advertencia, el signo podría retornar 0 de forma incorrecta porque el valor "
 "de eps es demasiado largo "
 
-#: src/gen.cc:9073
+#: src/gen.cc:9091
 msgid "Gen [int]"
 msgstr "Gen [int]"
 
-#: src/gen.cc:9079
+#: src/gen.cc:9097
 msgid "Index outside range : "
 msgstr "Rango fuera del índice: "
 
-#: src/gen.cc:9162 src/gen.cc:9242
+#: src/gen.cc:9180 src/gen.cc:9260
 msgid "Warning, using :0:-step, use :-1:-step for ::"
 msgstr ""
 
-#: src/gen.cc:9439
+#: src/gen.cc:9457
 msgid "Warning, evaluating ("
 msgstr "Advertencia, evaluación ("
 
-#: src/gen.cc:9464
+#: src/gen.cc:9482
 msgid "Index out of range"
 msgstr "Índice fuera del rango"
 
-#: src/gen.cc:9568
+#: src/gen.cc:9586
 msgid "islesscomplexthan mod"
 msgstr "mod islesscomplexthan"
 
-#: src/gen.cc:9851
+#: src/gen.cc:9869
 msgid "power_basis_exp"
 msgstr "power_basis_exp"
 
-#: src/gen.cc:10448
+#: src/gen.cc:10466
 msgid "symgcd"
 msgstr "symgcd"
 
-#: src/gen.cc:10530
+#: src/gen.cc:10548
 msgid "simplify: Polynomials do not have the same dimension"
 msgstr "simplifique: los polinomios no tienen la misma dimensión"
 
-#: src/gen.cc:10578
+#: src/gen.cc:10596
 msgid "gen.cc:simplify"
 msgstr "gen.cc:simplify"
 
-#: src/gen.cc:10582
+#: src/gen.cc:10600
 msgid "gen.cc:simplify/tmp.type!=_EXT"
 msgstr "gen.cc:simplify/tmp.type!=_EXT"
 
-#: src/gen.cc:10589 src/hist.cxx:4033 src/Equation.cc:4533
+#: src/gen.cc:10607 src/hist.cxx:4033 src/Equation.cc:4533
 msgid "simplify"
 msgstr "simplifique"
 
-#: src/gen.cc:10789 src/hist.cxx:4338
+#: src/gen.cc:10807 src/hist.cxx:4338
 msgid "%"
 msgstr "%"
 
-#: src/gen.cc:10856
+#: src/gen.cc:10874
 msgid "irem"
 msgstr "irem"
 
-#: src/gen.cc:11027
+#: src/gen.cc:11045
 msgid "Not invertible "
 msgstr "No inversible "
 
-#: src/gen.cc:11057 src/gen.cc:11060
+#: src/gen.cc:11075 src/gen.cc:11078
 msgid "invmod"
 msgstr "invmod"
 
-#: src/gen.cc:11198
+#: src/gen.cc:11216
 msgid "Reconstructed denominator is not prime with modulo"
 msgstr "El denominador reconstruido no es primo con módulo"
 
-#: src/gen.cc:11246 src/gen.cc:11263
+#: src/gen.cc:11264 src/gen.cc:11281
 msgid "powmod"
 msgstr "powmod"
 
-#: src/gen.cc:11284
+#: src/gen.cc:11302
 msgid "No Integer Solution"
 msgstr "No es solución de entero"
 
-#: src/gen.cc:11291
+#: src/gen.cc:11309
 msgid "isqrt"
 msgstr "isqrt"
 
-#: src/gen.cc:11333
+#: src/gen.cc:11351
 msgid "is_probab_prime_p"
 msgstr "is_probab_prime_p"
 
-#: src/gen.cc:11367
+#: src/gen.cc:11385
 msgid "nextprime"
 msgstr "nextprime"
 
-#: src/gen.cc:11376 src/gen.cc:11397
+#: src/gen.cc:11394 src/gen.cc:11415
 msgid "Interrupted"
 msgstr "Interrumpido"
 
-#: src/gen.cc:11384
+#: src/gen.cc:11402
 msgid "prevprime"
 msgstr "prevprime"
 
-#: src/gen.cc:11407
+#: src/gen.cc:11425
 msgid "jacobi"
 msgstr "jacobi"
 
-#: src/gen.cc:11443
+#: src/gen.cc:11461
 msgid "legendre"
 msgstr "legendre"
 
-#: src/gen.cc:11484
+#: src/gen.cc:11502
 msgid "has_denominator"
 msgstr "has_denominator"
 
-#: src/gen.cc:11825 src/gen.cc:11836 src/gen.cc:11844
+#: src/gen.cc:11843 src/gen.cc:11854 src/gen.cc:11862
 msgid ""
 "Warning, i is usually sqrt(-1), I'm using a symbolic variable instead but "
 "you should check your input"
@@ -4235,27 +4235,27 @@ msgstr ""
 "Advertencia, i suele ser sqrt(-1), en vez de ello, estoy usando una variable "
 "simbólica pero debe verificar su entrada"
 
-#: src/gen.cc:12337
+#: src/gen.cc:12355
 msgid "Empty array"
 msgstr "Matriz vacía"
 
-#: src/gen.cc:12342
+#: src/gen.cc:12360
 msgid "Bad array indexes"
 msgstr "Índices de matriz incorrectos"
 
-#: src/gen.cc:13973 src/Editeur.cc:2492
+#: src/gen.cc:13991 src/Editeur.cc:2492
 msgid "print"
 msgstr "imprimir"
 
-#: src/gen.cc:14714 src/gen.cc:14773
+#: src/gen.cc:14732 src/gen.cc:14791
 msgid "Unable to convert to real "
 msgstr "No es posible convertir en real "
 
-#: src/gen.cc:14867 src/gen.cc:14888 src/gen.cc:14994 src/gen.cc:15013
+#: src/gen.cc:14885 src/gen.cc:14906 src/gen.cc:15012 src/gen.cc:15031
 msgid "real_object + gen"
 msgstr "real_object + gen"
 
-#: src/gen.cc:15150
+#: src/gen.cc:15168
 msgid ""
 "Compile with MPFR or USE_GMP_REPLACEMENTS if you want transcendental long "
 "float support"
@@ -4263,34 +4263,34 @@ msgstr ""
 "Compile con MPFR o USE_GMP_REPLACEMENTS si desea compatibilidad con flotante "
 "largo trascendental"
 
-#: src/gen.cc:15438
+#: src/gen.cc:15456
 msgid "real_interval inv"
 msgstr "real_interval inv"
 
-#: src/gen.cc:15454 src/gen.cc:15476 src/gen.cc:15487 src/gen.cc:15498
-#: src/gen.cc:15509 src/gen.cc:15520 src/gen.cc:15531 src/gen.cc:15542
-#: src/gen.cc:15553 src/gen.cc:15564 src/gen.cc:15575 src/gen.cc:15586
-#: src/gen.cc:15597 src/gen.cc:15608 src/gen.cc:15619
+#: src/gen.cc:15472 src/gen.cc:15494 src/gen.cc:15505 src/gen.cc:15516
+#: src/gen.cc:15527 src/gen.cc:15538 src/gen.cc:15549 src/gen.cc:15560
+#: src/gen.cc:15571 src/gen.cc:15582 src/gen.cc:15593 src/gen.cc:15604
+#: src/gen.cc:15615 src/gen.cc:15626 src/gen.cc:15637
 msgid "real_interval sqrt"
 msgstr "real_interval sqrt"
 
-#: src/gen.cc:15465
+#: src/gen.cc:15483
 msgid "real_interval abs"
 msgstr "real_interval abs"
 
-#: src/gen.cc:15695
+#: src/gen.cc:15713
 msgid "real_interval mul"
 msgstr "real_interval mul"
 
-#: src/gen.cc:15725
+#: src/gen.cc:15743
 msgid "real_interval mul 2"
 msgstr "real_interval mul 2"
 
-#: src/gen.cc:15827
+#: src/gen.cc:15845
 msgid "MPFR error reading binary "
 msgstr "Error de MPFR al leer en binario "
 
-#: src/gen.cc:15829
+#: src/gen.cc:15847
 msgid "Error no MPFR reading "
 msgstr "Error de lectura de no MPFR "
 
@@ -4420,19 +4420,19 @@ msgstr ""
 # src/xcas.cxx:3724
 # src/xcas.cxx:3761
 # src/xcas.cxx:4777
-#: src/hist.cxx:1777 src/hist.cxx:1832 src/Graph.cc:6141
+#: src/hist.cxx:1777 src/hist.cxx:1832 src/Graph.cc:6149
 #, fuzzy
 msgid "Graph of a function"
 msgstr "Guardar config."
 
-#: src/hist.cxx:1810 src/Graph.cc:6747
+#: src/hist.cxx:1810 src/Graph.cc:6755
 msgid "Area under curve"
 msgstr ""
 
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/hist.cxx:1854 src/Graph.cc:6338
+#: src/hist.cxx:1854 src/Graph.cc:6346
 #, fuzzy
 msgid "Graph of a recurrent sequence"
 msgstr "Imprimir sesión"
@@ -4984,7 +4984,7 @@ msgstr ""
 # src/xcas.cxx:7903
 # src/xcas.cxx:7970
 # src/xcas.cxx:9117
-#: src/hist.cxx:4172 src/Graph.cc:6745
+#: src/hist.cxx:4172 src/Graph.cc:6753
 #, fuzzy
 msgid "Tangent"
 msgstr "General"
@@ -5467,7 +5467,7 @@ msgstr "Imprimir gráf."
 msgid "Format"
 msgstr "Normal"
 
-#: src/hist.cxx:4949 src/Tableur.cc:158 src/Graph.cc:6738
+#: src/hist.cxx:4949 src/Tableur.cc:158 src/Graph.cc:6746
 #, fuzzy
 msgid "Landscape"
 msgstr "Cargar script en eqw"
@@ -5683,7 +5683,7 @@ msgstr "Líneas"
 # src/xcas.cxx:3738
 # src/xcas.cxx:4766
 #: src/hist.menus:13 src/History.cc:3737 src/Tableur.cc:2937
-#: src/Editeur.cc:2444 src/Graph.cc:6721
+#: src/Editeur.cc:2444 src/Graph.cc:6729
 #, fuzzy
 msgid "Insert"
 msgstr "Insertar fila"
@@ -5792,7 +5792,7 @@ msgstr "completar"
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
 #: src/hist.menus:30 src/hist.menus:313 src/hist.menus:315 src/History.cc:3744
-#: src/Graph.cc:1196 src/Graph.cc:7629
+#: src/Graph.cc:1196 src/Graph.cc:7637
 #, fuzzy
 msgid "Print"
 msgstr "Imprimir sesión"
@@ -5808,7 +5808,7 @@ msgstr "Vista preliminar"
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/hist.menus:32 src/Graph.cc:6724
+#: src/hist.menus:32 src/Graph.cc:6732
 #, fuzzy
 msgid "To printer"
 msgstr "Imprimir sesión"
@@ -5876,7 +5876,7 @@ msgstr "Salir"
 # src/xcas.cxx:3765
 # src/xcas.cxx:4782
 #: src/hist.menus:44 src/History.cc:3754 src/Tableur.cc:2947
-#: src/Editeur.cc:2475 src/Graph.cc:6729
+#: src/Editeur.cc:2475 src/Graph.cc:6737
 msgid "Edit"
 msgstr "Editar"
 
@@ -5914,11 +5914,11 @@ msgstr "Seleccionar respuesta"
 # src/xcas.cxx:7990
 # src/xcas.cxx:8060
 # src/xcas.cxx:4800
-#: src/hist.menus:49 src/History.cc:3794 src/Tableur.cc:2951 src/Graph.cc:6739
+#: src/hist.menus:49 src/History.cc:3794 src/Tableur.cc:2951 src/Graph.cc:6747
 msgid "Undo"
 msgstr "Deshacer"
 
-#: src/hist.menus:50 src/History.cc:3795 src/Tableur.cc:2952 src/Graph.cc:6740
+#: src/hist.menus:50 src/History.cc:3795 src/Tableur.cc:2952 src/Graph.cc:6748
 msgid "Redo"
 msgstr ""
 
@@ -5926,7 +5926,7 @@ msgstr ""
 # src/xcas.cxx:3816
 # src/xcas.cxx:4799
 #: src/hist.menus:51 src/History.cc:3789 src/Tableur.cc:2950
-#: src/Editeur.cc:2476 src/Graph.cc:6735
+#: src/Editeur.cc:2476 src/Graph.cc:6743
 msgid "Paste"
 msgstr "Pegar"
 
@@ -6975,7 +6975,7 @@ msgstr "Distribuciones"
 # src/xcas.cxx:3974
 # src/xcas.cxx:4021
 # src/xcas.cxx:5114
-#: src/hist.menus:258 src/Graph.cc:6784
+#: src/hist.menus:258 src/Graph.cc:6792
 #, fuzzy
 msgid "Curves"
 msgstr "Circunferencias"
@@ -7258,7 +7258,7 @@ msgstr ": fichero existe. ¿Sobreescribir?"
 #: src/Tableur.cc:1496 src/Tableur.cc:1833 src/Tableur.cc:2002
 #: src/Tableur.cc:2084 src/Tableur.cc:2287 src/Editeur.cc:1634
 #: src/Editeur.cc:1768 src/Editeur.cc:1933 src/Graph.cc:1496 src/Graph.cc:1811
-#: src/Graph.cc:3176 src/Graph.cc:5746 src/Graph.cc:5952
+#: src/Graph.cc:3176 src/Graph.cc:5754 src/Graph.cc:5960
 msgid "OK"
 msgstr ""
 
@@ -7272,7 +7272,7 @@ msgstr ""
 #: src/Tableur.cc:2005 src/Tableur.cc:2087 src/Tableur.cc:2290
 #: src/Editeur.cc:1492 src/Editeur.cc:1637 src/Editeur.cc:1771
 #: src/Editeur.cc:1936 src/Graph.cc:954 src/Graph.cc:1498 src/Graph.cc:1813
-#: src/Graph.cc:3179 src/Graph.cc:5749 src/Graph.cc:5955
+#: src/Graph.cc:3179 src/Graph.cc:5757 src/Graph.cc:5963
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -7318,7 +7318,7 @@ msgid ""
 msgstr "Error analizando línea "
 
 #: src/History.cc:488 src/History.cc:510 src/Input.cc:1036 src/Editeur.cc:1166
-#: src/Editeur.cc:1251 src/Editeur.cc:1428 src/Graph.cc:7431 src/Graph.cc:7457
+#: src/Editeur.cc:1251 src/Editeur.cc:1428 src/Graph.cc:7439 src/Graph.cc:7465
 #, fuzzy
 msgid " column "
 msgstr "columna"
@@ -7326,7 +7326,7 @@ msgstr "columna"
 # src/xcas.cxx:6543
 # src/xcas.cxx:174 src/xcas.cxx:6644
 #: src/History.cc:488 src/History.cc:510 src/Input.cc:1036 src/Editeur.cc:1166
-#: src/Editeur.cc:1251 src/Editeur.cc:1428 src/Graph.cc:7431 src/Graph.cc:7457
+#: src/Editeur.cc:1251 src/Editeur.cc:1428 src/Graph.cc:7439 src/Graph.cc:7465
 msgid " at "
 msgstr " en "
 
@@ -7605,7 +7605,7 @@ msgstr "etiqueta"
 msgid "remove answers below"
 msgstr "Seleccionar respuesta"
 
-#: src/History.cc:3790 src/Graph.cc:6736
+#: src/History.cc:3790 src/Graph.cc:6744
 msgid "Delete selected levels"
 msgstr ""
 
@@ -7766,7 +7766,7 @@ msgstr ""
 # src/xcas.cxx:6543
 # src/xcas.cxx:174 src/xcas.cxx:6644
 #: src/Input.cc:1036 src/Editeur.cc:1166 src/Editeur.cc:1251
-#: src/Editeur.cc:1428 src/Graph.cc:7431 src/Graph.cc:7457
+#: src/Editeur.cc:1428 src/Graph.cc:7439 src/Graph.cc:7465
 msgid "Parse error line "
 msgstr "Error analizando línea "
 
@@ -7777,7 +7777,7 @@ msgstr ""
 # src/xcas.cxx:3810
 # src/xcas.cxx:3854
 # src/xcas.cxx:4943
-#: src/Input.cc:1285 src/Graph.cc:6776
+#: src/Input.cc:1285 src/Graph.cc:6784
 #, fuzzy
 msgid "polygon"
 msgstr "Polinómios"
@@ -7785,19 +7785,19 @@ msgstr "Polinómios"
 # src/xcas.cxx:3954
 # src/xcas.cxx:4001
 # src/xcas.cxx:5087
-#: src/Input.cc:1290 src/Graph.cc:6764
+#: src/Input.cc:1290 src/Graph.cc:6772
 #, fuzzy
 msgid "line"
 msgstr "Líneas"
 
-#: src/Input.cc:1293 src/Graph.cc:6763
+#: src/Input.cc:1293 src/Graph.cc:6771
 msgid "half_line"
 msgstr ""
 
 # src/xcas.cxx:4071
 # src/xcas.cxx:4118
 # src/xcas.cxx:5357
-#: src/Input.cc:1296 src/Graph.cc:6761
+#: src/Input.cc:1296 src/Graph.cc:6769
 #, fuzzy
 msgid "segment"
 msgstr "Listas"
@@ -8391,7 +8391,7 @@ msgstr ""
 msgid "Copy W to XYminmax"
 msgstr ""
 
-#: src/Equation.cc:4530 src/Graph.cc:1153 src/Graph.cc:7611
+#: src/Equation.cc:4530 src/Graph.cc:1153 src/Graph.cc:7619
 msgid "M"
 msgstr ""
 
@@ -8557,7 +8557,7 @@ msgstr "Hoja de cálculo"
 msgid "Split sheet/graph horizontally or vertically"
 msgstr ""
 
-#: src/Tableur.cc:160 src/Tableur.cc:2955 src/Graph.cc:6743
+#: src/Tableur.cc:160 src/Tableur.cc:2955 src/Graph.cc:6751
 msgid "Graph"
 msgstr ""
 
@@ -8606,7 +8606,7 @@ msgstr ""
 msgid "Save sheet"
 msgstr "Grabar hoja como"
 
-#: src/Tableur.cc:1278 src/Editeur.cc:750 src/Graph.cc:5593
+#: src/Tableur.cc:1278 src/Editeur.cc:750 src/Graph.cc:5601
 msgid ": file exists. Overwrite?"
 msgstr ": fichero existe. ¿Sobreescribir?"
 
@@ -8753,7 +8753,7 @@ msgstr ""
 msgid "Expression of the function (e.g x-y^2)"
 msgstr ""
 
-#: src/Tableur.cc:1795 src/Graph.cc:5887 src/Graph.cc:5893
+#: src/Tableur.cc:1795 src/Graph.cc:5895 src/Graph.cc:5901
 msgid "1st var"
 msgstr ""
 
@@ -8762,11 +8762,11 @@ msgstr ""
 msgid "Independant variable name (e.g x)"
 msgstr "Añadir un nombre de variable"
 
-#: src/Tableur.cc:1798 src/Graph.cc:5890 src/Graph.cc:5896 src/Graph.cc:5902
+#: src/Tableur.cc:1798 src/Graph.cc:5898 src/Graph.cc:5904 src/Graph.cc:5910
 msgid "2nd var"
 msgstr ""
 
-#: src/Tableur.cc:1800 src/Graph.cc:5898
+#: src/Tableur.cc:1800 src/Graph.cc:5906
 #, fuzzy
 msgid "Second independant variable name (e.g y)"
 msgstr "Añadir un nombre de variable"
@@ -8774,7 +8774,7 @@ msgstr "Añadir un nombre de variable"
 # src/xcas.cxx:8156
 # src/xcas.cxx:8234
 # src/xcas.cxx:8783 src/xcas.cxx:8953
-#: src/Tableur.cc:1801 src/Graph.cc:5932
+#: src/Tableur.cc:1801 src/Graph.cc:5940
 #, fuzzy
 msgid "xmin"
 msgstr "dentro"
@@ -8787,7 +8787,7 @@ msgstr "Añadir un nombre de variable"
 # src/xcas.cxx:6939
 # src/xcas.cxx:7009
 # src/xcas.cxx:9771
-#: src/Tableur.cc:1805 src/Graph.cc:5935
+#: src/Tableur.cc:1805 src/Graph.cc:5943
 #, fuzzy
 msgid "xstep"
 msgstr "ENTER"
@@ -8796,7 +8796,7 @@ msgstr "ENTER"
 msgid "Discretization step for 1st independant variable"
 msgstr ""
 
-#: src/Tableur.cc:1809 src/Graph.cc:5938
+#: src/Tableur.cc:1809 src/Graph.cc:5946
 msgid "xmax"
 msgstr ""
 
@@ -8821,7 +8821,7 @@ msgstr ""
 # src/xcas.cxx:8156
 # src/xcas.cxx:8234
 # src/xcas.cxx:8783 src/xcas.cxx:8953
-#: src/Tableur.cc:1815 src/Graph.cc:5941
+#: src/Tableur.cc:1815 src/Graph.cc:5949
 #, fuzzy
 msgid "ymin"
 msgstr "dentro"
@@ -8834,7 +8834,7 @@ msgstr "Añadir un nombre de variable"
 # src/xcas.cxx:6939
 # src/xcas.cxx:7009
 # src/xcas.cxx:9771
-#: src/Tableur.cc:1819 src/Graph.cc:5944
+#: src/Tableur.cc:1819 src/Graph.cc:5952
 #, fuzzy
 msgid "ystep"
 msgstr "ENTER"
@@ -8843,7 +8843,7 @@ msgstr "ENTER"
 msgid "Discretization step for 2nd independant variable"
 msgstr ""
 
-#: src/Tableur.cc:1823 src/Graph.cc:5947
+#: src/Tableur.cc:1823 src/Graph.cc:5955
 msgid "ymax"
 msgstr ""
 
@@ -9195,7 +9195,7 @@ msgstr "Tablero"
 msgid "Save sheet as text"
 msgstr "¿Guardar cambios hoja de cálculo?"
 
-#: src/Tableur.cc:2933 src/Graph.cc:6720
+#: src/Tableur.cc:2933 src/Graph.cc:6728
 msgid "Save as alternate filename"
 msgstr ""
 
@@ -9240,7 +9240,7 @@ msgstr "Imprimir"
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Tableur.cc:2943 src/Graph.cc:1194 src/Graph.cc:6723
+#: src/Tableur.cc:2943 src/Graph.cc:1194 src/Graph.cc:6731
 #, fuzzy
 msgid "EPS PNG and preview"
 msgstr "Imprimir sesión"
@@ -9568,7 +9568,7 @@ msgstr "Matemáticas"
 # src/xcas.cxx:4138
 # src/xcas.cxx:4185
 # src/xcas.cxx:5312
-#: src/Tableur.cc:3008 src/Graph.cc:6744
+#: src/Tableur.cc:3008 src/Graph.cc:6752
 #, fuzzy
 msgid "Function"
 msgstr "Funciones"
@@ -9888,7 +9888,7 @@ msgstr ""
 msgid "Check this button for a undefined loop"
 msgstr ""
 
-#: src/Editeur.cc:1745 src/Graph.cc:5884
+#: src/Editeur.cc:1745 src/Graph.cc:5892
 msgid "Var"
 msgstr ""
 
@@ -10088,7 +10088,7 @@ msgstr ""
 # src/xcas.cxx:4082
 # src/xcas.cxx:4129
 # src/xcas.cxx:4830
-#: src/Editeur.cc:2468 src/Graph.cc:7627
+#: src/Editeur.cc:2468 src/Graph.cc:7635
 #, fuzzy
 msgid "Export/Print"
 msgstr "Ordena"
@@ -10348,7 +10348,7 @@ msgid "Autoscale (full)"
 msgstr "auto-escala"
 
 # src/xcas.cxx:3749
-#: src/Graph.cc:1154 src/Graph.cc:7617 src/Help1.cc:241
+#: src/Graph.cc:1154 src/Graph.cc:7625 src/Help1.cc:241
 msgid "View"
 msgstr "Ver"
 
@@ -10363,12 +10363,12 @@ msgstr "Transformadas"
 # src/xcas.cxx:4037
 # src/xcas.cxx:4084
 # src/xcas.cxx:4820
-#: src/Graph.cc:1158 src/Graph.cc:1218 src/Graph.cc:7618
+#: src/Graph.cc:1158 src/Graph.cc:1218 src/Graph.cc:7626
 msgid "Zoom in"
 msgstr "Zoom +"
 
 # src/xcas.cxx:4821
-#: src/Graph.cc:1159 src/Graph.cc:1243 src/Graph.cc:7619
+#: src/Graph.cc:1159 src/Graph.cc:1243 src/Graph.cc:7627
 msgid "Zoom out"
 msgstr "Zoom -"
 
@@ -10524,7 +10524,7 @@ msgstr ""
 # src/xcas.cxx:4082
 # src/xcas.cxx:4129
 # src/xcas.cxx:4830
-#: src/Graph.cc:1193 src/Graph.cc:6722
+#: src/Graph.cc:1193 src/Graph.cc:6730
 #, fuzzy
 msgid "Export Print"
 msgstr "Ordena"
@@ -10533,11 +10533,11 @@ msgstr "Ordena"
 msgid "3-d to PNG"
 msgstr ""
 
-#: src/Graph.cc:1197 src/Graph.cc:7630
+#: src/Graph.cc:1197 src/Graph.cc:7638
 msgid "Preview (with Latex)"
 msgstr ""
 
-#: src/Graph.cc:1198 src/Graph.cc:7631
+#: src/Graph.cc:1198 src/Graph.cc:7639
 msgid "Print (with Latex)"
 msgstr ""
 
@@ -10864,7 +10864,7 @@ msgstr ""
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:1758 src/Graph.cc:6737
+#: src/Graph.cc:1758 src/Graph.cc:6745
 #, fuzzy
 msgid "Portrait"
 msgstr "Imprimir sesión"
@@ -10986,7 +10986,7 @@ msgstr ""
 # src/xcas.cxx:5592
 # src/xcas.cxx:5629
 # src/xcas.cxx:5682
-#: src/Graph.cc:4244 src/Graph.cc:6757 src/Graph.cc:6915
+#: src/Graph.cc:4244 src/Graph.cc:6765 src/Graph.cc:6923
 #, fuzzy
 msgid "Frame"
 msgstr "Normal"
@@ -10994,7 +10994,7 @@ msgstr "Normal"
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:4246 src/Graph.cc:6758
+#: src/Graph.cc:4246 src/Graph.cc:6766
 #, fuzzy
 msgid "Pointer"
 msgstr "Imprimir sesión"
@@ -11002,7 +11002,7 @@ msgstr "Imprimir sesión"
 # src/xcas.cxx:3864
 # src/xcas.cxx:3909
 # src/xcas.cxx:4986
-#: src/Graph.cc:5383 src/Graph3d.cc:2238
+#: src/Graph.cc:5391 src/Graph3d.cc:2238
 #, fuzzy
 msgid "Click "
 msgstr "Cálculo"
@@ -11010,7 +11010,7 @@ msgstr "Cálculo"
 # src/xcas.cxx:3724
 # src/xcas.cxx:3761
 # src/xcas.cxx:4777
-#: src/Graph.cc:5585
+#: src/Graph.cc:5593
 #, fuzzy
 msgid "Save figure"
 msgstr "Guardar config."
@@ -11018,23 +11018,23 @@ msgstr "Guardar config."
 # src/xcas.cxx:3700
 # src/xcas.cxx:3738
 # src/xcas.cxx:4766
-#: src/Graph.cc:5655
+#: src/Graph.cc:5663
 #, fuzzy
 msgid "Insert figure"
 msgstr "Insertar fila"
 
-#: src/Graph.cc:5725
+#: src/Graph.cc:5733
 msgid "Parameter minimal value"
 msgstr ""
 
-#: src/Graph.cc:5728
+#: src/Graph.cc:5736
 msgid "Parameter maximal value"
 msgstr ""
 
 # src/xcas.cxx:3699
 # src/xcas.cxx:3737
 # src/xcas.cxx:4839
-#: src/Graph.cc:5731
+#: src/Graph.cc:5739
 #, fuzzy
 msgid "Parameter current value"
 msgstr "Borrar columna actual"
@@ -11042,7 +11042,7 @@ msgstr "Borrar columna actual"
 # src/xcas.cxx:3699
 # src/xcas.cxx:3737
 # src/xcas.cxx:4839
-#: src/Graph.cc:5733
+#: src/Graph.cc:5741
 #, fuzzy
 msgid "Parameter step value"
 msgstr "Borrar columna actual"
@@ -11050,125 +11050,125 @@ msgstr "Borrar columna actual"
 # src/xcas.cxx:3697
 # src/xcas.cxx:3735
 # src/xcas.cxx:5378
-#: src/Graph.cc:5739
+#: src/Graph.cc:5747
 #, fuzzy
 msgid "Parameter variable name"
 msgstr "Nombre del programa"
 
-#: src/Graph.cc:5742
+#: src/Graph.cc:5750
 msgid "Numeric or formal parameter"
 msgstr ""
 
-#: src/Graph.cc:5753
+#: src/Graph.cc:5761
 msgid "Parameter definition"
 msgstr ""
 
-#: src/Graph.cc:5853
+#: src/Graph.cc:5861
 msgid "Draw slopefield"
 msgstr ""
 
-#: src/Graph.cc:5856
+#: src/Graph.cc:5864
 msgid "Autonomous 2d systems."
 msgstr ""
 
-#: src/Graph.cc:5859
+#: src/Graph.cc:5867
 msgid "Normalize slopefield"
 msgstr ""
 
-#: src/Graph.cc:5860
+#: src/Graph.cc:5868
 msgid "F(x,y)="
 msgstr ""
 
 # src/xcas.cxx:3849
 # src/xcas.cxx:3893
-#: src/Graph.cc:5862
+#: src/Graph.cc:5870
 #, fuzzy
 msgid "Implicit expression"
 msgstr "Gestión"
 
-#: src/Graph.cc:5863
+#: src/Graph.cc:5871
 msgid "dy/dt(t,y)="
 msgstr ""
 
-#: src/Graph.cc:5865
+#: src/Graph.cc:5873
 msgid ""
 "Expression of dy/dt in terms of y and t, e.g. sin(t*y). For autonomous 2d "
 "system,change time variable to x and enter d[x,y]/dt in terms of [x,y], e.g. "
 "[[1,2],[3,4]]*[x,y]"
 msgstr ""
 
-#: src/Graph.cc:5866
+#: src/Graph.cc:5874
 msgid "rho(t)="
 msgstr ""
 
-#: src/Graph.cc:5868
+#: src/Graph.cc:5876
 msgid "Expression of modulus rho wrt to angle t (e.g sin(t))"
 msgstr ""
 
-#: src/Graph.cc:5869
+#: src/Graph.cc:5877
 msgid "x(t)="
 msgstr ""
 
-#: src/Graph.cc:5871
+#: src/Graph.cc:5879
 msgid "Expression of x wrt to t (e.g sin(t))"
 msgstr ""
 
-#: src/Graph.cc:5872
+#: src/Graph.cc:5880
 msgid "y(t)="
 msgstr ""
 
-#: src/Graph.cc:5874
+#: src/Graph.cc:5882
 msgid "Expression of y wrt to t (e.g cos(t))"
 msgstr ""
 
-#: src/Graph.cc:5875
+#: src/Graph.cc:5883
 msgid "x="
 msgstr ""
 
-#: src/Graph.cc:5877
+#: src/Graph.cc:5885
 msgid "Expression of x wrt to u and v (e.g. u+v)"
 msgstr ""
 
-#: src/Graph.cc:5878 src/Graph.cc:5881
+#: src/Graph.cc:5886 src/Graph.cc:5889
 msgid "y="
 msgstr ""
 
-#: src/Graph.cc:5880
+#: src/Graph.cc:5888
 msgid "Expression of y wrt to u and v (e.g exp(u)-v)"
 msgstr ""
 
-#: src/Graph.cc:5883
+#: src/Graph.cc:5891
 msgid "Expression of z wrt to u and v (e.g u-v)"
 msgstr ""
 
-#: src/Graph.cc:5886
+#: src/Graph.cc:5894
 #, fuzzy
 msgid "Independant variable name (e.g t)"
 msgstr "Añadir un nombre de variable"
 
-#: src/Graph.cc:5889
+#: src/Graph.cc:5897
 #, fuzzy
 msgid "First independant variable name (e.g u)"
 msgstr "Añadir un nombre de variable"
 
-#: src/Graph.cc:5892
+#: src/Graph.cc:5900
 #, fuzzy
 msgid "Second independant variable name (e.g v)"
 msgstr "Añadir un nombre de variable"
 
-#: src/Graph.cc:5895
+#: src/Graph.cc:5903
 #, fuzzy
 msgid "First independant variable name (e.g x)"
 msgstr "Añadir un nombre de variable"
 
-#: src/Graph.cc:5899
+#: src/Graph.cc:5907
 msgid "Time var"
 msgstr ""
 
 # src/xcas.cxx:3697
 # src/xcas.cxx:3735
 # src/xcas.cxx:5378
-#: src/Graph.cc:5901
+#: src/Graph.cc:5909
 #, fuzzy
 msgid "Time variable name"
 msgstr "Nombre del programa"
@@ -11176,7 +11176,7 @@ msgstr "Nombre del programa"
 # src/xcas.cxx:3697
 # src/xcas.cxx:3735
 # src/xcas.cxx:5378
-#: src/Graph.cc:5904
+#: src/Graph.cc:5912
 #, fuzzy
 msgid "Function variable name"
 msgstr "Nombre del programa"
@@ -11184,7 +11184,7 @@ msgstr "Nombre del programa"
 # src/xcas.cxx:8156
 # src/xcas.cxx:8234
 # src/xcas.cxx:8783 src/xcas.cxx:8953
-#: src/Graph.cc:5905
+#: src/Graph.cc:5913
 #, fuzzy
 msgid "tmin"
 msgstr "dentro"
@@ -11192,19 +11192,19 @@ msgstr "dentro"
 # src/xcas.cxx:6939
 # src/xcas.cxx:7009
 # src/xcas.cxx:9771
-#: src/Graph.cc:5908
+#: src/Graph.cc:5916
 #, fuzzy
 msgid "tstep"
 msgstr "ENTER"
 
-#: src/Graph.cc:5911
+#: src/Graph.cc:5919
 msgid "tmax"
 msgstr ""
 
 # src/xcas.cxx:8156
 # src/xcas.cxx:8234
 # src/xcas.cxx:8783 src/xcas.cxx:8953
-#: src/Graph.cc:5914
+#: src/Graph.cc:5922
 #, fuzzy
 msgid "umin"
 msgstr "dentro"
@@ -11212,19 +11212,19 @@ msgstr "dentro"
 # src/xcas.cxx:6939
 # src/xcas.cxx:7009
 # src/xcas.cxx:9771
-#: src/Graph.cc:5917
+#: src/Graph.cc:5925
 #, fuzzy
 msgid "ustep"
 msgstr "ENTER"
 
-#: src/Graph.cc:5920
+#: src/Graph.cc:5928
 msgid "umax"
 msgstr ""
 
 # src/xcas.cxx:8156
 # src/xcas.cxx:8234
 # src/xcas.cxx:8783 src/xcas.cxx:8953
-#: src/Graph.cc:5923
+#: src/Graph.cc:5931
 #, fuzzy
 msgid "vmin"
 msgstr "dentro"
@@ -11232,77 +11232,77 @@ msgstr "dentro"
 # src/xcas.cxx:6939
 # src/xcas.cxx:7009
 # src/xcas.cxx:9771
-#: src/Graph.cc:5926
+#: src/Graph.cc:5934
 #, fuzzy
 msgid "vstep"
 msgstr "ENTER"
 
-#: src/Graph.cc:5929
+#: src/Graph.cc:5937
 msgid "vmax"
 msgstr ""
 
 # src/xcas.cxx:6531
-#: src/Graph.cc:5962
+#: src/Graph.cc:5970
 #, fuzzy
 msgid "Polar plot"
 msgstr "Dibujo de polígonos"
 
-#: src/Graph.cc:5965
+#: src/Graph.cc:5973
 msgid "Parametric plot"
 msgstr ""
 
 # src/xcas.cxx:3715 src/xcas.cxx:3717
 # src/xcas.cxx:3752 src/xcas.cxx:3754
-#: src/Graph.cc:5968
+#: src/Graph.cc:5976
 #, fuzzy
 msgid "Field/Odeplot"
 msgstr "Imprimir gráf."
 
-#: src/Graph.cc:5971
+#: src/Graph.cc:5979
 msgid "Implicitplot"
 msgstr ""
 
 # src/xcas.cxx:3974
 # src/xcas.cxx:3777
 # src/xcas.cxx:4793
-#: src/Graph.cc:6132
+#: src/Graph.cc:6140
 #, fuzzy
 msgid "Click first in a commandline"
 msgstr "Borrar línea de comandos"
 
-#: src/Graph.cc:6236 src/Graph.cc:6250
+#: src/Graph.cc:6244 src/Graph.cc:6258
 msgid "Point_on_ode_curve"
 msgstr ""
 
-#: src/Graph.cc:6237
+#: src/Graph.cc:6245
 msgid "Click initials conditions in graphic window. Change mode when finished."
 msgstr ""
 
-#: src/Graph.cc:6313
+#: src/Graph.cc:6321
 msgid "Shade area under a curve"
 msgstr ""
 
-#: src/Graph.cc:6493
+#: src/Graph.cc:6501
 #, fuzzy
 msgid "Real number?"
 msgstr "columna"
 
-#: src/Graph.cc:6527
+#: src/Graph.cc:6535
 msgid "Center,Point_on_circle,Point_in_plane"
 msgstr ""
 
-#: src/Graph.cc:6527
+#: src/Graph.cc:6535
 msgid "Center,Point_on_circle"
 msgstr ""
 
-#: src/Graph.cc:6531 src/Graph.cc:6535
+#: src/Graph.cc:6539 src/Graph.cc:6543
 msgid "Curve1,Curve2"
 msgstr ""
 
 # src/xcas.cxx:3945
 # src/xcas.cxx:3992
 # src/xcas.cxx:5078
-#: src/Graph.cc:6539
+#: src/Graph.cc:6547
 #, fuzzy
 msgid "Curve1,Curve2,Point"
 msgstr "Puntos"
@@ -11310,69 +11310,69 @@ msgstr "Puntos"
 # src/xcas.cxx:3945
 # src/xcas.cxx:3992
 # src/xcas.cxx:5078
-#: src/Graph.cc:6543
+#: src/Graph.cc:6551
 #, fuzzy
 msgid "Curve,Point"
 msgstr "Puntos"
 
-#: src/Graph.cc:6547 src/Graph.cc:6551 src/Graph.cc:6555 src/Graph.cc:6559
-#: src/Graph.cc:6654 src/Graph.cc:6658 src/Graph.cc:6682
+#: src/Graph.cc:6555 src/Graph.cc:6559 src/Graph.cc:6563 src/Graph.cc:6567
+#: src/Graph.cc:6662 src/Graph.cc:6666 src/Graph.cc:6690
 msgid "Point1,Point2"
 msgstr ""
 
-#: src/Graph.cc:6563 src/Graph.cc:6566
+#: src/Graph.cc:6571 src/Graph.cc:6574
 msgid "Object1,Object2,Position"
 msgstr ""
 
-#: src/Graph.cc:6570 src/Graph.cc:6573
+#: src/Graph.cc:6578 src/Graph.cc:6581
 msgid "Angle_vertex,Direction1,Direction2,Position"
 msgstr ""
 
 # src/xcas.cxx:3849
 # src/xcas.cxx:3893
-#: src/Graph.cc:6577 src/Graph.cc:6581 src/Graph.cc:6585 src/Graph.cc:6589
-#: src/Graph.cc:6593 src/Graph.cc:6597
+#: src/Graph.cc:6585 src/Graph.cc:6589 src/Graph.cc:6593 src/Graph.cc:6597
+#: src/Graph.cc:6601 src/Graph.cc:6605
 #, fuzzy
 msgid "Object,Position"
 msgstr "Gestión"
 
-#: src/Graph.cc:6601
+#: src/Graph.cc:6609
 msgid "Symmetry_center_axis,Object"
 msgstr ""
 
-#: src/Graph.cc:6605 src/Graph.cc:6621
+#: src/Graph.cc:6613 src/Graph.cc:6629
 msgid "Center,Ratio,Object"
 msgstr ""
 
-#: src/Graph.cc:6609
+#: src/Graph.cc:6617
 msgid "Curve,Object"
 msgstr ""
 
 # src/xcas.cxx:7492
 # src/xcas.cxx:7559
 # src/xcas.cxx:8466
-#: src/Graph.cc:6613
+#: src/Graph.cc:6621
 #, fuzzy
 msgid "Circle,Object"
 msgstr "Centrado"
 
-#: src/Graph.cc:6617
+#: src/Graph.cc:6625
 msgid "Center,Angle,Object"
 msgstr ""
 
 # src/xcas.cxx:7492
 # src/xcas.cxx:7559
 # src/xcas.cxx:8466
-#: src/Graph.cc:6625
+#: src/Graph.cc:6633
 #, fuzzy
 msgid "Vector,Object"
 msgstr "Centrado"
 
-#: src/Graph.cc:6629
+#: src/Graph.cc:6637
 msgid "Center,Ratio,Angle,Object"
 msgstr ""
 
-#: src/Graph.cc:6633
+#: src/Graph.cc:6641
 #, fuzzy
 msgid "Number of vertices?"
 msgstr "Número de dígitos"
@@ -11380,60 +11380,60 @@ msgstr "Número de dígitos"
 # src/xcas.cxx:3945
 # src/xcas.cxx:3992
 # src/xcas.cxx:5078
-#: src/Graph.cc:6640
+#: src/Graph.cc:6648
 #, fuzzy
 msgid "Point"
 msgstr "Puntos"
 
-#: src/Graph.cc:6650 src/Graph.cc:6686 src/Graph.cc:6690 src/Graph.cc:6694
-#: src/Graph.cc:6710
+#: src/Graph.cc:6658 src/Graph.cc:6694 src/Graph.cc:6698 src/Graph.cc:6702
+#: src/Graph.cc:6718
 msgid "Point1,Point2,Point3"
 msgstr ""
 
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:6662 src/Graph.cc:6666
+#: src/Graph.cc:6670 src/Graph.cc:6674
 #, fuzzy
 msgid "Point,Line"
 msgstr "Imprimir sesión"
 
-#: src/Graph.cc:6670 src/Graph.cc:6674
+#: src/Graph.cc:6678 src/Graph.cc:6682
 msgid "Sommet_angle,Point2,Point3"
 msgstr ""
 
-#: src/Graph.cc:6678
+#: src/Graph.cc:6686
 msgid "Point1,Point2,Point3,Point4"
 msgstr ""
 
-#: src/Graph.cc:6682
+#: src/Graph.cc:6690
 msgid "Point1,Point2,Point_in_plane"
 msgstr ""
 
-#: src/Graph.cc:6698
+#: src/Graph.cc:6706
 msgid "Focus1,Focus2,Point_on_ellipse"
 msgstr ""
 
-#: src/Graph.cc:6702
+#: src/Graph.cc:6710
 msgid "Focus,Point_or_line"
 msgstr ""
 
-#: src/Graph.cc:6706
+#: src/Graph.cc:6714
 msgid "Focus1,Focus2,Point_on_hyperbola"
 msgstr ""
 
-#: src/Graph.cc:6714
+#: src/Graph.cc:6722
 msgid "Center,Point_on_sphere"
 msgstr ""
 
-#: src/Graph.cc:6718
+#: src/Graph.cc:6726
 msgid "Fig"
 msgstr ""
 
 # src/xcas.cxx:3724
 # src/xcas.cxx:3761
 # src/xcas.cxx:4777
-#: src/Graph.cc:6719
+#: src/Graph.cc:6727
 #, fuzzy
 msgid "Save figure as text"
 msgstr "Guardar config."
@@ -11441,7 +11441,7 @@ msgstr "Guardar config."
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:6725
+#: src/Graph.cc:6733
 #, fuzzy
 msgid "Latex preview"
 msgstr "Imprimir sesión"
@@ -11449,7 +11449,7 @@ msgstr "Imprimir sesión"
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:6726
+#: src/Graph.cc:6734
 #, fuzzy
 msgid "Latex printer"
 msgstr "Imprimir sesión"
@@ -11457,24 +11457,24 @@ msgstr "Imprimir sesión"
 # src/xcas.cxx:3875
 # src/xcas.cxx:3920
 # src/xcas.cxx:5146
-#: src/Graph.cc:6730
+#: src/Graph.cc:6738
 #, fuzzy
 msgid "Add parameter"
 msgstr "Propiedades"
 
-#: src/Graph.cc:6731
+#: src/Graph.cc:6739
 msgid "Add numerical value"
 msgstr ""
 
-#: src/Graph.cc:6732
+#: src/Graph.cc:6740
 msgid "Add new entry"
 msgstr ""
 
-#: src/Graph.cc:6733
+#: src/Graph.cc:6741
 msgid "Add an object trace"
 msgstr ""
 
-#: src/Graph.cc:6734
+#: src/Graph.cc:6742
 #, fuzzy
 msgid "Change selection attribut"
 msgstr "Intercambiar selección a la derecha"
@@ -11482,7 +11482,7 @@ msgstr "Intercambiar selección a la derecha"
 # src/xcas.cxx:5592
 # src/xcas.cxx:5629
 # src/xcas.cxx:5682
-#: src/Graph.cc:6741
+#: src/Graph.cc:6749
 #, fuzzy
 msgid "Focus"
 msgstr "Normal"
@@ -11490,7 +11490,7 @@ msgstr "Normal"
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:6746
+#: src/Graph.cc:6754
 #, fuzzy
 msgid "Recurrent sequence (2-d)"
 msgstr "Imprimir sesión"
@@ -11498,27 +11498,27 @@ msgstr "Imprimir sesión"
 # src/xcas.cxx:5593
 # src/xcas.cxx:5630
 # src/xcas.cxx:5683
-#: src/Graph.cc:6748
+#: src/Graph.cc:6756
 #, fuzzy
 msgid "Parametric"
 msgstr "Simétrica"
 
-#: src/Graph.cc:6749
+#: src/Graph.cc:6757
 msgid "Polar (2-d)"
 msgstr ""
 
-#: src/Graph.cc:6750
+#: src/Graph.cc:6758
 msgid "Implicit"
 msgstr ""
 
-#: src/Graph.cc:6751
+#: src/Graph.cc:6759
 msgid "Slopefield Ode (2-d)"
 msgstr ""
 
 # src/xcas.cxx:3945
 # src/xcas.cxx:3992
 # src/xcas.cxx:5078
-#: src/Graph.cc:6759
+#: src/Graph.cc:6767
 #, fuzzy
 msgid "point"
 msgstr "Puntos"
@@ -11526,7 +11526,7 @@ msgstr "Puntos"
 # src/xcas.cxx:3954
 # src/xcas.cxx:4001
 # src/xcas.cxx:5087
-#: src/Graph.cc:6760
+#: src/Graph.cc:6768
 #, fuzzy
 msgid "Lines"
 msgstr "Líneas"
@@ -11534,7 +11534,7 @@ msgstr "Líneas"
 # src/xcas.cxx:3677
 # src/xcas.cxx:3779
 # src/xcas.cxx:4807
-#: src/Graph.cc:6762
+#: src/Graph.cc:6770
 #, fuzzy
 msgid "vector"
 msgstr "Historial"
@@ -11542,23 +11542,23 @@ msgstr "Historial"
 # src/xcas.cxx:3968
 # src/xcas.cxx:4015
 # src/xcas.cxx:5101
-#: src/Graph.cc:6765
+#: src/Graph.cc:6773
 #, fuzzy
 msgid "parallel"
 msgstr "Triángulos"
 
-#: src/Graph.cc:6766
+#: src/Graph.cc:6774
 msgid "perpendicular"
 msgstr ""
 
-#: src/Graph.cc:6767
+#: src/Graph.cc:6775
 msgid "perpen_bisector"
 msgstr ""
 
 # src/xcas.cxx:7393
 # src/xcas.cxx:7460
 # src/xcas.cxx:8367
-#: src/Graph.cc:6768
+#: src/Graph.cc:6776
 #, fuzzy
 msgid "median_line"
 msgstr "radianes"
@@ -11566,7 +11566,7 @@ msgstr "radianes"
 # src/xcas.cxx:3677
 # src/xcas.cxx:3779
 # src/xcas.cxx:4807
-#: src/Graph.cc:6769
+#: src/Graph.cc:6777
 #, fuzzy
 msgid "bisector"
 msgstr "Historial"
@@ -11574,7 +11574,7 @@ msgstr "Historial"
 # src/xcas.cxx:3810
 # src/xcas.cxx:3854
 # src/xcas.cxx:4943
-#: src/Graph.cc:6771
+#: src/Graph.cc:6779
 #, fuzzy
 msgid "Polygons"
 msgstr "Polinómios"
@@ -11582,19 +11582,19 @@ msgstr "Polinómios"
 # src/xcas.cxx:3968
 # src/xcas.cxx:4015
 # src/xcas.cxx:5101
-#: src/Graph.cc:6772
+#: src/Graph.cc:6780
 #, fuzzy
 msgid "triangle"
 msgstr "Triángulos"
 
-#: src/Graph.cc:6773
+#: src/Graph.cc:6781
 msgid "equilateral_triangle"
 msgstr ""
 
 # src/xcas.cxx:6931 src/xcas.cxx:7026
 # src/xcas.cxx:8121
 # src/xcas.cxx:8884
-#: src/Graph.cc:6774
+#: src/Graph.cc:6782
 #, fuzzy
 msgid "square"
 msgstr "interpretar"
@@ -11602,7 +11602,7 @@ msgstr "interpretar"
 # src/xcas.cxx:3843
 # src/xcas.cxx:3887
 # src/xcas.cxx:5107
-#: src/Graph.cc:6775
+#: src/Graph.cc:6783
 #, fuzzy
 msgid "quadrilateral"
 msgstr "Cuadriláteros"
@@ -11610,7 +11610,7 @@ msgstr "Cuadriláteros"
 # src/xcas.cxx:3974
 # src/xcas.cxx:4021
 # src/xcas.cxx:5114
-#: src/Graph.cc:6778
+#: src/Graph.cc:6786
 #, fuzzy
 msgid "Circles"
 msgstr "Circunferencias"
@@ -11618,7 +11618,7 @@ msgstr "Circunferencias"
 # src/xcas.cxx:3864
 # src/xcas.cxx:3909
 # src/xcas.cxx:4986
-#: src/Graph.cc:6780
+#: src/Graph.cc:6788
 #, fuzzy
 msgid "incircle"
 msgstr "recalcular"
@@ -11626,7 +11626,7 @@ msgstr "recalcular"
 # src/xcas.cxx:3864
 # src/xcas.cxx:3909
 # src/xcas.cxx:4986
-#: src/Graph.cc:6781
+#: src/Graph.cc:6789
 #, fuzzy
 msgid "excircle"
 msgstr "recalcular"
@@ -11634,7 +11634,7 @@ msgstr "recalcular"
 # src/xcas.cxx:3864
 # src/xcas.cxx:3909
 # src/xcas.cxx:4986
-#: src/Graph.cc:6782
+#: src/Graph.cc:6790
 #, fuzzy
 msgid "circumcircle"
 msgstr "recalcular"
@@ -11642,31 +11642,31 @@ msgstr "recalcular"
 # src/xcas.cxx:3721
 # src/xcas.cxx:3758
 # src/xcas.cxx:4774 src/xcas.cxx:5379
-#: src/Graph.cc:6785
+#: src/Graph.cc:6793
 #, fuzzy
 msgid "ellipse"
 msgstr "Inglés"
 
 # src/xcas.cxx:3680 src/xcas.cxx:3686 src/xcas.cxx:3751
 # src/xcas.cxx:3718 src/xcas.cxx:3724
-#: src/Graph.cc:6786
+#: src/Graph.cc:6794
 #, fuzzy
 msgid "hyperbola"
 msgstr "maple"
 
 # src/xcas.cxx:3680 src/xcas.cxx:3686 src/xcas.cxx:3751
 # src/xcas.cxx:3718 src/xcas.cxx:3724
-#: src/Graph.cc:6787
+#: src/Graph.cc:6795
 #, fuzzy
 msgid "parabola"
 msgstr "maple"
 
-#: src/Graph.cc:6788
+#: src/Graph.cc:6796
 msgid "plotode"
 msgstr ""
 
 # src/xcas.cxx:6546
-#: src/Graph.cc:6790
+#: src/Graph.cc:6798
 #, fuzzy
 msgid "Surfaces (3d)"
 msgstr "Conseguido"
@@ -11674,19 +11674,19 @@ msgstr "Conseguido"
 # src/xcas.cxx:4107
 # src/xcas.cxx:4154
 # src/xcas.cxx:5276
-#: src/Graph.cc:6791
+#: src/Graph.cc:6799
 #, fuzzy
 msgid "plane"
 msgstr "Exp & Log"
 
-#: src/Graph.cc:6792
+#: src/Graph.cc:6800
 msgid "sphere"
 msgstr ""
 
 # src/xcas.cxx:3986
 # src/xcas.cxx:4033
 # src/xcas.cxx:5126
-#: src/Graph.cc:6794
+#: src/Graph.cc:6802
 #, fuzzy
 msgid "Measures"
 msgstr "Medidas"
@@ -11694,7 +11694,7 @@ msgstr "Medidas"
 # src/xcas.cxx:7259 src/xcas.cxx:7405 src/xcas.cxx:7462 src/xcas.cxx:8070
 # src/xcas.cxx:7326 src/xcas.cxx:7472 src/xcas.cxx:7529 src/xcas.cxx:8148
 # src/xcas.cxx:8335 src/xcas.cxx:8400 src/xcas.cxx:8537
-#: src/Graph.cc:6795
+#: src/Graph.cc:6803
 #, fuzzy
 msgid "distanceat"
 msgstr "Cancelar"
@@ -11702,7 +11702,7 @@ msgstr "Cancelar"
 # src/xcas.cxx:3968
 # src/xcas.cxx:4015
 # src/xcas.cxx:5101
-#: src/Graph.cc:6796
+#: src/Graph.cc:6804
 #, fuzzy
 msgid "angleat"
 msgstr "Triángulos"
@@ -11710,7 +11710,7 @@ msgstr "Triángulos"
 # src/xcas.cxx:3772
 # src/xcas.cxx:3816
 # src/xcas.cxx:4799
-#: src/Graph.cc:6797
+#: src/Graph.cc:6805
 #, fuzzy
 msgid "areaat"
 msgstr "Pegar"
@@ -11718,7 +11718,7 @@ msgstr "Pegar"
 # src/xcas.cxx:3875
 # src/xcas.cxx:3920
 # src/xcas.cxx:5146
-#: src/Graph.cc:6798
+#: src/Graph.cc:6806
 #, fuzzy
 msgid "perimeterat"
 msgstr "Propiedades"
@@ -11726,7 +11726,7 @@ msgstr "Propiedades"
 # src/xcas.cxx:3690
 # src/xcas.cxx:3728
 # src/xcas.cxx:4729
-#: src/Graph.cc:6799
+#: src/Graph.cc:6807
 #, fuzzy
 msgid "slopeat"
 msgstr "Ejecutar"
@@ -11734,7 +11734,7 @@ msgstr "Ejecutar"
 # src/xcas.cxx:7259 src/xcas.cxx:7405 src/xcas.cxx:7462 src/xcas.cxx:8070
 # src/xcas.cxx:7326 src/xcas.cxx:7472 src/xcas.cxx:7529 src/xcas.cxx:8148
 # src/xcas.cxx:8335 src/xcas.cxx:8400 src/xcas.cxx:8537
-#: src/Graph.cc:6800
+#: src/Graph.cc:6808
 #, fuzzy
 msgid "distanceatraw"
 msgstr "Cancelar"
@@ -11742,7 +11742,7 @@ msgstr "Cancelar"
 # src/xcas.cxx:3690
 # src/xcas.cxx:3728
 # src/xcas.cxx:4729
-#: src/Graph.cc:6801
+#: src/Graph.cc:6809
 #, fuzzy
 msgid "angleatraw"
 msgstr "Ejecutar"
@@ -11750,7 +11750,7 @@ msgstr "Ejecutar"
 # src/xcas.cxx:3690
 # src/xcas.cxx:3728
 # src/xcas.cxx:4729
-#: src/Graph.cc:6802
+#: src/Graph.cc:6810
 #, fuzzy
 msgid "areaatraw"
 msgstr "Ejecutar"
@@ -11758,7 +11758,7 @@ msgstr "Ejecutar"
 # src/xcas.cxx:3875
 # src/xcas.cxx:3920
 # src/xcas.cxx:5146
-#: src/Graph.cc:6803
+#: src/Graph.cc:6811
 #, fuzzy
 msgid "perimeteratraw"
 msgstr "Propiedades"
@@ -11766,7 +11766,7 @@ msgstr "Propiedades"
 # src/xcas.cxx:3690
 # src/xcas.cxx:3728
 # src/xcas.cxx:4729
-#: src/Graph.cc:6804
+#: src/Graph.cc:6812
 #, fuzzy
 msgid "slopeatraw"
 msgstr "Ejecutar"
@@ -11774,19 +11774,19 @@ msgstr "Ejecutar"
 # src/xcas.cxx:3884
 # src/xcas.cxx:3929
 # src/xcas.cxx:5137
-#: src/Graph.cc:6806
+#: src/Graph.cc:6814
 msgid "Transformations"
 msgstr "Transformaciones"
 
 # src/xcas.cxx:4030
 # src/xcas.cxx:4077
 # src/xcas.cxx:5220
-#: src/Graph.cc:6807
+#: src/Graph.cc:6815
 #, fuzzy
 msgid "reflection"
 msgstr "Graficar selección"
 
-#: src/Graph.cc:6808
+#: src/Graph.cc:6816
 #, fuzzy
 msgid "rotation"
 msgstr "(3-d) Cambiar ángulo de rotación z"
@@ -11794,7 +11794,7 @@ msgstr "(3-d) Cambiar ángulo de rotación z"
 # src/xcas.cxx:7393
 # src/xcas.cxx:7460
 # src/xcas.cxx:8367
-#: src/Graph.cc:6809
+#: src/Graph.cc:6817
 #, fuzzy
 msgid "translation"
 msgstr "radianes"
@@ -11802,23 +11802,23 @@ msgstr "radianes"
 # src/xcas.cxx:4030
 # src/xcas.cxx:4077
 # src/xcas.cxx:5220
-#: src/Graph.cc:6810
+#: src/Graph.cc:6818
 #, fuzzy
 msgid "projection"
 msgstr "Graficar selección"
 
-#: src/Graph.cc:6811
+#: src/Graph.cc:6819
 msgid "homothety"
 msgstr ""
 
-#: src/Graph.cc:6812
+#: src/Graph.cc:6820
 msgid "similarity"
 msgstr ""
 
 # src/xcas.cxx:3700
 # src/xcas.cxx:3738
 # src/xcas.cxx:4766
-#: src/Graph.cc:6813
+#: src/Graph.cc:6821
 #, fuzzy
 msgid "inversion"
 msgstr "Insertar fila"
@@ -11826,80 +11826,80 @@ msgstr "Insertar fila"
 # src/xcas.cxx:3700
 # src/xcas.cxx:3738
 # src/xcas.cxx:4766
-#: src/Graph.cc:6816
+#: src/Graph.cc:6824
 #, fuzzy
 msgid "Intersections"
 msgstr "Insertar fila"
 
-#: src/Graph.cc:6817
+#: src/Graph.cc:6825
 msgid "inter_unique (1 point)"
 msgstr ""
 
-#: src/Graph.cc:6818
+#: src/Graph.cc:6826
 msgid "inter (close to a point)"
 msgstr ""
 
-#: src/Graph.cc:6819
+#: src/Graph.cc:6827
 msgid "inter (list of points)"
 msgstr ""
 
 # src/xcas.cxx:7903
 # src/xcas.cxx:7970
 # src/xcas.cxx:9117
-#: src/Graph.cc:6821
+#: src/Graph.cc:6829
 #, fuzzy
 msgid "tangent"
 msgstr "General"
 
-#: src/Graph.cc:6917
+#: src/Graph.cc:6925
 msgid "Set mode for mouse constructions"
 msgstr ""
 
-#: src/Graph.cc:6931
+#: src/Graph.cc:6939
 msgid "Color used for next mouse drawings"
 msgstr ""
 
-#: src/Graph.cc:6937
+#: src/Graph.cc:6945
 msgid "Line style used for next mouse drawings"
 msgstr ""
 
-#: src/Graph.cc:6942
+#: src/Graph.cc:6950
 msgid "Check for step evaluation"
 msgstr ""
 
-#: src/Graph.cc:6947
+#: src/Graph.cc:6955
 #, fuzzy
 msgid "Check for landscape"
 msgstr "Cargar script en eqw"
 
-#: src/Graph.cc:6952
+#: src/Graph.cc:6960
 msgid "Check if mouse clicks in approx mode"
 msgstr ""
 
-#: src/Graph.cc:6957
+#: src/Graph.cc:6965
 msgid "Save current figure commands independently of the session"
 msgstr ""
 
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4742
-#: src/Graph.cc:7079
+#: src/Graph.cc:7087
 #, fuzzy
 msgid "Export to LaTeX"
 msgstr "Exportar sesión como"
 
-#: src/Graph.cc:7351 src/Graph.cc:7665
+#: src/Graph.cc:7359 src/Graph.cc:7673
 msgid "fw"
 msgstr ""
 
-#: src/Graph.cc:7353 src/Graph.cc:7670
+#: src/Graph.cc:7361 src/Graph.cc:7678
 msgid "bw"
 msgstr ""
 
 # src/xcas.cxx:7393
 # src/xcas.cxx:7460
 # src/xcas.cxx:8367
-#: src/Graph.cc:7355 src/Graph.cc:7675
+#: src/Graph.cc:7363 src/Graph.cc:7683
 #, fuzzy
 msgid "tr"
 msgstr "radianes"
@@ -11907,51 +11907,51 @@ msgstr "radianes"
 # src/xcas.cxx:3864
 # src/xcas.cxx:3909
 # src/xcas.cxx:4986
-#: src/Graph.cc:7357 src/Graph.cc:7680
+#: src/Graph.cc:7365 src/Graph.cc:7688
 #, fuzzy
 msgid "tl"
 msgstr "recalcular"
 
-#: src/Graph.cc:7359 src/Graph.cc:7685
+#: src/Graph.cc:7367 src/Graph.cc:7693
 msgid "ss"
 msgstr ""
 
-#: src/Graph.cc:7361 src/Graph.cc:7690
+#: src/Graph.cc:7369 src/Graph.cc:7698
 msgid "ju"
 msgstr ""
 
 # src/xcas.cxx:4119
 # src/xcas.cxx:4166
 # src/xcas.cxx:5225
-#: src/Graph.cc:7363 src/Graph.cc:7695
+#: src/Graph.cc:7371 src/Graph.cc:7703
 #, fuzzy
 msgid "pe"
 msgstr "Especiales"
 
-#: src/Graph.cc:7372 src/Graph.cc:7700
+#: src/Graph.cc:7380 src/Graph.cc:7708
 msgid "ci"
 msgstr ""
 
 # src/xcas.cxx:3728
 # src/xcas.cxx:3765
 # src/xcas.cxx:4782
-#: src/Graph.cc:7374 src/Graph.cc:7705
+#: src/Graph.cc:7382 src/Graph.cc:7713
 #, fuzzy
 msgid "di"
 msgstr "Editar"
 
-#: src/Graph.cc:7376 src/Graph.cc:7710
+#: src/Graph.cc:7384 src/Graph.cc:7718
 msgid "fr"
 msgstr ""
 
-#: src/Graph.cc:7378 src/Graph.cc:7715
+#: src/Graph.cc:7386 src/Graph.cc:7723
 msgid "ft"
 msgstr ""
 
 # src/xcas.cxx:3864
 # src/xcas.cxx:3909
 # src/xcas.cxx:4986
-#: src/Graph.cc:7380 src/Graph.cc:7730
+#: src/Graph.cc:7388 src/Graph.cc:7738
 #, fuzzy
 msgid "cl"
 msgstr "recalcular"
@@ -11959,24 +11959,24 @@ msgstr "recalcular"
 # src/xcas.cxx:6950
 # src/xcas.cxx:7013
 # src/xcas.cxx:9762
-#: src/Graph.cc:7382 src/Graph.cc:7720
+#: src/Graph.cc:7390 src/Graph.cc:7728
 #, fuzzy
 msgid "ec"
 msgstr "ESC"
 
-#: src/Graph.cc:7384 src/Graph.cc:7725
+#: src/Graph.cc:7392 src/Graph.cc:7733
 msgid "sg"
 msgstr ""
 
-#: src/Graph.cc:7430 src/Graph.cc:7456
+#: src/Graph.cc:7438 src/Graph.cc:7464
 msgid "Not registered\n"
 msgstr ""
 
-#: src/Graph.cc:7612
+#: src/Graph.cc:7620
 msgid "Mesh"
 msgstr ""
 
-#: src/Graph.cc:7613
+#: src/Graph.cc:7621
 #, fuzzy
 msgid "None"
 msgstr "columna"
@@ -11984,7 +11984,7 @@ msgstr "columna"
 # src/xcas.cxx:6931 src/xcas.cxx:7026
 # src/xcas.cxx:8121
 # src/xcas.cxx:8884
-#: src/Graph.cc:7614
+#: src/Graph.cc:7622
 #, fuzzy
 msgid "Square"
 msgstr "interpretar"
@@ -11992,7 +11992,7 @@ msgstr "interpretar"
 # src/xcas.cxx:3968
 # src/xcas.cxx:4015
 # src/xcas.cxx:5101
-#: src/Graph.cc:7615
+#: src/Graph.cc:7623
 #, fuzzy
 msgid "Triangle"
 msgstr "Triángulos"
@@ -12000,37 +12000,37 @@ msgstr "Triángulos"
 # src/xcas.cxx:4076
 # src/xcas.cxx:4123
 # src/xcas.cxx:5336
-#: src/Graph.cc:7620
+#: src/Graph.cc:7628
 #, fuzzy
 msgid "Right"
 msgstr "Listas"
 
-#: src/Graph.cc:7621
+#: src/Graph.cc:7629
 msgid "Left"
 msgstr ""
 
-#: src/Graph.cc:7622
+#: src/Graph.cc:7630
 msgid "Up"
 msgstr ""
 
 # src/xcas.cxx:3762
 # src/xcas.cxx:3793
 # src/xcas.cxx:4846
-#: src/Graph.cc:7623
+#: src/Graph.cc:7631
 #, fuzzy
 msgid "Down"
 msgstr "abajo"
 
 # src/xcas.cxx:4058
 # src/xcas.cxx:4105
-#: src/Graph.cc:7624
+#: src/Graph.cc:7632
 #, fuzzy
 msgid "ShowPosition"
 msgstr "Dividir ventana"
 
 # src/xcas.cxx:3849
 # src/xcas.cxx:3893
-#: src/Graph.cc:7625
+#: src/Graph.cc:7633
 #, fuzzy
 msgid "HidePosition"
 msgstr "Gestión"
@@ -12038,7 +12038,7 @@ msgstr "Gestión"
 # src/xcas.cxx:3691
 # src/xcas.cxx:3729
 # src/xcas.cxx:4740
-#: src/Graph.cc:7628
+#: src/Graph.cc:7636
 #, fuzzy
 msgid "EPS/PNG and preview"
 msgstr "Imprimir sesión"
@@ -12046,55 +12046,55 @@ msgstr "Imprimir sesión"
 # src/xcas.cxx:7425
 # src/xcas.cxx:7492
 # src/xcas.cxx:8434
-#: src/Graph.cc:7633
+#: src/Graph.cc:7641
 #, fuzzy
 msgid "Color"
 msgstr "Columnas"
 
-#: src/Graph.cc:7666
+#: src/Graph.cc:7674
 msgid "Turtle n steps forward"
 msgstr ""
 
-#: src/Graph.cc:7671
+#: src/Graph.cc:7679
 msgid "Turtle n steps backward"
 msgstr ""
 
-#: src/Graph.cc:7676
+#: src/Graph.cc:7684
 msgid "Turtle turns right n degrees"
 msgstr ""
 
-#: src/Graph.cc:7681
+#: src/Graph.cc:7689
 msgid "Turtle turns left n degrees"
 msgstr ""
 
-#: src/Graph.cc:7686
+#: src/Graph.cc:7694
 msgid "Turtle steps to the left from n steps"
 msgstr ""
 
-#: src/Graph.cc:7691
+#: src/Graph.cc:7699
 msgid "Turtle jumps n steps"
 msgstr ""
 
-#: src/Graph.cc:7696
+#: src/Graph.cc:7704
 msgid "Change pen color"
 msgstr ""
 
 # src/xcas.cxx:3974
 # src/xcas.cxx:4021
 # src/xcas.cxx:5114
-#: src/Graph.cc:7701
+#: src/Graph.cc:7709
 #, fuzzy
 msgid "Circle arc"
 msgstr "Circunferencias"
 
-#: src/Graph.cc:7706
+#: src/Graph.cc:7714
 msgid "Filled circle arc"
 msgstr ""
 
 # src/xcas.cxx:3968
 # src/xcas.cxx:4015
 # src/xcas.cxx:5101
-#: src/Graph.cc:7711
+#: src/Graph.cc:7719
 #, fuzzy
 msgid "Filled rectangle"
 msgstr "Triángulos"
@@ -12102,27 +12102,27 @@ msgstr "Triángulos"
 # src/xcas.cxx:3968
 # src/xcas.cxx:4015
 # src/xcas.cxx:5101
-#: src/Graph.cc:7716
+#: src/Graph.cc:7724
 #, fuzzy
 msgid "Filled triangle"
 msgstr "Triángulos"
 
-#: src/Graph.cc:7721
+#: src/Graph.cc:7729
 msgid "Write to the right of the turtle"
 msgstr ""
 
-#: src/Graph.cc:7726
+#: src/Graph.cc:7734
 msgid "Sign picture"
 msgstr ""
 
 # src/xcas.cxx:3743 src/xcas.cxx:3747
 # src/xcas.cxx:3775
 # src/xcas.cxx:4792
-#: src/Graph.cc:7731
+#: src/Graph.cc:7739
 msgid "Clear all"
 msgstr "Borrar todo"
 
-#: src/Graph.cc:7740
+#: src/Graph.cc:7748
 msgid "Turtle menu"
 msgstr ""
 

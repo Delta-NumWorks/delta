@@ -736,7 +736,7 @@ namespace giac {
       cl=ilaplace(cl,x,x,contextptr);
       return vecteur(1,ratnormal(cl,contextptr));
     }
-    gen i=integrate_without_lnabs(rdiv(b,a,contextptr),x,contextptr);
+    gen i=integrate_without_lnabs(inv(a,contextptr)*b,x,contextptr);
     i=normal(lnexpand(i,contextptr),contextptr);
     i=exp(i,contextptr);
     if (step_info)
@@ -846,8 +846,10 @@ namespace giac {
 	    }
 	    if (reel && is_zero(im(cst,contextptr)) && lop(part,at_integrate).empty())
 	      part=re(part,contextptr);
-	    //part=recursive_ratnormal(part,contextptr);
-	    part=simplify(part,contextptr);
+	    if (1) // desolve((y''+y=sin(x)) and (y(0)=1) and (y'(0)=2),y)
+	      part=recursive_ratnormal(part,contextptr);
+	    else
+	      part=simplify(part,contextptr);
 	  }
 	  if (step_info)
 	    gprintf("Particuliar solution %gen",makevecteur(part),step_info,contextptr);

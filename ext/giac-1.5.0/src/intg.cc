@@ -44,6 +44,7 @@ using namespace std;
 #include "moyal.h"
 #include "maple.h"
 #include "rpn.h"
+#include "modpoly.h"
 #include "giacintl.h"
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -143,7 +144,7 @@ namespace giac {
   }
   const gen_op_context invpowtan2_tab[]={nop_inv,nop_pow,sin_over_cos,0};
   // remove nop if nop() does not contain x
-  static gen remove_nop(const gen & g,const gen & x,GIAC_CONTEXT){
+  gen remove_nop(const gen & g,const gen & x,GIAC_CONTEXT){
     if (g.type==_VECT){
       vecteur res(*g._VECTptr);
       iterateur it=res.begin(),itend=res.end();
@@ -324,6 +325,13 @@ namespace giac {
     }
   }
 
+  static gen normal_norootof(const gen & g,GIAC_CONTEXT){
+    gen res=normal(g,contextptr);
+    if (!lop(res,at_rootof).empty())
+      res=ratnormal(normalize_sqrt(g,contextptr),contextptr);
+    return res;
+  }
+
   // eval N at X=e with e=x*exp(i*dephasage*pi/n)/(X-e)+conj and integrate
   static gen substconj_(const gen & N,const gen & X,const gen & x,const gen & dephasage_,bool residue_only,GIAC_CONTEXT){
     int mode=angle_mode(contextptr);
@@ -342,10 +350,10 @@ namespace giac {
     gen e=x*(c+cst_i*s);
     gen b=subst(N,X,e,false,contextptr),rb,ib;
     reim(b,rb,ib,contextptr);
-    gen N2=normal(-2*ib,contextptr); // same
+    gen N2=normal_norootof(-2*ib,contextptr); // same
     if (residue_only)
       return N2*sign(s*x,contextptr);
-    gen res=normal(rb,contextptr)*symbolic(at_ln,pow(X,2)+ratnormal(-2*c*x,contextptr)*X+x.squarenorm(contextptr)); 
+    gen res=normal_norootof(rb,contextptr)*symbolic(at_ln,pow(X,2)+ratnormal(-2*c*x,contextptr)*X+x.squarenorm(contextptr)); 
     gen atanterm=pi/cst_pi*symbolic(at_atan,(X-c*x)/(s*x));
     if (X.is_symb_of_sommet(at_tan))
       atanterm += pi*sign(s*x,contextptr)*symbolic(at_floor,X._SYMBptr->feuille/pi+plus_one_half);
@@ -433,7 +441,7 @@ namespace giac {
       else
 	c=pow(c,inv(n,contextptr),contextptr);
       if (!residue_only)
-	res += normal(subst(N,X,c,false,contextptr),contextptr)*lnabs2(X-c,X,contextptr)+normal(subst(N,X,-c,false,contextptr),contextptr)*lnabs2(X+c,X,contextptr);
+	res += normal_norootof(subst(N,X,c,false,contextptr),contextptr)*lnabs2(X-c,X,contextptr)+normal_norootof(subst(N,X,-c,false,contextptr),contextptr)*lnabs2(X+c,X,contextptr);
       for (int i=1;i<n/2;++i)
 	res += substconj(N,X,c,gen(2*i)/n*cst_pi,residue_only,contextptr);
     }
@@ -580,7 +588,7 @@ namespace giac {
 	gen c2=(-b+sqrtdelta)/2/a;
 	gen N=r2e(num,l,contextptr)*X/d/sqrtdelta;
 	if (is_zero(im(a,contextptr)) && is_zero(im(b,contextptr)) && is_zero(im(c,contextptr))){
-	  if (is_positive(delta,contextptr)){
+	  if (!is_positive(-delta,contextptr)){
 	    res += makelnatan(N/c2,X,c2,d,residue_only,contextptr);
 	    res -= makelnatan(N/c1,X,c1,d,residue_only,contextptr);
 	    return true;
@@ -2191,6 +2199,31 @@ namespace giac {
       if (u._SYMBptr->sommet==at_plus){
 	if (u._SYMBptr->feuille.type!=_VECT)
 	  return is_rewritable_as_f_of(fu,u._SYMBptr->feuille,fx,gen_x,contextptr);
+	if (_is_polynomial(makesequence(fu,gen_x),contextptr)==1 && _is_polynomial(makesequence(u,gen_x),contextptr)==1){
+	  gen FU=_symb2poly(makesequence(fu,gen_x),contextptr);
+	  gen U=_symb2poly(makesequence(u,gen_x),contextptr);
+	  if (FU.type==_VECT && U.type==_VECT){
+	    vecteur vfu=*FU._VECTptr;
+	    vecteur vu=*U._VECTptr;
+	    int N=vfu.size()-1,M=vu.size()-1;
+	    vecteur vfx(N/M+1);
+	    for (;!vfu.empty();){
+	      int n=vfu.size()-1,m=vu.size()-1;
+	      if (n % m)
+		break;
+	      gen c=vfu[0]/pow(vu[0],n/m,contextptr);
+	      vfx[N/M-n/m]=c;
+	      vecteur vtmp;
+	      submodpoly(vfu,*_symb2poly(makesequence(c*pow(u,n/m),gen_x),contextptr)._VECTptr,vtmp);
+	      vfu=*normal(vtmp,contextptr)._VECTptr;
+	      trim(vfu,0);
+	    }
+	    if (vfu.empty()){
+	      fx=_poly2symb(makesequence(vfx,gen_x),contextptr);
+	      return true;
+	    }
+	  }
+	}
 	decompose_plus(*u._SYMBptr->feuille._VECTptr,gen_x,non_constant,alpha,contextptr);
 	if (non_constant.empty()) return false; // setsizeerr(gettext("in is_rewritable_as_f_of_f 2"));
 	if (!is_zero(alpha)){
@@ -3121,6 +3154,14 @@ namespace giac {
     gen ee=rewrite_hyper(e,contextptr),tmprem;
     ee=rewrite_minmax(ee,true,contextptr);
     gen res=linear_integrate(ee,x,tmprem,contextptr);
+    if (!is_zero(tmprem)){
+      ee = tmprem;
+      gen k=extract_cst(ee,x,contextptr);
+      if (ee.is_symb_of_sommet(at_plus)){
+	res += k*integrate_gen_rem(ee,x,tmprem,contextptr);
+	tmprem = k*tmprem;
+      }
+    }
     remains_to_integrate=remains_to_integrate+tmprem;
     if (step_infolevel(contextptr) && is_zero(remains_to_integrate))
       gprintf(gettext("Hence primitive of %gen with respect to %gen is %gen"),makevecteur(e,x,res),contextptr);
@@ -3727,7 +3768,20 @@ namespace giac {
       res=subst(primitive,*x._IDNTptr,borne_sup,false,contextptr)-subst(primitive,*x._IDNTptr,borne_inf,false,contextptr);
     }
     vecteur sp;
-    sp=lidnt(evalf(makevecteur(primitive,borne_inf,borne_sup),1,contextptr));
+    gen prim2(primitive);
+    // remove multiplicative constants to compute sp
+    if (prim2.is_symb_of_sommet(at_prod)){
+      gen primf=prim2._SYMBptr->feuille;
+      if (primf.type==_VECT){
+	vecteur primv=*primf._VECTptr,primv2;
+	for (int i=0;i<primv.size();++i){
+	  if (contains(lidnt(primv[i]),x))
+	    primv2.push_back(primv[i]);
+	}
+	prim2=symbolic(at_prod,gen(primv2,_SEQ__VECT));
+      }
+    }
+    sp=lidnt(evalf(makevecteur(prim2,borne_inf,borne_sup),1,contextptr));
     if (sp.size()>1){
       *logptr(contextptr) << gettext("No checks were made for singular points of antiderivative ")+primitive.print(contextptr)+gettext(" for definite integration in [")+borne_inf.print(contextptr)+","+borne_sup.print(contextptr)+"]" << '\n' ;
       sp.clear();
@@ -4975,7 +5029,7 @@ namespace giac {
 	gen f=v[1]._SYMBptr->feuille;
 	gen v1=f[0];
 	gen v2=f[1]._SYMBptr->feuille[0],v3=f[1]._SYMBptr->feuille[1];
-	return seqprod(makevecteur(v[0],v1,v2,v3,v[2]),type,contextptr);
+	return change_subtype(seqprod(makevecteur(v[0],v1,v2,v3,v[2]),type,contextptr),_SEQ__VECT);
       }
       if (v.size()==3 && !v[1].is_symb_of_sommet(at_equal) && g.subtype==_SEQ__VECT)
 	return change_subtype(seqprod(gen(makevecteur(symb_interval(v[0],v[1]),v[2]),_SEQ__VECT),type,contextptr),0);

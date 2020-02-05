@@ -5241,6 +5241,14 @@ namespace xcas {
   }
   
   void Graph2d::in_draw(int clip_x,int clip_y,int clip_w,int clip_h,int & vertical_pixels){
+    if (window_xmax-window_xmin<1e-100){
+      window_xmax=gnuplot_xmax;
+      window_xmin=gnuplot_xmin;
+    }
+    if (window_ymax-window_ymin<1e-100){
+      window_ymax=gnuplot_ymax;
+      window_ymin=gnuplot_ymin;
+    }
     struct timezone tz;
     gettimeofday(&animation_last,&tz);
     gen title_tmp;

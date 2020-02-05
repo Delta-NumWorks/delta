@@ -1762,7 +1762,7 @@ Nous allons en pr\'esenter un dans le cadre plus simple
 de la multiplication des polyn\^omes (o\`u on n'a pas \`a
 g\'erer les retenues).
 
-\subsubsection{Diviser pour r\'egner: multiplication de Karatsuba.}
+\subsubsection{Diviser pour r\'egner: multiplication de Karatsuba.} \label{sec:kara}
 Soient $P, Q$ deux polyn\^omes de degr\'es strictement inf\'erieur \`a
 $2n$. On suppose que le cout d'une op\'eration arithm\'etique dans 
 l'ensemble des coefficients vaut 1 et on n\'eglige les autres
@@ -2750,6 +2750,131 @@ permet de retrouver $a^3 \pmod{ n_1n_2n_3}$ par le lemme chinois si
 $n_1,n_2,n_3$ sont premiers entre eux 2 \`a deux, puis $a^3$ puis $a$.
 \end{itemize}
 
+\section{Algorithmes rapides sur les polyn\^omes en une variable.}
+On a pr\'esent\'e \`a la section \ref{sec:kara} un algorithme 
+de multiplication rapide de polyn\^omes. On verra \`a la
+section \ref{sec:fft} un algorithme plus rapide.
+En utilisant un algorithme de multiplication rapide de polyn\^omes,
+on peut acc\'el\'erer la division euclidienne et l'algorithme d'Euclide.
+
+\subsection{Inverse modulo $x^l$}
+Soit $A$ un polyn\^ome de coefficient constant 1. On cherche $B$
+de degr\'e strictement plus petit que $l$
+tel que $AB=1 \pmod{x^l}$. Pour $l=1$, il suffit de poser $B=1$.
+Supposons le probl\`eme r\'esolu pour $l$
+$$AB=1 \pmod{x^l}$$
+cherchons $C=B+x^lD$ tel que
+$$ A(B+x^lD)= 1 \pmod{x^{2l}} $$
+Ceci \'equivaut \`a
+$$ AD=\frac{1-AB}{x^l} \pmod{x^l}$$
+donc
+$$ D=B \frac{1-AB}{x^l} \pmod{x^l} $$
+on calcule $B(1-AB)$, on tronque pour avoir un polyn\^ome de degr\'e $2l-1$,
+on divise par $x^l$ (on sait que $1-AB$ est divisible par $x^l$).
+On peut aussi calculer $C$ directement
+$$ C=B+x^lD= 2B-AB^2 \pmod{x^{2l}}$$
+Pour passer de la pr\'ecision $l$ \`a la pr\'ecision $2l$, le co\^ut
+est celui d'une multiplication de 2 polyn\^omes en pr\'ecision $l$ et
+d'une multiplication en pr\'ecision $2l$, donc $M(l)+M(2l)$.
+Si $l$ est une puissance de 2, $l=2^n$, le cout total est
+$$ \sum_{k=1}^n M(2^k)+M(2^{k-1})$$
+Si la multiplication est Karatsuba, on obtient la m\^eme complexit\'e
+pour l'inverse. Si la multiplication est la FFT en $O(k2^k)$, on obtient
+aussi la m\^eme complexit\'e pour l'inverse.
+
+\subsection{Division euclidienne.}
+Soient $A$ et $B$ deux polyn\^omes de degr\'e respectifs $n$ et $m$
+avec $n \geq m$, on pose la division euclidienne~:
+$$ A=BQ+R $$
+Le degr\'e de $Q$ est $n-m+1$, le cout de l'algorithme na\"if
+est donc proportionnel \`a $m(n-m+1)$. Lorsque $n-m+1$ et $m$ sont grands,
+on peut esp\'erer trouver un algorithme plus efficace pour calculer
+$Q$ et $R$.
+
+On peut ramener le calcul de $Q$ \`a celui d'un inverse 
+modulo une puissance de $x$
+en faisant le changement de variables 
+$x=1/x$ et de multiplier par $x^n$. Si $a$ est le polyn\^ome
+ayant les coefficients de $A$ \'ecrits dans l'autre sens, on a
+$$ a(x) = x^n A(\frac{1}{x}) $$
+Avec les m\^emes conventions de notations pour $b$, $q$ et $r$ (en 
+consid\'erant $R$ comme de degr\'e exactement \'egal \`a $m-1$), on a~:
+$$ a=bq+x^{n-m+1} r$$
+Donc $ a=bq \pmod{x^{n-m+1}}$, et
+$$ q=a \mbox{inv}(b \pmod{x^{n-m+1}}) $$
+ce qui d\'etermine $q$ (car son degr\'e est $n-m+1$).
+
+On calcule ensuite $Q$ et $R=A-BQ$.
+
+\subsection{Euclide}
+L'observation de base pour acc\'el\'erer Euclide est que pour faire une
+\'etape d'Euclide, on divise g\'en\'eriquement un polyn\^ome $A$ de degr\'e
+$n$ par un polyn\^ome $B$ de degr\'e $n-1$, avec un quotient de degr\'e 1,
+dont les deux coefficients sont enti\`erement d\'etermin\'es par les
+deux coefficients dominants et sous-dominants de $A$ et $B$.
+
+On peut g\'en\'eraliser cette observation si on pense en terme
+de l'algorithme d'Euclide \'etendu (B\'ezout), le vecteur colonne 
+des deux restes $R_i$ et $R_{i+1}$ successifs \`a l'\'etape
+$i$ s'obtient en faisant
+le produit d'une matrice 2,2 par le vecteur colonne $A$ et $B$
+$$ \begin{pmatrix} R_i \\ R_{i+1} \end{pmatrix}
+= M_i \begin{pmatrix} A \\ B \end{pmatrix} $$
+Les coefficients de $M_i$ ne d\'ependent
+que des quotients initiaux, ils sont donc de degr\'e au plus $i$ (environ).
+Si on change les $l$ coefficients de plus bas degr\'e de $A$ ou $B$,
+les coefficients de degr\'e plus grand que (environ)
+$i+l$ de $R_i$ et $R_{i+1}$ ne changent pas. 
+On va prendre tout d'abord $i=n/4$ et $l=n/2$ (environ) pour $A$ et $B$
+et plus loin dans l'algorithme $i=n/4=l$. 
+Les termes de de degr\'e $>3n/4$ de $R_i$ et $R_{i+1}$ ne 
+vont pas d\'ependre des termes de degr\'e plus petit que $n/2$ de $A$ et $B$,
+que l'on peut annuler, ce qui revient \`a mettre $X^{n/2}$ en facteur
+ou encore \`a effectuer le calcul des $n/4$ premi\`eres \'etapes
+avec uniquement les $n/2$ coefficients de plus haut degr\'e de $A$ et $B$.
+Comme on a fait $n/4$ \'etapes environ, on a diminu\'e d'environ $n/4$
+le degr\'e de $R_i$ et $R_{i+1}$, qui encadrent $3n/4$.
+On refait alors environ $n/4$ \'etapes en gardant les termes de degr\'e
+plus grand que $n/4$ de $R_k$ et $R_{k+1}$ ($k=l=n/4$ ci-dessus), 
+on a alors diminu\'e de $n/2$
+le degr\'e de la paire de restes successifs.
+
+L'algorithme HGCD (half-GCD) calcule la matrice d'Euclide \'etendu
+qui permet de passer dans la suite des restes
+de $A,B$ avec deg$(A)=n$>deg$(B)$ \`a $R_k,R_{k+1}$ 
+avec deg$(R_k) \geq n/2 > $deg$(R_{k+1}$. Si $n$ est impair,
+on pose $m=(n+1)/2$, si $n$ est pair, $m=n/2$.
+\begin{itemize}
+\item si par chance deg$(B)<m$, on renvoie la matrice identit\'e
+\item on garde 
+les coefficients de $A$ et $B$ de degr\'e au moins \'egal \`a $m$, 
+on appelle r\'ecursivement HGCD 
+qui renvoie une matrice $M$ effectuant 
+$s$=environ $n/4$ \'etapes d'Euclide \'etendu,
+\item on calcule $R_s$ et $R_{s+1}$ en faisant le produit de matrice
+$M$ avec $(A,B)$,
+on a deg$(R_s) \geq ``3n/4'' > $deg$(R_{s+1}$. 
+La valeur pr\'ecise $3n/4$ est l'arrondi sup\'erieur de $m+\frac{n-m}{2}$ .
+\item si par chance, deg$(R_{s+1})<m$, on a fini, on renvoie $M$
+\item on effectue une division euclidienne pour remplacer $R_s,R_{s+1}$
+par $R_{s+1},R_{s+2}$ qui sont alors de degr\'e strictement plus 
+petit que ``$3n/4$'', ce qui correspond \`a une matrice \'el\'ementaire
+$$ E=\begin{pmatrix} 0 & 1 \\ 1 & -\mbox{quo}(R_s,R_{s+1}) \end{pmatrix}$$
+\item on calcule $\tilde{M}$
+la matrice d'Euclide \'etendu pour $R_{s+1}$ et $R_{s+2}$
+pour environ $n/4$ \'etapes par appel r\'ecursif de HGCD
+sur les environ $n/2$ coefficients de $R_{s+1}$ et $R_{s+2}$ 
+de degr\'e au moins ``$n/4$''. Pr\'ecis\'ement,
+si $l$=deg$(R_{s+1})$, on prend pour valeur de ``$n/4$'' l'entier
+$k=2m-l$.
+\item on renvoie le produit des 3 matrices $\tilde{M}EM $
+\end{itemize}
+
+On a donc ramen\'e hgcd en taille $n$ au calcul de deux
+hgcd en taille $n/2$ et des produits de taille au plus $n$.
+
+Pour une preuve rigoureuse, on renvoie \`a
+\ahref{https://pdfs.semanticscholar.org/a7e7/b01a3dd6ac0ec160b35e513c5efa38c2369e.pdf}{Yap}.
 
 \section{Pour en savoir plus.}
 Sur des aspects plus th\'eoriques~:
@@ -6353,7 +6478,9 @@ La courbe admet deux autres points d'inflexion ($t=-3.16...$ et
 $t=1.31...$) qu'on peut d\'eterminer avec les commandes Xcas suivantes~:\\
 \giacinputbigmath{purge(x,y);X:=x^3/(x^2+1); Y:=x+1/(x^2+2); plotparam([X,Y],x)}
 \giacinputmath{fsolve(X'*Y''-X''*Y',x)}\\
+\ifhevea
 \giacinputmath[style="width:400px;height:40px;font-size:large"]{tabvar([X,Y]);}
+\fi
 Note~: on utilise comme param\`etre \verb|x| au lieu de \verb|t| pour pouvoir 
 utiliser la notation \verb|'| pour d\'eriver (si on utilise \verb|t|
 comme param\`etre, il faut utiliser \verb|diff(.,t)| pour calculer
@@ -9865,7 +9992,8 @@ p8      &    &    &    &    &    &   &  & x   & x & x  & x   & x & x & x & x \\
 
 {\bf Remarque}\\
 On peut aussi g\'en\'erer des codes de Hamming binaire
-comme codes polynomiaux associ\'es \`a un polyn\^ome irr\'eductible $P$
+comme codes polynomiaux associ\'es \`a un polyn\^ome 
+irr\'eductible primitif $P$
 de $\Z/2\Z[X]$ de degr\'e $m$. En effet, on obtient ainsi un code
 de distance 3 au moins, puisque si un polynome $Q$ est multiple de $P$
 et n'a que 2 monomes non nuls d'indice plus petits que $n=2^m-1$, 
@@ -11305,7 +11433,7 @@ on v\'erifie
 
 \section{Exercices (factorisation des polynômes)}
 \begin{enumerate}
-\item Soit le polyn\^ome $P(x)=x^{5}+x^{4}-5x^{3}-5x^{2}+6x+6$.
+\item Soit le polyn\^ome $P(x)=2\,x^{3}-x^{2}-4\,x+2$.
 On veut d\'eterminer des intervalles d'isolation des racines r\'eelles
 positives de $P$.
 \begin{enumerate} 
@@ -11315,12 +11443,12 @@ coefficients). On peut utiliser \verb|coeffs| pour avoir la
 liste des coefficients de $P$.
 \item Pour faire de m\^eme sur $]0,1[$, on fait d'abord
 le changement de variables $x\rightarrow 1/x$ 
-($\tilde{P}(x)=x^5P(1/x)$) qui permet
+($\tilde{P}(x)=x^3P(1/x)$) qui permet
 de se ramener \`a des racines dans $]1,+\infty[$ puis  
 $x \rightarrow x+1$ ($\tilde{P}(x)=P(x+1)$) sur $]0,+\infty[$.
 On peut utiliser \verb|revlist| pour calculer $\tilde{P}$
 et \verb|ptayl| pour faire le changement d'origine.
-\item Pour faire de m\^eme sur $]a,b[$, on pose $P(x)=Q(at+b-a)$.
+\item Pour faire de m\^eme sur $]a,b[$, on pose $P(x)=Q((b-a)t+a)$.
 \item D\'eterminer une majoration $M$ des racines de $P$ en module.
 Puis par dichotomie, trouver des intervalles d'isolation
 des racines de $P$.
@@ -11330,7 +11458,8 @@ entre 0 et 6 (en utilisant les suites de Sturm, on donnera les
 d\'etails des calculs). D\'eterminer le nombre de racines r\'eelles
 de ce polyn\^ome en utilisant une majoration du module des racines.
 \item \'Ecrire un programme calculant la suite de Sturm d'un polynôme
-supposé squarefree (on peut tester avec \verb|sqrfree|), en utilisant
+supposé squarefree (on peut tester avec \verb|sqrfree|
+ou s'y ramener en calculant $P$/gcd$(P,P')$), en utilisant
 l'algorithme d'Euclide, on renverra $P$, $P'$ et la liste des quotients.
 \'Ecrire un programme calculant le nombre de changements de signe
 de la suite de Sturm en un r\'eel (indication~: utiliser 
@@ -11405,6 +11534,8 @@ lorsqu'on est proche du facteur.
 
 
 \end{enumerate}
+
+\vfill
 
 \pagebreak
 
@@ -18384,7 +18515,7 @@ de 10, on doit trouver $y_k$ proche de 0 relativement à la valeur des $|x_j|$.
 Les périodes et pseudo-périodes de $x$ correspondent donc aux
 valeurs de $y_k$ grandes par la règle $k$ * période =$N$.
 
-\section{La transformée de Fourier rapide}\index{FFT}
+\section{La transformée de Fourier rapide}\index{FFT} \label{sec:fft}
 \index{transform\'ee de Fourier rapide}\index{rapide, transform\'ee de
 Fourier}
 Le calcul de la DFT est relativement lent, il nécessite de l'ordre

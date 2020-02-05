@@ -1433,6 +1433,8 @@ namespace giac {
       if(v.size()==3)
 	name=v[2].print(contextptr);
       if (v[0].type==_VECT){
+	if (v[0].subtype==_GROUP__VECT && v[0]._VECTptr->size()==2)
+	  name="";
 	return vect2svg(v[0], attr, name,xmin,xmax,ymin,ymax,contextptr);
       }                     
       if (v[0].type==4)           //indispensable, mais je ne sais pas pourquoi

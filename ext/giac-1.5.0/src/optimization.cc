@@ -135,6 +135,40 @@ vecteur solve_vect(const vecteur &e,const vecteur &v,GIAC_CONTEXT) {
 
 int var_index=0;
 
+bool is_greater_than_zero(const gen &g,const vecteur &vars,GIAC_CONTEXT) {
+    vecteur terms(0);
+    if (g.is_symb_of_sommet(at_plus) && g._SYMBptr->feuille.type==_VECT)
+        terms=*g._SYMBptr->feuille._VECTptr;
+    else terms=makevecteur(g);
+    bool has_exp=false;
+    gen rest(0);
+    for (const_iterateur it=terms.begin();it!=terms.end();++it) {
+        if (_lin(*it,contextptr).is_symb_of_sommet(at_exp))
+            has_exp=true;
+        else rest+=*it;
+    }
+    if (!has_exp)
+        return false;
+    return is_positive(rest,contextptr);
+}
+
+gen remove_strictly_positive_factors(const gen &g,const vecteur &vars,GIAC_CONTEXT) {
+    gen f(g);
+    if (f.is_symb_of_sommet(at_neg))
+        f=f._SYMBptr->feuille;
+    if (f.is_symb_of_sommet(at_prod) && f._SYMBptr->feuille.type==_VECT) {
+        const vecteur &fv=*f._SYMBptr->feuille._VECTptr;
+        gen p(1);
+        for (const_iterateur jt=fv.begin();jt!=fv.end();++jt) {
+            if (is_greater_than_zero(*jt,vars,contextptr))
+              continue;
+            else p=*jt*p;
+        }
+        f=p;
+    }
+    return f;
+}
+
 /*
  * Solves a system of equations.
  * This function is based on _solve but handles cases where a variable
@@ -142,13 +176,22 @@ int var_index=0;
  */
 vecteur solve2(const vecteur &e_orig,const vecteur &vars_orig,GIAC_CONTEXT) {
     int m=e_orig.size(),n=vars_orig.size(),i=0;
+    vecteur e_orig_simp=*expexpand(expand(_pow2exp(e_orig,contextptr),contextptr),contextptr)._VECTptr;
+    for (iterateur it=e_orig_simp.begin();it!=e_orig_simp.end();++it) {
+        if (it->is_symb_of_sommet(at_equal))
+            *it=equal2diff(*it);
+        gen f=_factor(*it,contextptr);
+        gen num=remove_strictly_positive_factors(_numer(f,contextptr),vars_orig,contextptr);
+        gen den=remove_strictly_positive_factors(_denom(f,contextptr),vars_orig,contextptr);
+        *it=num/den;
+    }
     for (;i<m;++i) {
-        if (!is_rational_wrt_vars(e_orig[i],vars_orig,contextptr))
+        if (!is_rational_wrt_vars(e_orig_simp[i],vars_orig,contextptr))
             break;
     }
     if (n==1 || i==m)
-        return solve_vect(e_orig,vars_orig,contextptr);
-    vecteur e(*halftan(_texpand(hyp2exp(e_orig,contextptr),contextptr),contextptr)._VECTptr);
+        return solve_vect(e_orig_simp,vars_orig,contextptr);
+    vecteur e(*halftan(_texpand(hyp2exp(e_orig_simp,contextptr),contextptr),contextptr)._VECTptr);
     vecteur lv(*exact(lvar(_evalf(lvar(e),contextptr)),contextptr)._VECTptr);
     vecteur deps(n),depvars(n,gen(0));
     vecteur vars(vars_orig);
@@ -170,7 +213,7 @@ vecteur solve2(const vecteur &e_orig,const vecteur &vars_orig,GIAC_CONTEXT) {
             break;
     }
     if (it!=lv.end() || find(depvars.begin(),depvars.end(),gen(0))!=depvars.end())
-        return solve_vect(e_orig,vars_orig,contextptr);
+        return solve_vect(e_orig_simp,vars_orig,contextptr);
     vecteur e_subs=subst(e,deps,depvars,false,contextptr);
     vecteur sol=solve_vect(e_subs,depvars,contextptr);
     vecteur ret;
@@ -194,32 +237,55 @@ vecteur solve2(const vecteur &e_orig,const vecteur &vars_orig,GIAC_CONTEXT) {
     return ret;
 }
 
+bool is_ineq_x_a(const gen &g,const gen &var,gen &a,GIAC_CONTEXT) {
+    if ((g.is_symb_of_sommet(at_inferieur_egal) ||
+         g.is_symb_of_sommet(at_inferieur_strict) ||
+         g.is_symb_of_sommet(at_superieur_egal) ||
+         g.is_symb_of_sommet(at_superieur_strict)) &&
+        g._SYMBptr->feuille.type==_VECT &&
+        g._SYMBptr->feuille._VECTptr->front()==var &&
+        is_constant_wrt(g._SYMBptr->feuille._VECTptr->back(),var,contextptr))
+    {
+        a=g._SYMBptr->feuille._VECTptr->back();
+        return true;
+    }
+    return false;
+}
+
 /*
  * Traverse the tree of symbolic expression 'e' and collect all points of
- * transition in piecewise subexpressions, no matter of the inequality sign.
- * Nested piecewise expressions are not supported.
+ * transition in piecewise subexpressions.
  */
-void find_spikes(const gen &e,vecteur &cv,GIAC_CONTEXT) {
-    if (e.type!=_SYMB)
-        return;
-    gen &f=e._SYMBptr->feuille;
-    if (f.type==_VECT) {
-        for (const_iterateur it=f._VECTptr->begin();it!=f._VECTptr->end();++it) {
-            if (e.is_symb_of_sommet(at_piecewise) || e.is_symb_of_sommet(at_when)) {
-                if (it->is_symb_of_sommet(at_equal) ||
-                        it->is_symb_of_sommet(at_different) ||
-                        it->is_symb_of_sommet(at_inferieur_egal) ||
-                        it->is_symb_of_sommet(at_superieur_egal) ||
-                        it->is_symb_of_sommet(at_inferieur_strict) ||
-                        it->is_symb_of_sommet(at_superieur_strict)) {
-                    vecteur &w=*it->_SYMBptr->feuille._VECTptr;
-                    cv.push_back(w[0].type==_IDNT?w[1]:w[0]);
-                }
-            }
-            else find_spikes(*it,cv,contextptr);
+void collect_transition_points(const gen &e,const gen &var,vecteur &cv,GIAC_CONTEXT) {
+    if (e.type==_VECT) {
+        for (const_iterateur it=e._VECTptr->begin();it!=e._VECTptr->end();++it) {
+            collect_transition_points(*it,var,cv,contextptr);
         }
     }
-    else find_spikes(f,cv,contextptr);
+    else if ((e.is_symb_of_sommet(at_piecewise) || e.is_symb_of_sommet(at_when)) &&
+             e._SYMBptr->feuille.type==_VECT) {
+        const vecteur &f=*e._SYMBptr->feuille._VECTptr;
+        int sz=f.size();
+        for (int i=0;i<sz/2;++i) {
+            gen g=_solve(makesequence(f[2*i],var),contextptr);
+            if (g.type==_VECT) {
+                gen a,b;
+                for (const_iterateur it=g._VECTptr->begin();it!=g._VECTptr->end();++it) {
+                    if (is_ineq_x_a(*it,var,a,contextptr))
+                        cv.push_back(a);
+                    else if (it->is_symb_of_sommet(at_and) &&
+                             it->_SYMBptr->feuille.type==_VECT &&
+                             it->_SYMBptr->feuille._VECTptr->size()==2 &&
+                             is_ineq_x_a(it->_SYMBptr->feuille._VECTptr->front(),var,a,contextptr) &&
+                             is_ineq_x_a(it->_SYMBptr->feuille._VECTptr->back(),var,b,contextptr)) {
+                        cv.push_back(a);
+                        cv.push_back(b);
+                    }
+                }
+            }
+        }
+    } else if (e.type==_SYMB)
+        collect_transition_points(e._SYMBptr->feuille,var,cv,contextptr);
 }
 
 bool next_binary_perm(vector<bool> &perm,int to_end=0) {
@@ -247,7 +313,7 @@ vecteur make_temp_vars(const vecteur &vars,const vecteur &ineq,bool open,GIAC_CO
             if (s.type==_VECT)
                 as=*s._VECTptr;
             else {
-                *logptr(contextptr) << "Warning: failed to set bounds on variable " << *it << "\n";
+                *logptr(contextptr) << "Warning: failed to set bounds for variable " << *it << "\n";
                 as.clear();
             }
         }
@@ -267,9 +333,9 @@ vecteur make_temp_vars(const vecteur &vars,const vecteur &ineq,bool open,GIAC_CO
                         s._SYMBptr->feuille._VECTptr->back()._SYMBptr->feuille._VECTptr->front()==*it) {
                 vmin=s._SYMBptr->feuille._VECTptr->front()._SYMBptr->feuille._VECTptr->back();
                 vmax=s._SYMBptr->feuille._VECTptr->back()._SYMBptr->feuille._VECTptr->back();
-            } else *logptr(contextptr) << "Warning: failed to set bounds on variable " << *it << "\n";
+            } else *logptr(contextptr) << "Warning: failed to set bounds for variable " << *it << "\n";
         }
-        gen v=identificateur(" var"+print_INT_(++var_index));
+        gen v=identificateur(" x"+print_INT_(++var_index));
         if (!is_undef(vmax) && !is_undef(vmin))
             assume_t_in_ab(v,vmin,vmax,open,open,contextptr);
         else if (!is_undef(vmin))
@@ -365,7 +431,7 @@ matrice critical_univariate(const gen &f,const gen &x,GIAC_CONTEXT) {
         if (z.type==_VECT)
           cv=mergevecteur(cv,*z._VECTptr);
     }
-    find_spikes(f,cv,contextptr);  // assuming that f is not differentiable on transitions
+    collect_transition_points(f,x,cv,contextptr);
     for (int i=cv.size();i-->0;) {
         if (cv[i].is_symb_of_sommet(at_and))
             cv.erase(cv.begin()+i);
@@ -388,7 +454,13 @@ vecteur global_extrema(const gen &f,const vecteur &g,const vecteur &h,const vect
     if (n==1) {
         cv=critical_univariate(ff,tmpvars[0],contextptr);
         for (const_iterateur it=g.begin();it!=g.end();++it) {
-            cv.push_back(makevecteur(it->_SYMBptr->feuille._VECTptr->back()));
+            gen a,b;
+            if (!is_linear_wrt(*it,vars[0],a,b,contextptr) || is_zero(a)) {
+              *logptr(contextptr) << "Warning: expected a linear function in " << vars[0]
+                                  << ",  got " << *it << "\n";
+              continue;
+            }
+            cv.push_back(makevecteur(-b/a));
         }
     } else {
         vecteur gg=subst(g,vars,tmpvars,false,contextptr);
@@ -405,6 +477,15 @@ vecteur global_extrema(const gen &f,const vecteur &g,const vecteur &h,const vect
     matrice min_locations;
     for (const_iterateur it=cv.begin();it!=cv.end();++it) {
         gen val=_eval(subst(f,vars,*it,false,contextptr),contextptr);
+        if (is_inf(val)) {
+          *logptr(contextptr) << "Warning: the function is not bounded\n";
+          return vecteur(0);
+        }
+        if (is_undef(val)) {
+          *logptr(contextptr) << "Warning: failed to compute the function value at critical point "
+                              << (it->_VECTptr->size()==1?it->_VECTptr->front():*it) << "\n";
+          return vecteur(0);
+        }
         if (min_set && is_exactly_zero(ratnormal(val-mn,contextptr))) {
             if (find(min_locations.begin(),min_locations.end(),*it)==min_locations.end())
                 min_locations.push_back(*it);
@@ -574,7 +655,7 @@ gen _minimize(const gen &args,GIAC_CONTEXT) {
     gen mn,mx;
     vecteur loc(global_extrema(f,g,h,vars,mn,mx,contextptr));
     if (loc.empty() || mn.is_approx()) {
-        /* try using nlpsolve for approx results */
+        *logptr(contextptr) << "Warning: failed to find exact extrema, switching to approx mode\n";
         gen asol=_nlpsolve(change_subtype(vecteur(argv.begin(),argv.begin()+nargs),_SEQ__VECT),contextptr);
         if (asol.type==_VECT && asol._VECTptr->size()>1) {
             mn=asol._VECTptr->front();

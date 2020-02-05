@@ -36,7 +36,7 @@ namespace xcas {
   // If use_external_browser is true you can change the browser used
   // by setting the BROWSER env variable, e.g. export BROWSER=...
   extern bool use_external_browser; 
-  // alert if the command is not successfull
+  // alert if the command is not successful
   void system_browser(const std::string & s);
 
   // return the last keyword of s
