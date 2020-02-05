@@ -1484,13 +1484,9 @@ namespace giac {
 	local_sto_double(i,*vars._IDNTptr,newcontextptr);
 	// vars._IDNTptr->localvalue->back()._DOUBLE_val =i;
 	yy=y.evalf2double(eval_level(contextptr),newcontextptr);
-#ifdef EMCC
-	if (yy.is_symb_of_sommet(at_neg))
-	  yy=-yy._SYMBptr->feuille.evalf2double(eval_level(contextptr),newcontextptr);
-#endif
 	if (yy.type!=_DOUBLE_){
 	  if (debug_infolevel)
-	    CERR << y << " not real at " << i << " value " << yy << " type " << int(yy.type) << '\n';
+	    CERR << y << " not real at " << i << " " << yy << '\n';
 	  if (!chemin.empty())
 	    res.push_back(pnt_attrib(symb_curve(gen(makevecteur(vars+cst_i*f,vars,xmin,i,showeq),_PNT__VECT),gen(chemin,_GROUP__VECT)),attributs.empty()?color:attributs,contextptr));
 	  xmin=i;
@@ -2925,6 +2921,11 @@ namespace giac {
     if (s==1){
       v=makevecteur(0*v[0],v[0]);
       ++s;
+    }
+    if (s==4){
+      v[0]=makevecteur(v[0],v[1]);
+      v[1]=makevecteur(v[2],v[3]);
+      s=2;
     }
     if (s>=2 && s<=3 && v[0].type!=_VECT && v[1].type!=_VECT && !v[0].is_symb_of_sommet(at_pnt) && !v[1].is_symb_of_sommet(at_pnt) && is_zero(im(v[0],contextptr),contextptr) && is_zero(im(v[1],contextptr),contextptr)){
       if (s==2){
@@ -8792,14 +8793,7 @@ namespace giac {
     }
     int jstep,kstep;
     read_option(v,xmin,xmax,ymin,ymax,zmin,zmax,attributs,nstep,jstep,kstep,contextptr);
-    bool v0cst=false,v1cst=false;
-#ifndef NO_STDEXCEPT
-    try {
-      v0cst=lidnt(evalf(v0,1,contextptr)).empty();
-      v1cst=lidnt(evalf(v1,1,contextptr)).empty();
-    } catch(std::exception & e) {
-    }
-#endif
+    bool v0cst=lidnt(evalf(v0,1,contextptr)).empty(),v1cst=lidnt(evalf(v1,1,contextptr)).empty();
     if (v0cst && v1cst){
       if (s==2 || v[2].is_symb_of_sommet(at_equal))
 	return _point(eval(g,1,contextptr),contextptr);
@@ -11704,7 +11698,7 @@ namespace giac {
 
   // Unarchive a session from archive named s
   // Replace one level of history by replace
-  // Return 0 if not successful, or a vector of remaining gen in the archive
+  // Return 0 if not successfull, or a vector of remaining gen in the archive
   gen unarchive_session(istream & is,int level, const gen & replace,GIAC_CONTEXT){
 #if defined BESTA_OS || defined VISUALC
     ALLOCA(char, buf, BUFFER_SIZE ); //char * buf = ( char * )alloca( BUFFER_SIZE );
@@ -11728,7 +11722,7 @@ namespace giac {
   }
 
   gen unarchive_session(const string & s,int level, const gen & replace,GIAC_CONTEXT){
-    ::FILE * f = fopen(s.c_str(),"r");
+    FILE * f = fopen(s.c_str(),"r");
     char * buf = new char[101];
     fread(buf,sizeof(char),12,f);
     buf[12]=0;
@@ -11788,7 +11782,7 @@ namespace giac {
     if (a.type!=_STRNG)
       return gensizeerr(contextptr);
     if (s==3){ // new binary archive format
-      ::FILE * f=fopen(a._STRNGptr->c_str(),"w");
+      FILE * f=fopen(a._STRNGptr->c_str(),"w");
       if (!f)
 	return gensizeerr(gettext("Unable to open file ")+a.print(contextptr));
       fprintf(f,"%s","-1  "); // header: type would be -1
@@ -11813,7 +11807,7 @@ namespace giac {
     if ( args.type==_STRNG && args.subtype==-1) return  args;
     if (args.type!=_STRNG)
       return gensizeerr(contextptr);
-    ::FILE * f = fopen(args._STRNGptr->c_str(),"r");
+    FILE * f = fopen(args._STRNGptr->c_str(),"r");
     if (!f)
       return gensizeerr(gettext("Unable to read file"));
     char * buf = new char[101];

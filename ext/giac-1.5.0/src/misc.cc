@@ -948,45 +948,6 @@ namespace giac {
   static define_unary_function_eval (__tcoeff,&_tcoeff,_tcoeff_s);
   define_unary_function_ptr5( at_tcoeff ,alias_at_tcoeff,&__tcoeff,0,true);
 
-  gen _homogeneize(const gen & args,GIAC_CONTEXT){
-    if (args.type==_STRNG && args.subtype==-1) return  args;
-    gen t,p;
-    int s=2;
-    if (args.type!=_VECT){
-      t=t__IDNT_e;
-      p=args;
-    }
-    else {
-      vecteur & v=*args._VECTptr;
-      s=int(v.size());
-      if (!s)
-	return args;
-      if ( (args.subtype!=_SEQ__VECT) || (s<2) )
-	return v.front();
-      t=v[1];
-      p=v[0];
-    }
-    vecteur lv(lidnt(p));
-    vecteur lt(lv);
-    lt.push_back(t);
-    gen g=_e2r(makesequence(p,lv),contextptr),n,d;
-    fxnd(g,n,d);
-    if (n.type!=_POLY)
-      return p;
-    polynome nlcoeff(*n._POLYptr);
-    nlcoeff=nlcoeff.homogeneize();
-    if (d.type==_POLY){
-      polynome dlcoeff=d._POLYptr->homogeneize();
-      g=r2e(dlcoeff,lt,contextptr);
-    }
-    else
-      g=r2e(d,lv,contextptr);
-    return r2e(nlcoeff,lt,contextptr)/g;
-  }
-  static const char _homogeneize_s []="homogeneize";
-  static define_unary_function_eval (__homogeneize,&_homogeneize,_homogeneize_s);
-  define_unary_function_ptr5( at_homogeneize ,alias_at_homogeneize,&__homogeneize,0,true);
-
   static gen sqrfree(const gen & g,const vecteur & l,GIAC_CONTEXT){
     if (g.type!=_POLY)
       return r2sym(g,l,contextptr);
@@ -5118,6 +5079,15 @@ static define_unary_function_eval (__batons,&_batons,_batons_s);
     double largeur=.8;
     if (g.type==_VECT && g.subtype==_SEQ__VECT){
       vecteur v=*g._VECTptr;
+      if (v.size()>1 && v.front().type==_VECT && v.back().type!=_VECT){
+	gen l=evalf_double(v.back(),1,contextptr);
+	if (l.type==_DOUBLE_){
+	  largeur=v.back()._DOUBLE_val;
+	  v.pop_back();
+	  if (v.size()==1)
+	    v=*v.front()._VECTptr;
+	}
+      }
       for (unsigned i=0;i<v.size();++i){
 	if (v[i].is_symb_of_sommet(at_equal) && v[i]._SYMBptr->feuille.type==_VECT){
 	  gen f=v[i]._SYMBptr->feuille._VECTptr->front();
@@ -5226,6 +5196,21 @@ static define_unary_function_eval (__batons,&_batons,_batons_s);
   static const char _camembert_s []="camembert";
 static define_unary_function_eval (__camembert,&_camembert,_camembert_s);
   define_unary_function_ptr5( at_camembert ,alias_at_camembert,&__camembert,0,true);
+
+  gen _axis(const gen & g,GIAC_CONTEXT){
+    if (g.type!=_VECT || g._VECTptr->size()<4)
+      return gensizeerr(contextptr);
+    const vecteur & v=*g._VECTptr;
+    gen X(symb_equal(change_subtype(_GL_X,_INT_PLOT),symb_interval(v[0],v[1])));
+    gen Y(symb_equal(change_subtype(_GL_Y,_INT_PLOT),symb_interval(v[2],v[3])));
+    if (v.size()<6)
+      return makesequence(X,Y);
+    gen Z(symb_equal(change_subtype(_GL_Z,_INT_PLOT),symb_interval(v[4],v[5])));
+    return makesequence(X,Y,Z);
+  }
+  static const char _axis_s []="axis";
+  static define_unary_function_eval (__axis,&_axis,_axis_s);
+  define_unary_function_ptr5( at_axis ,alias_at_axis,&__axis,0,true);
 
   // Graham scan convex hull
  static bool graham_sort_function(const gen & a,const gen & b){
@@ -6951,17 +6936,6 @@ static define_unary_function_eval (__os_version,&_os_version,_os_version_s);
   static define_unary_function_eval (__randmarkov,&_randmarkov,_randmarkov_s);
   define_unary_function_ptr5( at_randmarkov ,alias_at_randmarkov,&__randmarkov,0,true);
 
-  vecteur lvarxwithinvsqrt(const gen &e,const gen & x,GIAC_CONTEXT){
-    gen ee=subst(e,invpowtan_tab,invpowtan2_tab,false,contextptr);
-    ee=remove_nop(ee,x,contextptr);
-    vecteur w(lvar(ee)),v;
-    for (int i=0;i<w.size();++i){
-      if (!is_constant_wrt(w[i],x,contextptr))
-	v.push_back(w[i]);
-    }
-    return v; // to remove nop do a return *(eval(v)._VECTptr);
-  }
-  
   gen _is_polynomial(const gen & args,GIAC_CONTEXT){
     if ( args.type==_STRNG && args.subtype==-1) return  args;
     vecteur v;
@@ -6974,7 +6948,7 @@ static define_unary_function_eval (__os_version,&_os_version,_os_version_s);
     if (v.size()==1)
       v.push_back(ggb_var(args));
     gen tmp=apply(v,equal2diff);
-    vecteur lv=lvarxwithinvsqrt(tmp,v[1],contextptr);
+    vecteur lv=lvarxwithinv(tmp,v[1],contextptr);
     gen res=lv.size()<2?1:0;
     res.subtype=_INT_BOOLEAN;
     return res;

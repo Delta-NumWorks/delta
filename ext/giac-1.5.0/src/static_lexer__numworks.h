@@ -312,6 +312,7 @@
  & at_autosimplify,
  & at_avance,
  & at_avgRC,
+ & at_axis,
  & at_back,
  & at_background,
  & at_backward,
