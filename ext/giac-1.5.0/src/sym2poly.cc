@@ -3267,6 +3267,8 @@ namespace giac {
   }
 
   gen _recursive_normal(const gen & e,GIAC_CONTEXT){
+    if (e.is_symb_of_sommet(at_unit))
+      return _usimplify(e,contextptr);
     gen var,res;
     if (is_equal(e))
       return apply_to_equal(e,recursive_normal,contextptr); // symb_equal(_recursive_normal(equal2diff(e),contextptr),0);
@@ -3902,8 +3904,16 @@ namespace giac {
   }
   gen _factor(const gen & args,GIAC_CONTEXT){
     if ( args.type==_STRNG && args.subtype==-1) return  args;
-    if (is_integer(args))
+    if (is_integer(args)){
+#ifdef KHICAS
+      return _ifactor(args,contextptr);
+#else
       *logptr(contextptr) << "Run ifactor(" << args << ") for integer factorization." << "\n";
+      return args;
+#endif
+    }
+    if (args.is_symb_of_sommet(at_unit))
+      return mksa_reduce(args,contextptr);
     if (is_equal(args))
       return apply_to_equal(args,_factor,contextptr);
     if (args.type==_VECT && args._VECTptr->size()==2 && is_equal(args._VECTptr->front())){

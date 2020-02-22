@@ -232,7 +232,7 @@ exp	: T_NUMBER		{$$ = $1;}
 	| exp TI_STO T_FOIS { $$=symbolic(at_convert,gen(makevecteur($1,$3) ,_SEQ__VECT)); }
 	| exp TI_STO T_DIV { $$=symbolic(at_convert,gen(makevecteur($1,$3) ,_SEQ__VECT)); }
 	| exp TI_STO T_VIRGULE { $$=symbolic(at_time,$1);}
-	| exp TI_STO TI_STO { $$=symbolic(at_solve,symb_equal($1,0));}
+	| exp TI_STO TI_STO { if ($1==16 || $1==10 || $1==8 || $1==2) $$=symbolic(at_integer_format,$1); else $$=symbolic(at_solve,symb_equal($1,0));}
 	| exp TI_STO T_UNIT exp { $$=symbolic(at_convert,gen(makevecteur($1,symb_unit(plus_one,$4,giac_yyget_extra(scanner))),_SEQ__VECT)); opened_quote(giac_yyget_extra(scanner)) &= 0x7ffffffd;}	
 	| symbol T_BEGIN_PAR suite T_END_PAR {$$ = check_symb_of($1,python_compat(giac_yyget_extra(scanner))?denest_sto(os_nary_workaround($3)):os_nary_workaround($3),giac_yyget_extra(scanner));}
 	| exp T_BEGIN_PAR suite T_END_PAR {$$ = check_symb_of($1,python_compat(giac_yyget_extra(scanner))?denest_sto(os_nary_workaround($3)):os_nary_workaround($3),giac_yyget_extra(scanner));}

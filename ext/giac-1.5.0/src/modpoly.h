@@ -248,6 +248,15 @@ namespace giac {
   // res=a*b mod p
   bool fft2mult(int ablinfnorm,const std::vector<int> & a,const std::vector<int> & b,std::vector<int> & res,int modulo,std::vector<int> & W,std::vector<int> & fftmult_p,std::vector<int> & fftmult_q,bool reverseatend,bool dividebyn,bool makeplus);
   bool fftmult(const modpoly & p,const modpoly & q,const gen &P,const gen &Q,modpoly & pq,int modulo, std::vector<int> & a,std::vector<int>&b,std::vector<int> &resp1,std::vector<int>&resp2,std::vector<int> & resp3, std::vector<int> & W,std::vector<int> &tmp_p,std::vector<int> &tmp_q,bool compute_pq);
+  // FFT mod 2^{r*2^l}+1, tmp1, tmp2 temporary gen must be _ZINT
+  void fft2rl(gen * f,long n,int r,int l,gen * t,bool direct,gen & tmp1, gen & tmp2,mpz_t & tmpqz);
+  // alpha[i] *= beta[i] mod 2^(expoN)+1
+  void fft2rltimes(modpoly & alpha,const modpoly & beta,unsigned long expoN,mpz_t & tmp,mpz_t & tmpqz);
+  void fft2rltimes(const modpoly & alpha,const modpoly & beta,modpoly & res,unsigned long expoN,mpz_t & tmp,mpz_t & tmpqz);
+  // pq *= -2^shift mod N=2^(expoN+1) where -2^shift is the inverse of n mod N
+  void fft2rldiv(modpoly & pq,unsigned long expoN,unsigned long shift,mpz_t & tmp,mpz_t & tmpqz);
+  gen intnorm(const dense_POLY1 & p,GIAC_CONTEXT);
+
   // Convolution of p and q, omega a n-th root of unity, n=2^k
   // WARNING p0 and q0 are given in ascending power
   void fftconv(const modpoly & p,const modpoly & q,unsigned long k,unsigned long n,const gen & omega,modpoly & pq,environment * env);

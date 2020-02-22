@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-31 10:27+0100\n"
+"POT-Creation-Date: 2020-02-19 14:29+0100\n"
 "PO-Revision-Date: 2013-09-09 17:43+0200\n"
 "Last-Translator: Alkis Akritas <akritas@uth.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,11 +113,11 @@ msgstr ""
 msgid "Stopped by user interruption."
 msgstr ""
 
-#: src/sym2poly.cc:3449 src/sym2poly.cc:3486
+#: src/sym2poly.cc:3451 src/sym2poly.cc:3488
 msgid "Not implemented, e.g. for multivariate mod/approx polynomials"
 msgstr ""
 
-#: src/sym2poly.cc:4082
+#: src/sym2poly.cc:4092
 msgid "Not enough elements in field to interpolate. Try in a field extension"
 msgstr ""
 
@@ -412,7 +412,7 @@ msgstr ""
 msgid "Option keep_pivot not applicable"
 msgstr ""
 
-#: src/maple.cc:1045 src/plot.cc:8078 src/plot.cc:8128
+#: src/maple.cc:1045 src/plot.cc:8083 src/plot.cc:8133
 msgid "not implemented"
 msgstr ""
 
@@ -615,7 +615,7 @@ msgstr ""
 msgid "No mathml support"
 msgstr ""
 
-#: src/mathml.cc:1932
+#: src/mathml.cc:1934
 msgid "MathMl convert "
 msgstr ""
 
@@ -628,7 +628,7 @@ msgid "2nd arg"
 msgstr "2ο όρισμα"
 
 #: src/misc.cc:1836 src/misc.cc:1876 src/misc.cc:1882 src/vecteur.cc:11426
-#: src/cocoa.cc:3356 src/gen.cc:4372 src/gen.cc:10224
+#: src/cocoa.cc:3360 src/gen.cc:4372 src/gen.cc:10224
 msgid "Not invertible"
 msgstr ""
 
@@ -684,210 +684,210 @@ msgstr ""
 msgid "Invalid class size (replaced by 1) "
 msgstr ""
 
-#: src/misc.cc:5207
+#: src/misc.cc:5216
 msgid "Negative value encoutered"
 msgstr ""
 
-#: src/misc.cc:5236
+#: src/misc.cc:5260
 msgid "graham_sort_function"
 msgstr ""
 
-#: src/misc.cc:5698
+#: src/misc.cc:5722
 msgid "binop"
 msgstr ""
 
-#: src/misc.cc:5798
+#: src/misc.cc:5822
 msgid "plotarea(f(x),x=a..b[,n,method])"
 msgstr ""
 
-#: src/misc.cc:5884
+#: src/misc.cc:5908
 msgid "not supported"
 msgstr ""
 
-#: src/misc.cc:6019
+#: src/misc.cc:6043
 msgid "Warning: not a graph matrix!"
 msgstr ""
 
-#: src/misc.cc:6300
+#: src/misc.cc:6324
 msgid ""
 "Warning! Leaving conjugate gradient algorithm after dimension of matrix "
 "iterations. Check that your matrix is hermitian/symmetric definite."
 msgstr ""
 
-#: src/misc.cc:6330
+#: src/misc.cc:6354
 msgid ""
 "Warning! Leaving Jacobi iterative algorithm after maximal number of "
 "iterations. Check that your matrix is diagonal dominant."
 msgstr ""
 
-#: src/misc.cc:6362
+#: src/misc.cc:6386
 msgid ""
 "Warning! Leaving Gauss-Seidel iterative algorithm after maximal number of "
 "iterations. Check that your matrix is diagonal dominant."
 msgstr ""
 
-#: src/misc.cc:7343
+#: src/misc.cc:7367
 #, c-format
 msgid ""
 "====================\n"
 "Parametric plot (%gen,%gen), variable %gen"
 msgstr ""
 
-#: src/misc.cc:7356
+#: src/misc.cc:7380
 #, fuzzy
 msgid "Even functions."
 msgstr "Νέα συνάρτηση"
 
-#: src/misc.cc:7358
+#: src/misc.cc:7382
 #, c-format
 msgid "Even function %gen, odd function %gen. Reflection Ox"
 msgstr ""
 
-#: src/misc.cc:7362
+#: src/misc.cc:7386
 #, c-format
 msgid "Odd function %gen, even function %gen. Reflection Oy"
 msgstr ""
 
-#: src/misc.cc:7364
+#: src/misc.cc:7388
 msgid "Odd functions. Center O"
 msgstr ""
 
-#: src/misc.cc:7378 src/misc.cc:7969
+#: src/misc.cc:7402 src/misc.cc:7993
 #, c-format
 msgid "Domain %gen"
 msgstr ""
 
-#: src/misc.cc:7381 src/misc.cc:7972
+#: src/misc.cc:7405 src/misc.cc:7996
 #, fuzzy
 msgid "Unable to find singular points"
 msgstr "Αδύνατη η μετατροπή σε ακέραιο"
 
-#: src/misc.cc:7417 src/misc.cc:8001 src/misc.cc:8015
+#: src/misc.cc:7441 src/misc.cc:8025 src/misc.cc:8039
 #, fuzzy
 msgid "Unable to find critical points"
 msgstr "Αδύνατη η μετατροπή σε ακέραιο"
 
-#: src/misc.cc:7427
+#: src/misc.cc:7451
 #, fuzzy
 msgid "Unable to find inflection points"
 msgstr "συνιστώσα x της κατεύθυνσης του προβολέα"
 
-#: src/misc.cc:7434 src/misc.cc:8023
+#: src/misc.cc:7458 src/misc.cc:8047
 msgid "Infinite number of critical points. Try with optional argument "
 msgstr ""
 
-#: src/misc.cc:7497
+#: src/misc.cc:7521
 #, c-format
 msgid ""
 "Singular point %gen, point %gen direction %gen kind (%gen,%gen)\n"
 "Taylor expansions %gen"
 msgstr ""
 
-#: src/misc.cc:7572
+#: src/misc.cc:7596
 #, c-format
 msgid "Horizontal asymptote at %gen : %gen"
 msgstr ""
 
-#: src/misc.cc:7582 src/misc.cc:8122
+#: src/misc.cc:7606 src/misc.cc:8146
 #, c-format
 msgid "Vertical parabolic asymptote at %gen"
 msgstr ""
 
-#: src/misc.cc:7588 src/misc.cc:8129
+#: src/misc.cc:7612 src/misc.cc:8153
 #, c-format
 msgid "Horizontal parabolic asymptote at %gen"
 msgstr ""
 
-#: src/misc.cc:7595
+#: src/misc.cc:7619
 #, c-format
 msgid "Parabolic asymptote direction at %gen: %gen"
 msgstr ""
 
-#: src/misc.cc:7601
+#: src/misc.cc:7625
 #, c-format
 msgid "Asymptote at %gen: %gen"
 msgstr ""
 
-#: src/misc.cc:7613
+#: src/misc.cc:7637
 #, c-format
 msgid "Vertical asymptote at %gen: %gen"
 msgstr ""
 
-#: src/misc.cc:7884
+#: src/misc.cc:7908
 #, c-format
 msgid ""
 "Variations (%gen,%gen)\n"
 "%gen"
 msgstr ""
 
-#: src/misc.cc:7897
+#: src/misc.cc:7921
 msgid ""
 "Warning, using x or y as variable in parametric plot may lead to confusion!"
 msgstr ""
 
-#: src/misc.cc:7940
+#: src/misc.cc:7964
 #, c-format
 msgid ""
 "====================\n"
 "Function plot %gen, variable %gen"
 msgstr ""
 
-#: src/misc.cc:7942
+#: src/misc.cc:7966
 #, c-format
 msgid "Periodic function T=%gen"
 msgstr ""
 
-#: src/misc.cc:7951
+#: src/misc.cc:7975
 #, c-format
 msgid "Even function %gen. Reflection Oy"
 msgstr ""
 
-#: src/misc.cc:7953
+#: src/misc.cc:7977
 #, c-format
 msgid "Odd function %gen. Center O"
 msgstr ""
 
-#: src/misc.cc:8009
+#: src/misc.cc:8033
 #, fuzzy
 msgid "Unable to find convexity"
 msgstr "Αδύνατη η μετατροπή σε ακέραιο"
 
-#: src/misc.cc:8085
+#: src/misc.cc:8109
 #, fuzzy, c-format
 msgid "Vertical asymptote %gen"
 msgstr "Κάθετος διαχωρισμός"
 
-#: src/misc.cc:8090
+#: src/misc.cc:8114
 #, c-format
 msgid "Symmetric vertical asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8103
+#: src/misc.cc:8127
 #, fuzzy, c-format
 msgid "Horizontal asymptote %gen"
 msgstr "Οριζόντιος διαχωρισμός"
 
-#: src/misc.cc:8110
+#: src/misc.cc:8134
 #, c-format
 msgid "Symmetric horizontal asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8138
+#: src/misc.cc:8162
 #, c-format
 msgid "Parabolic asymptote direction %gen at infinity"
 msgstr ""
 
-#: src/misc.cc:8145
+#: src/misc.cc:8169
 #, c-format
 msgid "Asymptote %gen"
 msgstr ""
 
-#: src/misc.cc:8155
+#: src/misc.cc:8179
 #, fuzzy, c-format
 msgid "Symmetric asymptote %gen"
 msgstr "Συμμετρικός Πίνακας"
 
-#: src/misc.cc:8391
+#: src/misc.cc:8415
 #, c-format
 msgid ""
 "Sign %gen\n"
@@ -1144,15 +1144,15 @@ msgstr ""
 msgid "modpoly.cc/DivRem"
 msgstr ""
 
-#: src/modpoly.cc:4810
+#: src/modpoly.cc:5249
 msgid "Argument must be a vector of even size"
 msgstr ""
 
-#: src/modpoly.cc:4935
+#: src/modpoly.cc:5374
 msgid "modpoly.cc/powmod"
 msgstr ""
 
-#: src/modpoly.cc:9509 src/modpoly.cc:9530
+#: src/modpoly.cc:10017 src/modpoly.cc:10038
 msgid "modpoly.cc/ininttype2ZZ"
 msgstr ""
 
@@ -1410,7 +1410,7 @@ msgid ""
 "otherwise solutions may be missed. The solutions of the equation are "
 msgstr ""
 
-#: src/solve.cc:1427 src/prog.cc:7026 src/prog.cc:7028
+#: src/solve.cc:1427 src/prog.cc:7032 src/prog.cc:7034
 msgid "Unable to sort "
 msgstr ""
 
@@ -1765,11 +1765,11 @@ msgstr ""
 msgid "Floor definite integration: unable to handle infinite boundaries"
 msgstr ""
 
-#: src/intg.cc:3598 src/plot.cc:1385 src/prog.cc:13017
+#: src/intg.cc:3598 src/plot.cc:1385 src/prog.cc:13029
 msgid "Assuming false condition "
 msgstr ""
 
-#: src/intg.cc:3602 src/plot.cc:1389 src/prog.cc:13021
+#: src/intg.cc:3602 src/plot.cc:1389 src/prog.cc:13033
 msgid "Assuming true condition "
 msgstr ""
 
@@ -1995,7 +1995,7 @@ msgstr ""
 msgid "This function works only in radian mode"
 msgstr ""
 
-#: src/subst.cc:421 src/plot.cc:10046
+#: src/subst.cc:421 src/plot.cc:10051
 msgid "Unable to solve"
 msgstr ""
 
@@ -2524,91 +2524,91 @@ msgstr ""
 msgid "=0: no solution found"
 msgstr ""
 
-#: src/gauss.cc:128 src/gauss.cc:409
+#: src/gauss.cc:117 src/gauss.cc:360
 msgid "q is not quadratic"
 msgstr ""
 
-#: src/gauss.cc:358 src/gen.cc:407
+#: src/gauss.cc:321 src/gen.cc:407
 msgid "Invalid dimension"
 msgstr ""
 
-#: src/gauss.cc:558
+#: src/gauss.cc:509
 msgid "Empty parabola"
 msgstr ""
 
-#: src/gauss.cc:563
+#: src/gauss.cc:514
 msgid "2 parallel lines"
 msgstr "2 παράλληλες ευθείες"
 
-#: src/gauss.cc:635
+#: src/gauss.cc:586
 msgid "Ellipsis reduced to ("
 msgstr ""
 
-#: src/gauss.cc:642
+#: src/gauss.cc:593
 msgid "Empty ellipsis"
 msgstr ""
 
-#: src/gauss.cc:647
+#: src/gauss.cc:598
 msgid "Ellipsis of center ("
 msgstr ""
 
-#: src/gauss.cc:677
+#: src/gauss.cc:628
 msgid "2 secant lines at ("
 msgstr ""
 
-#: src/gauss.cc:689
+#: src/gauss.cc:640
 msgid "Hyperbola of center ("
 msgstr ""
 
-#: src/gauss.cc:793
+#: src/gauss.cc:744
 msgid "Can't check sign "
 msgstr "Αδύνατος ο έλγχος προσήμου"
 
-#: src/gauss.cc:793 src/Input.cc:143
+#: src/gauss.cc:744 src/Input.cc:143
 msgid " or "
 msgstr " ή "
 
-#: src/gauss.cc:849
+#: src/gauss.cc:800
 msgid "Cone of center "
 msgstr ""
 
-#: src/gauss.cc:861
+#: src/gauss.cc:812
 msgid "Empty ellipsoid"
 msgstr ""
 
-#: src/gauss.cc:866
+#: src/gauss.cc:817
 msgid "Ellipsoid of center "
 msgstr ""
 
-#: src/gauss.cc:881 src/gauss.cc:895
+#: src/gauss.cc:832 src/gauss.cc:846
 msgid "2-fold hyperboloid of center "
 msgstr ""
 
-#: src/gauss.cc:919
+#: src/gauss.cc:870
 msgid "Elliptic cylinder around "
 msgstr ""
 
-#: src/gauss.cc:940
+#: src/gauss.cc:891
 msgid "2 plans intersecting at "
 msgstr ""
 
-#: src/gauss.cc:948
+#: src/gauss.cc:899
 msgid "Hyperbolic cylinder around "
 msgstr ""
 
-#: src/gauss.cc:987
+#: src/gauss.cc:938
 msgid "Elliptic paraboloid of center "
 msgstr ""
 
-#: src/gauss.cc:1002
+#: src/gauss.cc:953
 msgid "Hyperbolic paraboloid of center "
 msgstr ""
 
-#: src/gauss.cc:1037
+#: src/gauss.cc:988
 msgid "Paraboloid cylinder"
 msgstr ""
 
-#: src/gauss.cc:1044
+#: src/gauss.cc:995
 msgid "2 parallel plans"
 msgstr ""
 
@@ -2662,293 +2662,293 @@ msgstr "Δεν είναι ευθεία"
 msgid "2-d instruction"
 msgstr ""
 
-#: src/plot.cc:3621
+#: src/plot.cc:3626
 msgid "3-d instruction"
 msgstr ""
 
-#: src/plot.cc:3779 src/plot.cc:3818 src/Input.cc:1280 src/Input.cc:1282
+#: src/plot.cc:3784 src/plot.cc:3823 src/Input.cc:1280 src/Input.cc:1282
 #: src/Graph.cc:6787
 msgid "circle"
 msgstr "κύκλος"
 
-#: src/plot.cc:3970
+#: src/plot.cc:3975
 msgid "milieu"
 msgstr "χώρος"
 
-#: src/plot.cc:4049
+#: src/plot.cc:4054
 msgid "3 points expected"
 msgstr ""
 
-#: src/plot.cc:4081
+#: src/plot.cc:4086
 msgid "midpoint"
 msgstr "μέσο"
 
-#: src/plot.cc:5141
+#: src/plot.cc:5146
 msgid "Sum of coeff is 0"
 msgstr ""
 
-#: src/plot.cc:5434
+#: src/plot.cc:5439
 msgid "line2curve"
 msgstr ""
 
-#: src/plot.cc:5453
+#: src/plot.cc:5458
 msgid "Distance curve/curve not implemented"
 msgstr ""
 
-#: src/plot.cc:5888 src/plot.cc:5900
+#: src/plot.cc:5893 src/plot.cc:5905
 msgid "area(f(x),x=a..b,n,method])"
 msgstr ""
 
-#: src/plot.cc:6040
+#: src/plot.cc:6045
 msgid "angle plan with unknown"
 msgstr ""
 
-#: src/plot.cc:6050 src/plot.cc:6076 src/plot.cc:6090
+#: src/plot.cc:6055 src/plot.cc:6081 src/plot.cc:6095
 msgid "angle"
 msgstr "γωνία"
 
-#: src/plot.cc:6057
+#: src/plot.cc:6062
 msgid "Lines must intersect"
 msgstr ""
 
-#: src/plot.cc:6415 src/plot.cc:6427 src/plot.cc:6439 src/plot.cc:6442
-#: src/plot.cc:6448
+#: src/plot.cc:6420 src/plot.cc:6432 src/plot.cc:6444 src/plot.cc:6447
+#: src/plot.cc:6453
 msgid "plot.cc/parameter2point"
 msgstr ""
 
-#: src/plot.cc:6619
+#: src/plot.cc:6624
 msgid "Line "
 msgstr ""
 
-#: src/plot.cc:6940
+#: src/plot.cc:6945
 msgid "Locus on an unknown parametric curve type"
 msgstr ""
 
-#: src/plot.cc:6975
+#: src/plot.cc:6980
 msgid "3-d enveloppe not implemented"
 msgstr ""
 
-#: src/plot.cc:7023
+#: src/plot.cc:7028
 msgid "Equation 0 = "
 msgstr ""
 
-#: src/plot.cc:7216 src/plot.cc:7219 src/plot.cc:7233
+#: src/plot.cc:7221 src/plot.cc:7224 src/plot.cc:7238
 msgid "sommet"
 msgstr ""
 
-#: src/plot.cc:7852
+#: src/plot.cc:7857
 msgid "gen2complex"
 msgstr ""
 
-#: src/plot.cc:8047
+#: src/plot.cc:8052
 msgid "Not implemented or bad argument type/value"
 msgstr ""
 
-#: src/plot.cc:8293
+#: src/plot.cc:8298
 msgid "First arg of translation should not be a point"
 msgstr ""
 
-#: src/plot.cc:8352
+#: src/plot.cc:8357
 msgid "Plotparam: unable to discretize: tmin, tmax, tstep="
 msgstr ""
 
-#: src/plot.cc:8352
+#: src/plot.cc:8357
 msgid ""
 "\n"
 "Try a larger value for tstep"
 msgstr ""
 
-#: src/plot.cc:8632 src/plot.cc:8833
+#: src/plot.cc:8637 src/plot.cc:8838
 msgid "2nd arg must be a free variable"
 msgstr ""
 
-#: src/plot.cc:8711
+#: src/plot.cc:8716
 msgid "To get a point, run point("
 msgstr ""
 
-#: src/plot.cc:8715
+#: src/plot.cc:8720
 msgid "Assuming you want to run polygonplot"
 msgstr ""
 
-#: src/plot.cc:8853
+#: src/plot.cc:8858
 msgid "Variable x should be purged"
 msgstr "Εκκαθάριση της μεταβλητής x"
 
-#: src/plot.cc:8860
+#: src/plot.cc:8865
 msgid "Variable y should be purged"
 msgstr "Εκκαθάριση της μεταβλητής y"
 
-#: src/plot.cc:8867
+#: src/plot.cc:8872
 msgid "Variable z should be purged"
 msgstr "Εκκαθάριση της μεταβλητής z"
 
-#: src/plot.cc:8874
+#: src/plot.cc:8879
 msgid "Variable "
 msgstr "Μεταβλητή"
 
-#: src/plot.cc:8874
+#: src/plot.cc:8879
 msgid " should be purged"
 msgstr ""
 
-#: src/plot.cc:8881
+#: src/plot.cc:8886
 msgid "Variable t should be purged"
 msgstr "Εκκαθάριση της μεταβλητής t "
 
-#: src/plot.cc:8888
+#: src/plot.cc:8893
 msgid "Variable u should be purged"
 msgstr "Εκκαθάριση της μεταβλητής u"
 
-#: src/plot.cc:8895
+#: src/plot.cc:8900
 msgid "Variable v should be purged"
 msgstr "Εκκαθάριση της μεταβλητής v"
 
-#: src/plot.cc:9164
+#: src/plot.cc:9169
 msgid "Wrong parameter type "
 msgstr ""
 
-#: src/plot.cc:9182
+#: src/plot.cc:9187
 msgid "Can't isolate"
 msgstr ""
 
-#: src/plot.cc:9291
+#: src/plot.cc:9296
 msgid "3-d line/2-d circle"
 msgstr ""
 
-#: src/plot.cc:9293
+#: src/plot.cc:9298
 msgid "2-d line/sphere"
 msgstr ""
 
-#: src/plot.cc:9438
+#: src/plot.cc:9443
 msgid "Unable to solve intersection equation "
 msgstr ""
 
-#: src/plot.cc:9792
+#: src/plot.cc:9797
 msgid "Point is not on curve"
 msgstr "Το σημείο δεν είναι στην καμπύλη"
 
-#: src/plot.cc:9794
+#: src/plot.cc:9799
 msgid "2-d point expected"
 msgstr ""
 
-#: src/plot.cc:9876
+#: src/plot.cc:9881
 msgid "Hypersurface w/o equation not implemented"
 msgstr ""
 
-#: src/plot.cc:9881
+#: src/plot.cc:9886
 msgid "f(t)!=0:"
 msgstr ""
 
-#: src/plot.cc:10419
+#: src/plot.cc:10424
 msgid "Bug in conique reducing "
 msgstr ""
 
-#: src/plot.cc:10427
+#: src/plot.cc:10432
 msgid "Bug in conique, equation "
 msgstr ""
 
-#: src/plot.cc:10796
+#: src/plot.cc:10801
 msgid "Use pencolor for the turtle"
 msgstr ""
 
-#: src/plot.cc:10916
+#: src/plot.cc:10921
 msgid "Time"
 msgstr ""
 
-#: src/plot.cc:11229
+#: src/plot.cc:11234
 msgid "End interactive_plotode"
 msgstr "Τερματισμός της interactive_plotode"
 
-#: src/plot.cc:11433
+#: src/plot.cc:11438
 msgid "End of stream"
 msgstr ""
 
-#: src/plot.cc:11793 src/History.cc:1728
+#: src/plot.cc:11798 src/History.cc:1728
 msgid "Unable to open file "
 msgstr ""
 
-#: src/plot.cc:11796
+#: src/plot.cc:11801
 msgid "Error writing "
 msgstr ""
 
-#: src/plot.cc:11818
+#: src/plot.cc:11823
 #, fuzzy
 msgid "Unable to read file"
 msgstr "Αδύνατος ο χειρισμός"
 
-#: src/plot.cc:12008
+#: src/plot.cc:12013
 msgid "Bad iteration"
 msgstr ""
 
-#: src/plot.cc:12265
+#: src/plot.cc:12270
 msgid "Near "
 msgstr ""
 
-#: src/plot.cc:12372
+#: src/plot.cc:12377
 msgid ""
 "Singular points directions: [cell_i, cell_j, singularity, next solution] "
 msgstr ""
 
-#: src/plot.cc:12574
+#: src/plot.cc:12579
 msgid "Bad branch, questionnable accuracy"
 msgstr ""
 
-#: src/plot.cc:12644 src/plot.cc:12686 src/plot.cc:12748
+#: src/plot.cc:12649 src/plot.cc:12691 src/plot.cc:12753
 msgid "Warning! Could not loop or reach boundaries "
 msgstr ""
 
-#: src/plot.cc:12742
+#: src/plot.cc:12747
 msgid "Implicitplot "
 msgstr ""
 
-#: src/plot.cc:12766 src/plot3d.cc:2138
+#: src/plot.cc:12771 src/plot3d.cc:2138
 msgid "Variables must be free"
 msgstr ""
 
-#: src/plot.cc:12770
+#: src/plot.cc:12775
 msgid "Impliciplot: temporarily swtiching to real mode"
 msgstr ""
 
-#: src/plot.cc:14084
+#: src/plot.cc:14089
 msgid "vecteur2turtle"
 msgstr ""
 
-#: src/plot.cc:14423
+#: src/plot.cc:14428
 msgid "Give a name to the procedure, e.g. test"
 msgstr ""
 
-#: src/plot.cc:14428
+#: src/plot.cc:14433
 msgid "Give a name to thr procedure, e.g. \"test\""
 msgstr ""
 
-#: src/plot.cc:14447
+#: src/plot.cc:14452
 msgid "Give a filename, e.g. \"test\""
 msgstr ""
 
-#: src/plot.cc:14455
+#: src/plot.cc:14460
 msgid "Instruction debut_enregistrement not found"
 msgstr ""
 
-#: src/plot.cc:14697
+#: src/plot.cc:14702
 msgid "Integer argument >= 2"
 msgstr ""
 
-#: src/plot.cc:14835
+#: src/plot.cc:14840
 msgid "Collinear points"
 msgstr ""
 
-#: src/plot.cc:15170
+#: src/plot.cc:15175
 msgid "Circle centers are identical"
 msgstr ""
 
-#: src/plot.cc:15345 src/Graph.cc:6822
+#: src/plot.cc:15350 src/Graph.cc:6822
 msgid "reciprocation"
 msgstr "πολική_αντιστροφή"
 
-#: src/plot.cc:15553 src/plot.cc:15557 src/plot.cc:15572
+#: src/plot.cc:15558 src/plot.cc:15562 src/plot.cc:15577
 msgid "conj_harmonique"
 msgstr ""
 
-#: src/plot.cc:15834
+#: src/plot.cc:15839
 msgid "enveloppe"
 msgstr ""
 
@@ -3265,160 +3265,160 @@ msgstr ""
 msgid "Minus"
 msgstr ""
 
-#: src/prog.cc:4951
+#: src/prog.cc:4954
 msgid "makemat"
 msgstr ""
 
-#: src/prog.cc:4955
+#: src/prog.cc:4958
 msgid "interval"
 msgstr ""
 
-#: src/prog.cc:4959
+#: src/prog.cc:4962
 msgid "Boundaries not integer"
 msgstr ""
 
-#: src/prog.cc:5197
+#: src/prog.cc:5200
 msgid "Program killed"
 msgstr ""
 
-#: src/prog.cc:5865
+#: src/prog.cc:5868
 msgid "Sorry! Debugging requires a true operating system"
 msgstr ""
 
-#: src/prog.cc:5866
+#: src/prog.cc:5869
 msgid "Please try xcas on Linux or an Unix"
 msgstr ""
 
-#: src/prog.cc:5910 src/prog.cc:9034
+#: src/prog.cc:5913 src/prog.cc:9044
 msgid "Archiving "
 msgstr ""
 
-#: src/prog.cc:5919
+#: src/prog.cc:5922
 msgid "Click reads "
 msgstr ""
 
-#: src/prog.cc:6099
+#: src/prog.cc:6102
 msgid "check_binary"
 msgstr ""
 
-#: src/prog.cc:6304
+#: src/prog.cc:6307
 msgid "No such user "
 msgstr ""
 
-#: src/prog.cc:6386
+#: src/prog.cc:6392
 msgid "Warning: some commands like subs might change arguments order"
 msgstr ""
 
-#: src/prog.cc:6669
+#: src/prog.cc:6675
 msgid "Cas_setup "
 msgstr ""
 
-#: src/prog.cc:6953
+#: src/prog.cc:6959
 msgid "Parent insmod"
 msgstr ""
 
-#: src/prog.cc:7326
+#: src/prog.cc:7332
 msgid "Float too large"
 msgstr ""
 
-#: src/prog.cc:7362
+#: src/prog.cc:7368
 msgid "Incompatible units"
 msgstr ""
 
-#: src/prog.cc:7630
+#: src/prog.cc:7636
 msgid "Some units could not be converted to MKSA"
 msgstr ""
 
-#: src/prog.cc:7679
+#: src/prog.cc:7685
 msgid "Bad conversion basis"
 msgstr ""
 
-#: src/prog.cc:7763
+#: src/prog.cc:7769
 msgid "Run convert(matrix,array) for dense conversion"
 msgstr ""
 
-#: src/prog.cc:7770
+#: src/prog.cc:7776
 #, fuzzy
 msgid "Invalid map"
 msgstr "Μη έγκυρη συνθήκη"
 
-#: src/prog.cc:8099
+#: src/prog.cc:8109
 msgid "Running maple text translation __.map"
 msgstr "Εκτελείται μετάφραση κειμένου maple __.map"
 
-#: src/prog.cc:8119
+#: src/prog.cc:8129
 msgid "Running TI89 text translation __.ti"
 msgstr ""
 
-#: src/prog.cc:8370
+#: src/prog.cc:8380
 msgid "No help file found"
 msgstr ""
 
-#: src/prog.cc:8576
+#: src/prog.cc:8586
 msgid "Restoring epsilon to 1e-6 from "
 msgstr ""
 
-#: src/prog.cc:8580
+#: src/prog.cc:8590
 msgid "Restoring proba epsilon to 1e-6 from "
 msgstr ""
 
-#: src/prog.cc:8874
+#: src/prog.cc:8884
 #, fuzzy
 msgid "invalid |"
 msgstr "Μη έγκυρη συνθήκη"
 
-#: src/prog.cc:8922
+#: src/prog.cc:8932
 msgid "Invalid |"
 msgstr ""
 
-#: src/prog.cc:9018
+#: src/prog.cc:9028
 msgid "inputform may be used in a window environment only"
 msgstr ""
 
-#: src/prog.cc:9046
+#: src/prog.cc:9056
 msgid "Inputform reads "
 msgstr ""
 
-#: src/prog.cc:9620
+#: src/prog.cc:9630
 msgid "Error printasmaple_lib"
 msgstr ""
 
-#: src/prog.cc:12412
+#: src/prog.cc:12422
 msgid "Invalid unit exponent"
 msgstr ""
 
-#: src/prog.cc:12568
+#: src/prog.cc:12580
 #, fuzzy
 msgid "printasunit error"
 msgstr "Συντακτικό λάθος"
 
-#: src/prog.cc:12728
+#: src/prog.cc:12740
 msgid "User operator not available on this architecture"
 msgstr ""
 
-#: src/prog.cc:12740
+#: src/prog.cc:12752
 msgid "Operator name must be of type string"
 msgstr ""
 
-#: src/prog.cc:12828
+#: src/prog.cc:12840
 msgid "Non existent Folder"
 msgstr ""
 
-#: src/prog.cc:12876
+#: src/prog.cc:12888
 msgid "No case applies"
 msgstr ""
 
-#: src/prog.cc:13034
+#: src/prog.cc:13046
 msgid "Unable to handle when condition "
 msgstr ""
 
-#: src/prog.cc:13040
+#: src/prog.cc:13052
 msgid ""
 "when2sign does not work properly with infinities. Replace inf by Inf and run "
 "limit after."
 msgstr ""
 
-#: src/prog.cc:13273
+#: src/prog.cc:13285
 #, fuzzy
 msgid "assert failure: "
 msgstr "Προσθήκη σχήματος"
@@ -3446,17 +3446,17 @@ msgstr ""
 msgid "Unable to convert CoCoA data"
 msgstr ""
 
-#: src/cocoa.cc:14607 src/cocoa.cc:14775
+#: src/cocoa.cc:14611 src/cocoa.cc:14779
 msgid ""
 "Running a probabilistic check for the reconstructed Groebner basis. If "
 "successfull, error probability is less than "
 msgstr ""
 
-#: src/cocoa.cc:14607 src/cocoa.cc:14775
+#: src/cocoa.cc:14611 src/cocoa.cc:14779
 msgid " and is estimated to be less than 10^-"
 msgstr ""
 
-#: src/cocoa.cc:14607 src/cocoa.cc:14775
+#: src/cocoa.cc:14611 src/cocoa.cc:14779
 msgid ". Use proba_epsilon:=0 to certify (this takes more time)."
 msgstr ""
 

@@ -1106,6 +1106,8 @@ namespace giac {
 
   static string svg_segment(gen A, gen B, svg_attribut attr, string legende,double xmin,double xmax,double ymin,double ymax,GIAC_CONTEXT){
     string s;
+    if (attr.width<attr.epaisseur_point-1)
+      attr.width=attr.epaisseur_point-1;
     // gen thickness((xmax+ymax-xmin-ymin)/svg_epaisseur1);
     A=evalf(A,1,contextptr); B=evalf(B,1,contextptr);
     if (attr.ie){

@@ -11,5 +11,5 @@ EXTRA_DIST = 	chk_integrate chk_factor chk_normalize chk_partfrac \
 		testlimit testcas testgeo testother chk_other \
 		integrate.out factor.out normalize.out partfrac.out \
 		limit.out cas.out geo.out flanex \
-		TP*sol.cas TP*sol.cas.out1 morley_demo.* xavier.* README
+		TP*sol.cas TP*sol.cas.out* morley_demo.* xavier.* README
 TESTS_ENVIRONMENT = top_srcdir=$(top_srcdir)

@@ -1,4 +1,4 @@
-/*             itex2MML 1.3.3
+/*             hevea2mml is a fork of itex2MML 1.3.3
  *   itex2MML.cc last modified by Jacques Distler on 11/21/2007
  *   forked by B. Parisse for hevea -mathjax support
  *
@@ -312,9 +312,9 @@ int main (int argc, char ** argv)
     }
 
     if (args == "--help" || args == "-h"){
-      fputs ("usage: itex2MML [OPTIONS]\n"
+      fputs ("usage: hevea2mml [OPTIONS]\n"
 	     "\n"
-	     "itex2MML filters an input text stream (e.g., an XHTML web page) converting itex expressions\n"
+	     "hevea2mml filters an input text stream (e.g., an XHTML web page) converting itex expressions\n"
 	     "to MathML. Inline itex expressions are delimited either side by single dollar symbols ($):\n"
 	     "\n"
 	     "\t<p>The parameters $\\alpha$ and $\\beta$ in the function $f(x)$ are defined below.</p>\n"
@@ -326,7 +326,7 @@ int main (int argc, char ** argv)
 	     "\t\tf(x) = \\alpha x + \\frac{\\beta}{1+|x|}\n"
 	     "\t\\]</p>\n"
 	     "\n"
-	     "itex2MML Options:\n"
+	     "hevea2mml Options:\n"
 	     "\n"
 	     "  --raw-filter    filter input stream, converting equations as found to MathML [stops on error]\n"
 	     "  --inline        converts a single itex equation, without any $ symbols, to inline MathML\n"
@@ -334,7 +334,7 @@ int main (int argc, char ** argv)
 	     "  --forbid-markup forbid markup (more precisely, the '<' and '>' characters) in itex equations\n"
 	     "  --print-itex    used in conjuction with --inline or --display: prints the itex string\n"
 	     "\n"
-	     "For further information, see http://golem.ph.utexas.edu/~distler/blog/itex2MML.html\n", stdout);
+	     "hevea2mml is a fork of itex2MML, see http://golem.ph.utexas.edu/~distler/blog/itex2MML.html\n", stdout);
 
       bStop = true;
       break;
@@ -459,7 +459,7 @@ int main (int argc, char ** argv)
     mathml = 0;
   }
   else{
-    fputs ("itex2MML: itex parser failed to generate MathML from itex!\n", stderr);
+    fputs ("hevea2mml: itex parser failed to generate MathML from itex!\n", stderr);
   }
   return 0;
 }

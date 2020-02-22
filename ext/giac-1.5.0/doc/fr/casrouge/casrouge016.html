@@ -1,23 +1,23 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
-            "http://www.w3.org/TR/REC-html40/loose.dtd">
-<HTML>
-<HEAD>
-
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<META name="GENERATOR" content="hevea 1.10">
-<LINK rel="stylesheet" type="text/css" href="casrouge.css">
-<TITLE>Exercice : Les courses poursuites</TITLE>
-</HEAD>
-<BODY >
-<A HREF="casrouge015.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
-<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
-<A HREF="casrouge017.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
-<HR>
-<H1 CLASS="chapter"><A NAME="htoc421">Chapitre 16</A>  Exercice : Les courses poursuites</H1><H2 CLASS="section"><A NAME="toc113"></A><A NAME="htoc422">16.1</A>  Le chien qui va en direction de son maitre</H2><P>
-On chien se trouve en <I>C</I> de coordonnées (0,1) et son maitre se trouve en <I>M</I> de coordonnées (0,0).<BR>
-Le maitre se déplace sur l’axe des <I>x</I> et le chien se dirige à la même vitesse en direction de son maitre.<BR>
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="hevea 2.29+5 of 2017-05-18">
+<link rel="stylesheet" type="text/css" href="casrouge.css">
+<title>Exercice : Les courses poursuites</title>
+</head>
+<body >
+<a href="casrouge015.html"><img src="previous_motif.gif" alt="Previous"></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"></a>
+<a href="casrouge017.html"><img src="next_motif.gif" alt="Next"></a>
+<hr>
+<h1 id="sec500" class="chapter">Chapitre 16  Exercice : Les courses poursuites</h1>
+<h2 id="sec501" class="section">16.1  Le chien qui va en direction de son maitre</h2>
+<p>
+On chien se trouve en <span style="font-style:italic">C</span> de coordonnées (0,1) et son maitre se trouve en <span style="font-style:italic">M</span> de coordonnées (0,0).<br>
+Le maitre se déplace sur l’axe des <span style="font-style:italic">x</span> et le chien se dirige à la même vitesse en direction de son maitre.<br>
 On veut dessiner la trajectoire du chien.
-</P><PRE CLASS="verbatim">chien():={
+</p><pre class="verbatim">chien():={
 local X,Y,L,xk,yk,p,j,k,d,a,a1,b,b1;
 DispG;
 ClrGraph();
@@ -43,12 +43,14 @@ ftantque;
 return L;
 }
 :;
-</PRE><H2 CLASS="section"><A NAME="toc114"></A><A NAME="htoc423">16.2</A>  Avec les sommets d’isopolygônes</H2><P>
-Des personnes <I>A</I>,<I>B</I>,<I>C</I>.. sont situées aux sommets <I>A</I>,<I>B</I>,<I>C</I>.. d’un isoploygone.<BR>
-Á l’instant <I>t</I>, <I>A</I> se dirige vers <I>B</I>, <I>B</I> se dirige vers <I>C</I>, <I>C</I> se 
-dirige vers <I>D</I>,...et le dernier sommet se dirige vers <I>A</I>.<BR>
-On veut dessiner les trajectoires de <I>A</I>,<I>B</I>,<I>C</I>....
-</P><PRE CLASS="verbatim">isopoly(n,m):={
+</pre>
+<h2 id="sec502" class="section">16.2  Avec les sommets d’isopolygônes</h2>
+<p>
+Des personnes <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>.. sont situées aux sommets <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>.. d’un isoploygone.<br>
+Á l’instant <span style="font-style:italic">t</span>, <span style="font-style:italic">A</span> se dirige vers <span style="font-style:italic">B</span>, <span style="font-style:italic">B</span> se dirige vers <span style="font-style:italic">C</span>, <span style="font-style:italic">C</span> se 
+dirige vers <span style="font-style:italic">D</span>,...et le dernier sommet se dirige vers <span style="font-style:italic">A</span>.<br>
+On veut dessiner les trajectoires de <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>....
+</p><pre class="verbatim">isopoly(n,m):={
 local X,Y,L,xk,yk,p,j,k,d,a,a1,b,b1,P,SP;
 p:=0.1;
 L:=NULL;
@@ -77,13 +79,15 @@ return L;
 }
 :;
 
-</PRE><H2 CLASS="section"><A NAME="toc115"></A><A NAME="htoc424">16.3</A>  Avec les sommets de polygônes quelconques</H2><P>
-Des personnes <I>A</I>,<I>B</I>,<I>C</I>... sont situées aux sommets d’un ploygone <I>A</I>,<I>B</I>,<I>C</I>... 
-dont les affixes sont les éléments de la liste <I>Z</I>.<BR>
-Á l’instant <I>t</I>, <I>A</I> se dirige vers <I>B</I>, <I>B</I> se dirige vers <I>C</I>, <I>C</I> se 
-dirige vers <I>D</I>,...et le dernier sommet se dirige vers <I>A</I>.<BR>
-On veut dessiner les trajectoires de <I>A</I>,<I>B</I>,<I>C</I>....
-</P><PRE CLASS="verbatim">poly(Z):={
+</pre>
+<h2 id="sec503" class="section">16.3  Avec les sommets de polygônes quelconques</h2>
+<p>
+Des personnes <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>... sont situées aux sommets d’un ploygone <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>... 
+dont les affixes sont les éléments de la liste <span style="font-style:italic">Z</span>.<br>
+Á l’instant <span style="font-style:italic">t</span>, <span style="font-style:italic">A</span> se dirige vers <span style="font-style:italic">B</span>, <span style="font-style:italic">B</span> se dirige vers <span style="font-style:italic">C</span>, <span style="font-style:italic">C</span> se 
+dirige vers <span style="font-style:italic">D</span>,...et le dernier sommet se dirige vers <span style="font-style:italic">A</span>.<br>
+On veut dessiner les trajectoires de <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>....
+</p><pre class="verbatim">poly(Z):={
 local X,Y,L,xk,yk,p,j,k,d,a,a1,b,b1,n,m;
 p:=0.1;
 L:=NULL;
@@ -111,14 +115,16 @@ fpour;
 return L;
 }
 :;
-</PRE><H2 CLASS="section"><A NAME="toc116"></A><A NAME="htoc425">16.4</A>  Avec des points aléatoires</H2><P>
-Des souris <I>A</I>,<I>B</I>,<I>C</I>... sont situées aux points <I>A</I>,<I>B</I>,<I>C</I>... 
-dont les coordonnées sont les éléments des listes <I>X</I> et <I>Y</I> définies 
-aléatoirement entre -1 et 1.<BR>
-Á l’instant <I>t</I>, <I>A</I> se dirige vers <I>B</I>, <I>B</I> se dirige vers <I>C</I>, <I>C</I> se 
-dirige vers <I>D</I>,...et le dernier sommet se dirige vers <I>A</I>.<BR>
-On veut dessiner les trajectoires de <I>A</I>,<I>B</I>,<I>C</I>....
-</P><PRE CLASS="verbatim">courbot0():={
+</pre>
+<h2 id="sec504" class="section">16.4  Avec des points aléatoires</h2>
+<p>
+Des souris <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>... sont situées aux points <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>... 
+dont les coordonnées sont les éléments des listes <span style="font-style:italic">X</span> et <span style="font-style:italic">Y</span> définies 
+aléatoirement entre -1 et 1.<br>
+Á l’instant <span style="font-style:italic">t</span>, <span style="font-style:italic">A</span> se dirige vers <span style="font-style:italic">B</span>, <span style="font-style:italic">B</span> se dirige vers <span style="font-style:italic">C</span>, <span style="font-style:italic">C</span> se 
+dirige vers <span style="font-style:italic">D</span>,...et le dernier sommet se dirige vers <span style="font-style:italic">A</span>.<br>
+On veut dessiner les trajectoires de <span style="font-style:italic">A</span>,<span style="font-style:italic">B</span>,<span style="font-style:italic">C</span>....
+</p><pre class="verbatim">courbot0():={
 local X,Y,L,xk,yk,p,m,n,j,k,d,a,a1,b,b1;
 DispG;
 ClrGraph();
@@ -186,9 +192,10 @@ fpour;
 fpour;
 return L;
 }:;
-</PRE><HR>
-<A HREF="casrouge015.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
-<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
-<A HREF="casrouge017.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
-</BODY>
-</HTML>
+</pre>
+<hr>
+<a href="casrouge015.html"><img src="previous_motif.gif" alt="Previous"></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"></a>
+<a href="casrouge017.html"><img src="next_motif.gif" alt="Next"></a>
+</body>
+</html>

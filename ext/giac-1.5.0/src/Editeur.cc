@@ -3357,6 +3357,7 @@ namespace xcas {
       }
       return 1;
     }
+    char before_ch=buffer()->text()[giacmax(insert_position()-1,0)];
     int res=Fl_Text_Editor::handle(event);
     if (!ed && event==FL_PASTE)
       resize_nl_before(1);
@@ -3378,7 +3379,7 @@ namespace xcas {
 	if (hp)
 	  hp->modified(true);
       }
-      if (!tableur && Fl::event_key()==FL_BackSpace && python_compat(contextptr)){
+      if (!tableur && Fl::event_key()==FL_BackSpace && python_compat(contextptr) && !isalnum(before_ch)){
 	dedent();
       }
       if (tableur && tableur->editing && Fl::event_key()==FL_BackSpace && value().empty()){

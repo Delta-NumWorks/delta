@@ -141,7 +141,7 @@ libxcas_la_OBJECTS = $(am_libxcas_la_OBJECTS)
 PROGRAMS = $(bin_PROGRAMS)
 am_aide_OBJECTS = aide.$(OBJEXT)
 aide_OBJECTS = $(am_aide_OBJECTS)
-aide_DEPENDENCIES = libxcas.la $(am__DEPENDENCIES_1) \
+aide_DEPENDENCIES = libgiac.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_hevea2mml_OBJECTS = hevea2mml.$(OBJEXT) lex_yy.$(OBJEXT) \
 	y_tab.$(OBJEXT)
@@ -425,7 +425,7 @@ libxcas_la_SOURCES = History.cc Input.cc Xcas1.cc Equation.cc Print.cc \
 icas_SOURCES = icas.cc 
 icas_LDADD = libxcas.la $(GINSH_LIBS) $(GSL_LIBS) $(LAPACK_LIBS)
 aide_SOURCES = aide.cc
-aide_LDADD = libxcas.la $(GINSH_LIBS) $(GSL_LIBS) $(LAPACK_LIBS)
+aide_LDADD = libgiac.la $(GINSH_LIBS) $(GSL_LIBS) $(LAPACK_LIBS)
 hevea2mml_SOURCES = hevea2mml.cc lex_yy.c y_tab.c
 hevea2mml_LDADD = 
 AM_CPPFLAGS = -DIN_GIAC -I$(srcdir) -I$(top_srcdir) -I$(builddir) \

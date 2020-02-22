@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-31 10:27+0100\n"
+"POT-Creation-Date: 2020-02-19 14:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,12 +118,12 @@ msgstr ""
 msgid "Stopped by user interruption."
 msgstr "Parado por interrupção do utilizador."
 
-#: src/sym2poly.cc:3449 src/sym2poly.cc:3486
+#: src/sym2poly.cc:3451 src/sym2poly.cc:3488
 msgid "Not implemented, e.g. for multivariate mod/approx polynomials"
 msgstr ""
 "Não implementado, por exemplo, para polinómios mod/approx multivariados"
 
-#: src/sym2poly.cc:4082
+#: src/sym2poly.cc:4092
 msgid "Not enough elements in field to interpolate. Try in a field extension"
 msgstr ""
 "Não existem elementos suficientes no campo para interpolar. Experimentar uma "
@@ -432,7 +432,7 @@ msgstr "Bessel"
 msgid "Option keep_pivot not applicable"
 msgstr "Opção keep_pivot não é aplicável"
 
-#: src/maple.cc:1045 src/plot.cc:8078 src/plot.cc:8128
+#: src/maple.cc:1045 src/plot.cc:8083 src/plot.cc:8133
 msgid "not implemented"
 msgstr "não implementado"
 
@@ -634,7 +634,7 @@ msgstr "Não é um programa/função/ficheiro de grupo TI89/92"
 msgid "No mathml support"
 msgstr "Sem suporte mathml"
 
-#: src/mathml.cc:1932
+#: src/mathml.cc:1934
 msgid "MathMl convert "
 msgstr "Conversão MathMl "
 
@@ -647,7 +647,7 @@ msgid "2nd arg"
 msgstr "2.º argumento"
 
 #: src/misc.cc:1836 src/misc.cc:1876 src/misc.cc:1882 src/vecteur.cc:11426
-#: src/cocoa.cc:3356 src/gen.cc:4372 src/gen.cc:10224
+#: src/cocoa.cc:3360 src/gen.cc:4372 src/gen.cc:10224
 msgid "Not invertible"
 msgstr "Não invertível"
 
@@ -704,32 +704,32 @@ msgstr "Valores fora de alcance"
 msgid "Invalid class size (replaced by 1) "
 msgstr "Tamanho de classe inválido (substituído por 1) "
 
-#: src/misc.cc:5207
+#: src/misc.cc:5216
 msgid "Negative value encoutered"
 msgstr "Valor negativo encontrado"
 
-#: src/misc.cc:5236
+#: src/misc.cc:5260
 msgid "graham_sort_function"
 msgstr "graham_sort_function"
 
-#: src/misc.cc:5698
+#: src/misc.cc:5722
 msgid "binop"
 msgstr "binop"
 
-#: src/misc.cc:5798
+#: src/misc.cc:5822
 msgid "plotarea(f(x),x=a..b[,n,method])"
 msgstr "plotarea(f(x),x=a..b[,n,method])"
 
-#: src/misc.cc:5884
+#: src/misc.cc:5908
 #, fuzzy
 msgid "not supported"
 msgstr "Sem suporte mathml"
 
-#: src/misc.cc:6019
+#: src/misc.cc:6043
 msgid "Warning: not a graph matrix!"
 msgstr "Aviso: não é uma matriz de gráficos!"
 
-#: src/misc.cc:6300
+#: src/misc.cc:6324
 msgid ""
 "Warning! Leaving conjugate gradient algorithm after dimension of matrix "
 "iterations. Check that your matrix is hermitian/symmetric definite."
@@ -737,7 +737,7 @@ msgstr ""
 "Aviso! Deixar o algoritmo gradiente conjugado após a dimensão de iterações "
 "da matriz. Verifique se a sua matriz é hermitiana/simétrica definida."
 
-#: src/misc.cc:6330
+#: src/misc.cc:6354
 msgid ""
 "Warning! Leaving Jacobi iterative algorithm after maximal number of "
 "iterations. Check that your matrix is diagonal dominant."
@@ -745,7 +745,7 @@ msgstr ""
 "Aviso! Deixar o algoritmo iterativo Jacobi após o número máximo de "
 "iterações. Verifique se a sua matriz é diagonal dominante."
 
-#: src/misc.cc:6362
+#: src/misc.cc:6386
 msgid ""
 "Warning! Leaving Gauss-Seidel iterative algorithm after maximal number of "
 "iterations. Check that your matrix is diagonal dominant."
@@ -753,7 +753,7 @@ msgstr ""
 "Aviso! Deixar o algoritmo iterativo Gauss-Seidel após o número máximo de "
 "iterações. Verifique se a sua matriz é diagonal dominante."
 
-#: src/misc.cc:7343
+#: src/misc.cc:7367
 #, c-format
 msgid ""
 "====================\n"
@@ -762,47 +762,47 @@ msgstr ""
 "====================\n"
 "Desenho paramétrico (%gen,%gen), variável %gen"
 
-#: src/misc.cc:7356
+#: src/misc.cc:7380
 msgid "Even functions."
 msgstr "Funções pares."
 
-#: src/misc.cc:7358
+#: src/misc.cc:7382
 #, c-format
 msgid "Even function %gen, odd function %gen. Reflection Ox"
 msgstr "Função par %gen, função ímpar %gen. Reflexo Ox"
 
-#: src/misc.cc:7362
+#: src/misc.cc:7386
 #, c-format
 msgid "Odd function %gen, even function %gen. Reflection Oy"
 msgstr "Função ímpar %gen, função par %gen. Reflexo Oy"
 
-#: src/misc.cc:7364
+#: src/misc.cc:7388
 msgid "Odd functions. Center O"
 msgstr "Funções ímpares. Centro O"
 
-#: src/misc.cc:7378 src/misc.cc:7969
+#: src/misc.cc:7402 src/misc.cc:7993
 #, c-format
 msgid "Domain %gen"
 msgstr "Domínio %gen"
 
-#: src/misc.cc:7381 src/misc.cc:7972
+#: src/misc.cc:7405 src/misc.cc:7996
 msgid "Unable to find singular points"
 msgstr "Não é possível encontrar pontos singulares"
 
-#: src/misc.cc:7417 src/misc.cc:8001 src/misc.cc:8015
+#: src/misc.cc:7441 src/misc.cc:8025 src/misc.cc:8039
 msgid "Unable to find critical points"
 msgstr "Não é possível encontrar pontos críticos"
 
-#: src/misc.cc:7427
+#: src/misc.cc:7451
 msgid "Unable to find inflection points"
 msgstr "Não é possível encontrar pontos de inflexão"
 
-#: src/misc.cc:7434 src/misc.cc:8023
+#: src/misc.cc:7458 src/misc.cc:8047
 msgid "Infinite number of critical points. Try with optional argument "
 msgstr ""
 "Número infinito de pontos críticos. Experimente com um argumento opcional "
 
-#: src/misc.cc:7497
+#: src/misc.cc:7521
 #, c-format
 msgid ""
 "Singular point %gen, point %gen direction %gen kind (%gen,%gen)\n"
@@ -811,37 +811,37 @@ msgstr ""
 "Ponto singular %gen, tipo de direção %gen de ponto %gen (%gen,%gen)\n"
 "Expansões de Taylor %gen"
 
-#: src/misc.cc:7572
+#: src/misc.cc:7596
 #, c-format
 msgid "Horizontal asymptote at %gen : %gen"
 msgstr "Assimptota horizontal em %gen : %gen"
 
-#: src/misc.cc:7582 src/misc.cc:8122
+#: src/misc.cc:7606 src/misc.cc:8146
 #, c-format
 msgid "Vertical parabolic asymptote at %gen"
 msgstr "Assimptota parabólica vertical em %gen"
 
-#: src/misc.cc:7588 src/misc.cc:8129
+#: src/misc.cc:7612 src/misc.cc:8153
 #, c-format
 msgid "Horizontal parabolic asymptote at %gen"
 msgstr "Assimptota parabólica horizontal em %gen"
 
-#: src/misc.cc:7595
+#: src/misc.cc:7619
 #, c-format
 msgid "Parabolic asymptote direction at %gen: %gen"
 msgstr "Direção de assimptota parabólica em %gen: %gen"
 
-#: src/misc.cc:7601
+#: src/misc.cc:7625
 #, c-format
 msgid "Asymptote at %gen: %gen"
 msgstr "Assimptota em %gen: %gen"
 
-#: src/misc.cc:7613
+#: src/misc.cc:7637
 #, c-format
 msgid "Vertical asymptote at %gen: %gen"
 msgstr "Assimptota vertical em %gen: %gen"
 
-#: src/misc.cc:7884
+#: src/misc.cc:7908
 #, c-format
 msgid ""
 "Variations (%gen,%gen)\n"
@@ -850,14 +850,14 @@ msgstr ""
 "Variações (%gen,%gen)\n"
 "%gen"
 
-#: src/misc.cc:7897
+#: src/misc.cc:7921
 msgid ""
 "Warning, using x or y as variable in parametric plot may lead to confusion!"
 msgstr ""
 "Aviso, utilizar x ou y como variável no gráfico paramétrico pode conduzir a "
 "confusão!"
 
-#: src/misc.cc:7940
+#: src/misc.cc:7964
 #, c-format
 msgid ""
 "====================\n"
@@ -866,61 +866,61 @@ msgstr ""
 "====================\n"
 "Gráfico de função %gen, variável %gen"
 
-#: src/misc.cc:7942
+#: src/misc.cc:7966
 #, c-format
 msgid "Periodic function T=%gen"
 msgstr "Função períodica T=%gen"
 
-#: src/misc.cc:7951
+#: src/misc.cc:7975
 #, c-format
 msgid "Even function %gen. Reflection Oy"
 msgstr "Função par %gen. Reflexo Oy"
 
-#: src/misc.cc:7953
+#: src/misc.cc:7977
 #, c-format
 msgid "Odd function %gen. Center O"
 msgstr "Função ímpar %gen. Centro O"
 
-#: src/misc.cc:8009
+#: src/misc.cc:8033
 msgid "Unable to find convexity"
 msgstr "Não é possível encontrar convexidade"
 
-#: src/misc.cc:8085
+#: src/misc.cc:8109
 #, c-format
 msgid "Vertical asymptote %gen"
 msgstr "Assimptota vertical %gen"
 
-#: src/misc.cc:8090
+#: src/misc.cc:8114
 #, c-format
 msgid "Symmetric vertical asymptote %gen"
 msgstr "Assimptota vertical simétrica %gen"
 
-#: src/misc.cc:8103
+#: src/misc.cc:8127
 #, c-format
 msgid "Horizontal asymptote %gen"
 msgstr "Assimptota horizontal %gen"
 
-#: src/misc.cc:8110
+#: src/misc.cc:8134
 #, c-format
 msgid "Symmetric horizontal asymptote %gen"
 msgstr "Assimptota horizontal simétrica %gen"
 
-#: src/misc.cc:8138
+#: src/misc.cc:8162
 #, c-format
 msgid "Parabolic asymptote direction %gen at infinity"
 msgstr "Direção de assimptota parabólica %gen em infinito"
 
-#: src/misc.cc:8145
+#: src/misc.cc:8169
 #, c-format
 msgid "Asymptote %gen"
 msgstr "Assimptota %gen"
 
-#: src/misc.cc:8155
+#: src/misc.cc:8179
 #, c-format
 msgid "Symmetric asymptote %gen"
 msgstr "Assimptota simétrica %gen"
 
-#: src/misc.cc:8391
+#: src/misc.cc:8415
 #, fuzzy, c-format
 msgid ""
 "Sign %gen\n"
@@ -1187,15 +1187,15 @@ msgstr "modpoly.cc/x_to_xp"
 msgid "modpoly.cc/DivRem"
 msgstr "modpoly.cc/DivRem"
 
-#: src/modpoly.cc:4810
+#: src/modpoly.cc:5249
 msgid "Argument must be a vector of even size"
 msgstr "Argumento tem de ser um vetor de tamanho uniforme"
 
-#: src/modpoly.cc:4935
+#: src/modpoly.cc:5374
 msgid "modpoly.cc/powmod"
 msgstr "modpoly.cc/powmod"
 
-#: src/modpoly.cc:9509 src/modpoly.cc:9530
+#: src/modpoly.cc:10017 src/modpoly.cc:10038
 msgid "modpoly.cc/ininttype2ZZ"
 msgstr "modpoly.cc/ininttype2ZZ"
 
@@ -1472,7 +1472,7 @@ msgstr ""
 "parâmetros, caso contrário as soluções podem ser perdidas. As soluções da "
 "equação são "
 
-#: src/solve.cc:1427 src/prog.cc:7026 src/prog.cc:7028
+#: src/solve.cc:1427 src/prog.cc:7032 src/prog.cc:7034
 msgid "Unable to sort "
 msgstr "Não é possível ordenar "
 
@@ -1873,11 +1873,11 @@ msgstr ""
 msgid "Floor definite integration: unable to handle infinite boundaries"
 msgstr "Integração definida floor: não é possível lidar com limites infinitos"
 
-#: src/intg.cc:3598 src/plot.cc:1385 src/prog.cc:13017
+#: src/intg.cc:3598 src/plot.cc:1385 src/prog.cc:13029
 msgid "Assuming false condition "
 msgstr "Pressupor condição falsa "
 
-#: src/intg.cc:3602 src/plot.cc:1389 src/prog.cc:13021
+#: src/intg.cc:3602 src/plot.cc:1389 src/prog.cc:13033
 msgid "Assuming true condition "
 msgstr "Pressupor condição verdadeira "
 
@@ -2113,7 +2113,7 @@ msgstr "Não é possível converter euler mac laurin"
 msgid "This function works only in radian mode"
 msgstr "Esta função funciona apenas em modo radiano"
 
-#: src/subst.cc:421 src/plot.cc:10046
+#: src/subst.cc:421 src/plot.cc:10051
 msgid "Unable to solve"
 msgstr "Não é possível resolver"
 
@@ -2656,91 +2656,91 @@ msgstr "Aviso: "
 msgid "=0: no solution found"
 msgstr "=0: nenhuma solução encontrada"
 
-#: src/gauss.cc:128 src/gauss.cc:409
+#: src/gauss.cc:117 src/gauss.cc:360
 msgid "q is not quadratic"
 msgstr "q não é quadrática"
 
-#: src/gauss.cc:358 src/gen.cc:407
+#: src/gauss.cc:321 src/gen.cc:407
 msgid "Invalid dimension"
 msgstr "Dimensão inválida"
 
-#: src/gauss.cc:558
+#: src/gauss.cc:509
 msgid "Empty parabola"
 msgstr "Parábola vazia"
 
-#: src/gauss.cc:563
+#: src/gauss.cc:514
 msgid "2 parallel lines"
 msgstr "2 linhas paralelas"
 
-#: src/gauss.cc:635
+#: src/gauss.cc:586
 msgid "Ellipsis reduced to ("
 msgstr "Elipse reduzida a ("
 
-#: src/gauss.cc:642
+#: src/gauss.cc:593
 msgid "Empty ellipsis"
 msgstr "Elipse vazia"
 
-#: src/gauss.cc:647
+#: src/gauss.cc:598
 msgid "Ellipsis of center ("
 msgstr "Elipse de centro ("
 
-#: src/gauss.cc:677
+#: src/gauss.cc:628
 msgid "2 secant lines at ("
 msgstr "2 linhas secantes a ("
 
-#: src/gauss.cc:689
+#: src/gauss.cc:640
 msgid "Hyperbola of center ("
 msgstr "Hipérbola de centro ("
 
-#: src/gauss.cc:793
+#: src/gauss.cc:744
 msgid "Can't check sign "
 msgstr "Não é possível verificar o sinal "
 
-#: src/gauss.cc:793 src/Input.cc:143
+#: src/gauss.cc:744 src/Input.cc:143
 msgid " or "
 msgstr " ou "
 
-#: src/gauss.cc:849
+#: src/gauss.cc:800
 msgid "Cone of center "
 msgstr "Cone de centro "
 
-#: src/gauss.cc:861
+#: src/gauss.cc:812
 msgid "Empty ellipsoid"
 msgstr "Elipsóide vazio"
 
-#: src/gauss.cc:866
+#: src/gauss.cc:817
 msgid "Ellipsoid of center "
 msgstr "Elipsóide de centro "
 
-#: src/gauss.cc:881 src/gauss.cc:895
+#: src/gauss.cc:832 src/gauss.cc:846
 msgid "2-fold hyperboloid of center "
 msgstr "Hiperbolóide duplo de centro "
 
-#: src/gauss.cc:919
+#: src/gauss.cc:870
 msgid "Elliptic cylinder around "
 msgstr "Cilindro elíptico em torno "
 
-#: src/gauss.cc:940
+#: src/gauss.cc:891
 msgid "2 plans intersecting at "
 msgstr "2 planos intersecionando em "
 
-#: src/gauss.cc:948
+#: src/gauss.cc:899
 msgid "Hyperbolic cylinder around "
 msgstr "Cilindro hiperbólico em torno "
 
-#: src/gauss.cc:987
+#: src/gauss.cc:938
 msgid "Elliptic paraboloid of center "
 msgstr "Parabolóide elíptica de centro "
 
-#: src/gauss.cc:1002
+#: src/gauss.cc:953
 msgid "Hyperbolic paraboloid of center "
 msgstr "Parabolóide hiperbólica de centro "
 
-#: src/gauss.cc:1037
+#: src/gauss.cc:988
 msgid "Paraboloid cylinder"
 msgstr "Cilindro parabolóide"
 
-#: src/gauss.cc:1044
+#: src/gauss.cc:995
 msgid "2 parallel plans"
 msgstr "2 planos paralelos"
 
@@ -2796,99 +2796,99 @@ msgstr "Não uma linha!"
 msgid "2-d instruction"
 msgstr "Instrução 2-d"
 
-#: src/plot.cc:3621
+#: src/plot.cc:3626
 msgid "3-d instruction"
 msgstr "Instrução 3-d"
 
-#: src/plot.cc:3779 src/plot.cc:3818 src/Input.cc:1280 src/Input.cc:1282
+#: src/plot.cc:3784 src/plot.cc:3823 src/Input.cc:1280 src/Input.cc:1282
 #: src/Graph.cc:6787
 msgid "circle"
 msgstr "círculo"
 
-#: src/plot.cc:3970
+#: src/plot.cc:3975
 msgid "milieu"
 msgstr "meio"
 
-#: src/plot.cc:4049
+#: src/plot.cc:4054
 msgid "3 points expected"
 msgstr "3 pontos esperados"
 
-#: src/plot.cc:4081
+#: src/plot.cc:4086
 msgid "midpoint"
 msgstr "ponto médio"
 
-#: src/plot.cc:5141
+#: src/plot.cc:5146
 msgid "Sum of coeff is 0"
 msgstr "Soma de coeficiente é 0"
 
-#: src/plot.cc:5434
+#: src/plot.cc:5439
 msgid "line2curve"
 msgstr "line2curve"
 
-#: src/plot.cc:5453
+#: src/plot.cc:5458
 msgid "Distance curve/curve not implemented"
 msgstr "Curva de distância/curva não implementada"
 
-#: src/plot.cc:5888 src/plot.cc:5900
+#: src/plot.cc:5893 src/plot.cc:5905
 msgid "area(f(x),x=a..b,n,method])"
 msgstr "area(f(x),x=a..b,n,method])"
 
-#: src/plot.cc:6040
+#: src/plot.cc:6045
 msgid "angle plan with unknown"
 msgstr "plano de ângulo com desconhecido"
 
-#: src/plot.cc:6050 src/plot.cc:6076 src/plot.cc:6090
+#: src/plot.cc:6055 src/plot.cc:6081 src/plot.cc:6095
 msgid "angle"
 msgstr "ângulo"
 
-#: src/plot.cc:6057
+#: src/plot.cc:6062
 msgid "Lines must intersect"
 msgstr "As linhas devem intersecionar"
 
-#: src/plot.cc:6415 src/plot.cc:6427 src/plot.cc:6439 src/plot.cc:6442
-#: src/plot.cc:6448
+#: src/plot.cc:6420 src/plot.cc:6432 src/plot.cc:6444 src/plot.cc:6447
+#: src/plot.cc:6453
 msgid "plot.cc/parameter2point"
 msgstr "plot.cc/parameter2point"
 
-#: src/plot.cc:6619
+#: src/plot.cc:6624
 msgid "Line "
 msgstr "Linha "
 
-#: src/plot.cc:6940
+#: src/plot.cc:6945
 msgid "Locus on an unknown parametric curve type"
 msgstr "Localização num tipo de curva paramétrica desconhecido"
 
-#: src/plot.cc:6975
+#: src/plot.cc:6980
 msgid "3-d enveloppe not implemented"
 msgstr "Envelope 3-d não implementado"
 
-#: src/plot.cc:7023
+#: src/plot.cc:7028
 msgid "Equation 0 = "
 msgstr "Equação 0 = "
 
-#: src/plot.cc:7216 src/plot.cc:7219 src/plot.cc:7233
+#: src/plot.cc:7221 src/plot.cc:7224 src/plot.cc:7238
 msgid "sommet"
 msgstr "sommet"
 
-#: src/plot.cc:7852
+#: src/plot.cc:7857
 msgid "gen2complex"
 msgstr "gen2complex"
 
-#: src/plot.cc:8047
+#: src/plot.cc:8052
 msgid "Not implemented or bad argument type/value"
 msgstr "Não implementado ou tipo/valor de argumento errado"
 
-#: src/plot.cc:8293
+#: src/plot.cc:8298
 msgid "First arg of translation should not be a point"
 msgstr "Primeiro argumento de translação não deve ser um ponto"
 
-#: src/plot.cc:8352
+#: src/plot.cc:8357
 msgid "Plotparam: unable to discretize: tmin, tmax, tstep="
 msgstr ""
 "Parâmetros de desenho: não é possível discretizar: mínimo de t, máximo de t, "
 "passo t="
 
-#: src/plot.cc:8352
+#: src/plot.cc:8357
 msgid ""
 "\n"
 "Try a larger value for tstep"
@@ -2896,198 +2896,198 @@ msgstr ""
 "\n"
 "Experimente um valor maior para passo t"
 
-#: src/plot.cc:8632 src/plot.cc:8833
+#: src/plot.cc:8637 src/plot.cc:8838
 msgid "2nd arg must be a free variable"
 msgstr "O segundo argumento deve ser uma variável livre"
 
-#: src/plot.cc:8711
+#: src/plot.cc:8716
 msgid "To get a point, run point("
 msgstr "Para obter um ponto, executar point("
 
-#: src/plot.cc:8715
+#: src/plot.cc:8720
 #, fuzzy
 msgid "Assuming you want to run polygonplot"
 msgstr "Assumindo que pretende executar polygonscatterplot"
 
-#: src/plot.cc:8853
+#: src/plot.cc:8858
 msgid "Variable x should be purged"
 msgstr "Variável x deve ser depurada"
 
-#: src/plot.cc:8860
+#: src/plot.cc:8865
 msgid "Variable y should be purged"
 msgstr "Variável y deve ser depurada"
 
-#: src/plot.cc:8867
+#: src/plot.cc:8872
 msgid "Variable z should be purged"
 msgstr "Variável z deve ser depurada"
 
-#: src/plot.cc:8874
+#: src/plot.cc:8879
 msgid "Variable "
 msgstr "Variável "
 
-#: src/plot.cc:8874
+#: src/plot.cc:8879
 msgid " should be purged"
 msgstr " deve ser depurada"
 
-#: src/plot.cc:8881
+#: src/plot.cc:8886
 msgid "Variable t should be purged"
 msgstr "Variável t deve ser depurada"
 
-#: src/plot.cc:8888
+#: src/plot.cc:8893
 msgid "Variable u should be purged"
 msgstr "Variável u deve ser depurada"
 
-#: src/plot.cc:8895
+#: src/plot.cc:8900
 msgid "Variable v should be purged"
 msgstr "Variável v deve ser depurada"
 
-#: src/plot.cc:9164
+#: src/plot.cc:9169
 msgid "Wrong parameter type "
 msgstr "Tipo de parâmetro errado "
 
-#: src/plot.cc:9182
+#: src/plot.cc:9187
 msgid "Can't isolate"
 msgstr "Não é possível isolar"
 
-#: src/plot.cc:9291
+#: src/plot.cc:9296
 msgid "3-d line/2-d circle"
 msgstr "Linha 3-d/círculo 2-d"
 
-#: src/plot.cc:9293
+#: src/plot.cc:9298
 msgid "2-d line/sphere"
 msgstr "Linha/esfera 2-d"
 
-#: src/plot.cc:9438
+#: src/plot.cc:9443
 msgid "Unable to solve intersection equation "
 msgstr "Não é possível resolver uma equação de interseção "
 
-#: src/plot.cc:9792
+#: src/plot.cc:9797
 msgid "Point is not on curve"
 msgstr "Ponto não está na curva"
 
-#: src/plot.cc:9794
+#: src/plot.cc:9799
 msgid "2-d point expected"
 msgstr "Ponto 2-d esperado"
 
-#: src/plot.cc:9876
+#: src/plot.cc:9881
 msgid "Hypersurface w/o equation not implemented"
 msgstr "Hipersuperfície sem equação não implementada"
 
-#: src/plot.cc:9881
+#: src/plot.cc:9886
 msgid "f(t)!=0:"
 msgstr "f(t)!=0:"
 
-#: src/plot.cc:10419
+#: src/plot.cc:10424
 msgid "Bug in conique reducing "
 msgstr "Erro em conique, reduzindo "
 
-#: src/plot.cc:10427
+#: src/plot.cc:10432
 msgid "Bug in conique, equation "
 msgstr "Erro em conique, equação "
 
-#: src/plot.cc:10796
+#: src/plot.cc:10801
 msgid "Use pencolor for the turtle"
 msgstr "Utilizar cor de caneta para a tartaruga"
 
-#: src/plot.cc:10916
+#: src/plot.cc:10921
 msgid "Time"
 msgstr "Tempo"
 
-#: src/plot.cc:11229
+#: src/plot.cc:11234
 msgid "End interactive_plotode"
 msgstr "Terminar interactive_plotode"
 
-#: src/plot.cc:11433
+#: src/plot.cc:11438
 msgid "End of stream"
 msgstr "Fim de fluxo"
 
-#: src/plot.cc:11793 src/History.cc:1728
+#: src/plot.cc:11798 src/History.cc:1728
 msgid "Unable to open file "
 msgstr "Não é possível abrir o ficheiro "
 
-#: src/plot.cc:11796
+#: src/plot.cc:11801
 msgid "Error writing "
 msgstr "Erro de escrita "
 
-#: src/plot.cc:11818
+#: src/plot.cc:11823
 msgid "Unable to read file"
 msgstr "Não é possível ler o ficheiro"
 
-#: src/plot.cc:12008
+#: src/plot.cc:12013
 msgid "Bad iteration"
 msgstr "Iteração errada"
 
-#: src/plot.cc:12265
+#: src/plot.cc:12270
 msgid "Near "
 msgstr "Próximo "
 
-#: src/plot.cc:12372
+#: src/plot.cc:12377
 msgid ""
 "Singular points directions: [cell_i, cell_j, singularity, next solution] "
 msgstr ""
 "Direções de pontos singulares: [cell_i, cell_j, singularity, next solution] "
 
-#: src/plot.cc:12574
+#: src/plot.cc:12579
 msgid "Bad branch, questionnable accuracy"
 msgstr "Ramal errado, precisão questionável"
 
-#: src/plot.cc:12644 src/plot.cc:12686 src/plot.cc:12748
+#: src/plot.cc:12649 src/plot.cc:12691 src/plot.cc:12753
 msgid "Warning! Could not loop or reach boundaries "
 msgstr "Aviso! Não foi possível circundar ou alcançar os limites "
 
-#: src/plot.cc:12742
+#: src/plot.cc:12747
 msgid "Implicitplot "
 msgstr "Implicitplot "
 
-#: src/plot.cc:12766 src/plot3d.cc:2138
+#: src/plot.cc:12771 src/plot3d.cc:2138
 msgid "Variables must be free"
 msgstr "As variáveis devem estar livres"
 
-#: src/plot.cc:12770
+#: src/plot.cc:12775
 msgid "Impliciplot: temporarily swtiching to real mode"
 msgstr "Impliciplot: alteração temporária para o modo real"
 
-#: src/plot.cc:14084
+#: src/plot.cc:14089
 msgid "vecteur2turtle"
 msgstr "vecteur2turtle"
 
-#: src/plot.cc:14423
+#: src/plot.cc:14428
 msgid "Give a name to the procedure, e.g. test"
 msgstr "Atribua um nome ao procedimento, por exemplo, teste"
 
-#: src/plot.cc:14428
+#: src/plot.cc:14433
 msgid "Give a name to thr procedure, e.g. \"test\""
 msgstr "Atribua um nome ao procedimento, por exemplo, \"test\""
 
-#: src/plot.cc:14447
+#: src/plot.cc:14452
 msgid "Give a filename, e.g. \"test\""
 msgstr "Atribua um nome de ficheiro, por exemplo, \"test\""
 
-#: src/plot.cc:14455
+#: src/plot.cc:14460
 msgid "Instruction debut_enregistrement not found"
 msgstr "Instrução debut_enregistrement não encontrada"
 
-#: src/plot.cc:14697
+#: src/plot.cc:14702
 msgid "Integer argument >= 2"
 msgstr "Argumento inteiro >= 2"
 
-#: src/plot.cc:14835
+#: src/plot.cc:14840
 msgid "Collinear points"
 msgstr "Pontos colineares"
 
-#: src/plot.cc:15170
+#: src/plot.cc:15175
 msgid "Circle centers are identical"
 msgstr "Os centros dos círculos são idênticos"
 
-#: src/plot.cc:15345 src/Graph.cc:6822
+#: src/plot.cc:15350 src/Graph.cc:6822
 msgid "reciprocation"
 msgstr "reciprocação"
 
-#: src/plot.cc:15553 src/plot.cc:15557 src/plot.cc:15572
+#: src/plot.cc:15558 src/plot.cc:15562 src/plot.cc:15577
 msgid "conj_harmonique"
 msgstr "conj_harmonique"
 
-#: src/plot.cc:15834
+#: src/plot.cc:15839
 msgid "enveloppe"
 msgstr "envelope"
 
@@ -3404,158 +3404,158 @@ msgstr "União"
 msgid "Minus"
 msgstr "Menos"
 
-#: src/prog.cc:4951
+#: src/prog.cc:4954
 msgid "makemat"
 msgstr "makemat"
 
-#: src/prog.cc:4955
+#: src/prog.cc:4958
 msgid "interval"
 msgstr "intervalo"
 
-#: src/prog.cc:4959
+#: src/prog.cc:4962
 msgid "Boundaries not integer"
 msgstr "Limites não inteiro"
 
-#: src/prog.cc:5197
+#: src/prog.cc:5200
 msgid "Program killed"
 msgstr "Programa terminado"
 
-#: src/prog.cc:5865
+#: src/prog.cc:5868
 msgid "Sorry! Debugging requires a true operating system"
 msgstr "Lamentamos! A depuração requer um sistema operativo verdadeiro"
 
-#: src/prog.cc:5866
+#: src/prog.cc:5869
 msgid "Please try xcas on Linux or an Unix"
 msgstr "Experimente xcas no Linux ou um Unix"
 
-#: src/prog.cc:5910 src/prog.cc:9034
+#: src/prog.cc:5913 src/prog.cc:9044
 msgid "Archiving "
 msgstr "A arquivar "
 
-#: src/prog.cc:5919
+#: src/prog.cc:5922
 msgid "Click reads "
 msgstr "Leituras de cliques "
 
-#: src/prog.cc:6099
+#: src/prog.cc:6102
 msgid "check_binary"
 msgstr "check_binary"
 
-#: src/prog.cc:6304
+#: src/prog.cc:6307
 msgid "No such user "
 msgstr "Não existe o utilizador "
 
-#: src/prog.cc:6386
+#: src/prog.cc:6392
 msgid "Warning: some commands like subs might change arguments order"
 msgstr ""
 "Aviso: alguns comandos como subs poderão alterar a ordem dos argumentos"
 
-#: src/prog.cc:6669
+#: src/prog.cc:6675
 msgid "Cas_setup "
 msgstr "Cas_setup "
 
-#: src/prog.cc:6953
+#: src/prog.cc:6959
 msgid "Parent insmod"
 msgstr "Insmod principal"
 
-#: src/prog.cc:7326
+#: src/prog.cc:7332
 msgid "Float too large"
 msgstr "Flutuante demasiado grande"
 
-#: src/prog.cc:7362
+#: src/prog.cc:7368
 msgid "Incompatible units"
 msgstr "Unidades incompatíveis"
 
-#: src/prog.cc:7630
+#: src/prog.cc:7636
 msgid "Some units could not be converted to MKSA"
 msgstr "Algumas unidades não poderam ser convertidas para MKSA"
 
-#: src/prog.cc:7679
+#: src/prog.cc:7685
 msgid "Bad conversion basis"
 msgstr "Base de conversão errada"
 
-#: src/prog.cc:7763
+#: src/prog.cc:7769
 msgid "Run convert(matrix,array) for dense conversion"
 msgstr "Executar convert(matrix,array) para conversão densa"
 
-#: src/prog.cc:7770
+#: src/prog.cc:7776
 msgid "Invalid map"
 msgstr "Mapa inválido"
 
-#: src/prog.cc:8099
+#: src/prog.cc:8109
 msgid "Running maple text translation __.map"
 msgstr "Executar translação de texto maple __.map"
 
-#: src/prog.cc:8119
+#: src/prog.cc:8129
 msgid "Running TI89 text translation __.ti"
 msgstr "Executar translação de texto TI89 __.ti"
 
-#: src/prog.cc:8370
+#: src/prog.cc:8380
 msgid "No help file found"
 msgstr "Nenhum ficheiro de ajuda encontrado"
 
-#: src/prog.cc:8576
+#: src/prog.cc:8586
 msgid "Restoring epsilon to 1e-6 from "
 msgstr "Restaurar épsilon para 1e-6 de "
 
-#: src/prog.cc:8580
+#: src/prog.cc:8590
 msgid "Restoring proba epsilon to 1e-6 from "
 msgstr "Restaurar épsilon proba para 1e-6 de "
 
-#: src/prog.cc:8874
+#: src/prog.cc:8884
 msgid "invalid |"
 msgstr "inválido |"
 
-#: src/prog.cc:8922
+#: src/prog.cc:8932
 msgid "Invalid |"
 msgstr "Inválido |"
 
-#: src/prog.cc:9018
+#: src/prog.cc:9028
 msgid "inputform may be used in a window environment only"
 msgstr "inputform pode ser utilizado apenas num ambiente de janela"
 
-#: src/prog.cc:9046
+#: src/prog.cc:9056
 msgid "Inputform reads "
 msgstr "Inputform lê "
 
-#: src/prog.cc:9620
+#: src/prog.cc:9630
 msgid "Error printasmaple_lib"
 msgstr "Erro printasmaple_lib"
 
-#: src/prog.cc:12412
+#: src/prog.cc:12422
 msgid "Invalid unit exponent"
 msgstr "Exponente de unidade inválido"
 
-#: src/prog.cc:12568
+#: src/prog.cc:12580
 msgid "printasunit error"
 msgstr "erro printasunit"
 
-#: src/prog.cc:12728
+#: src/prog.cc:12740
 msgid "User operator not available on this architecture"
 msgstr "Operador de utilizador indisponível nesta arquitetura"
 
-#: src/prog.cc:12740
+#: src/prog.cc:12752
 msgid "Operator name must be of type string"
 msgstr "Nome de operador deve ser da string do tipo"
 
-#: src/prog.cc:12828
+#: src/prog.cc:12840
 msgid "Non existent Folder"
 msgstr "Pasta inexistente"
 
-#: src/prog.cc:12876
+#: src/prog.cc:12888
 msgid "No case applies"
 msgstr "Nenhum caso se aplica"
 
-#: src/prog.cc:13034
+#: src/prog.cc:13046
 msgid "Unable to handle when condition "
 msgstr "Não é possível lidar quando condição "
 
-#: src/prog.cc:13040
+#: src/prog.cc:13052
 msgid ""
 "when2sign does not work properly with infinities. Replace inf by Inf and run "
 "limit after."
 msgstr ""
 
-#: src/prog.cc:13273
+#: src/prog.cc:13285
 msgid "assert failure: "
 msgstr "falha de afirmação: "
 
@@ -3585,7 +3585,7 @@ msgstr "Giac gen inválido -> conversão CoCoA ZZ"
 msgid "Unable to convert CoCoA data"
 msgstr "Não é possível converter dados CoCoA"
 
-#: src/cocoa.cc:14607 src/cocoa.cc:14775
+#: src/cocoa.cc:14611 src/cocoa.cc:14779
 msgid ""
 "Running a probabilistic check for the reconstructed Groebner basis. If "
 "successfull, error probability is less than "
@@ -3593,11 +3593,11 @@ msgstr ""
 "Executar uma verificação probabilística para a base de Groebner "
 "reconstruída. Se for bem-sucedida, a probabilidade de erro é inferior a "
 
-#: src/cocoa.cc:14607 src/cocoa.cc:14775
+#: src/cocoa.cc:14611 src/cocoa.cc:14779
 msgid " and is estimated to be less than 10^-"
 msgstr " e é estimada ser inferior a 10^-"
 
-#: src/cocoa.cc:14607 src/cocoa.cc:14775
+#: src/cocoa.cc:14611 src/cocoa.cc:14779
 msgid ". Use proba_epsilon:=0 to certify (this takes more time)."
 msgstr ". Utilize proba_epsilon:=0 para certificar (isto demora mais tempo)."
 

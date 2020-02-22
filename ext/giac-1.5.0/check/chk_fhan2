@@ -2,4 +2,4 @@
 unset LANG
 export LC_MESSAGES=en_US.UTF8
 ../src/icas TP02-sol.cas > TP02.tst
-diff TP02.tst TP02-sol.cas.out1
+diff TP02.tst TP02-sol.cas.out1 || diff TP02.tst TP02-sol.cas.out2

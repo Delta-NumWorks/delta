@@ -1065,22 +1065,22 @@ namespace giac {
 	  v1.push_back(theid);
 	  // add = 
 	  if (thetype.val==_ZINT){
-	    newid=*it=gen(theid.print(contextptr)+"_i",contextptr);
+	    newid=*it=gen(identificateur(theid.print(contextptr)+"_i"));
 	    if (egal!=0)
 	      *it=symb_equal(*it,egal);
 	  }
 	  if (thetype.val==_DOUBLE_ || thetype.val==_REAL){
-	    newid=*it=gen(theid.print(contextptr)+"_d",contextptr);
+	    newid=*it=gen(identificateur(theid.print(contextptr)+"_d"));
 	    if (egal!=0)
 	      *it=symb_equal(*it,egal);
 	  }
 	  if (thetype.val==_CPLX){
-	    newid=*it=gen(theid.print(contextptr)+"_c",contextptr);
+	    newid=*it=gen(identificateur(theid.print(contextptr)+"_c"));
 	    if (egal!=0)
 	      *it=symb_equal(*it,egal);
 	  }
 	  if (thetype.val==_FRAC){
-	    newid=*it=gen(theid.print(contextptr)+"_f",contextptr);
+	    newid=*it=gen(identificateur(theid.print(contextptr)+"_f"));
 	    if (egal!=0)
 	      *it=symb_equal(*it,egal);
 	  }
@@ -1089,7 +1089,7 @@ namespace giac {
 	}
 	if (thetype==at_real || thetype==at_float){
 	  v1.push_back(theid);
-	  *it=gen(theid.print(contextptr)+"_d",contextptr);
+	  *it=gen(identificateur(theid.print(contextptr)+"_d"));
 	  if (egal!=0)
 	    *it=symb_equal(*it,egal);
 	  v2.push_back(*it);
@@ -1097,7 +1097,7 @@ namespace giac {
 	}
 	if (thetype==at_complex){
 	  v1.push_back(theid);
-	  *it=gen(theid.print(contextptr)+"_c",contextptr);
+	  *it=gen(identificateur(theid.print(contextptr)+"_c"));
 	  if (egal!=0)
 	    *it=symb_equal(*it,egal);
 	  v2.push_back(*it);
@@ -1105,7 +1105,7 @@ namespace giac {
 	}
 	if (thetype==at_vector){
 	  v1.push_back(theid);
-	  newid=*it=gen(theid.print(contextptr)+"_v",contextptr);
+	  newid=*it=gen(identificateur(theid.print(contextptr)+"_v"));
 	  if (egal!=0)
 	    *it=symb_equal(*it,egal);
 	  v2.push_back(newid);
@@ -1113,7 +1113,7 @@ namespace giac {
 	}
 	if (thetype==at_string){
 	  v1.push_back(theid);
-	  newid=*it=gen(theid.print(contextptr)+"_s",contextptr);
+	  newid=*it=gen(identificateur(theid.print(contextptr)+"_s"));
 	  if (egal!=0)
 	    *it=symb_equal(*it,egal);
 	  v2.push_back(newid);
@@ -1121,7 +1121,7 @@ namespace giac {
 	}
 	if (thetype==at_integrate || thetype==at_int){ // int==integrate
 	  v1.push_back(theid);
-	  newid=*it=gen(theid.print(contextptr)+"_i",contextptr);
+	  newid=*it=gen(identificateur(theid.print(contextptr)+"_i"));
 	  if (egal!=0)
 	    *it=symb_equal(*it,egal);
 	  v2.push_back(newid);
@@ -4926,7 +4926,10 @@ namespace giac {
   gen _makemat(const gen & args,const context * contextptr){
     if ( args.type==_STRNG &&  args.subtype==-1) return  args;
     if (args.type==_INT_ && args.val>0 && double(args.val)*args.val<LIST_SIZE_LIMIT){
-      return gen(vecteur(args.val,vecteur(args.val,0)),_MATRIX__VECT);
+      vecteur res;
+      for (int i=0;i<args.val;++i)
+	res.push_back(vecteur(args.val,0));
+      return gen(res,_MATRIX__VECT);
     }
     if (args.type!=_VECT)
       return symb_makemat(args);
@@ -6343,8 +6346,10 @@ namespace giac {
 
   gen _scientific_format(const gen & g,GIAC_CONTEXT){
     if ( g.type==_STRNG &&  g.subtype==-1) return  g;
+#ifndef KHICAS
     gen tmp=check_secure();
     if (is_undef(tmp)) return tmp;
+#endif
     gen args(g);
     if (g.type==_DOUBLE_)
       args=int(g._DOUBLE_val);    
@@ -6359,8 +6364,9 @@ namespace giac {
 
   gen _integer_format(const gen & g,GIAC_CONTEXT){
     if ( g.type==_STRNG &&  g.subtype==-1) return  g;
-    gen tmp=check_secure();
-    if (is_undef(tmp)) return tmp;
+#ifndef KHICAS
+    gen tmp=check_secure(); if (is_undef(tmp)) return tmp;
+#endif
     gen args(g);
     if (g.type==_DOUBLE_)
       args=int(g._DOUBLE_val);    
@@ -7784,6 +7790,10 @@ namespace giac {
 	}
 	if ( f==at_vector || f==at_array){
 	  g.subtype=_MATRIX__VECT;
+	  return g;
+	}
+	if (f==at_seq){
+	  g.subtype=_SEQ__VECT;
 	  return g;
 	}
 	if (f==at_table){

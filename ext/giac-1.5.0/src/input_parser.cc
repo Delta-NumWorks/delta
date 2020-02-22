@@ -5149,7 +5149,7 @@ yyreduce:
 
 /* Line 1806 of yacc.c  */
 #line 235 "input_parser.yy"
-    { (yyval)=symbolic(at_solve,symb_equal((yyvsp[(1) - (3)]),0));}
+    { if ((yyvsp[(1) - (3)])==16 || (yyvsp[(1) - (3)])==10 || (yyvsp[(1) - (3)])==8 || (yyvsp[(1) - (3)])==2) (yyval)=symbolic(at_integer_format,(yyvsp[(1) - (3)])); else (yyval)=symbolic(at_solve,symb_equal((yyvsp[(1) - (3)]),0));}
     break;
 
   case 26:

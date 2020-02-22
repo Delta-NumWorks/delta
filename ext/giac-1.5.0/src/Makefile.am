@@ -51,7 +51,7 @@ bin_PROGRAMS = icas xcas aide hevea2mml
 icas_SOURCES = icas.cc 
 icas_LDADD = libxcas.la $(GINSH_LIBS) $(GSL_LIBS) $(LAPACK_LIBS)
 aide_SOURCES = aide.cc
-aide_LDADD = libxcas.la $(GINSH_LIBS) $(GSL_LIBS) $(LAPACK_LIBS)
+aide_LDADD = libgiac.la $(GINSH_LIBS) $(GSL_LIBS) $(LAPACK_LIBS)
 hevea2mml_SOURCES = hevea2mml.cc lex_yy.c y_tab.c
 hevea2mml_LDADD = 
 

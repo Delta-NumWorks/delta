@@ -1,156 +1,162 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
-            "http://www.w3.org/TR/REC-html40/loose.dtd">
-<HTML>
-<HEAD>
-
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<META name="GENERATOR" content="hevea 1.10">
-<LINK rel="stylesheet" type="text/css" href="casrouge.css">
-<TITLE>Les graphes et l’algorithme de Dijkstra</TITLE>
-</HEAD>
-<BODY >
-<A HREF="casrouge009.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
-<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
-<A HREF="casrouge011.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
-<HR>
-<H1 CLASS="chapter"><A NAME="htoc283">Chapitre 10</A>  Les graphes et l’algorithme de Dijkstra</H1><P>
-Soit un graphe ayant <I>n</I> sommets numérotés de 0 à <I>n</I>−1. Certains de ces 
-sommets sont reliés par des arêtes de longueur données.<BR>
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="hevea 2.29+5 of 2017-05-18">
+<link rel="stylesheet" type="text/css" href="casrouge.css">
+<title>Les graphes et l’algorithme de Dijkstra</title>
+</head>
+<body >
+<a href="casrouge009.html"><img src="previous_motif.gif" alt="Previous"></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"></a>
+<a href="casrouge011.html"><img src="next_motif.gif" alt="Next"></a>
+<hr>
+<h1 id="sec316" class="chapter">Chapitre 10  Les graphes et l’algorithme de Dijkstra</h1>
+<p>
+Soit un graphe ayant <span style="font-style:italic">n</span> sommets numérotés de 0 à <span style="font-style:italic">n</span>−1. Certains de ces 
+sommets sont reliés par des arêtes de longueur données.<br>
 L’algorithme de Dijkstra permet de trouver le chemin de distance minimale qui 
-relie le sommet de numéro <TT>deb</TT> aux autres sommets.<BR>
-Cet algorithme procéde de proche en proche en se servant de la remarque :<BR>
+relie le sommet de numéro <span style="font-family:monospace">deb</span> aux autres sommets.<br>
+Cet algorithme procéde de proche en proche en se servant de la remarque :<br>
 si par exemple, le chemin le plus court pour aller du sommet 0 au sommet 2 
 passe par le sommet 4, le début de ce chemin est aussi le chemin le plus 
-court pour aller du sommet 0 au sommet 4.<BR>
-</P><H2 CLASS="section"><A NAME="toc78"></A><A NAME="htoc284">10.1</A>  L’algorithme sur un exemple</H2><P>
-Soient <I>n</I>=4 et le graphe de matrice <TT>A</TT> :
-</P><TABLE CLASS="display dcenter"><TR VALIGN="middle"><TD CLASS="dcell"><I>A</I>=</TD><TD CLASS="dcell">⎛<BR>
-⎜<BR>
-⎜<BR>
-⎜<BR>
-⎝</TD><TD CLASS="dcell"><TABLE CELLSPACING=6 CELLPADDING=0><TR><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>27</TD><TD ALIGN=center NOWRAP>11</TD><TD ALIGN=center NOWRAP>23  </TD></TR>
-<TR><TD ALIGN=center NOWRAP>27</TD><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>14</TD><TD ALIGN=center NOWRAP>1 </TD></TR>
-<TR><TD ALIGN=center NOWRAP>11</TD><TD ALIGN=center NOWRAP>14</TD><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>10</TD></TR>
-<TR><TD ALIGN=center NOWRAP>23</TD><TD ALIGN=center NOWRAP>1</TD><TD ALIGN=center NOWRAP>10</TD><TD ALIGN=center NOWRAP>0  </TD></TR>
-</TABLE></TD><TD CLASS="dcell">⎞<BR>
-⎟<BR>
-⎟<BR>
-⎟<BR>
-⎠</TD></TR>
-</TABLE><P>
+court pour aller du sommet 0 au sommet 4.<br>
+</p>
+<h2 id="sec317" class="section">10.1  L’algorithme sur un exemple</h2>
+<p>
+Soient <span style="font-style:italic">n</span>=4 et le graphe de matrice <span style="font-family:monospace">A</span> :
+</p><table class="display dcenter"><tr style="vertical-align:middle"><td class="dcell"><span style="font-style:italic">A</span>=</td><td class="dcell">⎛<br>
+⎜<br>
+⎜<br>
+⎜<br>
+⎝</td><td class="dcell"><table style="border-spacing:6px;border-collapse:separate;" class="cellpading0"><tr><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >27</td><td style="text-align:center;white-space:nowrap" >11</td><td style="text-align:center;white-space:nowrap" >23  </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >27</td><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >14</td><td style="text-align:center;white-space:nowrap" >1 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >11</td><td style="text-align:center;white-space:nowrap" >14</td><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >10</td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >23</td><td style="text-align:center;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" >10</td><td style="text-align:center;white-space:nowrap" >0  
+</td></tr>
+</table></td><td class="dcell">⎞<br>
+⎟<br>
+⎟<br>
+⎟<br>
+⎠</td></tr>
+</table><p>
 Je veux partir du sommet 0 pour aller au sommet 1 (resp 2,3) par le plus court 
-chemin.<BR>
-J’initialise :<BR>
-<TT>dist</TT> à <TT>[0,27,11,23]</TT> (c’est à dire à la ligne 0 de <TT>A</TT>) 
-<TT>afaire</TT> à <TT>[1,2,3]</TT> et<BR>
-<TT>sprec</TT> à <TT>[-1,0,0,0]</TT> (<TT>sprec[0]=-1</TT> car on part du sommet 0 et 
-pour <TT>j!=0</TT>, <TT>sprec[j]=0</TT> car <TT>dist</TT> est la distance provisoire 
-minimum pour aller de 0 à <TT>j</TT>). Les 2 valeurs <TT>dist[0]</TT> et 
-<TT>sprec[0]</TT> sont définitives car le sommet 0 est ici le départ. Je sais
+chemin.<br>
+J’initialise :<br>
+<span style="font-family:monospace">dist</span> à <span style="font-family:monospace">[0,27,11,23]</span> (c’est à dire à la ligne 0 de <span style="font-family:monospace">A</span>) 
+<span style="font-family:monospace">afaire</span> à <span style="font-family:monospace">[1,2,3]</span> et<br>
+<span style="font-family:monospace">sprec</span> à <span style="font-family:monospace">[-1,0,0,0]</span> (<span style="font-family:monospace">sprec[0]=-1</span> car on part du sommet 0 et 
+pour <span style="font-family:monospace">j!=0</span>, <span style="font-family:monospace">sprec[j]=0</span> car <span style="font-family:monospace">dist</span> est la distance provisoire 
+minimum pour aller de 0 à <span style="font-family:monospace">j</span>). Les 2 valeurs <span style="font-family:monospace">dist[0]</span> et 
+<span style="font-family:monospace">sprec[0]</span> sont définitives car le sommet 0 est ici le départ. Je sais
 aussi que le chemin le plus court du sommet 0 au sommet 1 (resp 2,3) ne 
-repassera pas par le sommet 0.<BR>
-<B>Première étape</B><BR>
-Je cherche le minimum des valeurs de <TT>dist</TT> pour les 
-sommets dont les numéros sont dans <TT>afaire=[1,2,3]</TT> c’est à dire le 
-minimum de <TT>[27,11,23]</TT>.<BR>
-Le minimum 11 de <TT>[27,11,23]</TT> est réalisé pour le sommet 2 (car 
-<TT>dist[2]=11</TT>). Je supprime le numéro 2 de la liste <TT>afaire</TT> qui 
-devient <TT>afaire=[1,3]</TT> car je connais maintenant
+repassera pas par le sommet 0. <br>
+<span style="font-weight:bold">Première étape</span><br>
+Je cherche le minimum des valeurs de <span style="font-family:monospace">dist</span> pour les 
+sommets dont les numéros sont dans <span style="font-family:monospace">afaire=[1,2,3]</span> c’est à dire le 
+minimum de <span style="font-family:monospace">[27,11,23]</span>.<br>
+Le minimum 11 de <span style="font-family:monospace">[27,11,23]</span> est réalisé pour le sommet 2 (car 
+<span style="font-family:monospace">dist[2]=11</span>). Je supprime le numéro 2 de la liste <span style="font-family:monospace">afaire</span> qui 
+devient <span style="font-family:monospace">afaire=[1,3]</span> car je connais maintenant
 le plus court chemin pour aller de 0 à 2, il est direct
-et a pour longueur 11 je ne change donc pas la valeur de <TT>dist[2]</TT> ni celle de <TT>sprec[2]</TT> : ces 2 valeurs sont maintenant définitives.<BR>
-On a donc encore <TT>dist=[0,27,11,23]</TT> et <TT>sprec=[-1,0,0,0]</TT> où les 
-valeurs d’indice 0 et 2 sont définitives.<BR>
+et a pour longueur 11 je ne change donc pas la valeur de <span style="font-family:monospace">dist[2]</span> ni celle de <span style="font-family:monospace">sprec[2]</span> : ces 2 valeurs sont maintenant définitives.<br>
+On a donc encore <span style="font-family:monospace">dist=[0,27,11,23]</span> et <span style="font-family:monospace">sprec=[-1,0,0,0]</span> où les 
+valeurs d’indice 0 et 2 sont définitives.<br>
 Maintenant, le chemin provisoirement le plus court allant du sommet 0 au sommet
 1 (resp du sommet 0 au sommet 3) est :
-</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+</p><ul class="itemize"><li class="li-itemize">
 soit le chemin direct allant de 0 à 2, suivi par le chemin le plus 
 court allant de 2 à 1 (resp de 2 à 3), 
-</LI><LI CLASS="li-itemize">soit le chemin le plus court allant de 0 à 1 (resp de 0 à 3) sans 
+</li><li class="li-itemize">soit le chemin le plus court allant de 0 à 1 (resp de 0 à 3) sans 
 passer pas par 2.
-</LI></UL><P>
+</li></ul><p>
 L’étape suivante consiste donc à comparer le chemin le plus court de 0 à 
-2 de longueur <TT>dist[2]</TT>, suivi par le chemin direct de 2 à 1 de longueur
-<TT>A[2,1]</TT> (resp 3 de longueur <TT>A[2,3]</TT>) avec le chemin le plus court 
-provisoire qui va de 0 à 1 <TT>dist[1]</TT> (respde 0 à 3 <TT>dist[3]</TT>).<BR>
-Je compare donc <TT>27=dist[1]</TT> à 11+14=25 (11=<TT>dist[2]</TT>=longueur du 
-chemin minimum allant de 0 à 2 et <TT>14=A[2,1]</TT>=longueur du chemin direct 
-allant de 2 à 1). On a 25&lt;27 donc je modifie <TT>dist</TT> en <TT>[0,25,11,23]</TT> 
-et <TT>sprec</TT> en <TT>[-1,2,0,0]</TT> puisque 25 est la longueur du chemin qui 
-passe par 2.<BR>
-Je compare donc <TT>23=dist[3]</TT> à 11+10=21 (11=longueur du chemin
-minimum allant de 0 à 2 et <TT>10=A[2,3]</TT>=longueur du chemin direct allant 
+2 de longueur <span style="font-family:monospace">dist[2]</span>, suivi par le chemin direct de 2 à 1 de longueur
+<span style="font-family:monospace">A[2,1]</span> (resp 3 de longueur <span style="font-family:monospace">A[2,3]</span>) avec le chemin le plus court 
+provisoire qui va de 0 à 1 <span style="font-family:monospace">dist[1]</span> (respde 0 à 3 <span style="font-family:monospace">dist[3]</span>).<br>
+Je compare donc <span style="font-family:monospace">27=dist[1]</span> à 11+14=25 (11=<span style="font-family:monospace">dist[2]</span>=longueur du 
+chemin minimum allant de 0 à 2 et <span style="font-family:monospace">14=A[2,1]</span>=longueur du chemin direct 
+allant de 2 à 1). On a 25&lt;27 donc je modifie <span style="font-family:monospace">dist</span> en <span style="font-family:monospace">[0,25,11,23]</span> 
+et <span style="font-family:monospace">sprec</span> en <span style="font-family:monospace">[-1,2,0,0]</span> puisque 25 est la longueur du chemin qui 
+passe par 2.<br>
+Je compare donc <span style="font-family:monospace">23=dist[3]</span> à 11+10=21 (11=longueur du chemin
+minimum allant de 0 à 2 et <span style="font-family:monospace">10=A[2,3]</span>=longueur du chemin direct allant 
 de 2 à 3). On a 21&lt;23 donc je modifie
-<TT>dist</TT> en <TT>[0,25,11,21]</TT> et <TT>sprec</TT> en <TT>[-1,2,0,2]</TT> puisque 21
-est la longueur du chemin qui passe par 2.<BR>
-Donc maintenant <TT>dist=[0,25,11,21]</TT> et <TT>sprec=[-1,2,0,2]</TT><BR>
-<B>Deuxième étape</B><BR>
-Je cherche le minimum des valeurs de <TT>dist</TT> pour les 
-sommets de numéros <TT>afaire=[1,3]</TT> c’est à dire le minimum de 
-<TT>[25,21]</TT>.<BR>
-Le minimum 21 de <TT>[25,21]</TT> est réalisé pour le sommet 3 car 
-<TT>dist[3]=21</TT>. Je supprime le numéro 3 de la liste <TT>afaire</TT> qui 
-devient <TT>afaire=[1]</TT> car je connais maintenant
+<span style="font-family:monospace">dist</span> en <span style="font-family:monospace">[0,25,11,21]</span> et <span style="font-family:monospace">sprec</span> en <span style="font-family:monospace">[-1,2,0,2]</span> puisque 21
+est la longueur du chemin qui passe par 2.<br>
+Donc maintenant <span style="font-family:monospace">dist=[0,25,11,21]</span> et <span style="font-family:monospace">sprec=[-1,2,0,2]</span><br>
+<span style="font-weight:bold">Deuxième étape</span><br>
+Je cherche le minimum des valeurs de <span style="font-family:monospace">dist</span> pour les 
+sommets de numéros <span style="font-family:monospace">afaire=[1,3]</span> c’est à dire le minimum de 
+<span style="font-family:monospace">[25,21]</span>.<br>
+Le minimum 21 de <span style="font-family:monospace">[25,21]</span> est réalisé pour le sommet 3 car 
+<span style="font-family:monospace">dist[3]=21</span>. Je supprime le numéro 3 de la liste <span style="font-family:monospace">afaire</span> qui 
+devient <span style="font-family:monospace">afaire=[1]</span> car je connais maintenant
 le plus court chemin pour aller de 0 à 3, il est de 
-longueur 21 et il passe par 2 car <TT>sprec[3]=2</TT>.<BR>
+longueur 21 et il passe par 2 car <span style="font-family:monospace">sprec[3]=2</span>.<br>
 Je cherche enfin le plus court chemin pour aller de 0 à 1 en empruntant :
-</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+</p><ul class="itemize"><li class="li-itemize">
 soit le chemin minimum allant de 0 à 2 de longueur 11 (car 
-<TT>dist[2]=11</TT>), puis le chemin direct allant de 2 à 1 de longueur 
-<TT>14=A[2,1]</TT> (donc un chemin de longueur 11+14=25=<TT>dist[1]</TT>), 
-</LI><LI CLASS="li-itemize">soit le chemin minimum qui va de 0 à 3 de longueur 21 (car 
-<TT>dist[3]=21</TT>), puis le chemin direct allant de 3 à 1 de longueur 
+<span style="font-family:monospace">dist[2]=11</span>), puis le chemin direct allant de 2 à 1 de longueur 
+<span style="font-family:monospace">14=A[2,1]</span> (donc un chemin de longueur 11+14=25=<span style="font-family:monospace">dist[1]</span>), 
+</li><li class="li-itemize">soit le chemin minimum qui va de 0 à 3 de longueur 21 (car 
+<span style="font-family:monospace">dist[3]=21</span>), puis le chemin direct allant de 3 à 1 de longueur 
 1=A[3,1] (donc un chemin de longueur 21+1=22).
-</LI></UL><P> 
+</li></ul><p> 
 Je compare donc 25 à 22. On a 22&lt;25 donc je modifie
-<TT>dist</TT> en <TT>[0,22,11,21]</TT> et <TT>sprec</TT> en <TT>[-1,3,0,2]</TT>.<BR>
-Donc maintenant <TT>dist=[0,22,11,21]</TT> et <TT>sprec=[-1,3,0,2]</TT><BR>
-<B>Troisième étape</B><BR>
-Il reste à chercher le minimum de <TT>[22]</TT> est obtenu pour le sommet de 
-numéro 1, numéro que l’on supprime de la liste <TT>afaire</TT> qui devient 
-vide.<BR>
-Le résultat final est donc :<BR>
-<TT>dist=[0,22,11,21]</TT> et <TT>sprec=[-1,3,0,2]</TT>
-</P><H2 CLASS="section"><A NAME="toc79"></A><A NAME="htoc285">10.2</A>  Déscription de l’algorithme de Dijkstra</H2><P>
-Soit <TT>A</TT> la matrice donnant la longueur des arêtes i.e. <TT>A[j,k]</TT> est 
-la longueur de l’arête reliant le sommet <TT>j</TT> au sommet <TT>k</TT> avec la 
-convention de mettre <TT>A[j,k]=inf=</TT>+∞ quand il n’y a pas d’arête 
-qui relie le sommet <TT>j</TT> au sommet <TT>k</TT>.<BR>
-Soientt <TT>dist</TT> un vecteur donnant les distances provisoires reliant le 
-sommet de numéro <TT>deb</TT> aux autres sommets et <TT>sprec[j]</TT> le 
-numéro du sommet précedent <TT>j</TT> par lequel on doit passer pour avoir la 
-distance minimale provisoire.<BR>
- Par exemple si <TT>n=5</TT> et si en fin de programme <TT>sprec=[3,2,0,-1,2]</TT> 
-cela veut dire que l’on part du sommet 3 car <TT>sprec[3]=-1</TT>.<BR>
-Si on cherche le plus court chemin pour aller du sommet 3 au sommet <TT>j=4</TT> 
-le chemin sera <TT>3,???,4</TT>. Mais comme <TT>sprec[4]=2</TT> le chemin sera <TT>3,??,2,4</TT> puis, comme <TT>sprec[2]=0</TT> et <TT>sprec[0]=3</TT> le chemin sera 
-<TT>3,0,2,4</TT>.<BR>
-Par contre le chemin minimum pour aller du sommet <TT>3</TT> à <TT>0</TT> sera 
-direct de <TT>3</TT> à <TT>0</TT> puique <TT>sprec[0]=3</TT>.<BR>
-<TT>afaire</TT> est la liste des indices restant à faire.<BR>
-<B>Initialisation :</B><BR>
-Au début <TT>dist=A[deb]</TT> (<TT>A[deb]</TT> est la ligne d’indice <TT>deb</TT> de 
-<TT>A</TT>) et<BR>
-<TT>sprec[deb]=-1</TT> et <TT>sprec[j]=deb</TT> pour <TT>j!:=deb</TT>.<BR>
-<TT>afaire</TT> est la liste des indices dans laquelle on a enlevé <TT>deb</TT> I.E. une liste de longueur <TT>n-1</TT>.<BR>
-<B>Etapes suivantes :</B><BR>
-On cherche le minimum <TT>m</TT> des distances provisoires <TT>dist</TT> reliant le 
-sommet <TT>deb</TT> aux sommets dont les numéros sont dans 
-<TT>afaire</TT> et on note <TT>jm</TT> le numéro du sommet réalisant ce minimum.
-On supprime <TT>jm</TT> de la liste <TT>afaire</TT>.<BR>
+<span style="font-family:monospace">dist</span> en <span style="font-family:monospace">[0,22,11,21]</span> et <span style="font-family:monospace">sprec</span> en <span style="font-family:monospace">[-1,3,0,2]</span>.<br>
+Donc maintenant <span style="font-family:monospace">dist=[0,22,11,21]</span> et <span style="font-family:monospace">sprec=[-1,3,0,2]</span><br>
+<span style="font-weight:bold">Troisième étape</span><br>
+Il reste à chercher le minimum de <span style="font-family:monospace">[22]</span> est obtenu pour le sommet de 
+numéro 1, numéro que l’on supprime de la liste <span style="font-family:monospace">afaire</span> qui devient 
+vide.<br>
+Le résultat final est donc :<br>
+<span style="font-family:monospace">dist=[0,22,11,21]</span> et <span style="font-family:monospace">sprec=[-1,3,0,2]</span>
+</p>
+<h2 id="sec318" class="section">10.2  Déscription de l’algorithme de Dijkstra</h2>
+<p>
+Soit <span style="font-family:monospace">A</span> la matrice donnant la longueur des arêtes i.e. <span style="font-family:monospace">A[j,k]</span> est 
+la longueur de l’arête reliant le sommet <span style="font-family:monospace">j</span> au sommet <span style="font-family:monospace">k</span> avec la 
+convention de mettre <span style="font-family:monospace">A[j,k]=inf=</span>+∞ quand il n’y a pas d’arête 
+qui relie le sommet <span style="font-family:monospace">j</span> au sommet <span style="font-family:monospace">k</span>. <br>
+Soientt <span style="font-family:monospace">dist</span> un vecteur donnant les distances provisoires reliant le 
+sommet de numéro <span style="font-family:monospace">deb</span> aux autres sommets et <span style="font-family:monospace">sprec[j]</span> le 
+numéro du sommet précedent <span style="font-family:monospace">j</span> par lequel on doit passer pour avoir la 
+distance minimale provisoire.<br>
+ Par exemple si <span style="font-family:monospace">n=5</span> et si en fin de programme <span style="font-family:monospace">sprec=[3,2,0,-1,2]</span> 
+cela veut dire que l’on part du sommet 3 car <span style="font-family:monospace">sprec[3]=-1</span>.<br>
+Si on cherche le plus court chemin pour aller du sommet 3 au sommet <span style="font-family:monospace">j=4</span> 
+le chemin sera <span style="font-family:monospace">3,???,4</span>. Mais comme <span style="font-family:monospace">sprec[4]=2</span> le chemin sera <span style="font-family:monospace">3,??,2,4</span> puis, comme <span style="font-family:monospace">sprec[2]=0</span> et <span style="font-family:monospace">sprec[0]=3</span> le chemin sera 
+<span style="font-family:monospace">3,0,2,4</span>.<br>
+Par contre le chemin minimum pour aller du sommet <span style="font-family:monospace">3</span> à <span style="font-family:monospace">0</span> sera 
+direct de <span style="font-family:monospace">3</span> à <span style="font-family:monospace">0</span> puique <span style="font-family:monospace">sprec[0]=3</span>.<br>
+<span style="font-family:monospace">afaire</span> est la liste des indices restant à faire.<br>
+<span style="font-weight:bold">Initialisation :</span><br>
+Au début <span style="font-family:monospace">dist=A[deb]</span> (<span style="font-family:monospace">A[deb]</span> est la ligne d’indice <span style="font-family:monospace">deb</span> de 
+<span style="font-family:monospace">A</span>) et <br>
+<span style="font-family:monospace">sprec[deb]=-1</span> et <span style="font-family:monospace">sprec[j]=deb</span> pour <span style="font-family:monospace">j!:=deb</span>.<br>
+<span style="font-family:monospace">afaire</span> est la liste des indices dans laquelle on a enlevé <span style="font-family:monospace">deb</span> I.E. une liste de longueur <span style="font-family:monospace">n-1</span>.<br>
+<span style="font-weight:bold">Etapes suivantes :</span><br>
+On cherche le minimum <span style="font-family:monospace">m</span> des distances provisoires <span style="font-family:monospace">dist</span> reliant le 
+sommet <span style="font-family:monospace">deb</span> aux sommets dont les numéros sont dans 
+<span style="font-family:monospace">afaire</span> et on note <span style="font-family:monospace">jm</span> le numéro du sommet réalisant ce minimum.
+On supprime <span style="font-family:monospace">jm</span> de la liste <span style="font-family:monospace">afaire</span>.<br>
 On compare ensuite, pour tous les numéros des sommets restant afaire, la 
-longueur <TT>autredist</TT> des chemins qui passent par 
-<TT>jm</TT> à la valeur provisoire <TT>dist</TT> et si pour le sommet de numéro
-<TT>k=afaire[j]</TT> le chemin qui passe par <TT>jm</TT> est plus court on modifie 
-<TT>dist[k]</TT> et on modifie <TT>sprec[k]</TT> qui vaut alors <TT>jm</TT>.<BR>
+longueur <span style="font-family:monospace">autredist</span> des chemins qui passent par 
+<span style="font-family:monospace">jm</span> à la valeur provisoire <span style="font-family:monospace">dist</span> et si pour le sommet de numéro
+<span style="font-family:monospace">k=afaire[j]</span> le chemin qui passe par <span style="font-family:monospace">jm</span> est plus court on modifie 
+<span style="font-family:monospace">dist[k]</span> et on modifie <span style="font-family:monospace">sprec[k]</span> qui vaut alors <span style="font-family:monospace">jm</span>.<br>
 On recommence jusqu’a épuisement de la liste 
-<TT>afaire</TT> , c’est à dire que l’on fait cela <TT>n-1</TT> fois.<BR>
-<B>Remarque</B><BR>
- Attention aux indices !!!!<BR>
-<TT>afaire</TT> est la liste des indices ou numéros des 
+<span style="font-family:monospace">afaire</span> , c’est à dire que l’on fait cela <span style="font-family:monospace">n-1</span> fois.<br>
+<span style="font-weight:bold">Remarque</span><br>
+ Attention aux indices !!!!<br>
+<span style="font-family:monospace">afaire</span> est la liste des indices ou numéros des 
 sommets restant à traiter et il ne faut pas confondre le numéro des sommets 
-et les indices qu’ils ont dans la liste <TT>afaire</TT> i.e. ne pas confondre
-<TT>k=afaire[j]</TT> avec <TT>j</TT> (si <TT>afaire=[2,0,1]</TT> le sommet 0 a pour 
-indice 1 dans <TT>afaire</TT>).</P><H2 CLASS="section"><A NAME="toc80"></A><A NAME="htoc286">10.3</A>  Le programme</H2><PRE CLASS="verbatim">dijkstra(A,deb):={
+et les indices qu’ils ont dans la liste <span style="font-family:monospace">afaire</span> i.e. ne pas confondre
+<span style="font-family:monospace">k=afaire[j]</span> avec <span style="font-family:monospace">j</span> (si <span style="font-family:monospace">afaire=[2,0,1]</span> le sommet 0 a pour 
+indice 1 dans <span style="font-family:monospace">afaire</span>).</p>
+<h2 id="sec319" class="section">10.3  Le programme</h2>
+<pre class="verbatim">Dijkstra(A,deb):={
 local j,k,n,na,dist,sprec,distaf,afaire,
       m,jm,autredist,jma;
 // initialisation
@@ -186,28 +192,31 @@ na:=na-1;
 fpour;
 retourne dist,sprec;
 }:;
-</PRE><P>On tape :<BR>
-<TT>M:=[[0,27,11,23],[27,0,14,1],[11,14,0,10],[23,1,10,0]]</TT><BR>
-<TT>dijkstra(M,0)</TT><BR>
-On obtient (cf la section précédente) :<BR>
-<TT>[0,22,11,21],[-1,3,0,2]</TT><BR>
-On tape :<BR>
-<TT>A:=[[0,1,6,7],[1,0,4,3],[6,4,0,1],[7,3,1,0]]</TT>
-<TT>dijkstra(A,2)</TT><BR>
-On obtient :<BR>
-<TT>[5,4,0,1],[1,2,-1,2]</TT><BR>
+</pre><p>
+On tape :<br>
+<span style="font-family:monospace">M:=[[0,27,11,23],[27,0,14,1],[11,14,0,10],[23,1,10,0]]</span><br>
+<span style="font-family:monospace">Dijkstra(M,0)</span><br>
+On obtient (cf la section précédente) :<br>
+<span style="font-family:monospace">[0,22,11,21],[-1,3,0,2]</span><br>
+On tape :<br>
+<span style="font-family:monospace">A:=[[0,1,6,7],[1,0,4,3],[6,4,0,1],[7,3,1,0]]</span>
+<span style="font-family:monospace">Dijkstra(A,2)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[5,4,0,1],[1,2,-1,2]</span><br>
 cela veut dire par exemple pour aller de 2 à 0 la distance minimale est 5 et 
-le chemin est 2,1,0.<BR>
-On tape :<BR>
-<TT>B:=[[0,1,6,7],[1,0,4,2],[6,4,0,1],[7,2,1,0]]</TT>
-<TT>dijkstra(B,0)</TT><BR>
-On obtient :<BR>
-<TT>[0,1,4,3],[-1,0,3,1]</TT><BR>
+le chemin est 2,1,0.<br>
+On tape :<br>
+<span style="font-family:monospace">B:=[[0,1,6,7],[1,0,4,2],[6,4,0,1],[7,2,1,0]]</span>
+<span style="font-family:monospace">Dijkstra(B,0)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[0,1,4,3],[-1,0,3,1]</span><br>
 cela veut dire par exemple pour aller de 0 à 2 la distance minimale est 4 et 
 le chemin est 0,1,3,2.
-</P><H2 CLASS="section"><A NAME="toc81"></A><A NAME="htoc287">10.4</A>  Le chemin le plus court d’un sommet à un autre</H2><P>
+</p>
+<h2 id="sec320" class="section">10.4  Le chemin le plus court d’un sommet à un autre</h2>
+<p>
 On tape en utilisant le programme précédent :
-</P><PRE CLASS="verbatim">dijkstra2(A,deb,fin):={
+</p><pre class="verbatim">dijkstra2(A,deb,fin):={
 local dist,sprec,long,chemin,j;
 dist,sprec:=dijkstra(A,deb);
 long:=dist[fin];
@@ -219,9 +228,10 @@ j:=sprec[j];
 ftantque;
 retourne long,[chemin];
 }:;
-</PRE><P>ou bien en arrétant le programme dès que l’on a atteint le sommet <TT>fin</TT>,
+</pre><p>
+ou bien en arrétant le programme dès que l’on a atteint le sommet <span style="font-family:monospace">fin</span>,
 on tape :
-</P><PRE CLASS="verbatim">dijkstra3(A,deb,fin):={
+</p><pre class="verbatim">dijkstra3(A,deb,fin):={
 local j,k,n,na,dist,sprec,distaf,afaire,m,
       jm,autred,jma,long,chemin;
 n:=size(A);
@@ -263,68 +273,71 @@ pour k de 0 jusque n-1 faire
    fpour; 
 fpour;
 }:;
-</PRE><P>On tape :<BR>
-<TT>M:=[[0,27,11,23],[27,0,14,1],[11,14,0,10],[23,1,10,0]]</TT><BR>
-<TT>dijkstra3(M,0,1)</TT><BR>
-On obtient (cf la section précédente) :<BR>
-<TT>22,[0,2,3,1]</TT><BR>
-<TT>dijkstra3(M,0,2)</TT><BR>
-On obtient (cf la section précédente) :<BR>
-<TT>11,[0,2]</TT><BR>
-<TT>dijkstra3(M,0,3)</TT><BR>
-On obtient (cf la section précédente) :<BR>
-<TT>21,[0,2,3]</TT><BR>
-On tape :<BR>
-<TT>A:=[[0,1,6,7],[1,0,4,3],[6,4,0,1],[7,3,1,0]]</TT><BR>
-<TT>dijkstra2(A,2,0)</TT> ou <TT>dijkstra3(A,2,0)</TT><BR>
-On obtient : <TT>5,[2,1,0]</TT><BR>
-On tape :<BR>
-<TT>B:=[[0,1,6,7],[1,0,4,2],[6,4,0,1],[7,2,1,0]]</TT><BR>
-<TT>dijkstra2(B,0,2)</TT> ou <TT>dijkstra3(B,0,2)</TT><BR>
-On obtient :<BR>
-<TT>4,[0,1,3,2]</TT><BR>
-On tape :<BR>
-<TT>dijkstra2(B,2,0)</TT> ou <TT>dijkstra3(B,2,0)</TT><BR>
-On obtient :<BR>
-<TT>4,[2,3,1,0]</TT><BR>
-<B>Exemple avec une matrice créee aléatoirement</B><BR>
-On tape :<BR>
-<TT>MR:=randmatrix(5,5,’alea(50)+1’)</TT><BR>
-<TT>M:=MR+tran(MR)</TT><BR>
-<TT>pour j de 0 jusque 4 faire M[j,j]=&lt;0; fpour;</TT><BR>
-<TT>M</TT><BR>
-On obtient :<BR>
-<TT>[[0,47,91,57,60],[47,0,58,18,50],[91,58,0,22,74],</TT><BR>
-<TT>[57,18,22,0,70],[60,50,74,70,0]]</TT><BR>
-</P><TABLE CLASS="display dcenter"><TR VALIGN="middle"><TD CLASS="dcell">⎛<BR>
-⎜<BR>
-⎜<BR>
-⎜<BR>
-⎜<BR>
-⎜<BR>
-⎝</TD><TD CLASS="dcell"><TABLE CELLSPACING=6 CELLPADDING=0><TR><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>47</TD><TD ALIGN=center NOWRAP>91</TD><TD ALIGN=center NOWRAP>57</TD><TD ALIGN=center NOWRAP>60 </TD></TR>
-<TR><TD ALIGN=center NOWRAP>47</TD><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>58</TD><TD ALIGN=center NOWRAP>18</TD><TD ALIGN=center NOWRAP>50 </TD></TR>
-<TR><TD ALIGN=center NOWRAP>91</TD><TD ALIGN=center NOWRAP>58</TD><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>22</TD><TD ALIGN=center NOWRAP>74 </TD></TR>
-<TR><TD ALIGN=center NOWRAP>57</TD><TD ALIGN=center NOWRAP>18</TD><TD ALIGN=center NOWRAP>22</TD><TD ALIGN=center NOWRAP>0</TD><TD ALIGN=center NOWRAP>70 </TD></TR>
-<TR><TD ALIGN=center NOWRAP>60</TD><TD ALIGN=center NOWRAP>50</TD><TD ALIGN=center NOWRAP>74</TD><TD ALIGN=center NOWRAP>70</TD><TD ALIGN=center NOWRAP>0 </TD></TR>
-</TABLE></TD><TD CLASS="dcell">⎞<BR>
-⎟<BR>
-⎟<BR>
-⎟<BR>
-⎟<BR>
-⎟<BR>
-⎠</TD></TR>
-</TABLE><P>
-On tape :<BR>
-<TT>dijkstra(M,0)</TT><BR>
-On obtient :<BR>
-<TT>[0,47,79,57,60],[-1,0,3,0,0]</TT><BR>
-On tape :<BR>
-<TT>dijkstra2(M,0,2)</TT><BR>
-On obtient :<BR>
-<TT>79,[0,3,2]</TT></P><HR>
-<A HREF="casrouge009.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
-<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
-<A HREF="casrouge011.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
-</BODY>
-</HTML>
+</pre><p>
+On tape :<br>
+<span style="font-family:monospace">M:=[[0,27,11,23],[27,0,14,1],[11,14,0,10],[23,1,10,0]]</span><br>
+<span style="font-family:monospace">dijkstra3(M,0,1)</span><br>
+On obtient (cf la section précédente) :<br>
+<span style="font-family:monospace">22,[0,2,3,1]</span><br>
+<span style="font-family:monospace">dijkstra3(M,0,2)</span><br>
+On obtient (cf la section précédente) :<br>
+<span style="font-family:monospace">11,[0,2]</span><br>
+<span style="font-family:monospace">dijkstra3(M,0,3)</span><br>
+On obtient (cf la section précédente) :<br>
+<span style="font-family:monospace">21,[0,2,3]</span><br>
+On tape :<br>
+<span style="font-family:monospace">A:=[[0,1,6,7],[1,0,4,3],[6,4,0,1],[7,3,1,0]]</span><br>
+<span style="font-family:monospace">dijkstra2(A,2,0)</span> ou <span style="font-family:monospace">dijkstra3(A,2,0)</span><br>
+On obtient : <span style="font-family:monospace">5,[2,1,0]</span><br>
+On tape :<br>
+<span style="font-family:monospace">B:=[[0,1,6,7],[1,0,4,2],[6,4,0,1],[7,2,1,0]]</span><br>
+<span style="font-family:monospace">dijkstra2(B,0,2)</span> ou <span style="font-family:monospace">dijkstra3(B,0,2)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">4,[0,1,3,2]</span><br>
+On tape :<br>
+<span style="font-family:monospace">dijkstra2(B,2,0)</span> ou <span style="font-family:monospace">dijkstra3(B,2,0)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">4,[2,3,1,0]</span><br>
+<span style="font-weight:bold">Exemple avec une matrice créee aléatoirement</span><br>
+On tape :<br>
+<span style="font-family:monospace">MR:=randmatrix(5,5,’alea(50)+1’)</span><br>
+<span style="font-family:monospace">M:=MR+tran(MR)</span><br>
+<span style="font-family:monospace">pour j de 0 jusque 4 faire M[j,j]=&lt;0; fpour;</span><br>
+<span style="font-family:monospace">M</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[[0,47,91,57,60],[47,0,58,18,50],[91,58,0,22,74],</span><br>
+<span style="font-family:monospace">[57,18,22,0,70],[60,50,74,70,0]]</span><br>
+</p><table class="display dcenter"><tr style="vertical-align:middle"><td class="dcell">⎛<br>
+⎜<br>
+⎜<br>
+⎜<br>
+⎜<br>
+⎜<br>
+⎝</td><td class="dcell"><table style="border-spacing:6px;border-collapse:separate;" class="cellpading0"><tr><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >47</td><td style="text-align:center;white-space:nowrap" >91</td><td style="text-align:center;white-space:nowrap" >57</td><td style="text-align:center;white-space:nowrap" >60 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >47</td><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >58</td><td style="text-align:center;white-space:nowrap" >18</td><td style="text-align:center;white-space:nowrap" >50 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >91</td><td style="text-align:center;white-space:nowrap" >58</td><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >22</td><td style="text-align:center;white-space:nowrap" >74 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >57</td><td style="text-align:center;white-space:nowrap" >18</td><td style="text-align:center;white-space:nowrap" >22</td><td style="text-align:center;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" >70 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" >60</td><td style="text-align:center;white-space:nowrap" >50</td><td style="text-align:center;white-space:nowrap" >74</td><td style="text-align:center;white-space:nowrap" >70</td><td style="text-align:center;white-space:nowrap" >0 
+</td></tr>
+</table></td><td class="dcell">⎞<br>
+⎟<br>
+⎟<br>
+⎟<br>
+⎟<br>
+⎟<br>
+⎠</td></tr>
+</table><p>
+On tape :<br>
+<span style="font-family:monospace">Dijkstra(M,0)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[0,47,79,57,60],[-1,0,3,0,0]</span><br>
+On tape :<br>
+<span style="font-family:monospace">dijkstra2(M,0,2)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">79,[0,3,2]</span></p>
+<hr>
+<a href="casrouge009.html"><img src="previous_motif.gif" alt="Previous"></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"></a>
+<a href="casrouge011.html"><img src="next_motif.gif" alt="Next"></a>
+</body>
+</html>

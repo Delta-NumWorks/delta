@@ -1,206 +1,208 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
-            "http://www.w3.org/TR/REC-html40/loose.dtd">
-<HTML>
-<HEAD>
-
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<META name="GENERATOR" content="hevea 1.10">
-<LINK rel="stylesheet" type="text/css" href="casrouge.css">
-<TITLE>Les quadriques</TITLE>
-</HEAD>
-<BODY >
-<A HREF="casrouge016.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
-<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
-<A HREF="casrouge018.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
-<HR>
-<H1 CLASS="chapter"><A NAME="htoc426">Chapitre 17</A>  Les quadriques</H1><H2 CLASS="section"><A NAME="toc117"></A><A NAME="htoc427">17.1</A>  Équation d’une quadrique</H2><P>
-Une forme quadratique de 4 variables <TT>X,Y,Z,T</TT> peut s’interpréter dans 
-l’espace projectif <TT>Oxyz</TT> comme le premier membre de l’équation d’une 
-quadrique.<BR>
-Par exemple soit :<BR>
-<TT><I>q</I>(<I>x</I>,<I>y</I>,<I>z</I>):=4*<I>x</I></TT><SUP><TT>2</TT></SUP><TT>+<I>y</I></TT><SUP><TT>2</TT></SUP><TT>+<I>z</I></TT><SUP><TT>2</TT></SUP><TT>-4*<I>x</I>*<I>y</I>+4*<I>x</I>*<I>z</I>-2*<I>y</I>*<I>z</I>+8*<I>x</I>-4*<I>y</I>+4*<I>z</I>+2</TT><BR>
-<TT>q(x,y,z)=0</TT> est l’équation d’une quadrique.<BR>
-On associe à <TT>q</TT> la forme quadradique <TT>Q</TT> :<BR>
-<TT>Q(x,y,z,t):=normal(t</TT><CODE><TT>^</TT></CODE><TT>2*normal(q(x/t,y/t,z/t)))</TT><BR>
-et la matrice carrée <TT>A</TT> d’ordre 4 :<BR>
-<TT>A:=q2a(Q(x,y,z,t),[x,y,z,t])</TT><BR>
-On obtient :<BR>
-<TT>A:=[[4,-2,2,4],[-2,1,-1,-2],[2,-1,1,2],[4,-2,2,2]]</TT><BR>
-on retrouve la forme <TT>Q</TT> à partir de <TT>A</TT> si :<BR>
-<TT>v:=[x,y,z,t]</TT><BR>
-la forme quadratique est :<BR>
-<TT>Q(op(v)):=normal((v*A*tran(v))[0])</TT> ou plus simplement :<BR>
-<TT>Q(op(v)):=normal(v*A*v)</TT><BR>
-on retrouve la forme <TT>Q</TT> à partir de <TT>A</TT> si :<BR>
-<TT>v1:=[x,y,z,1]</TT><BR>
-<TT>q(op(v1)):=normal(v1*A*v1)</TT><BR>
-et <TT>Q(v)=0</TT> représente une quadrique <TT>Q</TT> de l’espace projectif.<BR>
-Les points doubles de <TT>Q</TT> vérifie <TT>A*tran(v)=[0,0,0,0]</TT> ie 
-<TT>tran(v)</TT> est un élément du noyau de <TT>A</TT>.<BR>
-Discussion selon le rang <TT>r</TT> de <TT>A</TT> : <TT>r:=rank(A)</TT>
-</P><UL CLASS="itemize"><LI CLASS="li-itemize">
-Si <TT>r=4</TT>, <TT>Q</TT> est une quadrique propre ou non dégénérée 
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="hevea 2.29+5 of 2017-05-18">
+<link rel="stylesheet" type="text/css" href="casrouge.css">
+<title>Les quadriques</title>
+</head>
+<body >
+<a href="casrouge016.html"><img src="previous_motif.gif" alt="Previous"></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"></a>
+<a href="casrouge018.html"><img src="next_motif.gif" alt="Next"></a>
+<hr>
+<h1 id="sec505" class="chapter">Chapitre 17  Les quadriques</h1>
+<h2 id="sec506" class="section">17.1  Équation d’une quadrique</h2>
+<p>
+Une forme quadratique de 4 variables <span style="font-family:monospace">X,Y,Z,T</span> peut s’interpréter dans 
+l’espace projectif <span style="font-family:monospace">Oxyz</span> comme le premier membre de l’équation d’une 
+quadrique.<br>
+Par exemple soit :<br>
+<span style="font-family:monospace"><span style="font-style:italic">q</span></span><span style="font-family:monospace">(</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><span style="font-family:monospace">,</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><span style="font-family:monospace">,</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><span style="font-family:monospace">):=4*</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><sup><span style="font-family:monospace">2</span></sup><span style="font-family:monospace">+</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><sup><span style="font-family:monospace">2</span></sup><span style="font-family:monospace">+</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><sup><span style="font-family:monospace">2</span></sup><span style="font-family:monospace">-4*</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><span style="font-family:monospace">*</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><span style="font-family:monospace">+4*</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><span style="font-family:monospace">*</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><span style="font-family:monospace">-2*</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><span style="font-family:monospace">*</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><span style="font-family:monospace">+8*</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><span style="font-family:monospace">-4*</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><span style="font-family:monospace">+4*</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><span style="font-family:monospace">+2</span><br>
+<span style="font-family:monospace">q(x,y,z)=0</span> est l’équation d’une quadrique.<br>
+On associe à <span style="font-family:monospace">q</span> la forme quadradique <span style="font-family:monospace">Q</span> :<br>
+<span style="font-family:monospace">Q(x,y,z,t):=normal(t</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2*normal(q(x/t,y/t,z/t)))</span><br>
+et la matrice carrée <span style="font-family:monospace">A</span> d’ordre 4 :<br>
+<span style="font-family:monospace">A:=q2a(Q(x,y,z,t),[x,y,z,t])</span><br>
+On obtient :<br>
+<span style="font-family:monospace">A:=[[4,-2,2,4],[-2,1,-1,-2],[2,-1,1,2],[4,-2,2,2]]</span><br>
+on retrouve la forme <span style="font-family:monospace">Q</span> à partir de <span style="font-family:monospace">A</span> si :<br>
+<span style="font-family:monospace">v:=[x,y,z,t]</span><br>
+la forme quadratique est :<br>
+<span style="font-family:monospace">Q(op(v)):=normal((v*A*tran(v))[0])</span> ou plus simplement :<br>
+<span style="font-family:monospace">Q(op(v)):=normal(v*A*v)</span><br>
+on retrouve la forme <span style="font-family:monospace">Q</span> à partir de <span style="font-family:monospace">A</span> si :<br>
+<span style="font-family:monospace">v1:=[x,y,z,1]</span><br>
+<span style="font-family:monospace">q(op(v1)):=normal(v1*A*v1)</span><br>
+et <span style="font-family:monospace">Q(v)=0</span> représente une quadrique <span style="font-family:monospace">Q</span> de l’espace projectif.<br>
+Les points doubles de <span style="font-family:monospace">Q</span> vérifie <span style="font-family:monospace">A*tran(v)=[0,0,0,0]</span> ie 
+<span style="font-family:monospace">tran(v)</span> est un élément du noyau de <span style="font-family:monospace">A</span>.<br>
+Discussion selon le rang <span style="font-family:monospace">r</span> de <span style="font-family:monospace">A</span> : <span style="font-family:monospace">r:=rank(A)</span>
+</p><ul class="itemize"><li class="li-itemize">
+Si <span style="font-family:monospace">r=4</span>, <span style="font-family:monospace">Q</span> est une quadrique propre ou non dégénérée 
 sans point double.
-</LI><LI CLASS="li-itemize">Si <TT>r=3</TT>, <TT>Q</TT> est un cône et a un point double <TT>S</TT> qui est 
+</li><li class="li-itemize">Si <span style="font-family:monospace">r=3</span>, <span style="font-family:monospace">Q</span> est un cône et a un point double <span style="font-family:monospace">S</span> qui est 
 le sommet du cône.
-</LI><LI CLASS="li-itemize">Si <TT>r=2</TT>, <TT>q</TT> est le produit de 2 formes linéaires 
-indépendantes et <TT>Q</TT> est formée de 2 plans distincts et secants selon 
-la droite lieu des points doubles de <TT>Q</TT>.
-</LI><LI CLASS="li-itemize">Si <TT>r=1</TT>, <TT>q</TT> est le carré d’une forme linéaire non nulle et 
-<TT>Q</TT> est un plan de points doubles.
-</LI></UL><H2 CLASS="section"><A NAME="toc118"></A><A NAME="htoc428">17.2</A>  Équation reduite d’une quadrique</H2><P>
-Pour réaliser la réduction de l’équation d’une quadrique, on pose :<BR>
-<TT>B:=A[0..2,0..2];</TT><BR>
-<TT>C:=A[0..2,3];</TT><BR>
-<TT>d:=A[3,3];</TT><BR>
-Les directions propres de <TT>B</TT> sont les directions principales de la 
-quadrique <TT>Q</TT>.<BR>
+</li><li class="li-itemize">Si <span style="font-family:monospace">r=2</span>, <span style="font-family:monospace">q</span> est le produit de 2 formes linéaires 
+indépendantes et <span style="font-family:monospace">Q</span> est formée de 2 plans distincts et secants selon 
+la droite lieu des points doubles de <span style="font-family:monospace">Q</span>.
+</li><li class="li-itemize">Si <span style="font-family:monospace">r=1</span>, <span style="font-family:monospace">q</span> est le carré d’une forme linéaire non nulle et 
+<span style="font-family:monospace">Q</span> est un plan de points doubles.
+</li></ul>
+<h2 id="sec507" class="section">17.2  Équation reduite d’une quadrique</h2>
+<p>
+Pour réaliser la réduction de l’équation d’une quadrique, on pose :<br>
+<span style="font-family:monospace">B:=A[0..2,0..2];</span><br>
+<span style="font-family:monospace">C:=A[0..2,3];</span><br>
+<span style="font-family:monospace">d:=A[3,3];</span><br>
+Les directions propres de <span style="font-family:monospace">B</span> sont les directions principales de la 
+quadrique <span style="font-family:monospace">Q</span>.<br>
 Comme une matrice symétrique réelle est diagonalisable dans un repère
-orthonormé, il existe un repère orthonormé (<I>O</I>,<I>u</I>,<I>v</I>,<I>w</I>) dans lequel la
-quadrique a comme équation :<BR>
-<TT><I>s</I>1*<I>x</I>1</TT><SUP><TT>2</TT></SUP><TT>+<I>s</I>2*<I>y</I>1</TT><SUP><TT>2</TT></SUP><TT>+<I>s</I>3*<I>z</I>1</TT><SUP><TT>2</TT></SUP><TT>+2<I>c</I>1*<I>x</I>1+2*<I>c</I>2*<I>y</I>1+2*<I>c</I>3*<I>z</I>1+<I>d</I>1=0</TT><BR>
-où <TT>s1,s2,s3</TT> sont les valeurs propres de <TT>B</TT> et <TT>u,v,w</TT> sont les
-vecteurs propres associés, choisis normés et orthogonaux.<BR>
-<B>Remarques</B>
-</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+orthonormé, il existe un repère orthonormé (<span style="font-style:italic">O</span>,<span style="font-style:italic">u</span>,<span style="font-style:italic">v</span>,<span style="font-style:italic">w</span>) dans lequel la
+quadrique a comme équation :<br>
+<span style="font-family:monospace"><span style="font-style:italic">s</span></span><span style="font-family:monospace">1*</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><span style="font-family:monospace">1</span><sup><span style="font-family:monospace">2</span></sup><span style="font-family:monospace">+</span><span style="font-family:monospace"><span style="font-style:italic">s</span></span><span style="font-family:monospace">2*</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><span style="font-family:monospace">1</span><sup><span style="font-family:monospace">2</span></sup><span style="font-family:monospace">+</span><span style="font-family:monospace"><span style="font-style:italic">s</span></span><span style="font-family:monospace">3*</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><span style="font-family:monospace">1</span><sup><span style="font-family:monospace">2</span></sup><span style="font-family:monospace">+2</span><span style="font-family:monospace"><span style="font-style:italic">c</span></span><span style="font-family:monospace">1*</span><span style="font-family:monospace"><span style="font-style:italic">x</span></span><span style="font-family:monospace">1+2*</span><span style="font-family:monospace"><span style="font-style:italic">c</span></span><span style="font-family:monospace">2*</span><span style="font-family:monospace"><span style="font-style:italic">y</span></span><span style="font-family:monospace">1+2*</span><span style="font-family:monospace"><span style="font-style:italic">c</span></span><span style="font-family:monospace">3*</span><span style="font-family:monospace"><span style="font-style:italic">z</span></span><span style="font-family:monospace">1+</span><span style="font-family:monospace"><span style="font-style:italic">d</span></span><span style="font-family:monospace">1=0</span><br>
+où <span style="font-family:monospace">s1,s2,s3</span> sont les valeurs propres de <span style="font-family:monospace">B</span> et <span style="font-family:monospace">u,v,w</span> sont les
+vecteurs propres associés, choisis normés et orthogonaux.<br>
+<span style="font-weight:bold">Remarques</span>
+</p><ul class="itemize"><li class="li-itemize">
 Si les 3 valeurs propres de B sont différentes : les vecteurs propres 
 sont orthogonaux et il suffira de les normer.
-</LI><LI CLASS="li-itemize">Si il y a une valeur propre double non nulle il faudra rendre les 
+</li><li class="li-itemize">Si il y a une valeur propre double non nulle il faudra rendre les 
 vecteurs propres orthogonaux et les normer.
-</LI><LI CLASS="li-itemize">Si il y a une valeur propre double nulle il faut rendre
+</li><li class="li-itemize">Si il y a une valeur propre double nulle il faut rendre
 les vecteurs propres orthogonaux et les normer.
-</LI></UL><P>
+</li></ul><p>
 Voici les différents cas :
-</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+</p><ul class="itemize"><li class="li-itemize">
 1ier cas
-<I>s</I>1*<I>s</I>2*<I>s</I>3!=0 supposons que signe(<I>s</I>1)=signe(<I>s</I>2)<BR>
-l’équation s’écrit :<BR>
-<I>s</I>1*(<I>x</I>1+<I>c</I>1/<I>s</I>1)<SUP>2</SUP>+<I>s</I>2*(<I>y</I>1+<I>c</I>2/<I>s</I>2)<SUP>2</SUP>+<I>s</I>3*(<I>z</I>1+<I>c</I>3/<I>s</I>3)<SUP>2</SUP>+<I>d</I>2=0<BR>
-en faisant un changement d’origine <I>O</I>1 avec :<BR>
-<I>OO</I>1=−<I>c</I>1/<I>s</I>1*<I>u</I>−<I>c</I>2/<I>s</I>2*<I>v</I>−<I>c</I>3/<I>s</I>3*<I>w</I><BR>
-l’équation s’écrit :<BR>
-<I>s</I>1*<I>X</I><SUP>2</SUP>+<I>s</I>2*<I>Y</I><SUP>2</SUP>+<I>s</I>3*<I>Z</I><SUP>2</SUP>+<I>d</I>2=0<BR>
-quitte a multiplier par -1 on obtient une équation de la forme :<BR>
-<I>X</I><SUP>2</SUP>/<I>a</I><SUP>2</SUP>+<I>Y</I><SUP>2</SUP>/<I>b</I><SUP>2</SUP>+<I>s</I>*<I>Z</I><SUP>2</SUP>/<I>c</I><SUP>2</SUP>+<I>d</I>3=0<BR>
-avec <I>s</I>=1 ou <I>s</I>=−1 et <I>d</I>3=1 ou <I>d</I>3=−1 ou <I>d</I>3=0.<BR>
+<span style="font-style:italic">s</span>1*<span style="font-style:italic">s</span>2*<span style="font-style:italic">s</span>3!=0 supposons que signe(<span style="font-style:italic">s</span>1)=signe(<span style="font-style:italic">s</span>2)<br>
+l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*(<span style="font-style:italic">x</span>1+<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1)<sup>2</sup>+<span style="font-style:italic">s</span>2*(<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2)<sup>2</sup>+<span style="font-style:italic">s</span>3*(<span style="font-style:italic">z</span>1+<span style="font-style:italic">c</span>3/<span style="font-style:italic">s</span>3)<sup>2</sup>+<span style="font-style:italic">d</span>2=0<br>
+en faisant un changement d’origine <span style="font-style:italic">O</span>1 avec :<br>
+<span style="font-style:italic">OO</span>1=−<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1*<span style="font-style:italic">u</span>−<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2*<span style="font-style:italic">v</span>−<span style="font-style:italic">c</span>3/<span style="font-style:italic">s</span>3*<span style="font-style:italic">w</span><br>
+l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*<span style="font-style:italic">X</span><sup>2</sup>+<span style="font-style:italic">s</span>2*<span style="font-style:italic">Y</span><sup>2</sup>+<span style="font-style:italic">s</span>3*<span style="font-style:italic">Z</span><sup>2</sup>+<span style="font-style:italic">d</span>2=0<br>
+quitte a multiplier par -1 on obtient une équation de la forme :<br>
+<span style="font-style:italic">X</span><sup>2</sup>/<span style="font-style:italic">a</span><sup>2</sup>+<span style="font-style:italic">Y</span><sup>2</sup>/<span style="font-style:italic">b</span><sup>2</sup>+<span style="font-style:italic">s</span>*<span style="font-style:italic">Z</span><sup>2</sup>/<span style="font-style:italic">c</span><sup>2</sup>+<span style="font-style:italic">d</span>3=0 <br>
+avec <span style="font-style:italic">s</span>=1 ou <span style="font-style:italic">s</span>=−1 et <span style="font-style:italic">d</span>3=1 ou <span style="font-style:italic">d</span>3=−1 ou <span style="font-style:italic">d</span>3=0.<br>
 La quadrique est donc de révolution et est engendrée par la rotation autour
-de l’axe des <I>Z</I> de la conique d’équation <I>Y</I>=0,<I>X</I><SUP>2</SUP>/<I>a</I><SUP>2</SUP>+<I>s</I>*<I>Z</I><SUP>2</SUP>/<I>c</I><SUP>2</SUP>+<I>d</I>3=0.<BR>
+de l’axe des <span style="font-style:italic">Z</span> de la conique d’équation <span style="font-style:italic">Y</span>=0,<span style="font-style:italic">X</span><sup>2</sup>/<span style="font-style:italic">a</span><sup>2</sup>+<span style="font-style:italic">s</span>*<span style="font-style:italic">Z</span><sup>2</sup>/<span style="font-style:italic">c</span><sup>2</sup>+<span style="font-style:italic">d</span>3=0.<br>
 On a donc:
-<UL CLASS="itemize"><LI CLASS="li-itemize">
-<I>s</I>=1,<I>d</I>3=1 on a un ellipsoïde imaginaire,
-</LI><LI CLASS="li-itemize"><I>s</I>=1,<I>d</I>3=0 on a un cône imaginaire,
-</LI><LI CLASS="li-itemize"><I>s</I>=1,<I>d</I>3=−1 on a un ellipsoïde réelle,
-</LI><LI CLASS="li-itemize"><I>s</I>=−1,<I>d</I>3=1 on a un hyperboloïde a 2 nappes, engendré par la rotation 
+<ul class="itemize"><li class="li-itemize">
+<span style="font-style:italic">s</span>=1,<span style="font-style:italic">d</span>3=1 on a un ellipsoïde imaginaire,
+</li><li class="li-itemize"><span style="font-style:italic">s</span>=1,<span style="font-style:italic">d</span>3=0 on a un cône imaginaire,
+</li><li class="li-itemize"><span style="font-style:italic">s</span>=1,<span style="font-style:italic">d</span>3=−1 on a un ellipsoïde réelle,
+</li><li class="li-itemize"><span style="font-style:italic">s</span>=−1,<span style="font-style:italic">d</span>3=1 on a un hyperboloïde a 2 nappes, engendré par la rotation 
 d’une hyperbole autour de son axe transverse (c’est l’axe focal, celui qui 
 coupe l’hyperbole),
-</LI><LI CLASS="li-itemize"><I>s</I>=−1,<I>d</I>3=0 on a un cône réel,
-</LI><LI CLASS="li-itemize"><I>s</I>=−1,<I>d</I>3=−1 on a un hyperboloïde a 1 nappe, engendré par la rotation 
+</li><li class="li-itemize"><span style="font-style:italic">s</span>=−1,<span style="font-style:italic">d</span>3=0 on a un cône réel,
+</li><li class="li-itemize"><span style="font-style:italic">s</span>=−1,<span style="font-style:italic">d</span>3=−1 on a un hyperboloïde a 1 nappe, engendré par la rotation 
 d’une hyperbole autour de son axe non transverse (celui qui ne coupe pas 
 l’hyperbole),
-</LI></UL>
-<I>O</I>1 est centre de symétrie et les plans (resp les axes) de coordonnées
-du repère (01,<I>u</I>,<I>v</I>,<I>w</I>) sont des plans (resp des axes) de symétrie pour
-<TT>Q</TT>.
-</LI><LI CLASS="li-itemize">2ième cas
-<I>s</I>1*<I>s</I>2!=0 et <I>s</I>3=0<BR>
-l’équation s’écrit :<BR>
-<I>s</I>1*(<I>x</I>1+<I>c</I>1/<I>s</I>1)<SUP>2</SUP>+<I>s</I>2*(<I>y</I>1+<I>c</I>2/<I>s</I>2)<SUP>2</SUP>+2*<I>c</I>3*<I>z</I>1+<I>d</I>2=0
-<UL CLASS="itemize"><LI CLASS="li-itemize">
-Si <I>c</I>3!=0 l’équation s’écrit :<BR>
-<I>s</I>1*(<I>x</I>1+<I>c</I>1/<I>s</I>1)<SUP>2</SUP>+<I>s</I>2*(<I>y</I>1+<I>c</I>2/<I>s</I>2)<SUP>2</SUP>+2*<I>c</I>3*(<I>z</I>1+<I>d</I>2/(2*<I>c</I>3))=0<BR>
-en faisant un changement d’origine O1 avec :<BR>
-<I>OO</I>1=−<I>c</I>1/<I>s</I>1*<I>u</I>−<I>c</I>2/<I>s</I>2*<I>v</I>−<I>d</I>2/(2*<I>c</I>3)*<I>w</I><BR>
-selon le signe de s1*s2 l’équation s’écrit :<BR>
-si <I>s</I>1*<I>s</I>2&gt;0 
-l’équation s’écrit :<BR>
-<I>X</I><SUP>2</SUP>/<I>a</I><SUP>2</SUP>+<I>Y</I><SUP>2</SUP>/<I>b</I><SUP>2</SUP>−2*<I>s</I>*<I>Z</I>=0 avec <I>s</I>=1 ou <I>s</I>=−1<BR>
-on a un paraboloïde elliptique<BR>
-si <I>s</I>1*<I>s</I>2&lt;0<BR>
+</li></ul>
+<span style="font-style:italic">O</span>1 est centre de symétrie et les plans (resp les axes) de coordonnées
+du repère (01,<span style="font-style:italic">u</span>,<span style="font-style:italic">v</span>,<span style="font-style:italic">w</span>) sont des plans (resp des axes) de symétrie pour
+<span style="font-family:monospace">Q</span>.
+</li><li class="li-itemize">2ième cas
+<span style="font-style:italic">s</span>1*<span style="font-style:italic">s</span>2!=0 et <span style="font-style:italic">s</span>3=0 <br>
+l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*(<span style="font-style:italic">x</span>1+<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1)<sup>2</sup>+<span style="font-style:italic">s</span>2*(<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2)<sup>2</sup>+2*<span style="font-style:italic">c</span>3*<span style="font-style:italic">z</span>1+<span style="font-style:italic">d</span>2=0
+<ul class="itemize"><li class="li-itemize">
+Si <span style="font-style:italic">c</span>3!=0 l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*(<span style="font-style:italic">x</span>1+<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1)<sup>2</sup>+<span style="font-style:italic">s</span>2*(<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2)<sup>2</sup>+2*<span style="font-style:italic">c</span>3*(<span style="font-style:italic">z</span>1+<span style="font-style:italic">d</span>2/(2*<span style="font-style:italic">c</span>3))=0<br>
+en faisant un changement d’origine O1 avec :<br>
+<span style="font-style:italic">OO</span>1=−<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1*<span style="font-style:italic">u</span>−<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2*<span style="font-style:italic">v</span>−<span style="font-style:italic">d</span>2/(2*<span style="font-style:italic">c</span>3)*<span style="font-style:italic">w</span><br>
+selon le signe de s1*s2 l’équation s’écrit :<br>
+si <span style="font-style:italic">s</span>1*<span style="font-style:italic">s</span>2&gt;0 
+l’équation s’écrit :<br>
+<span style="font-style:italic">X</span><sup>2</sup>/<span style="font-style:italic">a</span><sup>2</sup>+<span style="font-style:italic">Y</span><sup>2</sup>/<span style="font-style:italic">b</span><sup>2</sup>−2*<span style="font-style:italic">s</span>*<span style="font-style:italic">Z</span>=0 avec <span style="font-style:italic">s</span>=1 ou <span style="font-style:italic">s</span>=−1<br>
+on a un paraboloïde elliptique<br>
+si <span style="font-style:italic">s</span>1*<span style="font-style:italic">s</span>2&lt;0 <br>
 l’équation s’écrit :
-<I>X</I><SUP>2</SUP>/<I>a</I><SUP>2</SUP>−<I>Y</I><SUP>2</SUP>/<I>b</I><SUP>2</SUP>−2*<I>s</I>*<I>Z</I>=0 avec <I>s</I>=1 ou <I>s</I>=−1<BR>
+<span style="font-style:italic">X</span><sup>2</sup>/<span style="font-style:italic">a</span><sup>2</sup>−<span style="font-style:italic">Y</span><sup>2</sup>/<span style="font-style:italic">b</span><sup>2</sup>−2*<span style="font-style:italic">s</span>*<span style="font-style:italic">Z</span>=0 avec <span style="font-style:italic">s</span>=1 ou <span style="font-style:italic">s</span>=−1<br>
 on a un paraboloïde hyperbolique
-</LI><LI CLASS="li-itemize">Si <I>c</I>3==0 l’équation s’écrit :<BR>
-<I>s</I>1*(<I>x</I>1+<I>c</I>1/<I>s</I>1)<SUP>2</SUP>+<I>s</I>2*(<I>y</I>1+<I>c</I>2/<I>s</I>2)<SUP>2</SUP>+<I>d</I>2=0<BR>
-en faisant un changement d’origine <I>O</I>1 avec :<BR>
-<I>OO</I>1=−<I>c</I>1/<I>s</I>1*<I>u</I>−<I>c</I>2/<I>s</I>2*<I>v</I> on obtient<BR>
-<I>s</I>1*<I>X</I><SUP>2</SUP>+<I>s</I>2*<I>Y</I><SUP>2</SUP>+<I>d</I>2=0<BR>
-La quadrique <TT>Q</TT> est soit, un cylindre de génératrices parallèles à
-<I>w</I>, soit, formée de 2 plans parallèles :<BR>
-si <I>s</I>1&gt;0,<I>s</I>2&gt;0,<I>d</I>2&gt;0 on a un cylindre elliptique imaginaire de génératrices 
-parallèles à <I>w</I>,<BR>
-si <I>s</I>1&gt;0,<I>s</I>2&gt;0,<I>d</I>2&lt;0 on a un cylindre elliptique réel de génératrices 
-parallèles à <I>w</I>,<BR>
-si <I>s</I>1&gt;0,<I>s</I>2&lt;0,<I>d</I>2&lt;0 on a un cylindre hyperbolique de génératrices 
-parallèles à <I>w</I>,<BR>
-si <I>s</I>1&gt;0,<I>s</I>2&gt;0,<I>d</I>2=0 on a 2 plans imaginaires conjugués non parallèles qui 
-se coupent selon la droite réelle <I>X</I>=0,<I>Y</I>=0 i.e. selon un cylindre réel 
-ayant comme base un point et de génératrices parallèles à <I>w</I>.<BR>
-si <I>s</I>1&gt;0,<I>s</I>2&lt;0,<I>d</I>2=0 on a 2 plans réels non parallèles.
-</LI></UL>
-</LI><LI CLASS="li-itemize">3ième cas <I>s</I>1=!0, <I>s</I>2=0 et <I>s</I>3=0<BR>
-l’équation s’écrit :<BR>
-<I>s</I>1*(<I>x</I>1+<I>c</I>1/<I>s</I>1)<SUP>2</SUP>+2*<I>c</I>2*<I>y</I>1+2*<I>c</I>3*<I>z</I>1+<I>d</I>2=0<BR>
-Si <I>c</I>2!=0 ou <I>c</I>3!=0 :<BR>
-soit <I>v</I>1 le vecteur unitaire de la droite du plan <I>x</I>1=0 definie par :<BR>
-<I>c</I>2*<I>y</I>1+<I>c</I>3*<I>z</I>1=0, <I>v</I>1=[0,<I>c</I>3,−<I>c</I>2]/√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP> et soit
-<I>w</I>1 le vecteur unitaire de la droite du plan <I>x</I>1=0 definies par :<BR>
-<I>c</I>3*<I>y</I>1−<I>c</I>2*<I>z</I>1=0, <I>w</I>1=[0,<I>c</I>2,<I>c</I>3]/√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><BR>
-<I>Y</I>*<I>v</I>1+<I>Z</I>*<I>w</I>1=[0,<I>Y</I>*<I>c</I>3+<I>Z</I>*<I>c</I>2,−<I>Y</I>*<I>c</I>2+<I>Z</I>*<I>c</I>3]/√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><BR>
-<I>y</I>1=(<I>Y</I>*<I>c</I>3+<I>Z</I>*<I>c</I>2)/√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><BR>
-<I>z</I>1=(−<I>Y</I>*<I>c</I>2+<I>Z</I>*<I>c</I>3)/√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP> donc<BR>
-<I>c</I>2*<I>y</I>1+<I>c</I>3*<I>z</I>1=<I>Z</I>*√<SPAN style="text-decoration:overline">(</SPAN><I>c</I>2<SUP>2</SUP>+<I>c</I>3<SUP>2</SUP>)<BR>
-Si on ne norme pas <I>v</I>1 et <I>w</I>1 on a <I>v</I>1=[0,<I>c</I>3,−<I>c</I>2], <I>w</I>1=[0,<I>c</I>2,<I>c</I>3],
-<I>Y</I>*<I>v</I>1+<I>Z</I>*<I>w</I>1=[0,<I>Y</I>*<I>c</I>3+<I>Z</I>*<I>c</I>2, −<I>Y</I>*<I>c</I>2+<I>Z</I>*<I>c</I>3], <I>y</I>1=(<I>Y</I>*<I>c</I>3+<I>Z</I>*<I>c</I>2), <I>z</I>1=(−<I>Y</I>*<I>c</I>2+<I>Z</I>*<I>c</I>3) et
-<I>c</I>2*<I>y</I>1+<I>c</I>3*<I>z</I>1=<I>Z</I> donc le nouveau <I>c</I>3==1.<BR>
-Ainsi, 2*(<I>c</I>2*<I>y</I>1+<I>c</I>3*<I>z</I>1)= 2*<I>Z</I>*√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><BR>
-en faisant un changement d’origine <I>O</I>1 avec :<BR>
-<I>OO</I>1=−<I>c</I>1/<I>s</I>1*<I>u</I><BR>
-Dans le repère (<I>O</I>1,<I>u</I>,<I>v</I>1,<I>w</I>1)
-l’équation s’écrit :<BR>
-<I>s</I>1*<I>X</I>1<SUP>2</SUP>+2*<I>c</I>4*<I>Z</I>1+<I>d</I>2=0
-avec <I>c</I>4=√<SPAN style="text-decoration:overline"><I>c</I>2</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP><SPAN style="text-decoration:overline">+<I>c</I>3</SPAN><SUP><SPAN style="text-decoration:overline">2</SPAN></SUP>!=0<BR>
-en faisant un changement d’origine <I>O</I>2 avec :<BR>
-<I>OO</I>2=−<I>d</I>2/(2*<I>c</I>4)*<I>w</I>1<BR>
-l’équation s’écrit :<BR>
-<I>s</I>1*<I>X</I><SUP>2</SUP>+2/<I>c</I>4*<I>Z</I>=0<BR>
-<TT>Q</TT> est un cylindre parabolique dont les génératrices sont parallèles
-à <I>u</I>1.<BR>
-Si <I>c</I>2=0 et <I>c</I>3=0 l’équation s’écrit :<BR>
-<I>s</I>1*(<I>x</I>1+<I>c</I>1/<I>s</I>1)<SUP>2</SUP>+<I>d</I>2=0<BR>
-on a alors deux plans parallèles imaginaires conjugués (<I>s</I>1*<I>d</I>2&gt;0)
-deux plans parallèles réels (<I>s</I>1*<I>d</I>2&lt;0) ou deux plans confondus (<I>d</I>2=0).
-</LI></UL><P>Pour faciliter l’étude des différents cas
-le programme <TT>jortho</TT> va renvoyer 6 valeurs :<BR>
+</li><li class="li-itemize">Si <span style="font-style:italic">c</span>3==0 l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*(<span style="font-style:italic">x</span>1+<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1)<sup>2</sup>+<span style="font-style:italic">s</span>2*(<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2)<sup>2</sup>+<span style="font-style:italic">d</span>2=0<br>
+en faisant un changement d’origine <span style="font-style:italic">O</span>1 avec :<br>
+<span style="font-style:italic">OO</span>1=−<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1*<span style="font-style:italic">u</span>−<span style="font-style:italic">c</span>2/<span style="font-style:italic">s</span>2*<span style="font-style:italic">v</span> on obtient <br>
+<span style="font-style:italic">s</span>1*<span style="font-style:italic">X</span><sup>2</sup>+<span style="font-style:italic">s</span>2*<span style="font-style:italic">Y</span><sup>2</sup>+<span style="font-style:italic">d</span>2=0<br>
+La quadrique <span style="font-family:monospace">Q</span> est soit, un cylindre de génératrices parallèles à
+<span style="font-style:italic">w</span>, soit, formée de 2 plans parallèles :<br>
+si <span style="font-style:italic">s</span>1&gt;0,<span style="font-style:italic">s</span>2&gt;0,<span style="font-style:italic">d</span>2&gt;0 on a un cylindre elliptique imaginaire de génératrices 
+parallèles à <span style="font-style:italic">w</span>,<br>
+si <span style="font-style:italic">s</span>1&gt;0,<span style="font-style:italic">s</span>2&gt;0,<span style="font-style:italic">d</span>2&lt;0 on a un cylindre elliptique réel de génératrices 
+parallèles à <span style="font-style:italic">w</span>,<br>
+si <span style="font-style:italic">s</span>1&gt;0,<span style="font-style:italic">s</span>2&lt;0,<span style="font-style:italic">d</span>2&lt;0 on a un cylindre hyperbolique de génératrices 
+parallèles à <span style="font-style:italic">w</span>, <br>
+si <span style="font-style:italic">s</span>1&gt;0,<span style="font-style:italic">s</span>2&gt;0,<span style="font-style:italic">d</span>2=0 on a 2 plans imaginaires conjugués non parallèles qui 
+se coupent selon la droite réelle <span style="font-style:italic">X</span>=0,<span style="font-style:italic">Y</span>=0 i.e. selon un cylindre réel 
+ayant comme base un point et de génératrices parallèles à <span style="font-style:italic">w</span>.<br>
+si <span style="font-style:italic">s</span>1&gt;0,<span style="font-style:italic">s</span>2&lt;0,<span style="font-style:italic">d</span>2=0 on a 2 plans réels non parallèles.
+</li></ul>
+</li><li class="li-itemize">3ième cas <span style="font-style:italic">s</span>1=!0, <span style="font-style:italic">s</span>2=0 et <span style="font-style:italic">s</span>3=0<br>
+l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*(<span style="font-style:italic">x</span>1+<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1)<sup>2</sup>+2*<span style="font-style:italic">c</span>2*<span style="font-style:italic">y</span>1+2*<span style="font-style:italic">c</span>3*<span style="font-style:italic">z</span>1+<span style="font-style:italic">d</span>2=0<br>
+Si <span style="font-style:italic">c</span>2!=0 ou <span style="font-style:italic">c</span>3!=0 :<br>
+soit <span style="font-style:italic">v</span>1 le vecteur unitaire de la droite du plan <span style="font-style:italic">x</span>1=0 definie par :<br>
+<span style="font-style:italic">c</span>2*<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>3*<span style="font-style:italic">z</span>1=0, <span style="font-style:italic">v</span>1=[0,<span style="font-style:italic">c</span>3,−<span style="font-style:italic">c</span>2]/√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup> et soit
+<span style="font-style:italic">w</span>1 le vecteur unitaire de la droite du plan <span style="font-style:italic">x</span>1=0 definies par :<br>
+<span style="font-style:italic">c</span>3*<span style="font-style:italic">y</span>1−<span style="font-style:italic">c</span>2*<span style="font-style:italic">z</span>1=0, <span style="font-style:italic">w</span>1=[0,<span style="font-style:italic">c</span>2,<span style="font-style:italic">c</span>3]/√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup><br>
+<span style="font-style:italic">Y</span>*<span style="font-style:italic">v</span>1+<span style="font-style:italic">Z</span>*<span style="font-style:italic">w</span>1=[0,<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>3+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>2,−<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>2+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>3]/√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup><br>
+<span style="font-style:italic">y</span>1=(<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>3+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>2)/√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup><br>
+<span style="font-style:italic">z</span>1=(−<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>2+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>3)/√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup> donc<br>
+<span style="font-style:italic">c</span>2*<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>3*<span style="font-style:italic">z</span>1=<span style="font-style:italic">Z</span>*√<span style="text-decoration:overline">(</span><span style="font-style:italic">c</span>2<sup>2</sup>+<span style="font-style:italic">c</span>3<sup>2</sup>)<br>
+Si on ne norme pas <span style="font-style:italic">v</span>1 et <span style="font-style:italic">w</span>1 on a <span style="font-style:italic">v</span>1=[0,<span style="font-style:italic">c</span>3,−<span style="font-style:italic">c</span>2], <span style="font-style:italic">w</span>1=[0,<span style="font-style:italic">c</span>2,<span style="font-style:italic">c</span>3],
+<span style="font-style:italic">Y</span>*<span style="font-style:italic">v</span>1+<span style="font-style:italic">Z</span>*<span style="font-style:italic">w</span>1=[0,<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>3+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>2, −<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>2+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>3], <span style="font-style:italic">y</span>1=(<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>3+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>2), <span style="font-style:italic">z</span>1=(−<span style="font-style:italic">Y</span>*<span style="font-style:italic">c</span>2+<span style="font-style:italic">Z</span>*<span style="font-style:italic">c</span>3) et
+<span style="font-style:italic">c</span>2*<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>3*<span style="font-style:italic">z</span>1=<span style="font-style:italic">Z</span> donc le nouveau <span style="font-style:italic">c</span>3==1.<br>
+Ainsi, 2*(<span style="font-style:italic">c</span>2*<span style="font-style:italic">y</span>1+<span style="font-style:italic">c</span>3*<span style="font-style:italic">z</span>1)= 2*<span style="font-style:italic">Z</span>*√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup><br>
+en faisant un changement d’origine <span style="font-style:italic">O</span>1 avec :<br>
+<span style="font-style:italic">OO</span>1=−<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1*<span style="font-style:italic">u</span><br>
+Dans le repère (<span style="font-style:italic">O</span>1,<span style="font-style:italic">u</span>,<span style="font-style:italic">v</span>1,<span style="font-style:italic">w</span>1)
+l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*<span style="font-style:italic">X</span>1<sup>2</sup>+2*<span style="font-style:italic">c</span>4*<span style="font-style:italic">Z</span>1+<span style="font-style:italic">d</span>2=0
+avec <span style="font-style:italic">c</span>4=√<span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">2</span><sup><span style="text-decoration:overline">2</span></sup><span style="text-decoration:overline">+</span><span style="text-decoration:overline"><span style="font-style:italic">c</span></span><span style="text-decoration:overline">3</span><sup><span style="text-decoration:overline">2</span></sup>!=0<br>
+en faisant un changement d’origine <span style="font-style:italic">O</span>2 avec :<br>
+<span style="font-style:italic">OO</span>2=−<span style="font-style:italic">d</span>2/(2*<span style="font-style:italic">c</span>4)*<span style="font-style:italic">w</span>1<br>
+l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*<span style="font-style:italic">X</span><sup>2</sup>+2/<span style="font-style:italic">c</span>4*<span style="font-style:italic">Z</span>=0<br>
+<span style="font-family:monospace">Q</span> est un cylindre parabolique dont les génératrices sont parallèles
+à <span style="font-style:italic">u</span>1.<br>
+Si <span style="font-style:italic">c</span>2=0 et <span style="font-style:italic">c</span>3=0 l’équation s’écrit :<br>
+<span style="font-style:italic">s</span>1*(<span style="font-style:italic">x</span>1+<span style="font-style:italic">c</span>1/<span style="font-style:italic">s</span>1)<sup>2</sup>+<span style="font-style:italic">d</span>2=0<br>
+on a alors deux plans parallèles imaginaires conjugués (<span style="font-style:italic">s</span>1*<span style="font-style:italic">d</span>2&gt;0)
+deux plans parallèles réels (<span style="font-style:italic">s</span>1*<span style="font-style:italic">d</span>2&lt;0) ou deux plans confondus (<span style="font-style:italic">d</span>2=0).
+</li></ul><p>Pour faciliter l’étude des différents cas
+le programme <span style="font-family:monospace">jortho</span> va renvoyer 6 valeurs :<br>
 les 3 valeurs propres (en regroupant les valeurs propres égales et non nulles
 au début et en mettant les valeurs propres nulles à la fin) et les 
 3 vecteurs propres seront normés et orthogonaux sauf pour les vecteurs 
-propres associés à 0.<BR>
-Soit les trois valeurs propres sont : <TT>s1,s2,s3</TT> et les trois vecteurs 
-propres associés sont : <TT>u,v,w</TT>.<BR>
+propres associés à 0.<br>
+Soit les trois valeurs propres sont : <span style="font-family:monospace">s1,s2,s3</span> et les trois vecteurs 
+propres associés sont : <span style="font-family:monospace">u,v,w</span>.<br>
 On a soit les zeros déjà à la fin et les valeurs égales non nulles
-déjà regroupées au début, soit on peut avoir 8 cas ( <TT>a!=0,b!=0,a!=b</TT>) :<BR>
- <TT>(0,a,b)</TT> ou <TT>(0,a,a)</TT> ou <TT>(0,a,0)</TT> ou <TT>(b,a,a)</TT> ou 
-<TT>(a,b,a)</TT> ou <TT>(0,0,a)</TT> ou <TT>(a,0,b)</TT> ou <TT>(a,0,a)</TT>.<BR>
+déjà regroupées au début, soit on peut avoir 8 cas ( <span style="font-family:monospace">a!=0,b!=0,a!=b</span>) :<br>
+ <span style="font-family:monospace">(0,a,b)</span> ou <span style="font-family:monospace">(0,a,a)</span> ou <span style="font-family:monospace">(0,a,0)</span> ou <span style="font-family:monospace">(b,a,a)</span> ou 
+<span style="font-family:monospace">(a,b,a)</span> ou <span style="font-family:monospace">(0,0,a)</span> ou <span style="font-family:monospace">(a,0,b)</span> ou <span style="font-family:monospace">(a,0,a)</span>.<br>
 Pour les quatre premiers cas :
-Si <TT>(s1==0 ou s2==s3) et s2!=0)</TT> on renvoie <TT>s2,s3,s1</TT> et 
-<TT>v,w,u</TT> .<BR>
-Ainsi on a maintenant :<BR>
- <TT>(a,b,0)</TT> ou <TT>(a,a,0)</TT> ou <TT>(a,0,0)</TT> ou <TT>(a,a,b)</TT> ou 
-<TT>(a,b,a)</TT> ou <TT>(0,0,a)</TT> ou <TT>(a,0,b)</TT> ou <TT>(a,0,a)</TT>.<BR>
-Pour les quatre derniers cas, on a :<BR>
-<TT>(s2==0 ou s1==s3) et s3!=0)</TT> on renvoie <TT>s3,s1,s2</TT> et 
-<TT>w,u,v</TT>.<BR>
+Si <span style="font-family:monospace">(s1==0 ou s2==s3) et s2!=0)</span> on renvoie <span style="font-family:monospace">s2,s3,s1</span> et 
+<span style="font-family:monospace">v,w,u</span> .<br>
+Ainsi on a maintenant :<br>
+ <span style="font-family:monospace">(a,b,0)</span> ou <span style="font-family:monospace">(a,a,0)</span> ou <span style="font-family:monospace">(a,0,0)</span> ou <span style="font-family:monospace">(a,a,b)</span> ou 
+<span style="font-family:monospace">(a,b,a)</span> ou <span style="font-family:monospace">(0,0,a)</span> ou <span style="font-family:monospace">(a,0,b)</span> ou <span style="font-family:monospace">(a,0,a)</span>.<br>
+Pour les quatre derniers cas, on a :<br>
+<span style="font-family:monospace">(s2==0 ou s1==s3) et s3!=0)</span> on renvoie <span style="font-family:monospace">s3,s1,s2</span> et 
+<span style="font-family:monospace">w,u,v</span>.<br>
 
-Il faut rendre u,v othogonaux lorsque <TT>s1==s2</TT> si <TT>v*u!=0</TT><BR>
- <TT>v1:=-(v*u)*u+(u*u)*v</TT> ainsi <TT>v1*u=0</TT>
-il faut rendre <TT>v,w</TT> othogonaux lorsque <TT>s3==s2==0</TT> si <TT>v*w!=0</TT><BR>
-puis on norme <TT>u,v,w</TT>.<BR>
-Voici les programmes :<BR>
-<TT>jortho</TT> renvoie les valeurs propres et les vecteurs propres 
-orthonormés.<BR>
-<TT>quadrique</TT> renvoie la nouvelle origine la matrice de passage et la forme 
+Il faut rendre u,v othogonaux lorsque <span style="font-family:monospace">s1==s2</span> si <span style="font-family:monospace">v*u!=0</span> <br>
+ <span style="font-family:monospace">v1:=-(v*u)*u+(u*u)*v</span> ainsi <span style="font-family:monospace">v1*u=0</span>
+il faut rendre <span style="font-family:monospace">v,w</span> othogonaux lorsque <span style="font-family:monospace">s3==s2==0</span> si <span style="font-family:monospace">v*w!=0</span> <br>
+puis on norme <span style="font-family:monospace">u,v,w</span>. <br>
+Voici les programmes :<br>
+<span style="font-family:monospace">jortho</span> renvoie les valeurs propres et les vecteurs propres 
+orthonormés.<br>
+<span style="font-family:monospace">quadrique</span> renvoie la nouvelle origine la matrice de passage et la forme 
 reduite ainsi que la verification.
-</P><PRE CLASS="verbatim">jortho(A):={
+</p><pre class="verbatim">jortho(A):={
 local P,J,u,v,w,s1,s2,s3,a,b;
 (P,J):=jordan(A);
 u:=P[0..2,0];
@@ -248,9 +250,9 @@ w:=w/sqrt(normal(w*w));
 v:=v/sqrt(a);
 return (s1,s2,s3,u,v,w);
 };
-</PRE><P>Le programme <TT>Quadrique</TT> renvoie le repere (la nouvelle origine et la 
+</pre><p>Le programme <span style="font-family:monospace">Quadrique</span> renvoie le repere (la nouvelle origine et la 
 matrice de passage) et l’équation réduite dans ce repère :
-</P><PRE CLASS="verbatim">//q0(x,y,z):=4*x^2+y^2+z^2-4*x*y+4*x*z-2*y*z+8*x-4*y+4*z+2 
+</p><pre class="verbatim">//q0(x,y,z):=4*x^2+y^2+z^2-4*x*y+4*x*z-2*y*z+8*x-4*y+4*z+2 
 //           (s2=s3=0,c2=c3=0)
 //q1(x,y,z):=x^2+3*y^2-3*z^2-8*y*z+2*z*x-4*x*y-1 
 //           (s3=0,c3=0)
@@ -359,104 +361,105 @@ return (O1,P,s1*X^2+d,[X,Y,Z],r,
 }
 }
 }
-</PRE><P>On tape :<BR>
-<TT>q0(x,y,z):=4*x</TT><CODE><TT>^</TT></CODE><TT>2+y</TT><CODE><TT>^</TT></CODE><TT>2+z</TT><CODE><TT>^</TT></CODE><TT>2-4*x*y+4*x*z-2*y*z+8*x-4*y+4*z+2</TT><BR>
-<TT>Quadrique(q0)</TT><BR>
-On obtient :<BR>
-<TT>[(-2)/3,1/3,(-1)/3],[[2/(sqrt(6)),(sqrt(5))/5,(sqrt(30))/15],</TT><BR>
-<TT>[-(1/(sqrt(6))),0,(sqrt(30))/6],[1/(sqrt(6)),(-2*sqrt(5))/5,</TT><BR>
-<TT>(sqrt(30))/30]],6*X</TT><CODE><TT>^</TT></CODE><TT>2-2,[X,Y,Z],2,6*X</TT><CODE><TT>^</TT></CODE><TT>2-2</TT><BR>
-On tape :<BR>
-<TT>q1(x,y,z):=x</TT><CODE><TT>^</TT></CODE><TT>2+3*y</TT><CODE><TT>^</TT></CODE><TT>2-3*z</TT><CODE><TT>^</TT></CODE><TT>2-8*y*z+2*z*x-4*x*y-1</TT><BR>
-<TT>Quadrique(q1)</TT><BR>
-On obtient :<BR>
-<TT>[0,0,0],[[0,1/(sqrt(6)),5*(-(1/(sqrt(30))))],[1/(sqrt(5)),</TT><BR>
-<TT>2*(-(1/(sqrt(6)))),2*(-(1/(sqrt(30))))],[2/(sqrt(5)),</TT><BR>
-<TT>1/(sqrt(6)),1/(sqrt(30))]],-5*X</TT><CODE><TT>^</TT></CODE><TT>2+6*Y</TT><CODE><TT>^</TT></CODE><TT>2-1,[X,Y,Z],3,</TT><BR>
-<TT>6*Y</TT><CODE><TT>^</TT></CODE><TT>2-5*X</TT><CODE><TT>^</TT></CODE><TT>2-1</TT><BR>
-On tape :<BR>
-<TT>q2(x,y,z):=5*x</TT><CODE><TT>^</TT></CODE><TT>2+y</TT><CODE><TT>^</TT></CODE><TT>2+z</TT><CODE><TT>^</TT></CODE><TT>2-2*x*y+2*x*z-6*y*z+2*x+4*y-6*z+1 </TT><BR>
-<TT>Quadrique(q2)</TT><BR>
-On obtient :<BR>
-<TT>[(-1)/2,-1,1/2],[[0,2/(sqrt(6)),-(1/(sqrt(3)))],[1/(sqrt(2)),</TT><BR>
-<TT>-(1/(sqrt(6))),-(1/(sqrt(3)))],</TT><BR>
-<TT>[1/(sqrt(2)),1/(sqrt(6)),1/(sqrt(3))]],</TT><BR>
-<TT>-2*X</TT><CODE><TT>^</TT></CODE><TT>2+6*Y</TT><CODE><TT>^</TT></CODE><TT>2+3*Z</TT><CODE><TT>^</TT></CODE><TT>2-3,[X,Y,Z],4</TT><BR>
-<TT>3*Z</TT><CODE><TT>^</TT></CODE><TT>2+6*Y</TT><CODE><TT>^</TT></CODE><TT>2-2*X</TT><CODE><TT>^</TT></CODE><TT>2-3</TT><BR>
-On tape :<BR>
-<TT>q3(x,y,z):=2*x</TT><CODE><TT>^</TT></CODE><TT>2+2*y</TT><CODE><TT>^</TT></CODE><TT>2+z</TT><CODE><TT>^</TT></CODE><TT>2+2*x*z-2*y*z+4*x-2*y-z+3</TT><BR>
-<TT>Quadrique(q3)</TT><BR>
-On obtient :<BR>
-<TT>[(-113)/144,41/144,17/72],</TT><BR>
-<TT>[[1/(sqrt(3)),-(1/(sqrt(2))),1/(sqrt(6))],</TT><BR>
-<TT>[-(1/(sqrt(3))),-(1/(sqrt(2))),</TT><BR>
-<TT>-(1/(sqrt(6)))],[1/(sqrt(3)),</TT><BR>
-<TT>0,2*(-(1/(sqrt(6))))]],</TT><BR>
-<TT>3*X</TT><CODE><TT>^</TT></CODE><TT>2+2*Y</TT><CODE><TT>^</TT></CODE><TT>2+(2*2*sqrt(6)*Z)/3,</TT><BR>
-<TT>[X,Y,Z],4,3*X</TT><CODE><TT>^</TT></CODE><TT>2+(4*sqrt(6)*Z)/3+2*Y</TT><CODE><TT>^</TT></CODE><TT>2</TT><BR>
-On tape :<BR>
-<TT>q4(x,y,z):=4*x</TT><CODE><TT>^</TT></CODE><TT>2+y</TT><CODE><TT>^</TT></CODE><TT>2+z</TT><CODE><TT>^</TT></CODE><TT>2-4*x*y+4*x*z-2*y*z+8*x-6*y+4*z+2 </TT><BR>
-<TT>Quadrique(q4)</TT><BR>
-On obtient :<BR>
-<TT>[(-227)/180,(-71)/72,(-227)/360],</TT><BR>
-<TT>[[2/(sqrt(6)),(-(sqrt(5)))/5,(-(sqrt(30)))/15],</TT><BR>
-<TT>[-(1/(sqrt(6))),0,(-(sqrt(30)))/6],</TT><BR>
-<TT>[1/(sqrt(6)),(2*sqrt(5))/5,(-(sqrt(30)))/30]],</TT><BR>
-<TT>6*X</TT><CODE><TT>^</TT></CODE><TT>2+(2*sqrt(30)*Z)/6,[X,Y,Z],3,</TT><BR>
-<TT>(48*sqrt(30)*Z)/144+6*X</TT><CODE><TT>^</TT></CODE><TT>2</TT><BR>
-On tape :<BR>
-<TT>q5(x,y,z):=x</TT><CODE><TT>^</TT></CODE><TT>2+2*y</TT><CODE><TT>^</TT></CODE><TT>2-z</TT><CODE><TT>^</TT></CODE><TT>2-4*x*y+4*x*z+4*y*z+6*x-4*y+2*z+1</TT><BR>
-<TT>Quadrique(q5)</TT><BR>
-On obtient :<BR>
-<TT>[(-15)/13,5/13,(-7)/13],[[(-2)/3,(-sqrt(13)+1)/(sqrt(-8*sqrt(13)+52)),</TT><BR>
-<TT>(sqrt(13)+1)/(sqrt(8*sqrt(13)+52))],[(-1)/3,4/(sqrt(-8*sqrt(13)+52)),</TT><BR>
-<TT>4/(sqrt(8*sqrt(13)+52))],[(-2)/3,(sqrt(13)-3)/(sqrt(-8*sqrt(13)+52)),</TT><BR>
-<TT>(-sqrt(13)-3)/(sqrt(8*sqrt(13)+52))]],</TT><BR>
-<TT>2*X</TT><CODE><TT>^</TT></CODE><TT>2+sqrt(13)*Y</TT><CODE><TT>^</TT></CODE><TT>2+(-(sqrt(13)))*Z</TT><CODE><TT>^</TT></CODE><TT>2+(-49)/13,[X,Y,Z],4,</TT><BR>
-<TT>((-2*sqrt(13))*Z</TT><CODE><TT>^</TT></CODE><TT>2)/2+(2*sqrt(13)*Y</TT><CODE><TT>^</TT></CODE><TT>2)/2+2*X</TT><CODE><TT>^</TT></CODE><TT>2+(-49)/13</TT><BR>
-On tape :<BR>
-<TT>q6(x,y,z):=(x+y)*(y-z)+3*x-5*y</TT><BR>
-<TT>Quadrique(q6)</TT><BR>
-On obtient :<BR>
-<TT>[16/9,8/9,11/9],[[1/(sqrt(2)),1/(sqrt(6)),-(1/(sqrt(3)))],</TT><BR>
-<TT>[0,2/(sqrt(6)),1/(sqrt(3))],[1/(sqrt(2)),-(1/(sqrt(6))),</TT><BR>
-<TT>1/(sqrt(3))]],(X</TT><CODE><TT>^</TT></CODE><TT>2)/-2+(3*Y</TT><CODE><TT>^</TT></CODE><TT>2)/2+(2*(-4*sqrt(3))*Z)/3,</TT><BR>
-<TT>[X,Y,Z],4,-(X</TT><CODE><TT>^</TT></CODE><TT>2)/2-(8*sqrt(3)*Z)/3-(-3*Y</TT><CODE><TT>^</TT></CODE><TT>2)/2</TT><BR>
-On tape :<BR>
-<TT>q7(x,y,z):=7*x</TT><CODE><TT>^</TT></CODE><TT>2+4*y</TT><CODE><TT>^</TT></CODE><TT>2+4*z</TT><CODE><TT>^</TT></CODE><TT>2+4*x*y-4*x*z-2*y*z-4*x+5*y+4*z-18</TT><BR>
-<TT>Quadrique(q7)</TT><BR>
-On obtient :<BR>
-<TT>[11/27,(-26)/27,(-29)/54],[[1/(sqrt(5)),54*(-(1/(sqrt(30)*27))),</TT><BR>
-<TT>2/(sqrt(6))],[0,5/(sqrt(30)),1/(sqrt(6))],[2/(sqrt(5)),1/(sqrt(30)),</TT><BR>
-<TT>-(1/(sqrt(6)))]],3*X</TT><CODE><TT>^</TT></CODE><TT>2+3*Y</TT><CODE><TT>^</TT></CODE><TT>2+9*Z</TT><CODE><TT>^</TT></CODE><TT>2+(-602)/27,</TT><BR>
-<TT>[X,Y,Z],4,3*Y</TT><CODE><TT>^</TT></CODE><TT>2+3*X</TT><CODE><TT>^</TT></CODE><TT>2+9*Z</TT><CODE><TT>^</TT></CODE><TT>2+(-602)/27</TT><BR>
-On tape :<BR>
-<TT>q8(x,y,z):=-x</TT><CODE><TT>^</TT></CODE><TT>2-3*z</TT><CODE><TT>^</TT></CODE><TT>2-4*x*y+4*x*z+4*y*z+6*x-4*y+2*z+1 </TT><BR>
-<TT>Quadrique(q8)</TT><BR>
-On obtient (c’est tres long!):<BR>
-<TT>[(-11)/54,223/108,61/54],[[(-sqrt(13)+1)/(sqrt(-8*sqrt(13)+52)),</TT><BR>
-<TT>(sqrt(13)+1)/(sqrt(8*sqrt(13)+52)),(-2)/3],[4/(sqrt(-8*sqrt(13)+52)),</TT><BR>
-<TT>4/(sqrt(8*sqrt(13)+52)),(-1)/3],[(sqrt(13)-3)/(sqrt(-8*sqrt(13)+52)),</TT><BR>
-<TT>(-sqrt(13)-3)/(sqrt(8*sqrt(13)+52)),(-2)/3]],</TT><BR>
-<TT>(sqrt(13)-2)*X</TT><CODE><TT>^</TT></CODE><TT>2+(-sqrt(13)-2)*Y</TT><CODE><TT>^</TT></CODE><TT>2-4*Z,[X,Y,Z],4,</TT><BR>
-<TT>((-4+2*sqrt(13))*X</TT><CODE><TT>^</TT></CODE><TT>2)/2+((-4-2*sqrt(13))*Y</TT><CODE><TT>^</TT></CODE><TT>2)/2-4*Z</TT><BR>
-On tape :<BR>
-<TT>q9(x,y,z):=x</TT><CODE><TT>^</TT></CODE><TT>2-3*x*y+y</TT><CODE><TT>^</TT></CODE><TT>2+x-y-z</TT><CODE><TT>^</TT></CODE><TT>2/2+sqrt(10)/5*z</TT><BR>
-<TT>Quadrique(q9)</TT><BR>
-On obtient un cône car <TT>r=3</TT> :<BR>
-<TT>[-1/5,1/5,(sqrt(10))/5],[[1/(sqrt(2)),1/(sqrt(2)),0],[-(1/(sqrt(2))),</TT><BR>
-<TT>1/(sqrt(2)),0],[0,0,1]],(5*X</TT><CODE><TT>^</TT></CODE><TT>2)/2+(Y</TT><CODE><TT>^</TT></CODE><TT>2)/(-2)+(Z</TT><CODE><TT>^</TT></CODE><TT>2)/(-2),[X,Y,Z],3,</TT><BR>
-<TT>5/2*X</TT><CODE><TT>^</TT></CODE><TT>2+(-1)/2*Y</TT><CODE><TT>^</TT></CODE><TT>2+(-1)/2*Z</TT><CODE><TT>^</TT></CODE><TT>2</TT><BR>
-On tape :<BR>
-<TT>q10(x,y,z):=x</TT><CODE><TT>^</TT></CODE><TT>2-3*x*y+y</TT><CODE><TT>^</TT></CODE><TT>2-x-y-z</TT><CODE><TT>^</TT></CODE><TT>2/2+sqrt(10)/5*z</TT><BR>
-<TT>Quadrique(q10)</TT><BR>
-On obtient :<BR>
-<TT>[-1,-1,(sqrt(10))/5],[[1/(sqrt(2)),1/(sqrt(2)),0],</TT><BR>
-<TT>[-(1/(sqrt(2))),1/(sqrt(2)),0],[0,0,1]],</TT><BR>
-<TT>(5*X</TT><CODE><TT>^</TT></CODE><TT>2)/2+(Y</TT><CODE><TT>^</TT></CODE><TT>2)/(-2)+(Z</TT><CODE><TT>^</TT></CODE><TT>2)/(-2)+6/5,[X,Y,Z],4,</TT><BR>
-<TT>5/2*X</TT><CODE><TT>^</TT></CODE><TT>2+(-1)/2*Y</TT><CODE><TT>^</TT></CODE><TT>2+(-1)/2*Z</TT><CODE><TT>^</TT></CODE><TT>2+6/5</TT></P><HR>
-<A HREF="casrouge016.html"><IMG SRC="previous_motif.gif" ALT="Previous"></A>
-<A HREF="index.html"><IMG SRC="contents_motif.gif" ALT="Up"></A>
-<A HREF="casrouge018.html"><IMG SRC="next_motif.gif" ALT="Next"></A>
-</BODY>
-</HTML>
+</pre><p>On tape :<br>
+<span style="font-family:monospace">q0(x,y,z):=4*x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-4*x*y+4*x*z-2*y*z+8*x-4*y+4*z+2</span><br>
+<span style="font-family:monospace">Quadrique(q0)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[(-2)/3,1/3,(-1)/3],[[2/(sqrt(6)),(sqrt(5))/5,(sqrt(30))/15],</span><br>
+<span style="font-family:monospace">[-(1/(sqrt(6))),0,(sqrt(30))/6],[1/(sqrt(6)),(-2*sqrt(5))/5,</span><br>
+<span style="font-family:monospace">(sqrt(30))/30]],6*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-2,[X,Y,Z],2,6*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-2</span><br>
+On tape :<br>
+<span style="font-family:monospace">q1(x,y,z):=x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+3*y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-3*z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-8*y*z+2*z*x-4*x*y-1</span><br>
+<span style="font-family:monospace">Quadrique(q1)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[0,0,0],[[0,1/(sqrt(6)),5*(-(1/(sqrt(30))))],[1/(sqrt(5)),</span><br>
+<span style="font-family:monospace">2*(-(1/(sqrt(6)))),2*(-(1/(sqrt(30))))],[2/(sqrt(5)),</span><br>
+<span style="font-family:monospace">1/(sqrt(6)),1/(sqrt(30))]],-5*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+6*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-1,[X,Y,Z],3,</span><br>
+<span style="font-family:monospace">6*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-5*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-1</span><br>
+On tape :<br>
+<span style="font-family:monospace">q2(x,y,z):=5*x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-2*x*y+2*x*z-6*y*z+2*x+4*y-6*z+1 </span><br>
+<span style="font-family:monospace">Quadrique(q2)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[(-1)/2,-1,1/2],[[0,2/(sqrt(6)),-(1/(sqrt(3)))],[1/(sqrt(2)),</span><br>
+<span style="font-family:monospace">-(1/(sqrt(6))),-(1/(sqrt(3)))],</span><br>
+<span style="font-family:monospace">[1/(sqrt(2)),1/(sqrt(6)),1/(sqrt(3))]],</span><br>
+<span style="font-family:monospace">-2*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+6*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+3*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-3,[X,Y,Z],4</span><br>
+<span style="font-family:monospace">3*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+6*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-2*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-3</span><br>
+On tape :<br>
+<span style="font-family:monospace">q3(x,y,z):=2*x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+2*y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+2*x*z-2*y*z+4*x-2*y-z+3</span><br>
+<span style="font-family:monospace">Quadrique(q3)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[(-113)/144,41/144,17/72],</span><br>
+<span style="font-family:monospace">[[1/(sqrt(3)),-(1/(sqrt(2))),1/(sqrt(6))],</span><br>
+<span style="font-family:monospace">[-(1/(sqrt(3))),-(1/(sqrt(2))),</span><br>
+<span style="font-family:monospace">-(1/(sqrt(6)))],[1/(sqrt(3)),</span><br>
+<span style="font-family:monospace">0,2*(-(1/(sqrt(6))))]],</span><br>
+<span style="font-family:monospace">3*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+2*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(2*2*sqrt(6)*Z)/3,</span><br>
+<span style="font-family:monospace">[X,Y,Z],4,3*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(4*sqrt(6)*Z)/3+2*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2</span><br>
+On tape :<br>
+<span style="font-family:monospace">q4(x,y,z):=4*x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-4*x*y+4*x*z-2*y*z+8*x-6*y+4*z+2 </span><br>
+<span style="font-family:monospace">Quadrique(q4)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[(-227)/180,(-71)/72,(-227)/360],</span><br>
+<span style="font-family:monospace">[[2/(sqrt(6)),(-(sqrt(5)))/5,(-(sqrt(30)))/15],</span><br>
+<span style="font-family:monospace">[-(1/(sqrt(6))),0,(-(sqrt(30)))/6],</span><br>
+<span style="font-family:monospace">[1/(sqrt(6)),(2*sqrt(5))/5,(-(sqrt(30)))/30]],</span><br>
+<span style="font-family:monospace">6*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(2*sqrt(30)*Z)/6,[X,Y,Z],3,</span><br>
+<span style="font-family:monospace">(48*sqrt(30)*Z)/144+6*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2</span><br>
+On tape :<br>
+<span style="font-family:monospace">q5(x,y,z):=x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+2*y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-4*x*y+4*x*z+4*y*z+6*x-4*y+2*z+1</span><br>
+<span style="font-family:monospace">Quadrique(q5)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[(-15)/13,5/13,(-7)/13],[[(-2)/3,(-sqrt(13)+1)/(sqrt(-8*sqrt(13)+52)),</span><br>
+<span style="font-family:monospace">(sqrt(13)+1)/(sqrt(8*sqrt(13)+52))],[(-1)/3,4/(sqrt(-8*sqrt(13)+52)),</span><br>
+<span style="font-family:monospace">4/(sqrt(8*sqrt(13)+52))],[(-2)/3,(sqrt(13)-3)/(sqrt(-8*sqrt(13)+52)),</span><br>
+<span style="font-family:monospace">(-sqrt(13)-3)/(sqrt(8*sqrt(13)+52))]],</span><br>
+<span style="font-family:monospace">2*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+sqrt(13)*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-(sqrt(13)))*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-49)/13,[X,Y,Z],4,</span><br>
+<span style="font-family:monospace">((-2*sqrt(13))*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2+(2*sqrt(13)*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2+2*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-49)/13</span><br>
+On tape :<br>
+<span style="font-family:monospace">q6(x,y,z):=(x+y)*(y-z)+3*x-5*y</span><br>
+<span style="font-family:monospace">Quadrique(q6)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[16/9,8/9,11/9],[[1/(sqrt(2)),1/(sqrt(6)),-(1/(sqrt(3)))],</span><br>
+<span style="font-family:monospace">[0,2/(sqrt(6)),1/(sqrt(3))],[1/(sqrt(2)),-(1/(sqrt(6))),</span><br>
+<span style="font-family:monospace">1/(sqrt(3))]],(X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/-2+(3*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2+(2*(-4*sqrt(3))*Z)/3,</span><br>
+<span style="font-family:monospace">[X,Y,Z],4,-(X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2-(8*sqrt(3)*Z)/3-(-3*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2</span><br>
+On tape :<br>
+<span style="font-family:monospace">q7(x,y,z):=7*x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+4*y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+4*z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+4*x*y-4*x*z-2*y*z-4*x+5*y+4*z-18</span><br>
+<span style="font-family:monospace">Quadrique(q7)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[11/27,(-26)/27,(-29)/54],[[1/(sqrt(5)),54*(-(1/(sqrt(30)*27))),</span><br>
+<span style="font-family:monospace">2/(sqrt(6))],[0,5/(sqrt(30)),1/(sqrt(6))],[2/(sqrt(5)),1/(sqrt(30)),</span><br>
+<span style="font-family:monospace">-(1/(sqrt(6)))]],3*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+3*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+9*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-602)/27,</span><br>
+<span style="font-family:monospace">[X,Y,Z],4,3*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+3*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+9*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-602)/27</span><br>
+On tape :<br>
+<span style="font-family:monospace">q8(x,y,z):=-x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-3*z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-4*x*y+4*x*z+4*y*z+6*x-4*y+2*z+1 </span><br>
+<span style="font-family:monospace">Quadrique(q8)</span><br>
+On obtient (c’est tres long!):<br>
+<span style="font-family:monospace">[(-11)/54,223/108,61/54],[[(-sqrt(13)+1)/(sqrt(-8*sqrt(13)+52)),</span><br>
+<span style="font-family:monospace">(sqrt(13)+1)/(sqrt(8*sqrt(13)+52)),(-2)/3],[4/(sqrt(-8*sqrt(13)+52)),</span><br>
+<span style="font-family:monospace">4/(sqrt(8*sqrt(13)+52)),(-1)/3],[(sqrt(13)-3)/(sqrt(-8*sqrt(13)+52)),</span><br>
+<span style="font-family:monospace">(-sqrt(13)-3)/(sqrt(8*sqrt(13)+52)),(-2)/3]],</span><br>
+<span style="font-family:monospace">(sqrt(13)-2)*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-sqrt(13)-2)*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-4*Z,[X,Y,Z],4,</span><br>
+<span style="font-family:monospace">((-4+2*sqrt(13))*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2+((-4-2*sqrt(13))*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2-4*Z</span><br>
+On tape :<br>
+<span style="font-family:monospace">q9(x,y,z):=x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-3*x*y+y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+x-y-z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2/2+sqrt(10)/5*z</span><br>
+<span style="font-family:monospace">Quadrique(q9)</span><br>
+On obtient un cône car <span style="font-family:monospace">r=3</span> :<br>
+<span style="font-family:monospace">[-1/5,1/5,(sqrt(10))/5],[[1/(sqrt(2)),1/(sqrt(2)),0],[-(1/(sqrt(2))),</span><br>
+<span style="font-family:monospace">1/(sqrt(2)),0],[0,0,1]],(5*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2+(Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/(-2)+(Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/(-2),[X,Y,Z],3,</span><br>
+<span style="font-family:monospace">5/2*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-1)/2*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-1)/2*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2</span><br>
+On tape :<br>
+<span style="font-family:monospace">q10(x,y,z):=x</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-3*x*y+y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2-x-y-z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2/2+sqrt(10)/5*z</span><br>
+<span style="font-family:monospace">Quadrique(q10)</span><br>
+On obtient :<br>
+<span style="font-family:monospace">[-1,-1,(sqrt(10))/5],[[1/(sqrt(2)),1/(sqrt(2)),0],</span><br>
+<span style="font-family:monospace">[-(1/(sqrt(2))),1/(sqrt(2)),0],[0,0,1]],</span><br>
+<span style="font-family:monospace">(5*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/2+(Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/(-2)+(Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2)/(-2)+6/5,[X,Y,Z],4,</span><br>
+<span style="font-family:monospace">5/2*X</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-1)/2*Y</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+(-1)/2*Z</span><code><span style="font-family:monospace">^</span></code><span style="font-family:monospace">2+6/5</span></p>
+<hr>
+<a href="casrouge016.html"><img src="previous_motif.gif" alt="Previous"></a>
+<a href="index.html"><img src="contents_motif.gif" alt="Up"></a>
+<a href="casrouge018.html"><img src="next_motif.gif" alt="Next"></a>
+</body>
+</html>
